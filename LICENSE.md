@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2021 Tytus Software Team
+Copyright (c) 2021 Luis Espino and other [contributors](https://github.com/tytusdb/tytusmljs/contributors)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
