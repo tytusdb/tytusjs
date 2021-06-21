@@ -36,4 +36,12 @@ class LinearRegression extends LinearModel {
         }
         return yPredict
     }
+
+    mserror(yTrain, yPredict) {
+        var mse = 0
+        for(var i = 0; i < yTrain.length; i++) {
+            mse += Math.pow(yTrain[i]-yPredict[i],2)
+        }
+        return mse / yTrain.length
+    }
 }
