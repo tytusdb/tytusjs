@@ -20,7 +20,7 @@ class LinearRegression extends LinearModel {
             sumX += xTrain[i]
             sumY += yTrain[i]
             sumXY += xTrain[i] * yTrain[i]
-            sumXX += xTrain[i]*xTrain[i]
+            sumXX += xTrain[i] * xTrain[i]
         }
         this.m = (xTrain.length * sumXY - sumX * sumY) / (xTrain.length * sumXX - Math.pow(Math.abs(sumX), 2))
         this.b = (sumY * sumXX - sumX * sumXY) / (xTrain.length * sumXX - Math.pow(Math.abs(sumX), 2))        
