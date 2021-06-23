@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+    <h1>Especificación de software</h1>    
+    <h3>Diagrama de clases</h3>    
+    <div class="mermaid">
+    classDiagram
+    LinearModel <|-- LinearRegression
+    class LinearModel {
+        +isFit : bool = false
+    }
+    class LinearRegression {
+        +m : float = 0
+        +b : float = 0
+        +fit(xTrain : float[], yTrain : float[])
+        +predict(xTest : float[]) float[]
+        +mserror(yTrain : float[], yPredict : float[]) float
+    }
+    </div>
+ <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+ <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>
