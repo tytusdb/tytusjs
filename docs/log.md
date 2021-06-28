@@ -5,4 +5,5 @@ Log Notes
 |1|21/06/2021|1|luisespino|nac|Regresión Lineal|Regresión lineal con mínimos cuadrados, desarrollo básico, puede mejorarse e incluir otros tipos del modelo lineal.|Finalizado|21/06/2021|
 |2|27/06/2021|3|uhcorona|3|Regresión Polinomial|Regresión polinómica, desarrollo básico|En desarrollo|En desarrollo|
 |3|27/06/2021|3|HenryGalvez|3|Árboles de decisión|Árboles de decisión, desarrollo básico|En desarrollo|En desarrollo|
-|4|28/06/2021|4|nejagope|3|A|Método de Bayes|Análisis de la solución|En desarrollo|
+|4|28/06/2021|3|nejagope|4|Método de Bayes|Análisis del problema|En desarrollo|En desarrollo|
+|5|28/06/2021|3|m0iino|4|Método de Bayes|Codificación del algoritmo|En desarrollo|En desarrollo|
