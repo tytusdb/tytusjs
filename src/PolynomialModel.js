@@ -76,4 +76,23 @@ class PolynomialRegression extends PolynomialModel {
         //Setting Model as trained
         this.isFit = true;
     }
+
+    //Function that creates a prediction based in the regression model
+    predict(xArray) {
+        let yArray = [];
+        //Checking if the model is already trained
+        if (this.isFit) {
+            //Generating the predictions based in the input and solutions
+            for (let i = 0; i < xArray.length; i++) {
+                let yprediction = 0;
+                for (let j = 0; j < this.solutions.length; j++) {
+                    yprediction += this.solutions[j] * Math.pow(xArray[i], j);
+                }
+                yArray.push(yprediction);
+            }
+        }
+
+        //Returning Prediction
+        return yArray;
+    }
 }
