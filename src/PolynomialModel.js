@@ -10,6 +10,7 @@ class PolynomialRegression extends PolynomialModel {
     constructor() {
         super();
         this.solutions = [];
+        this.error = 0;
     }
 
     //Method that trains the model in order to create the regression
@@ -75,6 +76,9 @@ class PolynomialRegression extends PolynomialModel {
 
         //Setting Model as trained
         this.isFit = true;
+
+        //Setting error
+        this.calculateR2(xArray, yArray);
     }
 
     //Function that creates a prediction based in the regression model
@@ -94,5 +98,32 @@ class PolynomialRegression extends PolynomialModel {
 
         //Returning Prediction
         return yArray;
+    }
+
+    //Method that stores error for the trained array
+    calculateR2(xArray, yArray) {
+        //Setting error array and predictions
+        let errors = new Array(xArray.length);
+        let prediction = this.predict(xArray);
+        let sumY = 0;
+
+        //Calculating errors
+        for (let i = 0; i < xArray.length; i++) {
+            sumY += yArray[i];
+            errors[i] = Math.pow(yArray[i] - prediction[i], 2);
+        }
+
+        let sr = 0;
+        let st = 0;
+        for (let i = 0; i < xArray.length; i++) {
+            sr += errors[i];
+            st += Math.pow(yArray[i] - (sumY / xArray.length), 2);
+        }
+        let r2 = (st - sr) / st;
+        this.error = r2;
+    }
+
+    getError() {
+        return this.error;
     }
 }
