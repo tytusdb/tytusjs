@@ -1,6 +1,8 @@
 <html>
   <head>
     <script type="text/javascript" src="../src/kmeans.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
 
   <body>
@@ -16,6 +18,11 @@
         value="3"
       />
       <br />
+
+      <input style="width: 60%;" id="linear_data" type="text"
+            placeholder="Ingrese los numeros separados por comas (0,1,2,3,...)"
+            value="1,2,3,4,5,7,8,9,10,12,13,14,15,16">
+        <br>
 
       <button id="btnLineal">Calcular KMeans Lineal</button>
 
@@ -45,6 +52,48 @@
         let clusters = new Set([...clusterized_data.map(a => a[1])])
 
         clusters = Array.from(clusters)
+
+        clusters.forEach((cluster, i) => {
+            clusters[i] = [cluster, "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })]
+        });
+
+        // console.log('clusters set: ', clusters)
+        //Graficada
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(function () { drawChart(clusters) });
+
+        function drawChart(clusters) {
+            //let y = Array(data.length).fill(0)
+            var graph_data = new google.visualization.DataTable();
+            graph_data.addColumn('number', 'X')
+            graph_data.addColumn('number', 'Y')
+            graph_data.addColumn({ type: 'string', role: 'style' }); // style col.
+            let a = clusterized_data.map(e => [e[0], 0, `point { size: 7; shape-type: diamond; fill-color: ${clusters[clusters.findIndex(a => a[0] == e[1])][1]}}`])
+
+            // console.log(a)
+            graph_data.addRows(a)
+
+            clusters.forEach(c => {
+                graph_data.addRow([c[0], 0, `point { size: 14; shape-type: circle; fill-color: ${c[1]}}`])
+            });
+
+
+
+            var options = {
+                title: 'Puntos',
+                seriesType: 'scatter',
+                series: { 1: { type: 'line' } },
+                hAxis: { title: 'X', minValue: 0, maxValue: Math.max(this.data) + 10 },
+                yAxis: { title: 'Y', minValue: 0, maxValue: 5 },
+                legend: 'none'
+            };
+
+            var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+            chart.draw(graph_data, options);
+        }
+
 
     };
   </script>
