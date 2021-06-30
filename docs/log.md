@@ -15,3 +15,4 @@ Log Notes
 |11|29/06/2021|-|pablorrp1|2|Conjuntos difusos|Cálculo del punto a clasificar por conjuntos difusos|En desarrollo|En desarrollo|
 |12|29/06/2021|-|cesarsazo|6|Regresion Lineal|Regresion con minimos cuadrados.|En desarrollo|En desarrollo|
 |13|29/06/2021|-|jj196|6|Método de Bayes|Análisis|En desarrollo|En desarrollo|En desarrollo|
+|14|29/06/2021|-|hernandezgramajo|6|Redes neuronales|Análisis del algoritmo|En desarrollo|En desarrollo|
