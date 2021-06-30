@@ -291,6 +291,254 @@
         </div>
     </div>
 
+    <div class="decisiontreeDoc">
+        
+        <h1 class="display-3 w-100 text-center">Decision Tree - ID3</h1>
+        <div class="dropdown-divider"></div>
+        <div class="container">
+            <h1 class="display-5 w-100">Class Diagram</h1>
+            <div class="mermaid">
+                classDiagram
+                DecisionTreeID3 -- NodeTree
+                DecisionTreeID3 -- Feature
+                DecisionTreeID3 -- Atrribute
+                class NodeTree {
+                +id : string = ""
+                +tag : string = ""
+                +value : string = ""
+                +child : NodeTree[] = []
+                }
+                class Feature {
+                +attribute : string = ""
+                +entropy : Float = -1
+                +gain : Float = -1
+                +primaryCount : Integer = 0
+                +secondaryCount : Integer = 0
+                +primaryPosibility : string = ""
+                +secondPosibility : string = ""
+                +updateFeature(_posibility : string ) bool
+                +calculateEntropy(_p : Integer, _n: Integer ) Float
+                }
+                class Atrribute {
+                +attribute : string = ""
+                +features : any[] = []
+                +infoEntropy : = -1
+                +gain : = -1
+                +index : = -1
+                }
+                class DecisionTreeID3 {
+                +dataset : any[] = []
+                +generalEntropy : float = 0
+                +primaryCount : float = 0
+                +secondaryCount : float = 0
+                +primaryPosibility : string = ""
+                +secondaryPosibility : string = ""
+                +root : NodeTree = null
+                +calculateEntropy(_p : Integer, _n : Integer) Number
+                +train(_dataset : any[], _start : Integer) NodeTree
+                +predict(_predict : any[], _root : NodeTree) NodeTree
+                +recursivePredict(_predict : any[],_node :NodeTree) NodeTree
+                +calculateGeneralEntropy(_dataset : any[], indexResult : Integer) Float
+                +classifierFeatures(_dataset : any[], indexFeature : Integer, indexResult : Integer) Feature[]
+                +calculateInformationEntropy(_features : Feature[]) Number
+                +calculateGain(_generalEntropy : Number, _infoEntropy : Number) Number
+                +selectBestFeature(_attributes : Attribute[]) Integer
+                +generateDotString(_root : NodeTree) string
+                +recursiveDotString(_root : NodeTree, _idParent : string) string
+                }
+            </div>
+        </div>
+        <div class="container mt-4">
+            <h3 class="display-5">DecisionTreeID3 Class</h3>
+            <div class="dropdown-divider"></div>
+
+            <div class="row">
+                <div class="col col-sm-12 col-lg-6">
+                    <h3 class="">Properties</h3>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>dataset</td>
+                                <td>2-dimensional matrix that contains the data header in the first row and the last column contains the 2 possible classes.</td>
+                            </tr>
+                            <tr>
+                                <td>generalEntropy</td>
+                                <td>Stores the overall entropy of the data set.</td>
+                            </tr>
+                            <tr>
+                                <td>primaryCount</td>
+                                <td>Stores how many times the first class found appears in the data set.</td>
+                            </tr>
+                            <tr>
+                                <td>secondaryCount</td>
+                                <td>Stores how many times the second class found appears in the data set.</td>
+                            </tr>
+                            <tr>
+                                <td>primaryPosibility</td>
+                                <td>Stores the first class found in the data set.</td>
+                            </tr>
+                            <tr>
+                                <td>secondaryPosibility</td>
+                                <td>Stores the second class found in the data set.</td>
+                            </tr>
+                            <tr>
+                                <td>root</td>
+                                <td>It is the root of the tree resulting from training</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <h3 class="">Methods</h3>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>calculateEntropy</td>
+                                <td>Receives 2 parameters, the first is how many times the first label appears, the second parameter is how many times the second label appears and returns the calculation of the entropy equation</td>
+                            </tr>
+                            <tr>
+                                <td>train</td>
+                                <td>This method is in charge of generating the decision tree through the data set it receives, it returns the root node of the generated tree.</td>
+                            </tr>
+                            <tr>
+                                <td>predict</td>
+                                <td>This function classifies the 2xm matrix it receives as a parameter, starts the search from the node it receives as a parameter, returns the node with the class it belongs to or null if it is not able to classify.</td>
+                            </tr>
+                            <tr>
+                                <td>recursivePredict</td>
+                                <td>This function is used as an aid to traversing the decision tree.</td>
+                            </tr>
+                            <tr>
+                                <td>calculateGeneralEntropy</td>
+                                <td>This function analyzes the received data set, it counts the number of times the first and second class appear, the index parameter that it receives indicates the number of column in which the count must be performed, it makes use of the calculateEntropy function and returns the value of the entropy of the entire data set.</td>
+                            </tr>
+                            <tr>
+                                <td>classifierFeatures</td>
+                                <td>This function analyzes the received data set, using the index parameter, separates each data into the corresponding characteristic, and returns a list of characteristics.</td>
+                            </tr>
+                            <tr>
+                                <td>calculateInformationEntropy</td>
+                                <td>This function receives a list of characteristics and returns the value of the entropy of the information for the received characteristic.</td>
+                            </tr>
+                            <tr>
+                                <td>calculateGain</td>
+                                <td>This function receives the general entropy and the information entropy and returns the value of the profit.</td>
+                            </tr>
+                            <tr>
+                                <td>selectBestFeature</td>
+                                <td>This function receives a set of characteristics and returns the index of the characteristic with the highest gain.</td>
+                            </tr>
+                            <tr>
+                                <td>generateDotString</td>
+                                <td>This function is used to generate the string in the format that the visjs tool accepts to generate a tree type graph.</td>
+                            </tr>
+                            <tr>
+                                <td>recursiveDotString</td>
+                                <td>This function is auxiliary to traverse the tree and generate the string for visjs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col col-sm-12 col-md-6">
+                    <h3 class="display-6">Overview<br /></h3>
+                    <p>
+                        This Machine Learning process works with the ID3 algorithm. It is a simple implementation to classify data matrices with the following characteristics
+                    </p>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">The data set is a matrix and contain the header.</li>
+                        <li class="list-group-item">The result column must be in the matrix last column.</li>
+                        <li class="list-group-item">The header is considering as Attribute.</li>
+                        <li class="list-group-item">Every data is considering as Feature.</li>
+                    </ol>
+                </div>
+                <div class="col col-sm-12 col-md-6">
+                    <h3 class="display-6">Example Data Set:<br /></h3>
+                    <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+                        <code class="text-info">
+                            [<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;["Attr1", "Attr2", "Attr3", "Result"],<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;["lorem", "lorem", "lorem", "Class1"],<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;["lorem", "lorem", "lorem", "Class2"],<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;["lorem", "lorem", "lorem", "Class1"],<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;["lorem", "lorem", "lorem", "Class2"],<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;["lorem", "lorem", "lorem", "Class1"],<br />
+                            ]<br />
+                        </code>
+                        Note: Attr#, lorem, Result and Class# can be any string.
+                    </p>
+                </div>
+            </div>
+
+            <div class="dropdown-divider mt-5 mb-5"></div>
+
+            <div class="row">
+                <div class="col col-sm-12 col-md-6">
+                    <h3 class="display-6">Data to Predict:<br /></h3>
+                    <p>
+                        The data to be predicted consists of a matrix with 2 rows and <strong>m</strong> columns. The first row will be the header, the second row will consist of the data for decision making.
+                    </p>
+                    <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+                        <code class="text-info">
+                            [<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;["Attr1", "Attr2", "Attr3"], <br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;["lorem", "lorem", "lorem"], <br />
+                            ]<br />
+                        </code>
+                        Note: The header must be in the data
+                    </p>
+                </div>
+                <div class="col col-sm-12 col-md-6">
+                    <h3 class="display-6">Result of predict:<br /></h3>
+                    <p>
+                        The result of the classification consists of an object of type NodeTree which has in its value attribute the classification of the data entered.
+                        <br />
+                        <br />
+                    </p>
+                    <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+                        <code class="text-info">
+                            {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;childs: []<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;id: "3eb4d4228163"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;tag: "Overcast"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;value: "Yes"<br />
+                            }
+                        </code>
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="display-6">Usage<br /></h3>
+
+            <div class="dropdown-divider mt-3 mb-5"></div>
+
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item">Import the Library inside HTML page in a script tag.</li>
+                <li class="list-group-item">Prepare a matrix to use as a data set.</li>
+                <li class="list-group-item">Train the algorithm.</li>
+                <li class="list-group-item">Predict data!.</li>
+            </ol>
+
+        </div>
+    </div>
+
     <hr>
     
     
