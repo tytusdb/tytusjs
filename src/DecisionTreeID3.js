@@ -140,6 +140,37 @@ class DecisionTreeID3 {
     }
 
     /**
+     * Simple function to predict a data
+     * @param {any[]} _predict 
+     * @param {NodeTree} _root 
+     * @returns 
+     */
+    predict(_predict, _root){
+        return this.recursivePredict(_predict, _root);
+    }
+
+    /**
+     * Simple function
+     * @param {any[]} _predict 
+     * @param {NodeTree} _node 
+     * @returns 
+     */
+    recursivePredict(_predict,_node){
+        if(_node.childs.length == 0) return _node;
+        for (let index = 0; index<_predict[0].length; index++){
+            if(_predict[0][index] === _node.value){
+                //if(this.childs.length == 0) return
+                for(let i = 0; i<_node.childs.length; i++){
+                    if(_node.childs[i].tag === _predict[1][index]){
+                        return this.recursivePredict(_predict, _node.childs[i])
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
      * 
      * @param {String Array} _dataset 
      * @param {Integer} indexResult this attribute is to indicate the result column in the data set
