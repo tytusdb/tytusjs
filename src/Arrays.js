@@ -8,3 +8,15 @@ function joinArrays() {
     }
     return a
 }
+
+/**
+ * Zip: Iterator of tuples where items 
+ * paired together
+ * @param {array} arrays 
+ * @returns 
+ */
+function zip(arrays) {
+    return arrays[0].map(function(_,i){
+        return arrays.map(function(array){return array[i]})
+    });
+}

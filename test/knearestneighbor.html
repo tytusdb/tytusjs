@@ -1,0 +1,45 @@
+<html>
+<head>
+<script type="text/javascript" src="../src/Arrays.js"></script>
+<script type="text/javascript" src="../src/Distance.js"></script>
+<script type="text/javascript" src="../src/KNearestNeighbor.js"></script>
+</head>
+<body>
+<h2>K-Nearest Neighbor</h2>
+<h3>Training</h3>
+<table id="tabla"></table>
+<h3>For point</h3>
+<table id="punto"></table>
+<h4>Euclidian</h4>
+<p id="logE"></p>
+<h4>Manhattan</h4>
+<p id="logM"></p>
+</body>
+<script>
+  var ind = ["A", "B", "C", "D", "E", "F"]
+  var x = [3, 5, 2, 2, 6, 6]
+  var y = [2, 3, 1, 2, 3, 4]
+  var group = ["N", "P", "N", "N", "P", "P"]
+  var point = [4, 4]
+  var tabla = "<table>"
+  for (const i in x) {
+    tabla += "<tr>"
+    tabla += "<td>" + ind[i] + "</td><td>" + x[i] + "</td><td>" + y[i] + "</td><td>" + group[i] + "</td>"
+    tabla += "</tr>"
+  }
+  tabla += "</table>"
+  document.getElementById("tabla").innerHTML = tabla
+  tabla = "<table>"
+  tabla += "<td> G </td><td>" + point[0] + "</td><td>" + point[1] + "</td>"
+  tabla += "</table>"
+  document.getElementById("punto").innerHTML = tabla
+</script>
+<script>
+  var individuals = zip([x, y, group])
+  var knn = new KNearestNeighbor(individuals)
+  var euc = knn.euclidean(point)
+  var man = knn.manhattan(point)
+  document.getElementById("logE").innerHTML = euc
+  document.getElementById("logM").innerHTML = man
+</script>
+</html>
