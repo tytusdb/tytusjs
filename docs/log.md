@@ -11,3 +11,4 @@ Log Notes
 |7|29/06/2021|3|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo|En desarrollo|En desarrollo|
 |8|29/06/2021|3|Richimenendez|14|K-Means|Codificacion del algoritmo|En desarrollo|En desarrollo|
 |9|29/06/2021|-|pablorrp1|2|K-nearest neigbor|Cálculo del punto a clasificar contra datos de entrenamiento|En desarrollo|En desarrollo|
+|10|29/06/2021|3|ronald1512|3|Redes neuronales|Análisis y diseño del algoritmo|En desarrollo|En desarrollo|
