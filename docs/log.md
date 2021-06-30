@@ -3,7 +3,7 @@ Log Notes
 |No.|Fecha inicio|Días aprox.|Usuario|Equipo|Funcionalidad|Detalle|Estado|Fecha fin|
 |-|-|-|-|-|-|-|-|-|
 |1|21/06/2021|1|luisespino|nac|Regresión Lineal|Regresión lineal con mínimos cuadrados, desarrollo básico, puede mejorarse e incluir otros tipos del modelo lineal.|Finalizado|21/06/2021|
-|2|27/06/2021|3|uhcorona|3|Regresión Polinomial|Regresión polinómica, desarrollo básico|En desarrollo|En desarrollo|
+|2|27/06/2021|3|uhcorona|3|Regresión Polinomial|Regresión polinómica, desarrollo básico|Finalizado|29/06/2021|
 |3|27/06/2021|3|HenryGalvez|3|Árboles de decisión|Árboles de decisión, desarrollo básico|En desarrollo|En desarrollo|
 |4|28/06/2021|3|nejagope|4|Método de Bayes|Análisis del problema|En desarrollo|En desarrollo|
 |5|28/06/2021|3|m0iino|4|Método de Bayes|Codificación del algoritmo|En desarrollo|En desarrollo|
@@ -16,3 +16,5 @@ Log Notes
 |12|29/06/2021|-|cesarsazo|6|Regresion Lineal|Regresion con minimos cuadrados.|En desarrollo|En desarrollo|
 |13|29/06/2021|-|jj196|6|Método de Bayes|Análisis|En desarrollo|En desarrollo|En desarrollo|
 |14|29/06/2021|-|hernandezgramajo|6|Redes neuronales|Análisis del algoritmo|En desarrollo|En desarrollo|
+|15|30/06/2021|1|uhcorona|3|Prueba Beta Regresión polinómica|Prueba Beta Regresión polinómica|En desarrollo|En desarrollo|
+|16|30/06/2021|1|HenryGalvez|3|Prueba Beta Árboles de decisión|Prueba Beta Árboles de decisión|En desarrollo|En desarrollo|
