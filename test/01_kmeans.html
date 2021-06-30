@@ -1,5 +1,6 @@
 <html>
   <head>
+    <script type="text/javascript" src="../dist/kmeans.js"></script>
   </head>
 
   <body>
@@ -37,6 +38,14 @@
           `El numero de clusters (${k}) no puede ser menor a la cantidad de datos (${data.length})`
         );
       }
+      
+       var kmeans = new LinearKMeans(k, data)
+        let clusterized_data = kmeans.clusterize(k, data)
+
+        let clusters = new Set([...clusterized_data.map(a => a[1])])
+
+        clusters = Array.from(clusters)
+
     };
   </script>
 </html>
