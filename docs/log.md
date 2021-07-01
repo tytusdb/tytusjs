@@ -7,12 +7,12 @@ Log Notes
 |3|27/06/2021|3|HenryGalvez|3|Árboles de decisión|Árboles de decisión, desarrollo básico|Finalizado|30/06/2021|
 |4|28/06/2021|3|nejagope|4|Método de Bayes|Análisis del problema|En desarrollo|En desarrollo|
 |5|28/06/2021|3|m0iino|4|Método de Bayes|Codificación del algoritmo|En desarrollo|En desarrollo|
-|6|29/06/2021|1|Diegog56|14|K-Means|Analisis y diseño del algoritmo|Terminado|29/06/2021|
+|6|29/06/2021|1|Diegog56|14|K-Means|Analisis y diseño del algoritmo|Finalizado|29/06/2021|
 |7|29/06/2021|2|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo lineal y pruebas|En desarrollo|En desarrollo|
 |8|29/06/2021|3|Richimenendez|14|K-Means|Codificacion del algoritmo lineal|En desarrollo|En desarrollo|
 |9|29/06/2021|1|pablorrp1|2|K-nearest neigbor|Cálculo del punto a clasificar contra datos de entrenamiento|Finalizado|29/06/2021|
 |10|29/06/2021|3|ronald1512|3|Redes neuronales|Análisis y diseño del algoritmo|En desarrollo|En desarrollo|
-|11|29/06/2021|-|pablorrp1|2|Conjuntos difusos|Cálculo del punto a clasificar por conjuntos difusos|En desarrollo|En desarrollo|
+|11|29/06/2021|1|pablorrp1|2|Conjuntos difusos|Cálculo del punto a clasificar por conjuntos difusos|Finalizado|30/06/2021|
 |12|29/06/2021|-|cesarsazo|6|Regresion Lineal|Regresion con minimos cuadrados.|En desarrollo|En desarrollo|
 |13|29/06/2021|-|jj196|6|Método de Bayes|Análisis|En desarrollo|En desarrollo|En desarrollo|
 |14|29/06/2021|-|hernandezgramajo|6|Redes neuronales|Análisis del algoritmo|En desarrollo|En desarrollo|
