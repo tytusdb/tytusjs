@@ -22,4 +22,6 @@ Log Notes
 |18|01/07/2021|2|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo 2D y pruebas|En desarrollo|En desarrollo|
 |19|01/07/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo 2D|En desarrollo|En desarrollo|
 |20|01/07/2021|2|Diegog56|14|K-Means|Codificacion del algoritmo 2D|En desarrollo|En desarrollo|
+|21|01/07/2021|2|esahuay|15|Regresión Lineal - Mínimos cuadarados |Análisis del algoritmo|En desarrollo|En desarrollo|
+
 
