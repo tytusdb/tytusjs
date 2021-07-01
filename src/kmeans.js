@@ -162,5 +162,45 @@ class LinearKMeans extends KMeans {
 
 
 
+}
+class _2DKMeans extends KMeans {
+    constructor() {
+        super()
+        this.data = []
+    }
+
+    clusterize(k, data, iterations) {
+
+    }
+
+    distance(point_a, point_b) {
+
+    }
+
+
+    calculateMeanVariance(arr) {
+
+        function getVariance(arr, mean) {
+            return arr.reduce(function (pre, cur) {
+                pre = pre + Math.pow((cur - mean), 2);
+                return pre;
+            }, 0)
+        }
+
+        var meanTot = arr.reduce(function (pre, cur) {
+            return pre + cur;
+        })
+
+        var total = getVariance(arr, meanTot / arr.length);
+
+        var res = {
+            mean: meanTot / arr.length,
+            variance: total / arr.length
+        }
+
+
+        return [res.mean, res.variance]
+    }
+
 
 }

@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="../src/kmeans.js"></script>
+    <!--graficada -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <h2>G14 - KMeans</h2>
+    <div style="width: 100%;">
+        <label for="linear_data"> Datos 2D (x,y)</label>
+        <br>
+        <input style="width: 60%;" id="cluster_count" type="number" placeholder="Ingrese la cantidad de clusters"
+            value=3>
+        <br>
+        <!--pendiente añadir iteraciones -->
+        <input style="width: 60%;" id="linear_data" type="text"
+            placeholder="Ingrese los numeros separados por comas ([0,0],[0,1],[0,2]...)"
+            value="[0,0],[0,1],[0,2]">
+        <br>
+        <input style="width: 60%;" id="iterations" type="number"
+            placeholder="Ingrese la cantidad de iteraciones a realizar" value=3>
+        <br>
+
+        <button id="btnLineal">Calcular KMeans 2D</button>
+
+        <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    </div>
+</body>
+<script>
+
+    document.getElementById('btnLineal').onclick = function () {
+        var linear_data = document.getElementById('linear_data').value
+        var k = document.getElementById('cluster_count').value
+        var iterations = document.getElementById('iterations').value
+        var data = []
+        var split = linear_data.split(',')
+        // <!--pendiente añadir cantidad de pasos -->
+        split.forEach(d => {
+            data.push(parseInt(d))
+        });
+
+        if (data.length < k) {
+            alert(`El numero de clusters (${k}) no puede ser menor a la cantidad de datos (${data.length})`)
+        }
+        var kmeans = new _2DKMeans(k, data)
+        let clusterized_data = kmeans.clusterize(k, data, iterations)
+
+        let clusters = new Set([...clusterized_data.map(a => a[1])])
+
+        clusters = Array.from(clusters)
+
+
+        clusters.forEach((cluster, i) => {
+            clusters[i] = [cluster, "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })]
+        });
+
+        // console.log('clusters set: ', clusters)
+        //Graficada
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(function () { drawChart(clusters) });
+
+        function drawChart(clusters) {
+            //let y = Array(data.length).fill(0)
+            var graph_data = new google.visualization.DataTable();
+            graph_data.addColumn('number', 'X')
+            graph_data.addColumn('number', 'Y')
+            graph_data.addColumn({ type: 'string', role: 'style' }); // style col.
+            let a = clusterized_data.map(e => [e[0], 0, `point { size: 7; shape-type: diamond; fill-color: ${clusters[clusters.findIndex(a => a[0] == e[1])][1]}}`])
+
+            // console.log(a)
+            graph_data.addRows(a)
+
+            clusters.forEach(c => {
+                graph_data.addRow([c[0], 0, `point { size: 3; shape-type: square; fill-color: #ff0000`])
+            });
+
+
+
+            var options = {
+                title: 'Puntos',
+                seriesType: 'scatter',
+                series: { 1: { type: 'line' } },
+                hAxis: { title: 'X', minValue: 0, maxValue: Math.max(this.data) + 10 },
+                yAxis: { title: 'Y', minValue: 0, maxValue: 5 },
+                legend: 'none'
+            };
+
+            var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+            chart.draw(graph_data, options);
+        }
+
+
+
+    }
+
+</script>
+
+
+
+</html>
