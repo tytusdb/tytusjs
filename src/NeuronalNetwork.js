@@ -42,7 +42,9 @@ class Matriz {
                     this.data[i][j] *= n.data[i][j];
 
         } else {
-
+            for (let i = 0; i < this.rows; i++)
+                for (let j = 0; j < this.cols; j++)
+                    this.data[i][j] *= n;
         }
     }
 }
