@@ -1,4 +1,5 @@
 class Matriz {
+
     constructor(rows, cols) {
         this.rows = rows;
         this.cols = cols;
