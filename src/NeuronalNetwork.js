@@ -151,3 +151,8 @@ class LayerLink {
     }
 
 }
+
+
+class NeuralNetwork {
+
+}
