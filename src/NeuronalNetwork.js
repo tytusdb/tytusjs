@@ -47,4 +47,23 @@ class Matriz {
                     this.data[i][j] *= n;
         }
     }
+
+    add(n) {
+        if (n instanceof Matrix) {
+            for (let i = 0; i < this.rows; i++)
+                for (let j = 0; j < this.cols; j++)
+                    this.data[i][j] += n.data[i][j];
+        } else {
+            for (let i = 0; i < this.rows; i++)
+                for (let j = 0; j < this.cols; j++)
+                    this.data[i][j] += n;
+        }
+
+    }
+
+    static subtract(a, b) {
+        let res = new Matrix(a.rows, a.cols);
+
+        return res;
+    }
 }
