@@ -25,4 +25,5 @@ Log Notes
 |21|01/07/2021|2|esahuay|15|Regresión Lineal - Mínimos cuadarados |Análisis del algoritmo|En desarrollo|En desarrollo|
 |22|01/07/2021|2|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |En desarrollo|En desarrollo|
 |23|01/07/2021|2|wiicho57x|5|web unificada de ejemplox|diseño|En desarrollo|En desarrollo|
+|24|02/07/2021|1|carlospnd|5|Support Vector Machine|Análisis|En desarrollo|En desarrollo|
 
