@@ -91,4 +91,12 @@ class Matriz {
             for (let j = 0; j < this.cols; j++)
                 this.data[i][j] = (Math.random() * 2) - 1;  //between -1 and 1
     }
+
+    static transpose(m) {
+        let res = new Matrix(m.cols, m.rows);
+        for (let i = 0; i < m.rows; i++)
+            for (let j = 0; j < m.cols; j++)
+                res.data[j][i] = m.data[i][j];
+        return res;
+    }
 }
