@@ -127,8 +127,8 @@ class Matriz {
 
 class LayerLink {
     constructor(prevNode_count, node_count) {
-        this.weights = new Matrix(node_count, prevNode_count);
-        this.bias = new Matrix(node_count, 1);
+        this.weights = new Matriz(node_count, prevNode_count);
+        this.bias = new Matriz(node_count, 1);
         this.weights.randomize();
         this.bias.randomize();
 
