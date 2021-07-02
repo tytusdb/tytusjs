@@ -256,6 +256,27 @@ class NeuralNetwork {
         // Calculate Actual Error based on Target.
         layerErrors[this.layerCount] = Matrix.subtract(targets, layerResult[this.layerCount]);
 
+        // Correcting and Recalculating Error for each Layer
+        for (let i = this.layerCount; i > 0; i--) {
+            // Calculate the Layer Gradient 
+            // dyE/dyW = learning_rate * layerError * sigmoid(x) * (1-sigmoid(x)); 
+            // NOTE: dsigmoid = sigmoid(x) * (1-sigmoid(x) ie derivative of sigmoid
+
+            gradients[i] = Matrix.map(layerResult[i], this.options.derivative);
+            gradients[i].multiply(layerErrors[i]);
+            gradients[i].multiply(this.learning_rate);
+
+            // Calculate the Changes to be made to the weighs
+            let hidden_T = Matrix.transpose(layerResult[i - 1]);
+            let weight_ho_deltas = Matrix.multiply(gradients[i], hidden_T);
+
+            // Update the Weights and Gradient According to Deltas & Gradient.
+            this.layerLink[i - 1].add(weight_ho_deltas, gradients[i]);
+
+            // Calculate the Previous Layer Errors (Proportional Error based on Current Layer Error.)
+            // NOTE: We are Backpropogating, Therefore we are going backwards 1 step (i.e. i-1)
+            layerErrors[i - 1] = Matrix.multiply(Matrix.transpose(this.layerLink[i - 1].getWeights()), layerErrors[i]);
+        }
 
     }
 
