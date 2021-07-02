@@ -24,5 +24,5 @@ Log Notes
 |20|01/07/2021|2|Diegog56|14|K-Means|Codificacion del algoritmo 2D|En desarrollo|En desarrollo|
 |21|01/07/2021|2|esahuay|15|Regresión Lineal - Mínimos cuadarados |Análisis del algoritmo|En desarrollo|En desarrollo|
 |22|01/07/2021|2|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |En desarrollo|En desarrollo|
-
+|23|01/07/2021|2|wiicho57x|5|Regresion Logistica|Análisis del algoritmo|En desarrollo|En desarrollo|
 
