@@ -198,4 +198,13 @@ class NeuralNetwork {
 
     }
 
+    predict(input_array) {
+
+        if (input_array.length !== this.inputs) {
+            console.error(`This Instance of NeuralNetwork Expects ${this.inputs} Inputs, ${input_array.length} Provided.`);
+            return { inputs: input_array };
+        }
+
+    }
+
 }
