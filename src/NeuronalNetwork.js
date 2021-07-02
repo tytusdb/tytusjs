@@ -99,4 +99,10 @@ class Matriz {
                 res.data[j][i] = m.data[i][j];
         return res;
     }
+
+    print() {
+        console.table(this.data);
+    }
+
+
 }
