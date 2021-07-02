@@ -7,6 +7,23 @@
 
 <body id="id2">
 
+    <script src="../src/NeuronalNetwork.js"></script>
+    <script>
+        let design = [2, 4, 3, 2];
+        let brain = new NeuralNetwork(design);
+        for (let i = 0; i < 10000; i++) {
+            let num1 = Math.random();
+            let num2 = Math.random();
+            brain.train([num1, num2], (num1 > num2 ? [1, 0] : [0, 1]));
+        }
+
+        largest = brain.predict([10, 20]);
+
+        document.getElementById("id2").textContent = String("Probability Score for Largest: " + brain.predict([10, 20]));
+
+
+        console.log(`Probability Score for Largest: ${largest}`)
+    </script>
 
     <textarea id="id1" rows="10">Predecir que segundo numero sea mayor al primero [10,20]</textarea>
 </body>
