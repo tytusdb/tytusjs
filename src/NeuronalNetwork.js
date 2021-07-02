@@ -204,6 +204,49 @@ class NeuralNetwork {
             console.error(`This Instance of NeuralNetwork Expects ${this.inputs} Inputs, ${input_array.length} Provided.`);
             return { inputs: input_array };
         }
+        let input = Matriz.fromArray(input_array);
+        let layerResult = input;
+        for (let i = 0; i < this.layerCount; i++) {
+            layerResult = Matriz.multiply(this.layerLink[i].getWeights(), layerResult);
+            layerResult.add(this.layerLink[i].getBias());
+            layerResult.map(this.options.activation);
+        }
+        // The Last Layer Result will be the Final Output.
+        return layerResult.toArray();
+    }
+
+    setLearningRate(n) {
+        if (n > 1 && n < 100) {
+            n = n / 100;
+        } else {
+            console.error("Set Learning Rate Between (0 - 1) or (1 - 100)");
+            return;
+        }
+        if (n > 0.3) {
+            console.warn("It is recommended to Set Lower Learning Rates");
+        }
+        this.learning_rate = n;
+    }
+
+    train(input_array, target_array) {
+        if (input_array.length !== this.inputs) {
+            console.error(`This Instance of NeuralNetwork Expects ${this.inputs} Inputs, ${input_array.length} Provided.`);
+            return { inputs: input_array };
+        }
+        if (target_array.length !== this.output_nodes) {
+            console.error(`This Instance of NeuralNetwork Expects ${this.output_nodes} Outputs, ${target_array.length} Provided.`);
+            return { outputs: target_array };
+        }
+        let input = Matrix.fromArray(input_array);
+        // Array to Store/Track each Layer Weighted Result (sum)
+        let layerResult = [];
+        layerResult[0] = input;  // Since input is First Layer.
+        // Predicting the Result for Given Input, Store Output of each Consequent layer
+        for (let i = 0; i < this.layerCount; i++) {
+            layerResult[i + 1] = Matrix.multiply(this.layerLink[i].getWeights(), layerResult[i]);
+            layerResult[i + 1].add(this.layerLink[i].getBias());
+            layerResult[i + 1].map(this.options.activation);
+        }
 
     }
 
