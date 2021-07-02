@@ -17,7 +17,7 @@ Log Notes
 |13|29/06/2021|-|jj196|6|Método de Bayes|Análisis|En desarrollo|En desarrollo|En desarrollo|
 |14|29/06/2021|-|hernandezgramajo|6|Redes neuronales|Análisis del algoritmo|En desarrollo|En desarrollo|
 |15|30/06/2021|1|uhcorona|3|Prueba Beta Regresión polinómica|Prueba Beta Regresión polinómica|Finalizado|01/07/2021|
-|16|30/06/2021|1|HenryGalvez|3|Prueba Beta Árboles de decisión|Prueba Beta Árboles de decisión|En desarrollo|En desarrollo|
+|16|30/06/2021|1|HenryGalvez|3|Prueba Beta Árboles de decisión|Prueba Beta Árboles de decisión|Finalizado|01/07/2021|
 |17|30/06/2021|1|Diegog56|14|K-Means|Codificacion del algoritmo lineal|Finalizado|01/07/2021|
 |18|01/07/2021|2|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo 2D y pruebas|En desarrollo|En desarrollo|
 |19|01/07/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo 2D|En desarrollo|En desarrollo|
