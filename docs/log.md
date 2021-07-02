@@ -26,4 +26,4 @@ Log Notes
 |22|01/07/2021|2|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |En desarrollo|En desarrollo|
 |23|01/07/2021|2|wiicho57x|5|web unificada de ejemplox|diseño|En desarrollo|En desarrollo|
 |24|02/07/2021|1|carlospnd|5|Support Vector Machine|Análisis|Codificación del algoritmo svm|En desarrollo|
-
+|25|02/07/2021|1|andreaflores|5|Support Vector Machine|Análisis y diseño del algoritmo|Codificación svm|En desarrollo|
