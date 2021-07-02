@@ -63,7 +63,26 @@ class Matriz {
 
     static subtract(a, b) {
         let res = new Matrix(a.rows, a.cols);
-
+        for (let i = 0; i < a.rows; i++)
+            for (let j = 0; j < a.cols; j++)
+                res.data[i][j] = a.data[i][j] - b.data[i][j];
         return res;
+    }
+
+    map(func) {
+        for (let i = 0; i < this.rows; i++)
+            for (let j = 0; j < this.cols; j++) {
+                let val = this.data[i][j];
+                this.data[i][j] = func(val);
+            }
+    }
+
+    static map(m, func) {
+        for (let i = 0; i < m.rows; i++)
+            for (let j = 0; j < m.cols; j++) {
+                let val = m.data[i][j];
+                m.data[i][j] = func(val);
+            }
+        return m;
     }
 }
