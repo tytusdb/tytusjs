@@ -13,4 +13,14 @@ class Matriz {
 
 
     }
+
+    static multiply(m1, m2) {
+
+        if (m1.cols !== m2.rows) {
+            console.log("Cannot Operate, Check Matrix Multiplication Rules.");
+            return undefined;
+        } else {
+
+        }
+    }
 }
