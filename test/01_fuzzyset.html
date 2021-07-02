@@ -1,11 +1,9 @@
 <html>
 <head>
-<script type="text/javascript" src="../src/Arrays.js"></script>
-<script type="text/javascript" src="../src/Distance.js"></script>
-<script type="text/javascript" src="../src/KNearestNeighbor.js"></script>
+<script type="text/javascript" src="../dist/tytus.js"></script>
 </head>
 <body>
-<h2>K-Nearest Neighbor</h2>
+<h2>Fuzzy Set</h2>
 <h3>Training</h3>
 <table id="tabla"></table>
 <h3>For point</h3>
@@ -37,9 +35,9 @@
 </script>
 <script>
   var individuals = zip([x, y, z, group])
-  var knn = new KNearestNeighbor(individuals)
-  var euc = knn.euclidean(point)
-  var man = knn.manhattan(point)
+  var fs = new FuzzySet(individuals)
+  var euc = fs.euclidean(point)
+  var man = fs.manhattan(point)
   document.getElementById("logE").innerHTML = euc
   document.getElementById("logM").innerHTML = man
 </script>
