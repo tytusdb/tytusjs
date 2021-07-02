@@ -104,5 +104,22 @@ class Matriz {
         console.table(this.data);
     }
 
+    toArray() {
+        let arr = [];
+        for (let i = 0; i < this.rows; i++)
+            for (let j = 0; j < this.cols; j++)
+                arr.push(this.data[i][j]);
+        return arr;
+    }
+
+    static fromArray(array) {
+        let m = new Matrix(array.length, 1);
+        for (let i = 0; i < array.length; i++) {
+            m.data[i][0] = array[i];
+        }
+        // m.print();
+        return m;
+    }
+
 
 }
