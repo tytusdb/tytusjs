@@ -1,5 +1,5 @@
 class Matriz {
-
+    // http://github.com/AlexDenver
     constructor(rows, cols) {
         this.rows = rows;
         this.cols = cols;
@@ -126,6 +126,7 @@ class Matriz {
 
 
 class LayerLink {
+    //http://github.com/AlexDenver
     constructor(prevNode_count, node_count) {
         this.weights = new Matriz(node_count, prevNode_count);
         this.bias = new Matriz(node_count, 1);
@@ -154,5 +155,47 @@ class LayerLink {
 
 
 class NeuralNetwork {
+    //http://github.com/AlexDenver
+    constructor(layers, options) {
+        if (layers.length < 2) {
+            console.error("Neural Network Needs Atleast 2 Layers To Work.");
+            return { layers: layers };
+        }
+        this.options = {
+            activation: function (x) {
+                return (1 / (1 + Math.exp(-x)));
+            },
+            derivative: function (y) {
+                return (y * (1 - y));
+            }
+        }
+        this.learning_rate = 0.1;
+        if (options) {
+            if (options.learning_rate)
+                this.setLearningRate(parseFloat(options.learning_rate));
+            if (options.activation && options.derivative &&
+                options.activation instanceof Function &&
+                options.derivative instanceof Function) {
+                this.options.activation = options.activation;
+                this.options.derivative = options.derivative;
+            } else {
+                console.error("Check Documentation to Learn How To Set Custom Activation Function");
+                console.warn("Documentation Link: http://github.com/AlexDenver")
+                return { options: options };
+            }
+        }
+        this.layerCount = layers.length - 1;   // Ignoring Output Layer.
+        this.inputs = layers[0];
+        this.output_nodes = layers[layers.length - 1];
+        this.layerLink = [];
+        for (let i = 1, j = 0; j < (this.layerCount); i++, j++) {
+            if (layers[i] <= 0) {
+                console.error("A Layer Needs To Have Atleast One Node (Neuron).");
+                return { layers: layers };
+            }
+            this.layerLink[j] = new LayerLink(layers[j], layers[i]);    // Previous Layer Nodes & Current Layer Nodes
+        }
+
+    }
 
 }
