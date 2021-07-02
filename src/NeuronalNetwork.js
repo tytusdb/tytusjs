@@ -248,6 +248,15 @@ class NeuralNetwork {
             layerResult[i + 1].map(this.options.activation);
         }
 
+        let targets = Matrix.fromArray(target_array);
+        // Variables to Store Errors and Gradients at each Layer.
+        let layerErrors = [];
+        let gradients = [];
+
+        // Calculate Actual Error based on Target.
+        layerErrors[this.layerCount] = Matrix.subtract(targets, layerResult[this.layerCount]);
+
+
     }
 
 }
