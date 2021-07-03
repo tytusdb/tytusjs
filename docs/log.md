@@ -40,6 +40,8 @@ Log Notes
 |36|03/07/2021|1|Ingridrpm|1|Árboles de decisión|Prueba Árboles de decisión|En desarrollo|03/07/2021|
 |37|03/07/2021|1|davidsalguero|1|Progresión polinomial|Pruebas de progresión polinomial|En desarrollo|03/07/2021|
 |38|03/07/2021|1|gerchay|13|Naive Bayes|Implementación del algoritmo Naiva Bayes tipo Gaussian|Finalizado|03/07/2021|
-|39|03/07/2021|1|gerchay|13|K-means|Implementación del argoritmo K-means tipo Density-Based Clustering.|Finalizado|03/07/2021|
-|40|03/07/2021|1|ronald1512|13|Arboles de decision|Implementación del argoritmo Arboles de decision tipo regresión.|Finalizado|03/07/2021|
-|41|03/07/2021|1|ronald1512|13|K-nearest neighbor|Implementación del argoritmo K-nearest neighbor mejorando la solución finalizada por otro compañero previamente|Finalizado|03/07/2021|
+|39|03/07/2021|1|gerchay|13|K-means|Implementación del algoritmo K-means tipo Density-Based Clustering.|Finalizado|03/07/2021|
+|40|03/07/2021|1|ronald1512|13|Arboles de decision|Implementación del algoritmo Arboles de decision tipo regresión.|Finalizado|03/07/2021|
+|41|03/07/2021|1|ronald1512|13|K-nearest neighbor|Implementación del algoritmo K-nearest neighbor mejorando la solución finalizada por otro compañero previamente|Finalizado|03/07/2021|
+|42|03/07/2021|1|marcolograjeda|13|Regresion lineal|Implementación del algoritmo Regresion lineal mejorando la solución finalizada por ing. Espino previamente|Finalizado|03/07/2021|
+|43|03/07/2021|1|marcolograjeda|13|Regresion polinomial|Implementación del algoritmo Regresion polinomial mejorando la solución finalizada por uhcorona previamente|Finalizado|03/07/2021|
