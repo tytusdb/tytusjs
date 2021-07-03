@@ -11,7 +11,7 @@ Log Notes
 |7|29/06/2021|2|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo lineal y pruebas|Finalizado|01/07/2021|
 |8|29/06/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo lineal|Finalizado|01/07/2021|
 |9|29/06/2021|1|pablorrp1|2|K-nearest neigbor|Cálculo del punto a clasificar contra datos de entrenamiento|Finalizado|29/06/2021|
-|10|29/06/2021|3|ronald1512|3|Redes neuronales|Análisis y diseño del algoritmo|En desarrollo|En desarrollo|
+|10|29/06/2021|3|cristianncaste18|13|Redes neuronales|Análisis y diseño del algoritmo|En desarrollo|En desarrollo|
 |11|29/06/2021|1|pablorrp1|2|Conjuntos difusos|Cálculo del punto a clasificar por conjuntos difusos|Finalizado|30/06/2021|
 |12|29/06/2021|-|cesarsazo|6|Regresion Lineal|Regresion con minimos cuadrados.|En desarrollo|En desarrollo|
 |13|29/06/2021|-|jj196|6|Método de Bayes|Análisis|En desarrollo|En desarrollo|En desarrollo|
@@ -39,4 +39,10 @@ Log Notes
 |35|03/07/2021|1|PabloOsuna1997|1|Regresion Lineal|Prueba Regresion Lineal|En desarrollo|03/07/2021|
 |36|03/07/2021|1|Ingridrpm|1|Árboles de decisión|Prueba Árboles de decisión|En desarrollo|03/07/2021|
 |37|03/07/2021|1|davidsalguero|1|Progresión polinomial|Pruebas de progresión polinomial|En desarrollo|03/07/2021|
-|38|03/07/2021|1|rafalejy|16|Naive Bayes|Análisis y diseño del algoritmo|En desarrollo|03/07/2021|
+|38|03/07/2021|1|gerchay|13|Naive Bayes|Implementación del algoritmo Naiva Bayes tipo Gaussian|Finalizado|03/07/2021|
+|39|03/07/2021|1|gerchay|13|K-means|Implementación del algoritmo K-means tipo Density-Based Clustering.|Finalizado|03/07/2021|
+|40|03/07/2021|1|ronald1512|13|Arboles de decision|Implementación del algoritmo Arboles de decision tipo regresión.|Finalizado|03/07/2021|
+|41|03/07/2021|1|ronald1512|13|K-nearest neighbor|Implementación del algoritmo K-nearest neighbor mejorando la solución finalizada por otro compañero previamente|Finalizado|03/07/2021|
+|42|03/07/2021|1|marcolograjeda|13|Regresion lineal|Implementación del algoritmo Regresion lineal mejorando la solución finalizada por ing. Espino previamente|Finalizado|03/07/2021|
+|43|03/07/2021|1|marcolograjeda|13|Regresion polinomial|Implementación del algoritmo Regresion polinomial mejorando la solución finalizada por uhcorona previamente|Finalizado|03/07/2021|
+|44|03/07/2021|1|rafalejy|16|Naive Bayes|Análisis y diseño del algoritmo|En desarrollo|03/07/2021|
