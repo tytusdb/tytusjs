@@ -20,5 +20,9 @@ Pure Javascript Machine Learning Library
 
 [05 Neuronal Network Example](https://tytusdb.github.io/tytusjs/test/05_NeuronalNetwork.html)
 
+[01 SVM Example](https://tytusdb.github.io/tytusjs/test/01_svm.html)
+
+[01 Partial Least Squares Example](https://tytusdb.github.io/tytusjs/test/01_partialLeastSquares.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
