@@ -1,5 +1,5 @@
 class Matriz {
-    // http://github.com/AlexDenver
+
     constructor(rows, cols) {
         this.rows = rows;
         this.cols = cols;
@@ -13,6 +13,8 @@ class Matriz {
 
 
     }
+
+    // http://github.com/AlexDenver
 
     static multiplicar(m1, m2) {
 
@@ -126,12 +128,14 @@ class Matriz {
 
 
 class LayerLink {
-    //http://github.com/AlexDenver
+
     constructor(prevNode_count, node_count) {
         this.weights = new Matriz(node_count, prevNode_count);
         this.bias = new Matriz(node_count, 1);
         this.weights.tirar_random();
         this.bias.tirar_random();
+
+        //http://github.com/AlexDenver
 
         //console.table(this.weights.data)
         //console.table(this.bias.data)
@@ -155,7 +159,9 @@ class LayerLink {
 
 
 class NeuralNetwork {
+
     //http://github.com/AlexDenver
+
     constructor(layers, options) {
         if (layers.length < 2) {
             console.error("Neural Network Needs Atleast 2 Layers To Work.");
