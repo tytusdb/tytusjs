@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Simple Neural Networks</title>
+</head>
+
+<body id="id2">
+
+
+
+    <textarea id="id1"
+        rows="10">Predecir que segundo numero sea mayor al primero [10,20], el resultado mostrado es segun entrenamiento realizado.</textarea>
+
+    <p id="logE"></p>
+    <p id="logE">----------------------------------------------------------------------------------------------</p>
+    <textarea id="id2"
+        rows="10">Predecir que primer numero sea mayor al segundo [20,5], el resultado mostrado es segun entrenamiento realizado.</textarea>
+
+    <p id="logEE"></p>
+</body>
+<script src="../src/NeuronalNetwork.js"></script>
+<script>
+    let design = [2, 4, 3, 2];
+    let brain = new NeuralNetwork(design);
+    for (let i = 0; i < 10000; i++) {
+        let num1 = Math.random();
+        let num2 = Math.random();
+        brain.Entrenar([num1, num2], (num1 > num2 ? [1, 0] : [0, 1]));
+    }
+
+    largest = brain.Predecir([10, 20]);
+
+    document.getElementById("logE").innerHTML = String("Probability Score for Largest: " + brain.Predecir([10, 20]));
+
+
+    console.log(`Probability Score for Largest: ${largest}`)
+
+    let design2 = [2, 4, 3, 2];
+    let brain2 = new NeuralNetwork(design2);
+    for (let i = 0; i < 10000; i++) {
+        let num1 = Math.random();
+        let num2 = Math.random();
+        brain.Entrenar([num1, num2], (num1 < num2 ? [1, 0] : [0, 1]));
+    }
+
+    largest = brain2.Predecir([20, 5]);
+
+    document.getElementById("logEE").innerHTML = String("Probability Score for Largest: " + brain.Predecir([20, 5]));
+
+
+    console.log(`Probability Score for Largest: ${largest}`)
+
+
+</script>
+
+</html>
