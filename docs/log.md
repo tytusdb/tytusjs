@@ -19,9 +19,9 @@ Log Notes
 |15|30/06/2021|1|uhcorona|3|Prueba Beta Regresión polinómica|Prueba Beta Regresión polinómica|Finalizado|01/07/2021|
 |16|30/06/2021|1|HenryGalvez|3|Prueba Beta Árboles de decisión|Prueba Beta Árboles de decisión|Finalizado|01/07/2021|
 |17|30/06/2021|1|Diegog56|14|K-Means|Codificacion del algoritmo lineal|Finalizado|01/07/2021|
-|18|01/07/2021|2|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo 2D y pruebas|En desarrollo|En desarrollo|
-|19|01/07/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo 2D|En desarrollo|En desarrollo|
-|20|01/07/2021|2|Diegog56|14|K-Means|Codificacion del algoritmo 2D|En desarrollo|En desarrollo|
+|18|01/07/2021|2|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo 2D y pruebas|Finalizado|03/07/2021|
+|19|01/07/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo 2D|Finalizado|03/07/2021|
+|20|01/07/2021|2|Diegog56|14|K-Means|Codificacion del algoritmo 2D|Finalizado|03/07/2021|
 |21|01/07/2021|2|esahuay|15|Regresión Lineal - Mínimos cuadarados |Análisis del algoritmo|En desarrollo|En desarrollo|
 |22|01/07/2021|2|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |En desarrollo|En desarrollo|
 |23|01/07/2021|2|wiicho57x|5|web unificada de ejemplox|diseño|Finalizado|Finalizado|02/07/2021
@@ -33,3 +33,5 @@ Log Notes
 |29|02/07/2021|1|coradowilly|12|Regresión Logistica|Construcción del algoritmo|En desarrollo|03/07/2021|
 |30|03/07/2021|2|wiicho57x|5|web unificada de ejemplo agregargando nuevos ejemplos|diseño|En proceso|En Proceso|02/07/2021
 |31|02/07/2021|2|jelp2020|15|Test progresión polinomial|Ejemplo covid19|En Proceso|03/07/2021
+|32|03/07/2021|1|LuisAlfonsoMelgarArizpe|14|K-Means|Añadida documentacion de las clases (SPECIFICATIONS) y libreria de distribucion|Finalizado|03/07/2021|
+
