@@ -45,3 +45,4 @@ Log Notes
 |41|03/07/2021|1|ronald1512|13|K-nearest neighbor|Implementación del algoritmo K-nearest neighbor mejorando la solución finalizada por otro compañero previamente|Finalizado|03/07/2021|
 |42|03/07/2021|1|marcolograjeda|13|Regresion lineal|Implementación del algoritmo Regresion lineal mejorando la solución finalizada por ing. Espino previamente|Finalizado|03/07/2021|
 |43|03/07/2021|1|marcolograjeda|13|Regresion polinomial|Implementación del algoritmo Regresion polinomial mejorando la solución finalizada por uhcorona previamente|Finalizado|03/07/2021|
+|44|03/07/2021|1|rafalejy|16|Naive Bayes|Análisis y diseño del algoritmo|En desarrollo|03/07/2021|
