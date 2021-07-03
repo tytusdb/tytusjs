@@ -24,14 +24,18 @@ Log Notes
 |20|01/07/2021|2|Diegog56|14|K-Means|Codificacion del algoritmo 2D|Finalizado|03/07/2021|
 |21|01/07/2021|2|esahuay|15|Regresión Lineal - Mínimos cuadarados |Análisis del algoritmo|En desarrollo|En desarrollo|
 |22|01/07/2021|2|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |En desarrollo|En desarrollo|
-|23|01/07/2021|2|wiicho57x|5|web unificada de ejemplox|diseño|Finalizado|Finalizado|02/07/2021
-|24|02/07/2021|1|carlospnd|5|Support Vector Machine|Análisis|Codificación del algoritmo svm|En desarrollo|
+|23|01/07/2021|2|wiicho57x|5|web unificada de ejemplox|diseño|Finalizado|Finalizado|02/07/2021|
+|24|02/07/2021|1|carlospnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |25|02/07/2021|1|andreaflores|5|Support Vector Machine|Análisis y diseño del algoritmo|Codificación svm|En desarrollo|
-|26|02/07/2021|1|dodany|5|Partial Least-Squares|Codificación del algoritmo PLS|En desarrollo|En desarrollo|
+|26|02/07/2021|1|dodany|5|Partial Least-Squares|Codificación del algoritmo PLS|FInalizado|03/07/2021|
 |27|02/07/2021|1|dodany|5|Orthonormalized Partial Least Squares|Codificación del algoritmo OPLS|En desarrollo|En desarrollo|
 |28|02/07/2021|1|Saulguz1|12|Regresión Logistica|Análisis del algoritmo|Finalizado|02/07/2021|
 |29|02/07/2021|1|coradowilly|12|Regresión Logistica|Construcción del algoritmo|En desarrollo|03/07/2021|
-|30|03/07/2021|2|wiicho57x|5|web unificada de ejemplo agregargando nuevos ejemplos|diseño|En proceso|En Proceso|02/07/2021
-|31|02/07/2021|2|jelp2020|15|Test progresión polinomial|Ejemplo covid19|En Proceso|03/07/2021
+|30|03/07/2021|2|wiicho57x|5|web unificada de ejemplo agregargando nuevos ejemplos|diseño|En proceso|En Proceso|02/07/2021|
+|31|02/07/2021|2|jelp2020|15|Test progresión polinomial|Ejemplo covid19|En Proceso|03/07/2021|
 |32|03/07/2021|1|LuisAlfonsoMelgarArizpe|14|K-Means|Añadida documentacion de las clases (SPECIFICATIONS) y libreria de distribucion|Finalizado|03/07/2021|
-
+|33|03/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal|En desarrollo|03/07/2021|
+|34|03/07/2021|1|carlospnd|5|Partial Least-Squares|Prueba Beta Partial Least-Squares|Finalizado|03/07/2021|
+|35|03/07/2021|1|PabloOsuna1997|1|Regresion Lineal|Prueba Regresion Lineal|En desarrollo|03/07/2021|
+|36|03/07/2021|1|Ingridrpm|1|Árboles de decisión|Prueba Árboles de decisión|En desarrollo|03/07/2021|
+|37|03/07/2021|1|davidsalguero|1|Progresión polinomial|Pruebas de progresión polinomial|En desarrollo|03/07/2021|
