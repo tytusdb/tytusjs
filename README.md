@@ -16,5 +16,7 @@ Pure Javascript Machine Learning Library
 
 [01 K-Nearest Neighbor with Fuzzy Set Example](https://tytusdb.github.io/tytusjs/test/01_fuzzyset.html)
 
+[05 Neuronal Network Example](https://tytusdb.github.io/tytusjs/test/05_NeuronalNetwork.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
