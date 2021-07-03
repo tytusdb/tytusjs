@@ -34,4 +34,6 @@ Log Notes
 |30|03/07/2021|2|wiicho57x|5|web unificada de ejemplo agregargando nuevos ejemplos|diseño|En proceso|En Proceso|02/07/2021
 |31|02/07/2021|2|jelp2020|15|Test progresión polinomial|Ejemplo covid19|En Proceso|03/07/2021
 |32|03/07/2021|1|LuisAlfonsoMelgarArizpe|14|K-Means|Añadida documentacion de las clases (SPECIFICATIONS) y libreria de distribucion|Finalizado|03/07/2021|
+|33|03/07/2021|1|carlospnd|5|Partial Least-Squares|Codificación del algoritmo PLS|Prueba Beta Partial Least-Squares|En desarrollo|
+
 
