@@ -62,7 +62,7 @@ Low,Short,Yes,Yes,Several,No</textarea>
                 var arrHeader = header.split(",")
                 document.getElementById('prediction').innerText = arrHeader[arrHeader.length-1] + ": " + predictNode.value
             } else {
-                document.getElementById('prediction').value = ""
+                document.getElementById('prediction').innerText = ""
             }
             var parsDot = vis.network.convertDot(dotStr);
             var data = {
@@ -92,9 +92,9 @@ Low,Short,Yes,Yes,Several,No</textarea>
             if (predictNode != null) {
                 var header = document.getElementById('header').value;
                 var arrHeader = header.split(",")
-                document.getElementById('prediction').value = arrHeader[arrHeader.length-1] + ": " + predictNode.value
+                document.getElementById('prediction').innerText = arrHeader[arrHeader.length-1] + ": " + predictNode.value
             } else {
-                document.getElementById('prediction').value = ""
+                document.getElementById('prediction').innerText = ""
             }
             var parsDot = vis.network.convertDot(dotStr);
             var data = {
