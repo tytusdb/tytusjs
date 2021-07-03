@@ -36,3 +36,4 @@ Log Notes
 |32|03/07/2021|1|LuisAlfonsoMelgarArizpe|14|K-Means|Añadida documentacion de las clases (SPECIFICATIONS) y libreria de distribucion|Finalizado|03/07/2021|
 |33|03/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal|En desarrollo|03/07/2021
 |34|03/07/2021|1|carlospnd|5|Partial Least-Squares|Codificación del algoritmo PLS|Prueba Beta Partial Least-Squares|En desarrollo|
+|35|03/07/2021|1|PabloOsuna1997|1|Regresion Lineal|Prueba Regresion Lineal|En desarrollo|03/07/2021|
