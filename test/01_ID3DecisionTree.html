@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID3 Decision Tree</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
+    <script type="text/javascript" src="../dist/tytus.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1 class="display-1 w-100 text-center">Decision Tree ID3</h1>
+    <div class="container">
+        <h3 class="display-6 mt-5">Used Data Set:<br /></h3>
+        <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+            <code class="text-info">
+                [<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Outlook", "Temperature", "Humidity", "Windy", "Play Tennis"], //The header is considering as Attribute <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Sunny", "Hot", "High", "Weak", "No" ], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Sunny", "Hot", "High", "Strong", "No" ], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Overcast", "Hot", "High", "Weak", "Yes"], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Rainy", "Mild", "High", "Weak", "Yes"], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Rainy", "Cool", "Normal", "Weak", "Yes"], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Rainy", "Cool", "Normal", "Strong", "No" ], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Overcast", "Cool", "Normal", "Strong", "Yes"], //Every data is considering as Feature<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Sunny", "Mild", "High", "Weak", "No" ], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Sunny", "Cool", "Normal", "Weak", "Yes"], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Rainy", "Mild", "Normal", "Weak", "Yes"], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Sunny", "Mild", "Normal", "Strong", "Yes"], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Overcast", "Mild", "High", "Strong", "Yes"], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Overcast", "Hot", "Normal", "Weak", "Yes"], <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Rainy", "Mild", "High", "Strong", "No" ], <br />
+                ]<br />
+            </code>
+        </p>
+
+        <h3 class="display-6 mt-5">Data to Predict:<br /></h3>
+        <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+            <code class="text-info">
+                [<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Outlook", "Temperature", "Humidity", "Windy"], //The header must be in the data <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;["Overcast", "Cool", "Normal", "Strong"], <br />
+                ]<br />
+            </code>
+        </p>
+
+        <h3 class="display-6 mt-5">Result of predict:<br /></h3>
+        <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+            <code class="text-info">
+                {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;childs: []<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;id: "3eb4d4228163"<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;tag: "Overcast"<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;value: "Yes"<br />
+                }
+            </code>
+        </p>
+    </div>
+    <h3 class="display-6 text-center mt-5">Result Tree:<br /></h3>
+    <div class="container mb-5">
+        <div style="width: 100%; height: 500px; border: 2px dashed red; border-radius: 10px;" id="tree"></div>
+    </div>
+    <p class="text-muted">Test By HenryGalvez</p>
+    <script type="text/javascript">
+        testWithChart = () => {
+
+            let dtSt = [
+                ["Outlook", "Temperature", "Humidity", "Windy", "Play Tennis"], //The header is considering as Attribute
+                ["Sunny", "Hot", "High", "Weak", "No"],
+                ["Sunny", "Hot", "High", "Strong", "No"],
+                ["Overcast", "Hot", "High", "Weak", "Yes"],
+                ["Rainy", "Mild", "High", "Weak", "Yes"],
+                ["Rainy", "Cool", "Normal", "Weak", "Yes"],
+                ["Rainy", "Cool", "Normal", "Strong", "No"],
+                ["Overcast", "Cool", "Normal", "Strong", "Yes"], //Every data is considering as Feature
+                ["Sunny", "Mild", "High", "Weak", "No"],
+                ["Sunny", "Cool", "Normal", "Weak", "Yes"],
+                ["Rainy", "Mild", "Normal", "Weak", "Yes"],
+                ["Sunny", "Mild", "Normal", "Strong", "Yes"],
+                ["Overcast", "Mild", "High", "Strong", "Yes"],
+                ["Overcast", "Hot", "Normal", "Weak", "Yes"],
+                ["Rainy", "Mild", "High", "Strong", "No"],
+            ]
+
+            let dTree = new DecisionTreeID3(dtSt);
+            let root = dTree.train(dTree.dataset);
+            let predict = dTree.predict([
+                ["Outlook", "Temperature", "Humidity", "Windy"],
+                ["Overcast", "Cool", "Normal", "Strong"],
+            ], root)
+            return {
+                dotStr: dTree.generateDotString(root),
+                predictNode: predict
+            };
+        }
+        var chart = document.getElementById("tree");
+        var {
+            dotStr,
+            predictNode
+        } = this.testWithChart()
+        //console.log(predictNode);
+        var parsDot = vis.network.convertDot(dotStr);
+        var data = {
+            nodes: parsDot.nodes,
+            edges: parsDot.edges
+        }
+        var options = {
+            layout: {
+                hierarchical: {
+                    levelSeparation: 100,
+                    nodeSpacing: 100,
+                    parentCentralization: true,
+                    direction: 'UD', // UD, DU, LR, RL
+                    sortMethod: 'directed', // hubsize, directed
+                    //shakeTowards: 'roots' // roots, leaves                        
+                },
+            },
+        };
+        var network = new vis.Network(chart, data, options);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -16,14 +16,18 @@ Log Notes
 |12|29/06/2021|-|cesarsazo|6|Regresion Lineal|Regresion con minimos cuadrados.|En desarrollo|En desarrollo|
 |13|29/06/2021|-|jj196|6|Método de Bayes|Análisis|En desarrollo|En desarrollo|En desarrollo|
 |14|29/06/2021|-|hernandezgramajo|6|Redes neuronales|Análisis del algoritmo|En desarrollo|En desarrollo|
-|15|30/06/2021|1|uhcorona|3|Prueba Beta Regresión polinómica|Prueba Beta Regresión polinómica|En desarrollo|En desarrollo|
-|16|30/06/2021|1|HenryGalvez|3|Prueba Beta Árboles de decisión|Prueba Beta Árboles de decisión|En desarrollo|En desarrollo|
+|15|30/06/2021|1|uhcorona|3|Prueba Beta Regresión polinómica|Prueba Beta Regresión polinómica|Finalizado|01/07/2021|
+|16|30/06/2021|1|HenryGalvez|3|Prueba Beta Árboles de decisión|Prueba Beta Árboles de decisión|Finalizado|01/07/2021|
 |17|30/06/2021|1|Diegog56|14|K-Means|Codificacion del algoritmo lineal|Finalizado|01/07/2021|
 |18|01/07/2021|2|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo 2D y pruebas|En desarrollo|En desarrollo|
 |19|01/07/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo 2D|En desarrollo|En desarrollo|
 |20|01/07/2021|2|Diegog56|14|K-Means|Codificacion del algoritmo 2D|En desarrollo|En desarrollo|
 |21|01/07/2021|2|esahuay|15|Regresión Lineal - Mínimos cuadarados |Análisis del algoritmo|En desarrollo|En desarrollo|
-|22|02/07/2021|1|Saulguz1|12|Regresión Logistica|Análisis del algoritmo|Finalizado|02/07/2021|
-|23|02/07/2021|1|coradowilly|12|Regresión Logistica|Construcción del algoritmo|En desarrollo|03/07/2021|
-
-
+|22|01/07/2021|2|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |En desarrollo|En desarrollo|
+|23|01/07/2021|2|wiicho57x|5|web unificada de ejemplox|diseño|En desarrollo|En desarrollo|
+|24|02/07/2021|1|carlospnd|5|Support Vector Machine|Análisis|Codificación del algoritmo svm|En desarrollo|
+|25|02/07/2021|1|andreaflores|5|Support Vector Machine|Análisis y diseño del algoritmo|Codificación svm|En desarrollo|
+|26|02/07/2021|1|dodany|5|Partial Least-Squares|Codificación del algoritmo PLS|En desarrollo|En desarrollo|
+|27|02/07/2021|1|dodany|5|Orthonormalized Partial Least Squares|Codificación del algoritmo OPLS|En desarrollo|En desarrollo|
+|28|02/07/2021|1|Saulguz1|12|Regresión Logistica|Análisis del algoritmo|Finalizado|02/07/2021|
+|29|02/07/2021|1|coradowilly|12|Regresión Logistica|Construcción del algoritmo|En desarrollo|03/07/2021|
