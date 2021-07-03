@@ -24,5 +24,7 @@ Pure Javascript Machine Learning Library
 
 [11 Partial Least Squares Example](https://tytusdb.github.io/tytusjs/test/01_partialLeastSquares.html)
 
+[12 Decision Tree Example](https://tytusdb.github.io/tytusjs/test/02_DecisionTree.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
