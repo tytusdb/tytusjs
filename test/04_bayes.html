@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayes Method</title>
+    <script src="../src/BayesMethod.js"></script>
+
+    
+</head>
+<body>
+    <script>
+        var bayes = new BayesMethod()        
+        bayes.addAttribute(['sunny', 'sunny', 'overcast', 'rain', 'rain', 'rain', 'overcast', 'sunny', 'sunny', 'rain', 'sunny', 'overcast', 'overcast', 'rain'],'outlook')
+        bayes.addAttribute(['hot', 'hot', 'hot', 'mild', 'cool', 'cool', 'cool', 'mild', 'cool', 'mild', 'mild', 'mild', 'hot', 'mild'],'temperature')
+        bayes.addAttribute(['high', 'high', 'high', 'high', 'normal', 'normal', 'normal', 'high', 'normal', 'normal', 'normal', 'high', 'normal', 'highs'],'humidity')
+        bayes.addAttribute(['false', 'true', 'false', 'false', 'false', 'true', 'true', 'false', 'false', 'false', 'true', 'true', 'false', 'true'],'windy')
+        bayes.addClass(['N', 'N', 'P', 'P', 'P', 'N', 'P', 'N', 'P', 'P', 'P', 'P', 'P', 'N'],'class')        
+        bayes.train()
+        
+        
+        var p1 = bayes.probability('outlook', 'sunny', 'P')
+        var res = bayes.predict(['sunny', 'hot'])
+        var res1 = bayes.predict(['sunny', 'hot', 'high', 'false'])
+        var res2 = bayes.predict(['sunny', 'hot', 'high', 'false'], 'N')
+        
+        
+        console.log(`P(P|sunny) = ${p1}`)
+        console.log(`Result if outlook='sunny', temperature='hot': ${res2}`)
+        console.log(`Result if outlook='sunny', temperature='hot', humidity='high', windy='false': ${res2}`)
+        console.log(`P(N|sunny,hot,high,false) = ${res2}`)
+        
+        
+        //console.log(JSON.stringify(bayes))
+    </script>
+</body>
+</html>
