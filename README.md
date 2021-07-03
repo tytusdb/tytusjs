@@ -6,9 +6,9 @@ Pure Javascript Machine Learning Library
 
 [02 Polynomial Regression Example](https://tytusdb.github.io/tytusjs/test/01_polynomialregression.html)
 
-[03 KMeans (LINEAR) Example and Test Page](https://tytusdb.github.io/tytusjs/test/01_kmeans.html)
+[03 KMeans (LINEAR) Example and Test Page](https://tytusdb.github.io/tytusjs/test/03_kmeans.html)
 
-[04 KMeans (2D) Example and Test Page](https://tytusdb.github.io/tytusjs/test/02_kmeans.html)
+[04 KMeans (2D) Example and Test Page](https://tytusdb.github.io/tytusjs/test/04_kmeans.html)
 
 [05 ID3 Decision Tree Example and Test Page](https://tytusdb.github.io/tytusjs/test/01_ID3DecisionTree.html)
 
