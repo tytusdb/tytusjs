@@ -29,3 +29,5 @@ Log Notes
 |25|02/07/2021|1|andreaflores|5|Support Vector Machine|Análisis y diseño del algoritmo|Codificación svm|En desarrollo|
 |26|02/07/2021|1|dodany|5|Partial Least-Squares|Codificación del algoritmo PLS|En desarrollo|En desarrollo|
 |27|02/07/2021|1|dodany|5|Orthonormalized Partial Least Squares|Codificación del algoritmo OPLS|En desarrollo|En desarrollo|
+|28|02/07/2021|1|Saulguz1|12|Regresión Logistica|Análisis del algoritmo|Finalizado|02/07/2021|
+|29|02/07/2021|1|coradowilly|12|Regresión Logistica|Construcción del algoritmo|En desarrollo|03/07/2021|
