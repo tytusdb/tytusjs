@@ -39,3 +39,4 @@ Log Notes
 |35|03/07/2021|1|PabloOsuna1997|1|Regresion Lineal|Prueba Regresion Lineal|En desarrollo|03/07/2021|
 |36|03/07/2021|1|Ingridrpm|1|Árboles de decisión|Prueba Árboles de decisión|En desarrollo|03/07/2021|
 |37|03/07/2021|1|davidsalguero|1|Progresión polinomial|Pruebas de progresión polinomial|En desarrollo|03/07/2021|
+|38|03/07/2021|1|rafalejy|16|Naive Bayes|Análisis y diseño del algoritmo|En desarrollo|03/07/2021|
