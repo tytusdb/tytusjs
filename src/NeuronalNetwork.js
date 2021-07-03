@@ -14,7 +14,7 @@ class Matriz {
 
     }
 
-    static multiply(m1, m2) {
+    static multiplicar(m1, m2) {
 
         if (m1.cols !== m2.rows) {
             console.log("Cannot Operate, Check Matriz Multiplication Rules.");
@@ -34,7 +34,7 @@ class Matriz {
 
         }
     }
-    multiply(n) {
+    multiplicar(n) {
         if (n instanceof Matriz) {
 
             for (let i = 0; i < this.rows; i++)
@@ -48,7 +48,7 @@ class Matriz {
         }
     }
 
-    add(n) {
+    summar(n) {
         if (n instanceof Matriz) {
             for (let i = 0; i < this.rows; i++)
                 for (let j = 0; j < this.cols; j++)
@@ -61,7 +61,7 @@ class Matriz {
 
     }
 
-    static subtract(a, b) {
+    static resstar(a, b) {
         let res = new Matriz(a.rows, a.cols);
         for (let i = 0; i < a.rows; i++)
             for (let j = 0; j < a.cols; j++)
@@ -69,7 +69,7 @@ class Matriz {
         return res;
     }
 
-    map(func) {
+    mapear(func) {
         for (let i = 0; i < this.rows; i++)
             for (let j = 0; j < this.cols; j++) {
                 let val = this.data[i][j];
@@ -77,7 +77,7 @@ class Matriz {
             }
     }
 
-    static map(m, func) {
+    static mapear(m, func) {
         for (let i = 0; i < m.rows; i++)
             for (let j = 0; j < m.cols; j++) {
                 let val = m.data[i][j];
@@ -86,13 +86,13 @@ class Matriz {
         return m;
     }
 
-    randomize() {
+    tirar_random() {
         for (let i = 0; i < this.rows; i++)
             for (let j = 0; j < this.cols; j++)
                 this.data[i][j] = (Math.random() * 2) - 1;  //between -1 and 1
     }
 
-    static transpose(m) {
+    static transpuesta(m) {
         let res = new Matriz(m.cols, m.rows);
         for (let i = 0; i < m.rows; i++)
             for (let j = 0; j < m.cols; j++)
@@ -100,11 +100,11 @@ class Matriz {
         return res;
     }
 
-    print() {
+    imprimir() {
         console.table(this.data);
     }
 
-    toArray() {
+    convert_to_array() {
         let arr = [];
         for (let i = 0; i < this.rows; i++)
             for (let j = 0; j < this.cols; j++)
@@ -112,7 +112,7 @@ class Matriz {
         return arr;
     }
 
-    static fromArray(array) {
+    static get_array(array) {
         let m = new Matriz(array.length, 1);
         for (let i = 0; i < array.length; i++) {
             m.data[i][0] = array[i];
@@ -130,25 +130,25 @@ class LayerLink {
     constructor(prevNode_count, node_count) {
         this.weights = new Matriz(node_count, prevNode_count);
         this.bias = new Matriz(node_count, 1);
-        this.weights.randomize();
-        this.bias.randomize();
+        this.weights.tirar_random();
+        this.bias.tirar_random();
 
         //console.table(this.weights.data)
         //console.table(this.bias.data)
     }
 
-    updateWeights(weights) {
+    actualizar_Weights(weights) {
         this.weights = weights;
     }
-    getWeights() {
+    obtener_Weights() {
         return this.weights;
     }
-    getBias() {
+    obtener_Bias() {
         return this.bias;
     }
-    add(deltaWeight, bias) {
-        this.weights.add(deltaWeight);
-        this.bias.add(bias);
+    summar(deltaWeight, bias) {
+        this.weights.summar(deltaWeight);
+        this.bias.summar(bias);
     }
 
 }
@@ -172,7 +172,7 @@ class NeuralNetwork {
         this.learning_rate = 0.1;
         if (options) {
             if (options.learning_rate)
-                this.setLearningRate(parseFloat(options.learning_rate));
+                this.Set_aprendizaje_rate(parseFloat(options.learning_rate));
             if (options.activation && options.derivative &&
                 options.activation instanceof Function &&
                 options.derivative instanceof Function) {
@@ -198,24 +198,24 @@ class NeuralNetwork {
 
     }
 
-    predict(input_array) {
+    Predecir(input_array) {
 
         if (input_array.length !== this.inputs) {
             console.error(`This Instance of NeuralNetwork Expects ${this.inputs} Inputs, ${input_array.length} Provided.`);
             return { inputs: input_array };
         }
-        let input = Matriz.fromArray(input_array);
+        let input = Matriz.get_array(input_array);
         let layerResult = input;
         for (let i = 0; i < this.layerCount; i++) {
-            layerResult = Matriz.multiply(this.layerLink[i].getWeights(), layerResult);
-            layerResult.add(this.layerLink[i].getBias());
-            layerResult.map(this.options.activation);
+            layerResult = Matriz.multiplicar(this.layerLink[i].obtener_Weights(), layerResult);
+            layerResult.summar(this.layerLink[i].obtener_Bias());
+            layerResult.mapear(this.options.activation);
         }
         // The Last Layer Result will be the Final Output.
-        return layerResult.toArray();
+        return layerResult.convert_to_array();
     }
 
-    setLearningRate(n) {
+    Set_aprendizaje_rate(n) {
         if (n > 1 && n < 100) {
             n = n / 100;
         } else {
@@ -228,7 +228,7 @@ class NeuralNetwork {
         this.learning_rate = n;
     }
 
-    train(input_array, target_array) {
+    Entrenar(input_array, target_array) {
         if (input_array.length !== this.inputs) {
             console.error(`This Instance of NeuralNetwork Expects ${this.inputs} Inputs, ${input_array.length} Provided.`);
             return { inputs: input_array };
@@ -237,24 +237,24 @@ class NeuralNetwork {
             console.error(`This Instance of NeuralNetwork Expects ${this.output_nodes} Outputs, ${target_array.length} Provided.`);
             return { outputs: target_array };
         }
-        let input = Matriz.fromArray(input_array);
+        let input = Matriz.get_array(input_array);
         // Array to Store/Track each Layer Weighted Result (sum)
         let layerResult = [];
         layerResult[0] = input;  // Since input is First Layer.
         // Predicting the Result for Given Input, Store Output of each Consequent layer
         for (let i = 0; i < this.layerCount; i++) {
-            layerResult[i + 1] = Matriz.multiply(this.layerLink[i].getWeights(), layerResult[i]);
-            layerResult[i + 1].add(this.layerLink[i].getBias());
-            layerResult[i + 1].map(this.options.activation);
+            layerResult[i + 1] = Matriz.multiplicar(this.layerLink[i].obtener_Weights(), layerResult[i]);
+            layerResult[i + 1].summar(this.layerLink[i].obtener_Bias());
+            layerResult[i + 1].mapear(this.options.activation);
         }
 
-        let targets = Matriz.fromArray(target_array);
+        let targets = Matriz.get_array(target_array);
         // Variables to Store Errors and Gradients at each Layer.
         let layerErrors = [];
         let gradients = [];
 
         // Calculate Actual Error based on Target.
-        layerErrors[this.layerCount] = Matriz.subtract(targets, layerResult[this.layerCount]);
+        layerErrors[this.layerCount] = Matriz.resstar(targets, layerResult[this.layerCount]);
 
         // Correcting and Recalculating Error for each Layer
         for (let i = this.layerCount; i > 0; i--) {
@@ -262,20 +262,20 @@ class NeuralNetwork {
             // dyE/dyW = learning_rate * layerError * sigmoid(x) * (1-sigmoid(x)); 
             // NOTE: dsigmoid = sigmoid(x) * (1-sigmoid(x) ie derivative of sigmoid
 
-            gradients[i] = Matriz.map(layerResult[i], this.options.derivative);
-            gradients[i].multiply(layerErrors[i]);
-            gradients[i].multiply(this.learning_rate);
+            gradients[i] = Matriz.mapear(layerResult[i], this.options.derivative);
+            gradients[i].multiplicar(layerErrors[i]);
+            gradients[i].multiplicar(this.learning_rate);
 
             // Calculate the Changes to be made to the weighs
-            let hidden_T = Matriz.transpose(layerResult[i - 1]);
-            let weight_ho_deltas = Matriz.multiply(gradients[i], hidden_T);
+            let hidden_T = Matriz.transpuesta(layerResult[i - 1]);
+            let weight_ho_deltas = Matriz.multiplicar(gradients[i], hidden_T);
 
             // Update the Weights and Gradient According to Deltas & Gradient.
-            this.layerLink[i - 1].add(weight_ho_deltas, gradients[i]);
+            this.layerLink[i - 1].summar(weight_ho_deltas, gradients[i]);
 
             // Calculate the Previous Layer Errors (Proportional Error based on Current Layer Error.)
             // NOTE: We are Backpropogating, Therefore we are going backwards 1 step (i.e. i-1)
-            layerErrors[i - 1] = Matriz.multiply(Matriz.transpose(this.layerLink[i - 1].getWeights()), layerErrors[i]);
+            layerErrors[i - 1] = Matriz.multiplicar(Matriz.transpuesta(this.layerLink[i - 1].obtener_Weights()), layerErrors[i]);
         }
 
     }
