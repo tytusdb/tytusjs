@@ -55,4 +55,5 @@ Log Notes
 |51|03/07/2021|1|jorsala1|7|Redes Neuronales|Prueba beta Neuronal Network|En desarrollo|03/07/2021|
 |52|03/07/2021|1|bchacon45|7|K-nearest neigbor|Prueba beta K-nearest neigbor|En desarrollo|03/07/2021|
 |53|03/07/2021|1|andreaflores|5|Web unificada|Diseño y ejemplos|En desarrollo|En desarrollo|
-|54|03/07/2021|1|hugofiguer9777|4|K-nearest neigbor|Codificacion de metodo para mapear distancia|En Desarrollo|03/07/2021|
+|54|03/07/2021|1|pablorrp1|2|Librería unificada|Unificar archivos Arrays, BayesMethod, DecissionTreeID3, Distance, FuzzySet, kmeans, KNearestNeighbor, Linear Model, LogisticRegression, NaiveBayes, NeuronalNetwork, PartialLeastSquares, PolynomialModel y svm|En desarrollo|03/07/2021|
+|55|03/07/2021|1|hugofiguer9777|4|K-nearest neigbor|Codificacion de metodo para mapear distancia|En Desarrollo|03/07/2021|
