@@ -5,8 +5,8 @@ Log Notes
 |1|21/06/2021|1|luisespino|nac|Regresión Lineal|Regresión lineal con mínimos cuadrados, desarrollo básico, puede mejorarse e incluir otros tipos del modelo lineal.|Finalizado|21/06/2021|
 |2|27/06/2021|3|uhcorona|3|Regresión Polinomial|Regresión polinómica, desarrollo básico|Finalizado|29/06/2021|
 |3|27/06/2021|3|HenryGalvez|3|Árboles de decisión|Árboles de decisión, desarrollo básico|Finalizado|30/06/2021|
-|4|28/06/2021|3|nejagope|4|Método de Bayes|Análisis del problema|En desarrollo|En desarrollo|
-|5|28/06/2021|3|m0iino|4|Método de Bayes|Codificación del algoritmo|En desarrollo|En desarrollo|
+|4|28/06/2021|3|nejagope|4|Método de Bayes|Análisis del problema|Finalizado|02/07/2021|
+|5|28/06/2021|3|m0iino|4|Método de Bayes|Codificación del algoritmo|Finalizado|03/07/2021|
 |6|29/06/2021|1|Diegog56|14|K-Means|Analisis y diseño del algoritmo|Finalizado|29/06/2021|
 |7|29/06/2021|2|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo lineal y pruebas|Finalizado|01/07/2021|
 |8|29/06/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo lineal|Finalizado|01/07/2021|
@@ -50,3 +50,5 @@ Log Notes
 |46|03/07/2021|1|CPeraltaa|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
 |47|03/07/2021|1|jossiebk|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
 |48|03/07/2021|1|huriel2g|18|Redes Neuronales|Prueba Beta Redes Neuronales|Finalizado|03/07/2021| 
+|49|03/07/2021|1|dianajimeneza|4|Método de Bayes|Pruebas del método|Desarrollo|04/07/2021| 
+|50|03/07/2021|1|QuiqueMRamirez|4|Método de Bayes|Especificaciones del software|Desarrollo|04/07/2021| 
