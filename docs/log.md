@@ -34,7 +34,7 @@ Log Notes
 |30|03/07/2021|2|wiicho57x|5|web unificada de ejemplo agregargando nuevos ejemplos|diseño|En proceso|En Proceso|02/07/2021|
 |31|02/07/2021|2|jelp2020|15|Test progresión polinomial|Ejemplo covid19|En Proceso|03/07/2021|
 |32|03/07/2021|1|LuisAlfonsoMelgarArizpe|14|K-Means|Añadida documentacion de las clases (SPECIFICATIONS) y libreria de distribucion|Finalizado|03/07/2021|
-|33|03/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal|En desarrollo|03/07/2021|
+|33|03/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal|Finalizado|03/07/2021|
 |34|03/07/2021|1|carlospnd|5|Partial Least-Squares|Prueba Beta Partial Least-Squares|Finalizado|03/07/2021|
 |35|03/07/2021|1|PabloOsuna1997|1|Regresion Lineal|Prueba Regresion Lineal|En desarrollo|03/07/2021|
 |36|03/07/2021|1|Ingridrpm|1|Árboles de decisión|Prueba Árboles de decisión|En desarrollo|03/07/2021|
