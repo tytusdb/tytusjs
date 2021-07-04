@@ -76,3 +76,4 @@ Log Notes
 |72|04/07/2021|1|carlospnd|5|Perceptron|Diseño del algoritmo Perceptron|En desarrollo|En desarrollo|
 |73|04/07/2021|1|Ingrdrpm|1|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|04/07/2021|
 |74|04/07/2021|1|PabloOsuna1997|1|Regresion Plynomial|Prueba Regresion Polinomial|Finalizado|04/07/2021|
+|75|04/07/2021|1|rafalejy|16|Naive Bayes|Prueba beta y ejemplo |En desarrollo|04/07/2021|
