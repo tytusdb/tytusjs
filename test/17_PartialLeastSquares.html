@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>17 - Partial Least Square</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script type="text/javascript" src="../dist/tytus.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
+    </head>
+    <body>
+        <p><h1 class="text-center display-5" style="margin-bottom: 5%;">Partial Least Square</h1></p>
+
+        <div class="container">
+            <div class="row text-center" >
+                
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4">
+                    <table class="table table-primary table-hover text-center" id="valoresX">
+                        <thead>
+                            <tr>
+                              <th colspan="2">Valores X</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoValoresX">
+
+                        </tbody>
+                    </table> 
+                </div>
+                <div class="col-lg-4">
+                    <table class="table table-primary table-hover text-center" id="valoresY">
+                        <thead>
+                            <tr>
+                              <th colspan="2">Valores Y</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoValoresY">
+
+                        </tbody>
+                    </table> 
+                </div>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <table class="table table-primary table-hover text-center" id="tablaValoresIniciales">
+                        <thead>
+                            <tr>
+                              <th colspan="2">Valores Iniciales</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoValoresIniciales">
+    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2">
+
+                </div>
+                <div class="col-lg-2">
+                    <label for="nuevosVX">Valores X en formato JSON:</label>
+                    <textarea class="form-control" id="nuevosVX" rows="5">[[0.01,0.02],[0.02,0.03],[0.25,0.69],[0.58,0.74],[0.95,1.2]]</textarea>
+                </div>
+
+                <div class="col-lg-2">
+                    <label for="nuevosVY">Valores Y en formato JSON:</label>
+                    <textarea class="form-control" id="nuevosVY" rows="5">[[1,0],[0,1],[0,1],[1,0],[0,1]]</textarea>
+                </div>
+
+                <div class="col-lg-4">
+                    
+                    <label for="etiqueta">Nuevos Valores iniciales:  </label>
+                    <br>
+                    <br>
+                    <label for="nuevaTolerancia">Tolerancia:  </label>
+                    <input type="text" name="nuevaTolerancia" id="nuevaTolerancia">
+                    <br>
+                    <br>
+                    <label for="nuevosVectores">#Vectores:  </label>
+                    <input type="text" name="nuevosVectores" id="nuevosVectores">
+                    <br>
+                    <br>
+                    <input type="button" value="Ejecutar nuevamente el algoritmo" onclick="nuevoEjecutarAlgoritmo()">
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-primary table-hover text-center" id="tablaPuntuacionX">
+                    <thead>
+                        <tr>
+                          <th id="tituloX" colspan="2">Matriz de puntuacion X</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaPuntuacionX">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-primary table-hover text-center" id="tablaCargaX">
+                    <thead>
+                        <tr>
+                          <th id="tituloCX" colspan="2">Matriz de carga X</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaCargaX">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-primary table-hover text-center" id="tablaPuntuacionY">
+                    <thead>
+                        <tr>
+                          <th id="tituloY" colspan="2">Matriz de puntuacion Y</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaPuntuacionY">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-primary table-hover text-center" id="tablaCargaY">
+                    <thead>
+                        <tr>
+                          <th id="tituloCY" colspan="2">Matriz de carga Y</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaCargaY">
+
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-primary table-hover text-center" id="tablaCoeficiente">
+                    <thead>
+                        <tr>
+                          <th id="tituloCoeficiente" colspan="2">Matriz de Coeficiente de Regresion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaCoeficiente">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-primary table-hover text-center" id="tablaPesoX">
+                    <thead>
+                        <tr>
+                          <th id="tituloPesoX" colspan="2">Matriz de peso de X</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaPesoX">
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </body>
+    <script>
+        //var valoresX = [[0.01,0.02],[0.02,0.03],[0.25,0.69],[0.58,0.74],[0.95,1.2]];
+        //var valoresY =[[1,0],[0,1],[0,1],[1,0],[0,1]];
+        
+        var valoresX = [[0.01,0.02],[0.02,0.03],[0.25,0.69],[0.58,0.74],[0.95,1.2]];
+        var valoresY = [[1,0],[0,1],[0,1],[1,0],[0,1]];
+        
+        var hiperparams = {
+            tolerance : 0.0001,
+            latentVectors:10
+        }
+        
+        function colocarValoresX(){
+            
+            var htmlTabla = "<tbody>";
+
+            for(let i = 0; i < valoresX.length; i++){
+                htmlTabla = htmlTabla + "\n\t<tr>";
+                for(let j = 0; j < valoresX[0].length; j++ ){
+                    htmlTabla = htmlTabla + "\n\t\t<td> "+valoresX[i][j]+" </td>";    
+                }   
+                htmlTabla = htmlTabla + "\n\t</tr>";
+            }
+            /*
+            for(const x in valoresX){
+                htmlTabla = htmlTabla + "\n\t<tr>";
+                htmlTabla = htmlTabla + "\n\t\t<td> "+valoresX[x][0]+" </td>";
+                htmlTabla = htmlTabla + "\n\t\t<td> "+valoresX[x][1]+" </td>"; 
+                htmlTabla = htmlTabla + "\n\t</tr>";
+            }
+            */
+            htmlTabla= htmlTabla+"\n</tbody>";
+            document.getElementById("cuerpoValoresX").innerHTML = htmlTabla;
+        }
+        function colocarValoresY(){
+            var htmlTabla = "<tbody>";
+            for(let i = 0; i < valoresX.length; i++){
+                htmlTabla = htmlTabla + "\n\t<tr>";
+                for(let j = 0; j < valoresX[0].length; j++ ){
+                    htmlTabla = htmlTabla + "\n\t\t<td> "+valoresX[i][j]+" </td>";    
+                }   
+                htmlTabla = htmlTabla + "\n\t</tr>";
+            }
+            /*
+            for(const y in valoresY){
+                htmlTabla = htmlTabla + "\n\t<tr>";
+                htmlTabla = htmlTabla + "\n\t\t<td> "+valoresY[y][0]+" </td>";
+                htmlTabla = htmlTabla + "\n\t\t<td> "+valoresY[y][1]+" </td>"; 
+                htmlTabla = htmlTabla + "\n\t</tr>";
+            }
+            */
+            htmlTabla= htmlTabla+"\n</tbody>";
+            document.getElementById("cuerpoValoresY").innerHTML = htmlTabla;
+        }
+        function colocarValoresIniciales(){
+            var htmlTabla = "<tbody>";
+            htmlTabla = htmlTabla + "\n\t<tr>";
+            htmlTabla = htmlTabla + "\n\t\t<td> Tolerancia </td>";
+            htmlTabla = htmlTabla + "\n\t\t<td> "+hiperparams.tolerance+" </td>"; 
+            htmlTabla = htmlTabla + "\n\t</tr>";
+            htmlTabla = htmlTabla + "\n\t<tr>";
+            htmlTabla = htmlTabla + "\n\t\t<td> Vectores Latentes </td>";
+            htmlTabla = htmlTabla + "\n\t\t<td> "+hiperparams.latentVectors+" </td>"; 
+            htmlTabla = htmlTabla + "\n\t</tr>";
+            htmlTabla = htmlTabla + "\n</tbody>";
+            document.getElementById("cuerpoValoresIniciales").innerHTML = htmlTabla;
+        }
+
+        function colocarMatrizResultados(opcion,tipoMatriz){  //donde tipo puede ser T,P,U,Q,B,W
+            var htmlTabla = "<tbody>";
+            
+            for(let i = 0; i<opcion.data.length; i++){
+                htmlTabla = htmlTabla + "\n\t<tr>";
+                for(let j = 0; j<opcion.data[i].length; j++){
+                    htmlTabla = htmlTabla + "\n\t\t<td> "+opcion.data[i][j]+" </td>"; 
+                }
+                htmlTabla = htmlTabla + "\n\t</tr>";
+            }
+            htmlTabla= htmlTabla+"\n</tbody>";
+
+            if(tipoMatriz == 'T'){
+                document.getElementById("cuerpoTablaPuntuacionX").innerHTML = htmlTabla;
+                document.getElementById("tituloX").colSpan = opcion.data[0].length;
+            }else if(tipoMatriz == 'P'){
+                document.getElementById("cuerpoTablaCargaX").innerHTML = htmlTabla;
+                document.getElementById("tituloCX").colSpan = opcion.data[0].length;
+            }else if(tipoMatriz == 'U'){
+                document.getElementById("cuerpoTablaPuntuacionY").innerHTML = htmlTabla;
+                document.getElementById("tituloY").colSpan = opcion.data[0].length;
+            }else if(tipoMatriz == 'Q'){
+                document.getElementById("cuerpoTablaCargaY").innerHTML = htmlTabla;
+                document.getElementById("tituloCY").colSpan = opcion.data[0].length;
+            }else if(tipoMatriz == 'B'){
+                document.getElementById("cuerpoTablaCoeficiente").innerHTML = htmlTabla;
+                document.getElementById("tituloCoeficiente").colSpan = opcion.data[0].length;
+            }else if(tipoMatriz == 'W'){
+                document.getElementById("cuerpoTablaPesoX").innerHTML = htmlTabla;
+                document.getElementById("tituloPesoX").colSpan = opcion.data[0].length;
+                console.log(opcion);
+            }
+
+        }
+
+        function ejecutarAlgoritmo(){
+            
+            var minimosCuadradosParciales = new PLS(hiperparams);
+            minimosCuadradosParciales.train(valoresX, valoresY);
+            colocarMatrizResultados(minimosCuadradosParciales.T, 'T');
+            colocarMatrizResultados(minimosCuadradosParciales.P, 'P');
+            colocarMatrizResultados(minimosCuadradosParciales.U, 'U');
+            colocarMatrizResultados(minimosCuadradosParciales.Q, 'Q');
+            colocarMatrizResultados(minimosCuadradosParciales.B, 'B');
+            colocarMatrizResultados(minimosCuadradosParciales.W, 'W');
+        }
+
+        function nuevoEjecutarAlgoritmo(){
+            let x = document.getElementById("nuevosVX").value;
+            let y = document.getElementById("nuevosVY").value;
+            
+            let tolerancia = document.getElementById("nuevaTolerancia").value;
+            let vectores = document.getElementById("nuevosVectores").value;
+
+            valoresX = JSON.parse(x);
+            valoresY = JSON.parse(y);
+            
+            hiperparams.tolerance = parseFloat(tolerancia, 10);
+            hiperparams.latentVectors = parseInt(vectores, 10);
+
+
+            console.log(valoresX);
+            console.log(valoresY);
+            console.log(hiperparams);
+            colocarValoresX();
+            colocarValoresY();
+            colocarValoresIniciales();
+            ejecutarAlgoritmo();
+        }
+
+        colocarValoresX();
+        colocarValoresY();
+        colocarValoresIniciales();
+        /**/
+        ejecutarAlgoritmo();
+    </script>
+</html>
