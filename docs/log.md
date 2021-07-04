@@ -50,3 +50,4 @@ Log Notes
 |46|03/07/2021|1|CPeraltaa|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
 |47|03/07/2021|1|jossiebk|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
 |48|03/07/2021|2|Saulguz1|12|Regresión Logistica|Desarrollo y Diseño del algoritmo|En Desarrollo|04/07/2021|
+|49|03/07/2021|1|coradowilly|12|Regresión Logistica|Diseño test del algoritmo|En desarrollo|04/07/2021|
