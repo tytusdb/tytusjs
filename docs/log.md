@@ -78,3 +78,4 @@ Log Notes
 |74|04/07/2021|1|PabloOsuna1997|1|Regresion Plynomial|Prueba Regresion Polinomial|Finalizado|04/07/2021|
 |75|04/07/2021|1|SergioGuoz|4|K-nearest neighbor|Desarrollo funcionalidad predecir|Finalizado|04/07/2021|
 |76|04/07/2021|1|rafalejy|16|Naive Bayes|Prueba beta y ejemplo |En desarrollo|04/07/2021|
+|77|05/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal Custom|En desarrollo|04/07/2021|
