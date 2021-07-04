@@ -62,6 +62,8 @@ Pure Javascript Machine Learning Library
 
 [29 Perceptron Example](https://tytusdb.github.io/tytusjs/test/29_PerceptronExample.html)
 
+[30 Custom Linear Regression Example (07)](https://tytusdb.github.io/tytusjs/test/30_linearRegresionCustomExample.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
 
