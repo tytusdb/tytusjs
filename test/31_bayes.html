@@ -169,7 +169,8 @@
     </br>
         Suppose that N is Not Win and P is Win
     </br>
-        1. Find the probability P(not win | sunny, hot, high, false)
+    <p>1. Find the probability P(not win | sunny, hot, high, false) </p>
+    <p>2. Find the probability P( win | sunny, hot, high, false)</p>
     </div>
     <hr color="mediumspringgreen" size=3></hr>
     <div>
@@ -177,13 +178,24 @@
     </div>
     <div div style="margin-left: 170px;">
        
-        <p><b>Calculation of P(not win| sunny, hot, high, false)</b></p>
+        <p><b>1 Calculation of P(not win| sunny, hot, high, false)</b></p>
         <p>P(sunny| not_win): <b id="p1" style="color: blue;"></b></p>
         <p>P(hot| not_win): <b id="p2" style="color: blue;"></b></p>
         <p>P(high| not_win): <b id="p3" style="color: blue;"></b></p>
         <p>P(false| not_win): <b id="p4" style="color: blue;"></b></p>
         <p>P(not win| sunny, hot, high, false): <b id="res2" style="color: blue;"></b></p>
         <p>The result of the probability calculation P(not win| sunny, hot, high, false) is <b id="res3"></b> </p>
+
+    </div>
+    <div div style="margin-left: 170px;">
+       
+        <p><b>2 Calculation of P(win| sunny, hot, high, false)</b></p>
+        <p>P(sunny| win): <b id="p5" style="color: blue;"></b></p>
+        <p>P(hot| win): <b id="p6" style="color: blue;"></b></p>
+        <p>P(high| win): <b id="p7" style="color: blue;"></b></p>
+        <p>P(false| win): <b id="p8" style="color: blue;"></b></p>
+        <p>P(win| sunny, hot, high, false): <b id="res4" style="color: blue;"></b></p>
+        <p>The result of the probability calculation P(win| sunny, hot, high, false) is <b id="res5"></b> </p>
 
     </div>
     <script>
@@ -225,6 +237,28 @@
         document.getElementById('p4').innerHTML=p4 +' = ' + percentageP4+'%'; //set in <b>  with id p4
         console.log(`P(N|false) = ${p4}`)
 
+        //--------------------------------------probability calculation 2------------------------------------------------------
+        //P(sunny| win)
+        var p5 = bayes.probability('outlook', 'sunny', 'P')
+        var percentageP5= p5.toFixed(2);
+        document.getElementById('p5').innerHTML=p5 +' = ' + percentageP5+'%'  //set in <b>  with id p5
+        console.log(`P(P|sunny) = ${p5}`)
+        //P(hot| win):
+        var p6 = bayes.probability('temperature', 'hot', 'P')
+        var percentageP6= p6.toFixed(2);
+        document.getElementById('p6').innerHTML=p6+' = ' + percentageP6+'%'  //set in <b>  with id p6
+        console.log(`P(P|hot) = ${p6}`)
+        //P(high| win):
+        var p7 = bayes.probability('humidity', 'high', 'P')
+        var percentageP7= p7.toFixed(2);
+        document.getElementById('p7').innerHTML=p7 +' = ' + percentageP7+'%' //set in <b>  with id p7
+        console.log(`P(P|high) = ${p7}`)
+        //P(false| win)
+        var p8 = bayes.probability('windy', 'false', 'P')
+        var percentageP8= p8.toFixed(2);
+        document.getElementById('p8').innerHTML=p8 +' = ' + percentageP8+'%'; //set in <b>  with id p8
+        console.log(`P(P|false) = ${p8}`)
+
         //------------------------------------calculation of probabilities using the predict method of bayes----------------
         //P(not win| sunny, hot, high, false):
         var res2 = bayes.predict(['sunny', 'hot', 'high', 'false'], 'N')
@@ -232,6 +266,13 @@
         document.getElementById('res2').innerHTML=res2  +' = '+parseFloat(resSplit[1]).toFixed(3)+"%"  //set in <b>  with id res2
         document.getElementById('res3').innerHTML=parseFloat(resSplit[1]).toFixed(3)+"%"               //set in <b>  with id res3
         
+        //------------------------------------calculation of probabilities using the predict method of bayes 2----------------
+        //P(win| sunny, hot, high, false):
+        var res4 = bayes.predict(['sunny', 'hot', 'high', 'false'], 'P')
+        var resSplit4= res4.toString().split(',')
+        document.getElementById('res4').innerHTML=res4  +' = '+parseFloat(resSplit4[1]).toFixed(3)+"%"  //set in <b>  with id res2
+        document.getElementById('res5').innerHTML=parseFloat(resSplit4[1]).toFixed(3)+"%"               //set in <b>  with id res3    
+            
         //---------------------------------------Others examples-------------------------------------------------------------
         var res = bayes.predict(['sunny', 'hot'])
         var res1 = bayes.predict(['sunny', 'hot', 'high', 'false'])
