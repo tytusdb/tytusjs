@@ -27,6 +27,21 @@
             </code>
         </p>
 
+        <h3 class="display-6 mt-5">Datos para Test 2</h3>
+        <h3 class="display-15 mt-5">Predecir que el valor del primer numero sea igual al valor del segundo numero</h3>
+        <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+            <code class="text-info" id="dataEntrada">
+                &nbsp;&nbsp;&nbsp;&nbsp;[10,25]
+            </code>
+        </p>
+
+        <h3 class="display-15 mt-5">Probabilidad de que el hecho anterior ocurra</h3>
+        <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+            <code class="text-center" id="Resultado2">
+                
+            </code>
+        </p>
+
     </div>
     <script src="../src/NeuronalNetwork.js"></script>
     
@@ -50,7 +65,17 @@
 
     //console.log(`Probability Score for diferent: ${diferent}`)
 
-    
+    let arreglodesignado2 = [2, 4, 3, 2];
+    let redNeural2 = new NeuralNetwork(arreglodesignado);
+    for (let i = 0; i < 10000; i++) {
+        let numero12 = Math.random();
+        let numero22 = Math.random();
+        redNeural.Entrenar([numero12, numero22], (numero12 == numero22 ? [1, 0] : [0, 1]));
+    }
+
+    diferent2 = redNeural2.Predecir([10, 25]);
+
+    document.getElementById("Resultado2").innerHTML = String( "&nbsp;&nbsp;&nbsp;&nbsp;" + redNeural2.Predecir([10, 25]));
 
 
 </script>
