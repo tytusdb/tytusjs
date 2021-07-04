@@ -1,10 +1,14 @@
 class KNearestNeighbor {
+
   constructor(individuals = []) {
     this.individuals = individuals
   }
 
-  // Sobrecarga para uso en metodo de mapearGenerarDistancia
-  constructor(k = 1, data, labels) {
+  k;
+  data;
+  label;
+  // Metodo para inicializar valores para metodo de calcular distancia
+  inicializar(k, data, labels) {
     this.k = k;
     this.data = data;
     this.labels = labels;
