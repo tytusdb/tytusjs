@@ -70,6 +70,8 @@ Pure Javascript Machine Learning Library
 
 [32 Redes Neuronales](https://tytusdb.github.io/tytusjs/test/32_NeuronalNetwork.html)
 
+[33 K-means](https://tytusdb.github.io/tytusjs/test/33_Kmeans.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
 
