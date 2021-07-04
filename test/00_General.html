@@ -36,6 +36,8 @@
 
 		<script src="../src/NeuronalNetwork.js"></script>
 
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
 </head>
 
@@ -913,6 +915,145 @@
 				</article>
 			</section>
 			
+			<section id="decimo">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">Linear Regression 2</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+
+					</div>
+
+					<center>
+						<h2>Current Model</h2>
+						<table style="text-align: center">
+							<tr>
+								<th>X Train</th>
+								<th>Y Train</th>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>10</td>
+							</tr>
+						</table>
+						<h2>Predicted Data</h2>
+						<table id="displayTable" style="text-align: center">
+							<tr>
+								<th>X Base</th>
+								<th>Y Predicted</th>
+								<th>ERROR %</th>
+							</tr>
+						</table>
+						<h2>Graph</h2>
+						<div id="curve_chart" style="width: 900px; height: 500px"></div>
+					</center>
+					<script>
+						let xValues = [0, 1, 2, 3, 4, 5, 6, 7];
+						let yValues = [0, 3, 5, 4, 6, 6, 7, 10];
+						let linearRegresion = new LinearRegression();
+						linearRegresion.fit(xValues, yValues);
+						let result10 = linearRegresion.predict(xValues);
+						let displayTable = document.getElementById("displayTable");
+						for (let i = 0; i < xValues.length; i++) {
+							const x = xValues[i];
+							const y = result10[i];
+							let row = document.createElement("tr");
+							let xCol = document.createElement("td");
+							xCol.innerText = x.toString();
+							let yCol = document.createElement("td");
+							yCol.innerText = y.toString();
+							let errCol = document.createElement("td");
+							errCol.innerHTML =
+								(Math.abs(parseFloat(yValues[i]) - parseFloat(result10[i])) /
+									parseFloat(yValues[i]) ===
+								Infinity
+									? 1.0
+									: Math.abs(parseFloat(yValues[i]) - parseFloat(result10[i])) /
+									  parseFloat(yValues[i])) * 100.0;
+							row.appendChild(xCol);
+							row.appendChild(yCol);
+							row.appendChild(errCol);
+							displayTable.appendChild(row);
+						}
+			
+						var graphDataSet = [];
+						graphDataSet.push(["X", "Y", "Predicted"]);
+						for (let i = 0; i < xValues.length; i++) {
+							const x = xValues[i];
+							graphDataSet.push([x.toString(), yValues[i], result10[i]]);
+						}
+			
+						google.charts.load("current", { packages: ["corechart"] });
+						google.charts.setOnLoadCallback(drawChart10);
+			
+						function drawChart10() {
+							var data10 = google.visualization.arrayToDataTable(graphDataSet);
+			
+							var options = {
+								title: "Linear Regression",
+								legend: { position: "bottom" },
+							};
+			
+							var chart = new google.visualization.LineChart(
+								document.getElementById("curve_chart")
+							);
+			
+							chart.draw(data10, options);
+						}
+					</script>
+			
+
+				</article>
+			</section>
+
 			<section id="sexto">
 				<article class="box post post-excerpt">
 					<header>
@@ -968,6 +1109,7 @@
 				<li><a href="#septimo">Linear Regression</a></li>
 				<li><a href="#octavo">K-Nearest Neighbor 2</a></li>
 				<li><a href="#noveno">Neuronal Network</a></li>
+				<li><a href="#decimo">Linear Regression 2</a></li>
 				
 
 			</ul>
