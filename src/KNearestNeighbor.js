@@ -1,12 +1,26 @@
-const distance = (a, b) => Math.sqrt(
-  a.map((aPoint, i) => b[i] - aPoint)
-    .reduce((sumOfSquares, diff) => sumOfSquares + (diff * diff), 0)
-);
-
 class KNearestNeighbor {
   constructor(individuals = []) {
     this.individuals = individuals
   }
+
+  // Sobrecarga para uso en metodo de mapearGenerarDistancia
+  constructor(k = 1, data, labels) {
+    this.k = k;
+    this.data = data;
+    this.labels = labels;
+  }
+
+  /**
+ * Calcula la distancia entre los dos puntos
+ * Los puntos deben estar definidos como arreglos
+ * @param {Array.<number>} a
+ * @param {Array.<number>} b
+ * @return {number}
+ */
+  distance = (a, b) => Math.sqrt(
+    a.map((aPoint, i) => b[i] - aPoint)
+      .reduce((sumOfSquares, diff) => sumOfSquares + (diff * diff), 0)
+  );
 
   euclidean(point) {
     var distance = []
@@ -50,7 +64,7 @@ class KNearestNeighbor {
     for (let index = 0, len = this.data.length; index < len; index++) {
       const otroPunto = this.data[index];
       const otroPuntoLabel = this.labels[index];
-      const distancia = distance(point, otroPunto);
+      const distancia = this.distance(point, otroPunto);
 
       if (!maxDistanceInMap || distancia < maxDistanceInMap) {
 
@@ -87,21 +101,21 @@ class KNearestNeighbor {
     const map = this.mapearGenerarDistancia(point);
     const votos = map.slice(0, this.k); //pasamos el valor k
     const votosCounts = votos
-        // Reduce a un objeto tipo {label: voteCount}
-        .reduce((obj, vote) => Object.assign({}, obj, {[vote.label]: (obj[vote.label] || 0) + 1}), {})
-    ;
+      // Reduce a un objeto tipo {label: voteCount}
+      .reduce((obj, vote) => Object.assign({}, obj, { [vote.label]: (obj[vote.label] || 0) + 1 }), {})
+      ;
     //Ordenar por medio del valor cantidad
     const sortedVotes = Object.keys(votosCounts)
-        .map(label => ({label, count: votosCounts[label]}))
-        .sort((a, b) => a.count > b.count ? -1 : 1)
-    ;
+      .map(label => ({ label, count: votosCounts[label] }))
+      .sort((a, b) => a.count > b.count ? -1 : 1)
+      ;
 
     return {
-        label: sortedVotes[0].label,
-        votosCounts,
-        votos
+      label: sortedVotes[0].label,
+      votosCounts,
+      votos
     };
 
-}
+  }
 
 }

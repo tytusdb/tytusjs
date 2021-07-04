@@ -58,6 +58,20 @@ Pure Javascript Machine Learning Library
 
 [27 Polynomial Regression Example (04)](https://tytusdb.github.io/tytusjs/test/27_regressionPolinomialExample.html)
 
+[28 K-Nearest Neighbor Example and Graph](https://tytusdb.github.io/tytusjs/test/28_knearest.html)
+
+[29 Perceptron Example](https://tytusdb.github.io/tytusjs/test/29_PerceptronExample.html)
+
+[30 Custom Linear Regression Example (07)](https://tytusdb.github.io/tytusjs/test/30_linearRegresionCustomExample.html)
+
+[31 Bayes Method Example](https://tytusdb.github.io/tytusjs/test/31_bayes.html)
+
+[32 Bayes Example (3)](https://tytusdb.github.io/tytusjs/test/28_NaiveBayesPrediction.html)
+
+[33 Redes Neuronales](https://tytusdb.github.io/tytusjs/test/32_NeuronalNetwork.html)
+
+[34 K-means](https://tytusdb.github.io/tytusjs/test/33_Kmeans.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
 
