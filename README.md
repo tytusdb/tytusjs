@@ -28,8 +28,14 @@ Pure Javascript Machine Learning Library
 
 [13 SVM Example](https://tytusdb.github.io/tytusjs/test/13_svm.html)
 
+[14 Linear Regression Example](https://tytusdb.github.io/tytusjs/test/14_linearRegresionExample)
+
 [15 Sample Neuronal Network Example](https://tytusdb.github.io/tytusjs/test/15_NeuronalNetwork.html)
+
+[16 Neuronal Network Example 2](https://tytusdb.github.io/tytusjs/test/15_NeuronalNetwork_Example2.html)
+
 [17 K-Nearest Neighbor Example (03)](https://tytusdb.github.io/tytusjs/test/17_knearestneighbor.html)
+
 
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
