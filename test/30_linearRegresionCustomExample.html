@@ -146,5 +146,38 @@
 				}
 			});
 		</script>
+		<center>
+			<h1>Linear Regresion</h1>
+			<h2>Current Model</h2>
+			<table style="text-align: center">
+				<tr>
+					<th>X Train</th>
+					<th>Y Train</th>
+				</tr>
+				<tr>
+					<td>
+						<input
+							type="text"
+							name="xData"
+							id="xData"
+							placeholder="0,1,2,3,4,5,...n"
+						/>
+					</td>
+					<td>
+						<input
+							type="text"
+							name="yData"
+							id="yData"
+							placeholder="0,1,2,3,4,5,...n"
+						/>
+					</td>
+				</tr>
+			</table>
+			<button style="margin: 10px" id="predictButton">PREDICT</button>
+			<h2>Predicted Data</h2>
+			<table id="displayTable" style="text-align: center"></table>
+			<h2>Graph</h2>
+			<div id="curve_chart" style="width: 900px; height: 500px"></div>
+		</center>
 	</body>
 </html>
