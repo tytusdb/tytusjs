@@ -73,3 +73,5 @@ Log Notes
 |69|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Ejemplo del algoritmo de regresion minimos cuadrados parciales|Finalizado|04/07/2021|
 |70|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Ejecucion de tests del algoritmo desde el ejemplo|Finalizado|04/07/2021|
 |71|04/07/2021|1|gpeitzner|1|Regresión Polinomial|Prueba Beta de Regresión Polinomial|Finalizado|04/07/2021|
+|72|04/07/2021|1|carlospnd|5|Perceptron|Diseño del algoritmo Perceptron|En desarrollo|En desarrollo|
+
