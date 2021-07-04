@@ -80,3 +80,4 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |75|04/07/2021|1|SergioGuoz|4|K-nearest neighbor|Desarrollo funcionalidad predecir|Finalizado|04/07/2021|
 |76|04/07/2021|1|rafalejy|16|Naive Bayes|Prueba beta y ejemplo |En desarrollo|04/07/2021|
 |77|02/07/2021|1|dodany|5|Perceptron |Prueba Beta Perceptron |Finalizado|04/07/2021|
+|78|04/07/2021|1|PabloOsuna1997|1|Naive Bayes|Prueba Naive Bayes|Finalizado|04/07/2021|
