@@ -13,7 +13,7 @@ class BayesMethod{
         if (attributeName){
             if (this.attributeNames.includes(attributeName)){
                 //attribute already added
-                return false
+                throw Exception('Attribute already added')
             }
         }        
 
@@ -21,14 +21,14 @@ class BayesMethod{
             //check if values is array
             if (!Array.isArray(values)){
                 //values must be array
-                return false
+                throw Exception('Value must be array')
             }else{
                 //check if values are primitive
                 let primitiveValues = true
                 values.forEach(v => primitiveValues = primitiveValues && v !== Object(v))
 
                 if (!primitiveValues){
-                    return false
+                    throw Exception('Value is not primivite')
                 }                    
             }
 
@@ -43,20 +43,20 @@ class BayesMethod{
     addClass(values, className){        
         if (this.class){
             //there's already a class defined (just one is allowed)
-            return false
+            throw Exception('There is already a class defined')
         }
         if (values){
             //check if values is array
             if (!Array.isArray(values)){
                 //values must be array
-                return false
+                throw Exception('Values must be array')
             }else{
                 //check if values are primitive
                 let primitiveValues = true
                 values.forEach(v => primitiveValues = primitiveValues && v !== Object(v))
                 
                 if (!primitiveValues){
-                    return false
+                    throw Exception('value is not primitive')
                 }
             }
 
@@ -71,7 +71,7 @@ class BayesMethod{
 
     train(){
         if (!this.isModelValid()){
-            return false
+            throw Exception('Model not valid')
         }
 
         // create frecuency table for each attribute
@@ -120,14 +120,14 @@ class BayesMethod{
         
         var attribIndex = this.attributeNames.findIndex(n => n === attributeName)
         if (attribIndex == -1){
-            return null
+            throw Exception('attribute index -1')
         }
 
         var frecuencyTable = this.frecuencyTables[attribIndex]
         var causeIndex = frecuencyTable.values.findIndex(v => v == cause)
 
         if (causeIndex == -1){
-            return null;
+            throw Exception('cause index -1')
         }
 
         var classFrecuencyTable = this.frecuencyTables[this.frecuencyTables.length - 1]
@@ -185,7 +185,7 @@ class BayesMethod{
             });
             return [this.classes[highestProbabilityClassIndex], highestProbability]
         }else{
-            return null;
+            throw Exception('class probabilities < 1')
         }
     }
 
@@ -193,11 +193,11 @@ class BayesMethod{
     isModelValid(){
         if (!this.classes){
             //classes needed
-            return false
+            throw Exception('classes needed')
         }
         if (!this.attributes){
             //attributes needed
-            return false
+            throw Exception('atributes needed')
         }else{
             let length = this.attributes[0].length;
             let sameLength = true;
@@ -206,7 +206,7 @@ class BayesMethod{
 
             if (!sameLength){
                 console.log('attributes and class must have the same ammount of elements')
-                return false;
+                throw Exception('attributes and class must have the same ammount of elements')
             }
         }
         return true
@@ -215,14 +215,14 @@ class BayesMethod{
     toFrecuencyTable(values){
         if (!Array.isArray(values)){
             //values must be array
-            return false
+            throw Exception('values must be array')
         }else{
             //check if values are primitive
             let primitiveValues = true
             values.forEach(v => primitiveValues = primitiveValues && v !== Object(v))
             
             if (!primitiveValues){
-                return false
+                throw Exception('value not primitive')
             }
         }
 
