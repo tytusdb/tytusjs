@@ -52,9 +52,23 @@ Log Notes
 |48|03/07/2021|1|huriel2g|18|Redes Neuronales|Prueba Beta Redes Neuronales|Finalizado|03/07/2021| 
 |49|03/07/2021|1|dianajimeneza|4|Método de Bayes|Pruebas del método|Desarrollo|04/07/2021| 
 |50|03/07/2021|1|QuiqueMRamirez|4|Método de Bayes|Especificaciones del software|Desarrollo|04/07/2021| 
-|51|03/07/2021|1|jorsala1|7|Redes Neuronales|Prueba beta Neuronal Network|En desarrollo|03/07/2021|
-|52|03/07/2021|1|bchacon45|7|K-nearest neigbor|Prueba beta K-nearest neigbor|En desarrollo|03/07/2021|
+|51|03/07/2021|1|jorsala1|7|Redes Neuronales|Prueba beta Neuronal Network| Finalizado |03/07/2021|
+|52|03/07/2021|1|bchacon45|7|K-nearest neigbor|Prueba beta K-nearest neigbor|Finalizado |03/07/2021|
 |53|03/07/2021|1|andreaflores|5|Web unificada|Diseño y ejemplos|En desarrollo|En desarrollo|
 |54|03/07/2021|1|pablorrp1|2|Librería unificada|Unificar archivos Arrays, BayesMethod, DecissionTreeID3, Distance, FuzzySet, kmeans, KNearestNeighbor, Linear Model, NaiveBayes, NeuronalNetwork, PartialLeastSquares, PolynomialModel y svm|Finalizado|03/07/2021|
 |55|03/07/2021|1|hugofiguer9777|4|K-nearest neigbor|Codificacion de metodo para mapear distancia|En Desarrollo|03/07/2021|
 |56|03/07/2021|1|brandonBBAL1994|17|Regresion Lineal|Prueba beta de regresion lineal|Finalizado|03/07/2021|
+|57|03/07/2021|1|MarielosH|7| Partial Least Squares |Prueba beta Partial Least Squares|Finalizado |03/07/2021|
+|58|03/07/2021|1|sandraeu|7|Linear Regression|Prueba beta Linear Regression |Finalizado |03/07/2021|
+|59|03/07/2021|1|javib94|8|KMeans |Clase para calcular y graficar centroides |Finalizado |03/07/2021|
+|60|03/07/2021|1|ChristianR007|8|Naive Bayes|Metodo de bayes por causa y efecto segun las probabilidades de la tabla|Finalizado|03/07/2021|
+|61|03/07/2021|1|WillyAlberto|8|K-nearest neighbor|Algoritmo K-nearest neighbor basico por Manhattan y Euclidiana|Finalizado|03/07/2021|
+|62|03/07/2021|1|javib94|8|KMeans |Ejemplo del uso de G8_KMeans |Finalizado |03/07/2021|
+|63|03/07/2021|2|Saulguz1|12|Regresión Logistica|Desarrollo y Diseño del algoritmo|En Desarrollo|04/07/2021|
+|64|03/07/2021|1|coradowilly|12|Regresión Logistica|Diseño test del algoritmo|En desarrollo|04/07/2021|
+|65|04/07/2021|1|Saulguz1|12|Regresión Logistica|Diseño test Algoritmo Regresion Logistica Multiclase|En Desarrollo|04/07/2021|
+|66|03/07/2021|1|coradowilly|12|Regresión Logistica|Diseño test del algoritmo|Finalizado|04/07/2021|
+|67|04/07/2021|1|coradowilly|12|Regresión Logistica|Desarrollo y Diseño del algoritmo MultiClass|En desarrollo|04/07/2021|
+|68|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Prueba beta de algoritmo minimos cuadrados parciales|Finalizado|04/07/2021|
+|69|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Ejemplo del algoritmo de regresion minimos cuadrados parciales|Finalizado|04/07/2021|
+|70|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Ejecucion de tests del algoritmo desde el ejemplo|Finalizado|04/07/2021|
