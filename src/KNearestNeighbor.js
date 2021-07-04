@@ -1,8 +1,3 @@
-const distance = (a, b) => Math.sqrt(
-  a.map((aPoint, i) => b[i] - aPoint)
-    .reduce((sumOfSquares, diff) => sumOfSquares + (diff * diff), 0)
-);
-
 class KNearestNeighbor {
   constructor(individuals = []) {
     this.individuals = individuals
@@ -14,6 +9,18 @@ class KNearestNeighbor {
     this.data = data;
     this.labels = labels;
   }
+
+  /**
+ * Calcula la distancia entre los dos puntos
+ * Los puntos deben estar definidos como arreglos
+ * @param {Array.<number>} a
+ * @param {Array.<number>} b
+ * @return {number}
+ */
+  distance = (a, b) => Math.sqrt(
+    a.map((aPoint, i) => b[i] - aPoint)
+      .reduce((sumOfSquares, diff) => sumOfSquares + (diff * diff), 0)
+  );
 
   euclidean(point) {
     var distance = []
@@ -57,7 +64,7 @@ class KNearestNeighbor {
     for (let index = 0, len = this.data.length; index < len; index++) {
       const otroPunto = this.data[index];
       const otroPuntoLabel = this.labels[index];
-      const distancia = distance(point, otroPunto);
+      const distancia = this.distance(point, otroPunto);
 
       if (!maxDistanceInMap || distancia < maxDistanceInMap) {
 
