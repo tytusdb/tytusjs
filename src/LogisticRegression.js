@@ -13,6 +13,7 @@ class LogisticRegression extends LogisticModel {
 
     // Fit regression
     fit(data) {
+        console.log(data)
         this.dim = data[0].length;
         var N = data.length;
         
@@ -135,4 +136,87 @@ class LogisticRegression extends LogisticModel {
         }
         return sum;
     };
+}
+
+
+class MultiClassLogistic extends LogisticModel {
+    constructor() {
+        super()  
+        this.alpha = 0.001;
+        this.lambda = 0;
+        this.iterations = 100;     
+    }
+    fit(data, classes) {
+        this.dim = data[0].length;
+        var N = data.length;
+        
+        if(!classes){
+            classes = [];
+            for(var i=0; i < N; ++i){
+                var found = false;
+                var label = data[i][this.dim-1];
+                for(var j=0; j < classes.length; ++j){
+                    if(label == classes[j]){
+                        found = true;
+                        break;
+                    }
+                }
+                if(!found){
+                    classes.push(label);
+                }
+            }
+        }
+        
+        this.classes = classes;
+
+        console.log(this.classes)
+        
+        this.logistics = {};
+        var result = {};
+        for(var k = 0; k < this.classes.length; ++k){
+            var c = this.classes[k];
+            this.logistics[c] = new LogisticRegression({
+                alpha: this.alpha,
+                lambda: this.lambda,
+                iterations: this.iterations
+            });
+            var data_c = [];
+            for(var i=0; i < N; ++i){
+                var row = [];
+                for(var j=0; j < this.dim-1; ++j){
+                    row.push(data[i][j]);
+                }
+                row.push(data[i][this.dim-1] == c ? 1 : 0);
+                data_c.push(row);
+            }
+            result[c] = this.logistics[c].fit(data_c);
+        }
+        return result;
+    };
+    
+    transform(x) {
+        if(x[0].length){ // x is a matrix            
+            var predicted_array = [];
+            for(var i=0; i < x.length; ++i){
+                var predicted = this.transform(x[i]);
+                predicted_array.push(predicted);
+            }
+            return predicted_array;
+        }
+        
+        
+        
+        var max_prob = 0.0;
+        var best_c = '';
+        for(var k = 0; k < this.classes.length; ++k) {
+            var c = this.classes[k];
+            var prob_c = this.logistics[c].transform(x);
+            if(max_prob < prob_c){
+                max_prob = prob_c;
+                best_c = c;
+            }
+        }
+        
+        return best_c;
+    }
 }
