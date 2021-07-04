@@ -28,5 +28,7 @@ Pure Javascript Machine Learning Library
 
 [13 SVM Example](https://tytusdb.github.io/tytusjs/test/13_svm.html)
 
+[17 K-Nearest Neighbor Example (03)](https://tytusdb.github.io/tytusjs/test/17_knearestneighbor.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
