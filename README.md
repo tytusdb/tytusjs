@@ -36,8 +36,7 @@ Pure Javascript Machine Learning Library
 
 [17 K-Nearest Neighbor Example (03)](https://tytusdb.github.io/tytusjs/test/17_knearestneighbor.html)
 
-
-[16 Naive Bayes Example ](https://tytusdb.github.io/tytusjs/test/16_NaiveBayes_Basic.html)
+[18 Naive Bayes Example ](https://tytusdb.github.io/tytusjs/test/18_NaiveBayes_Basic.html)
 
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
