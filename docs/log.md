@@ -72,3 +72,4 @@ Log Notes
 |68|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Prueba beta de algoritmo minimos cuadrados parciales|Finalizado|04/07/2021|
 |69|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Ejemplo del algoritmo de regresion minimos cuadrados parciales|Finalizado|04/07/2021|
 |70|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Ejecucion de tests del algoritmo desde el ejemplo|Finalizado|04/07/2021|
+|71|04/07/2021|1|gpeitzner|1|Regresión Polinomial|Prueba Beta de Regresión Polinomial|En desarrollo|04/07/2021|
