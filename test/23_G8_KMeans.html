@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes">
+  <title>K-Means Clustering</title>
+</head>
+<body>
+   <main class="container">
+    <h1>K-Means Ejemplo Grupo 8</h1>
+    <div>
+      <canvas id="canvas" width="600" height="600"></canvas>
+    </div>
+    <div>
+      <p id="info"></p>
+    </div>
+  </main>
+  
+  <script src="../src/G8_Kmeans.js"></script>
+  <script type="text/javascript">
+        var data = [
+        [6,5],
+        [9,10],
+        [10,1],
+        [5,5],
+        [7,7],
+        [4,1],
+        [10,7],
+        [6,8],
+        [10,2],
+        [9,4],
+        [2,5],
+        [9,1],
+        [10,9],
+        [2,8],
+        [1,1],
+        [6,10],
+        [3,8],
+        [2,3],
+        [7,9],
+        [7,7],
+        [3,6],
+        [5,8],
+        [7,5],
+        [10,9],
+        [10,9]
+        ];
+
+        var kmeanss = new G8_Kmeans({
+            canvas: document.getElementById('canvas'),
+            data: data,
+            k: 3    
+        });
+        
+        for(i=0;i<kmeanss.means.length; i++){
+          document.getElementById("info").innerHTML +=  "<br>Centroide Cluster ".concat(i, ": ", kmeanss.means[i]);
+        }
+         
+    </script>
+   
+</body>
+</html>
