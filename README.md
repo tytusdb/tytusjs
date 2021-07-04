@@ -28,7 +28,7 @@ Pure Javascript Machine Learning Library
 
 [13 SVM Example](https://tytusdb.github.io/tytusjs/test/13_svm.html)
 
-[14 Linear Regression Example (02)](https://tytusdb.github.io/tytusjs/test/14_linearRegresionExample)
+[14 Linear Regression Example (03)](https://tytusdb.github.io/tytusjs/test/14_linearRegresionExample)
 
 [15 Sample Neuronal Network Example](https://tytusdb.github.io/tytusjs/test/15_NeuronalNetwork.html)
 
@@ -40,11 +40,11 @@ Pure Javascript Machine Learning Library
 
 [18 Naive Bayes Example ](https://tytusdb.github.io/tytusjs/test/18_NaiveBayes_Basic.html)
 
-[19 Linear Regression Example (02)](https://tytusdb.github.io/tytusjs/test/19_regression.html)
+[19 Linear Regression Example (04)](https://tytusdb.github.io/tytusjs/test/19_regression.html)
 
 [20 Partial Least Squares Example ](https://tytusdb.github.io/tytusjs/test/20_PartialLeastSquares.html)
 
-[21 Linear Regression Example ](https://tytusdb.github.io/tytusjs/test/21_regression.html)
+[21 Linear Regression Example (05)](https://tytusdb.github.io/tytusjs/test/21_regression.html)
 
 [22 Partial Least Squares Example](https://tytusdb.github.io/tytusjs/test/22_Naive_Bayes.html)
 
@@ -53,6 +53,16 @@ Pure Javascript Machine Learning Library
 [24 G8 K-Means Usage Example](https://tytusdb.github.io/tytusjs/test/23_G8_KMeans.html)
 
 [25 Polynomial Regression Example (03)](https://tytusdb.github.io/tytusjs/test/25_polinomialRegressionExample.html)
+
+[26 Linear Regression Example (06)](https://tytusdb.github.io/tytusjs/test/26_regressionLinealExample.html)
+
+[27 Polynomial Regression Example (04)](https://tytusdb.github.io/tytusjs/test/27_regressionPolinomialExample.html)
+
+[28 K-Nearest Neighbor Example and Graph](https://tytusdb.github.io/tytusjs/test/28_knearest.html)
+
+[29 Perceptron Example](https://tytusdb.github.io/tytusjs/test/29_PerceptronExample.html)
+
+[30 Bayes Method Example](https://tytusdb.github.io/tytusjs/test/30_bayes.html)
 
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
