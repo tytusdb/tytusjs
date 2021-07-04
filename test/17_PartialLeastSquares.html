@@ -56,7 +56,39 @@
                     </table>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-2">
 
+                </div>
+                <div class="col-lg-2">
+                    <label for="nuevosVX">Valores X en formato JSON:</label>
+                    <textarea class="form-control" id="nuevosVX" rows="5"></textarea>
+                </div>
+
+                <div class="col-lg-2">
+                    <label for="nuevosVY">Valores Y en formato JSON:</label>
+                    <textarea class="form-control" id="nuevosVY" rows="5"></textarea>
+                </div>
+
+                <div class="col-lg-4">
+                    
+                    <label for="etiqueta">Nuevos Valores iniciales:  </label>
+                    <br>
+                    <br>
+                    <label for="nuevaTolerancia">Tolerancia:  </label>
+                    <input type="text" name="nuevaTolerancia" id="nuevaTolerancia">
+                    <br>
+                    <br>
+                    <label for="nuevosVectores">#Vectores:  </label>
+                    <input type="text" name="nuevosVectores" id="nuevosVectores">
+                    <br>
+                    <br>
+                    <input type="button" value="Ejecutar nuevamente el algoritmo" onclick="ejecutarAlgoritmoPropio()">
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
             <div class="row" style="margin-top: 2%;">
                 <table class="table table-dark table-hover text-center" id="tablaPuntuacionX">
                     <thead>
@@ -149,23 +181,42 @@
         function colocarValoresX(){
             
             var htmlTabla = "<tbody>";
+
+            for(let i = 0; i < valoresX.length; i++){
+                htmlTabla = htmlTabla + "\n\t<tr>";
+                for(let j = 0; j < valoresX[0].length; j++ ){
+                    htmlTabla = htmlTabla + "\n\t\t<td> "+valoresX[i][j]+" </td>";    
+                }   
+                htmlTabla = htmlTabla + "\n\t</tr>";
+            }
+            /*
             for(const x in valoresX){
                 htmlTabla = htmlTabla + "\n\t<tr>";
                 htmlTabla = htmlTabla + "\n\t\t<td> "+valoresX[x][0]+" </td>";
                 htmlTabla = htmlTabla + "\n\t\t<td> "+valoresX[x][1]+" </td>"; 
                 htmlTabla = htmlTabla + "\n\t</tr>";
             }
+            */
             htmlTabla= htmlTabla+"\n</tbody>";
             document.getElementById("cuerpoValoresX").innerHTML = htmlTabla;
         }
         function colocarValoresY(){
             var htmlTabla = "<tbody>";
+            for(let i = 0; i < valoresX.length; i++){
+                htmlTabla = htmlTabla + "\n\t<tr>";
+                for(let j = 0; j < valoresX[0].length; j++ ){
+                    htmlTabla = htmlTabla + "\n\t\t<td> "+valoresX[i][j]+" </td>";    
+                }   
+                htmlTabla = htmlTabla + "\n\t</tr>";
+            }
+            /*
             for(const y in valoresY){
                 htmlTabla = htmlTabla + "\n\t<tr>";
                 htmlTabla = htmlTabla + "\n\t\t<td> "+valoresY[y][0]+" </td>";
                 htmlTabla = htmlTabla + "\n\t\t<td> "+valoresY[y][1]+" </td>"; 
                 htmlTabla = htmlTabla + "\n\t</tr>";
             }
+            */
             htmlTabla= htmlTabla+"\n</tbody>";
             document.getElementById("cuerpoValoresY").innerHTML = htmlTabla;
         }
@@ -219,6 +270,7 @@
         }
 
         function ejecutarAlgoritmo(){
+            
             var minimosCuadradosParciales = new PLS(hiperparams);
             minimosCuadradosParciales.train(valoresX, valoresY);
             colocarMatrizResultados(minimosCuadradosParciales.T, 'T');
@@ -229,12 +281,11 @@
             colocarMatrizResultados(minimosCuadradosParciales.W, 'W');
         }
 
-        
         colocarValoresX();
         colocarValoresY();
         colocarValoresIniciales();
 
         /**/
-        ejecutarAlgoritmo();
+        //ejecutarAlgoritmo();
     </script>
 </html>
