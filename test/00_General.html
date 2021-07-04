@@ -711,6 +711,63 @@
 				</article>
 			</section>
 
+			<section id="septimo">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">Linear Regression</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+
+					</div>
+					<div>
+						<p id="log7"></p>    
+						<div id="chart_div7" style="width: 900px; height: 500px;"></div>
+						<script type="text/javascript">
+							var xTrain = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+							var yTrain = [1, 4, 1, 5, 3, 7, 2, 7, 4, 9]
+							var linear = new LinearRegression()
+							linear.fit(xTrain, yTrain)
+							yPredict = linear.predict(xTrain)
+							document.getElementById("log7").innerHTML+='<br>X Train:   '+xTrain+'<br>Y Train:   '+yTrain+'<br>Y Predict: '+yPredict
+							var a = joinArrays('x',xTrain,'yTrain',yTrain,'yPredict',yPredict)
+
+							google.charts.load('current', {'packages':['corechart']});
+							google.charts.setOnLoadCallback(drawChart);
+							
+							function drawChart() {
+								var data = google.visualization.arrayToDataTable(a);
+								var options = {
+									seriesType : 'scatter',
+									series: {1: {type: 'line'}}
+								};  
+								var chart = new google.visualization.ComboChart(document.getElementById('chart_div7'));
+								chart.draw(data, options);         
+							}    
+						</script>
+					</div>
+				</article>
+			</section>
+
 			
 			<section id="sexto">
 				<article class="box post post-excerpt">
@@ -764,6 +821,7 @@
 				<li><a href="#cuarto">K-Nearest Neighbor</a></li>
 				<li><a href="#quinto">Simple Neural Networks</a></li>
 				<li><a href="#sexto">Decision Tree</a></li>
+				<li><a href="#septimo">Linear Regression</a></li>
 				
 
 			</ul>
