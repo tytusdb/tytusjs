@@ -64,6 +64,8 @@ Pure Javascript Machine Learning Library
 
 [30 Custom Linear Regression Example (07)](https://tytusdb.github.io/tytusjs/test/30_linearRegresionCustomExample.html)
 
+[31 Bayes Method Example](https://tytusdb.github.io/tytusjs/test/30_bayes.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
 
