@@ -183,12 +183,50 @@
             document.getElementById("cuerpoValoresIniciales").innerHTML = htmlTabla;
         }
 
+        function colocarMatrizResultados(opcion,tipoMatriz){  //donde tipo puede ser T,P,U,Q,B,W
+            var htmlTabla = "<tbody>";
+            
+            for(let i = 0; i<opcion.data.length; i++){
+                htmlTabla = htmlTabla + "\n\t<tr>";
+                for(let j = 0; j<opcion.data[i].length; j++){
+                    htmlTabla = htmlTabla + "\n\t\t<td> "+opcion.data[i][j]+" </td>"; 
+                }
+                htmlTabla = htmlTabla + "\n\t</tr>";
+            }
+            htmlTabla= htmlTabla+"\n</tbody>";
 
+            if(tipoMatriz == 'T'){
+                document.getElementById("cuerpoTablaPuntuacionX").innerHTML = htmlTabla;
+                document.getElementById("tituloX").colSpan = opcion.data[0].length;
+            }else if(tipoMatriz == 'P'){
+                document.getElementById("cuerpoTablaCargaX").innerHTML = htmlTabla;
+                document.getElementById("tituloCX").colSpan = opcion.data[0].length;
+            }else if(tipoMatriz == 'U'){
+                document.getElementById("cuerpoTablaPuntuacionY").innerHTML = htmlTabla;
+                document.getElementById("tituloY").colSpan = opcion.data[0].length;
+            }else if(tipoMatriz == 'Q'){
+                document.getElementById("cuerpoTablaCargaY").innerHTML = htmlTabla;
+                document.getElementById("tituloCY").colSpan = opcion.data[0].length;
+            }else if(tipoMatriz == 'B'){
+                document.getElementById("cuerpoTablaCoeficiente").innerHTML = htmlTabla;
+                document.getElementById("tituloCoeficiente").colSpan = opcion.data[0].length;
+            }else if(tipoMatriz == 'W'){
+                document.getElementById("cuerpoTablaPesoX").innerHTML = htmlTabla;
+                document.getElementById("tituloPesoX").colSpan = opcion.data[0].length;
+                console.log(opcion);
+            }
+
+        }
 
         function ejecutarAlgoritmo(){
             var minimosCuadradosParciales = new PLS(hiperparams);
             minimosCuadradosParciales.train(valoresX, valoresY);
-
+            colocarMatrizResultados(minimosCuadradosParciales.T, 'T');
+            colocarMatrizResultados(minimosCuadradosParciales.P, 'P');
+            colocarMatrizResultados(minimosCuadradosParciales.U, 'U');
+            colocarMatrizResultados(minimosCuadradosParciales.Q, 'Q');
+            colocarMatrizResultados(minimosCuadradosParciales.B, 'B');
+            colocarMatrizResultados(minimosCuadradosParciales.W, 'W');
         }
 
         
