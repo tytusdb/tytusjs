@@ -70,33 +70,42 @@ class LogisticRegression extends LogisticModel {
     }
     // gradiente
     grad(X, Y, theta) {
-        var N = X.length;
-        var Vx = [];
-        for(var d = 0; d < this.dim; ++d) {
-            var sum = 0.0;
-            for(var i = 0; i < N; ++i){
-                var x_i = X[i];
-                var predicted = this.h(x_i, theta);
-                sum += ((predicted - Y[i]) * x_i[d] + this.lambda * theta[d]) / N;
-            }    
-            Vx.push(sum);
+        try {
+            var N = X.length;
+            var Vx = [];
+            for(var d = 0; d < this.dim; ++d) {
+                var sum = 0.0;
+                for(var i = 0; i < N; ++i){
+                    var x_i = X[i];
+                    var predicted = this.h(x_i, theta);
+                    sum += ((predicted - Y[i]) * x_i[d] + this.lambda * theta[d]) / N;
+                }    
+                Vx.push(sum);
+            }
+            
+            return Vx;
+        }catch(e){
+            console.log(e)
         }
-        
-        return Vx;
-        
     }
     //valor h function predicted
     h(x_i, theta) {
-        var gx = 0.0;
-        for(var d = 0; d < this.dim; ++d){
-            gx += theta[d] * x_i[d];
+        try {
+            var gx = 0.0;
+            for(var d = 0; d < this.dim; ++d){
+                gx += theta[d] * x_i[d];
+            }
+            return 1.0 / (1.0 + Math.exp(-gx));
+        } catch(e){
+            console.log(e)
         }
-        return 1.0 / (1.0 + Math.exp(-gx));
     }
     // transformar
     transform(x) {
+        console.log("VALOR DE X: "+x)
         if(x[0].length){ // x is a matrix            
             var predicted_array = [];
+            console.log("LOGITUD : " + x.length)
             for(var i=0; i < x.length; ++i){
                 var predicted = this.transform(x[i]);
                 predicted_array.push(predicted);
