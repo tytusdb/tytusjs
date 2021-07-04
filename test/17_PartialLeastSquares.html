@@ -17,7 +17,7 @@
                 
                 <div class="col-lg-2"></div>
                 <div class="col-lg-4">
-                    <table class="table table-dark table-hover text-center" id="valoresX">
+                    <table class="table table-primary table-hover text-center" id="valoresX">
                         <thead>
                             <tr>
                               <th colspan="2">Valores X</th>
@@ -29,7 +29,7 @@
                     </table> 
                 </div>
                 <div class="col-lg-4">
-                    <table class="table table-dark table-hover text-center" id="valoresY">
+                    <table class="table table-primary table-hover text-center" id="valoresY">
                         <thead>
                             <tr>
                               <th colspan="2">Valores Y</th>
@@ -44,7 +44,7 @@
             <div class="row" style="margin-top: 2%;">
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4">
-                    <table class="table table-dark table-hover text-center" id="tablaValoresIniciales">
+                    <table class="table table-primary table-hover text-center" id="tablaValoresIniciales">
                         <thead>
                             <tr>
                               <th colspan="2">Valores Iniciales</th>
@@ -62,12 +62,12 @@
                 </div>
                 <div class="col-lg-2">
                     <label for="nuevosVX">Valores X en formato JSON:</label>
-                    <textarea class="form-control" id="nuevosVX" rows="5"></textarea>
+                    <textarea class="form-control" id="nuevosVX" rows="5">[[0.01,0.02],[0.02,0.03],[0.25,0.69],[0.58,0.74],[0.95,1.2]]</textarea>
                 </div>
 
                 <div class="col-lg-2">
                     <label for="nuevosVY">Valores Y en formato JSON:</label>
-                    <textarea class="form-control" id="nuevosVY" rows="5"></textarea>
+                    <textarea class="form-control" id="nuevosVY" rows="5">[[1,0],[0,1],[0,1],[1,0],[0,1]]</textarea>
                 </div>
 
                 <div class="col-lg-4">
@@ -83,14 +83,14 @@
                     <input type="text" name="nuevosVectores" id="nuevosVectores">
                     <br>
                     <br>
-                    <input type="button" value="Ejecutar nuevamente el algoritmo" onclick="ejecutarAlgoritmoPropio()">
+                    <input type="button" value="Ejecutar nuevamente el algoritmo" onclick="nuevoEjecutarAlgoritmo()">
                 </div>
                 <div class="col-lg-2">
 
                 </div>
             </div>
             <div class="row" style="margin-top: 2%;">
-                <table class="table table-dark table-hover text-center" id="tablaPuntuacionX">
+                <table class="table table-primary table-hover text-center" id="tablaPuntuacionX">
                     <thead>
                         <tr>
                           <th id="tituloX" colspan="2">Matriz de puntuacion X</th>
@@ -102,7 +102,7 @@
                 </table>
             </div>
             <div class="row" style="margin-top: 2%;">
-                <table class="table table-dark table-hover text-center" id="tablaCargaX">
+                <table class="table table-primary table-hover text-center" id="tablaCargaX">
                     <thead>
                         <tr>
                           <th id="tituloCX" colspan="2">Matriz de carga X</th>
@@ -115,7 +115,7 @@
             </div>
 
             <div class="row" style="margin-top: 2%;">
-                <table class="table table-dark table-hover text-center" id="tablaPuntuacionY">
+                <table class="table table-primary table-hover text-center" id="tablaPuntuacionY">
                     <thead>
                         <tr>
                           <th id="tituloY" colspan="2">Matriz de puntuacion Y</th>
@@ -127,7 +127,7 @@
                 </table>
             </div>
             <div class="row" style="margin-top: 2%;">
-                <table class="table table-dark table-hover text-center" id="tablaCargaY">
+                <table class="table table-primary table-hover text-center" id="tablaCargaY">
                     <thead>
                         <tr>
                           <th id="tituloCY" colspan="2">Matriz de carga Y</th>
@@ -140,7 +140,7 @@
             </div>
             
             <div class="row" style="margin-top: 2%;">
-                <table class="table table-dark table-hover text-center" id="tablaCoeficiente">
+                <table class="table table-primary table-hover text-center" id="tablaCoeficiente">
                     <thead>
                         <tr>
                           <th id="tituloCoeficiente" colspan="2">Matriz de Coeficiente de Regresion</th>
@@ -152,7 +152,7 @@
                 </table>
             </div>
             <div class="row" style="margin-top: 2%;">
-                <table class="table table-dark table-hover text-center" id="tablaPesoX">
+                <table class="table table-primary table-hover text-center" id="tablaPesoX">
                     <thead>
                         <tr>
                           <th id="tituloPesoX" colspan="2">Matriz de peso de X</th>
@@ -170,8 +170,8 @@
         //var valoresX = [[0.01,0.02],[0.02,0.03],[0.25,0.69],[0.58,0.74],[0.95,1.2]];
         //var valoresY =[[1,0],[0,1],[0,1],[1,0],[0,1]];
         
-        var valoresX = [[0.12, 0.02],[0.25, 1.01],[0.95, 0.01],[1.01, 0.96]];
-        var valoresY = [[1, 0],[1, 0],[1, 0],[0, 1]];
+        var valoresX = [[0.01,0.02],[0.02,0.03],[0.25,0.69],[0.58,0.74],[0.95,1.2]];
+        var valoresY = [[1,0],[0,1],[0,1],[1,0],[0,1]];
         
         var hiperparams = {
             tolerance : 0.0001,
@@ -223,12 +223,12 @@
         function colocarValoresIniciales(){
             var htmlTabla = "<tbody>";
             htmlTabla = htmlTabla + "\n\t<tr>";
-            htmlTabla = htmlTabla + "\n\t\t<td> Vectores Latentes </td>";
-            htmlTabla = htmlTabla + "\n\t\t<td> "+hiperparams.latentVectors+" </td>"; 
-            htmlTabla = htmlTabla + "\n\t</tr>";
-            htmlTabla = htmlTabla + "\n\t<tr>";
             htmlTabla = htmlTabla + "\n\t\t<td> Tolerancia </td>";
             htmlTabla = htmlTabla + "\n\t\t<td> "+hiperparams.tolerance+" </td>"; 
+            htmlTabla = htmlTabla + "\n\t</tr>";
+            htmlTabla = htmlTabla + "\n\t<tr>";
+            htmlTabla = htmlTabla + "\n\t\t<td> Vectores Latentes </td>";
+            htmlTabla = htmlTabla + "\n\t\t<td> "+hiperparams.latentVectors+" </td>"; 
             htmlTabla = htmlTabla + "\n\t</tr>";
             htmlTabla = htmlTabla + "\n</tbody>";
             document.getElementById("cuerpoValoresIniciales").innerHTML = htmlTabla;
@@ -281,11 +281,33 @@
             colocarMatrizResultados(minimosCuadradosParciales.W, 'W');
         }
 
+        function nuevoEjecutarAlgoritmo(){
+            let x = document.getElementById("nuevosVX").value;
+            let y = document.getElementById("nuevosVY").value;
+            
+            let tolerancia = document.getElementById("nuevaTolerancia").value;
+            let vectores = document.getElementById("nuevosVectores").value;
+
+            valoresX = JSON.parse(x);
+            valoresY = JSON.parse(y);
+            
+            hiperparams.tolerance = parseFloat(tolerancia, 10);
+            hiperparams.latentVectors = parseInt(vectores, 10);
+
+
+            console.log(valoresX);
+            console.log(valoresY);
+            console.log(hiperparams);
+            colocarValoresX();
+            colocarValoresY();
+            colocarValoresIniciales();
+            ejecutarAlgoritmo();
+        }
+
         colocarValoresX();
         colocarValoresY();
         colocarValoresIniciales();
-
         /**/
-        //ejecutarAlgoritmo();
+        ejecutarAlgoritmo();
     </script>
 </html>
