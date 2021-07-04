@@ -74,7 +74,7 @@ Log Notes
 |70|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Ejecucion de tests del algoritmo desde el ejemplo|Finalizado|04/07/2021|
 |71|04/07/2021|1|gpeitzner|1|Regresión Polinomial|Prueba Beta de Regresión Polinomial|Finalizado|04/07/2021|
 |72|04/07/2021|1|carlospnd|5|Perceptron|Diseño del algoritmo Perceptron|En desarrollo|En desarrollo|
-|73|04/07/2021|1|Ingrdrpm|1|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|04/07/2021|
+|73|04/07/2021|1|Ingridrpm|1|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|04/07/2021|
 |74|04/07/2021|1|PabloOsuna1997|1|Regresion Plynomial|Prueba Regresion Polinomial|Finalizado|04/07/2021|
 |75|04/07/2021|1|SergioGuoz|4|K-nearest neighbor|Desarrollo funcionalidad predecir|Finalizado|04/07/2021|
 |76|04/07/2021|1|rafalejy|16|Naive Bayes|Prueba beta y ejemplo |En desarrollo|04/07/2021|
