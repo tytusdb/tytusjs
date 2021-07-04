@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <script type="text/javascript" src="../src/G8_KnearestNeighbor.js"></script>
+    </head>
+    <body>
+        <h1>K-Nearest Neighbor</h1>
+        <p id="Resp"></p>
+        <table id="tabla">
+            <tr>
+                <th>Individuo</th>
+                <th>V1</th>
+                <th>V2</th>
+                <th>V3</th>
+                <th>Clase</th>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>1</td>
+                <td>9</td>
+                <td>2</td>
+                <td>A1</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>9</td>
+                <td>8</td>
+                <td>8</td>
+                <td>A3</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>2</td>
+                <td>8</td>
+                <td>3</td>
+                <td>A1</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>9</td>
+                <td>1</td>
+                <td>8</td>
+                <td>A2</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>A1</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>9</td>
+                <td>8</td>
+                <td>9</td>
+                <td>A3</td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>8</td>
+                <td>2</td>
+                <td>9</td>
+                <td>A2</td>
+            </tr>
+            <tr>
+                <td>H</td>
+                <td>7</td>
+                <td>5</td>
+                <td>6</td>
+                <td>?</td>
+            </tr>
+        </table>
+
+        <script>
+            var datos = [
+                ["A", [1,9,2], "I"],
+                ["B", [9,8,8], "III"],
+                ["C", [2,8,3], "I"],
+                ["D", [9,1,8], "II"],
+                ["E", [2,8,2], "I"],
+                ["F", [9,8,9], "III"],
+                ["G", [8,2,9], "II"]
+            ];
+            var newIndividuo = ["H", [7,5,6]];
+            let Manhattan = predecirCluster(1, datos, newIndividuo);
+            let Euclidiana = predecirCluster(2, datos, newIndividuo);
+
+            let html = document.getElementById("Resp");
+            let resp = 'El resultado es:<br/>';
+            resp += `Manhattan: ${Manhattan}<br/>`;
+            resp += `Euclidiana: ${Euclidiana}`;
+            html.innerHTML = resp;
+            
+            
+        </script>
+    </body>
+</html>
