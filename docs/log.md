@@ -49,3 +49,4 @@ Log Notes
 |45|03/07/2021|1|michikatrins|9|Metodo de Bayes Gaussian|Test del argoritmo |Desarrollo|03/07/2021|
 |46|03/07/2021|1|CPeraltaa|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
 |47|03/07/2021|1|jossiebk|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
+|48|03/07/2021|1|huriel2g|18|Redes Neuronales|Prueba Beta Redes Neuronales|Finalizado|03/07/2021|
