@@ -52,9 +52,11 @@ Log Notes
 |48|03/07/2021|1|huriel2g|18|Redes Neuronales|Prueba Beta Redes Neuronales|Finalizado|03/07/2021| 
 |49|03/07/2021|1|dianajimeneza|4|Método de Bayes|Pruebas del método|Desarrollo|04/07/2021| 
 |50|03/07/2021|1|QuiqueMRamirez|4|Método de Bayes|Especificaciones del software|Desarrollo|04/07/2021| 
-|51|03/07/2021|1|jorsala1|7|Redes Neuronales|Prueba beta Neuronal Network|En desarrollo|03/07/2021|
-|52|03/07/2021|1|bchacon45|7|K-nearest neigbor|Prueba beta K-nearest neigbor|En desarrollo|03/07/2021|
+|51|03/07/2021|1|jorsala1|7|Redes Neuronales|Prueba beta Neuronal Network| Finalizado |03/07/2021|
+|52|03/07/2021|1|bchacon45|7|K-nearest neigbor|Prueba beta K-nearest neigbor|Finalizado |03/07/2021|
 |53|03/07/2021|1|andreaflores|5|Web unificada|Diseño y ejemplos|En desarrollo|En desarrollo|
 |54|03/07/2021|1|pablorrp1|2|Librería unificada|Unificar archivos Arrays, BayesMethod, DecissionTreeID3, Distance, FuzzySet, kmeans, KNearestNeighbor, Linear Model, NaiveBayes, NeuronalNetwork, PartialLeastSquares, PolynomialModel y svm|Finalizado|03/07/2021|
 |55|03/07/2021|1|hugofiguer9777|4|K-nearest neigbor|Codificacion de metodo para mapear distancia|En Desarrollo|03/07/2021|
 |56|03/07/2021|1|brandonBBAL1994|17|Regresion Lineal|Prueba beta de regresion lineal|Finalizado|03/07/2021|
+|57|03/07/2021|1|MarielosH|7| Partial Least Squares |Prueba beta Partial Least Squares|Finalizado |03/07/2021|
+|58|03/07/2021|1|sandraeu|7|Linear Regression|Prueba beta Linear Regression |Finalizado |03/07/2021|
