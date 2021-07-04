@@ -1,0 +1,73 @@
+<html>
+<head>
+<script type="text/javascript" src="../dist/tytus.js"></script>
+<script type="text/javascript" src="../src/LogisticRegression.js"></script>
+<script type="text/javascript" src="../src/Arrays.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+<h2>Logistic Regression</h2>
+<p id="log"></p>    
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+<script type="text/javascript">
+var xTrain = [6.8,4.3,5.4,5.8,6.2,5.6,5.2,6.3,5.6,5,7.2,6.4,5.5,6.7,6.7,4.9,7.7,6.7,6,6.3,4.8,6,7.7,4.8,4.8,6.6,4.8,5,5,5.5,5.7,4.8,5,5.4,6.4,4.9,4.4,4.9,6.4,4.9,6.3,6.3,6.9,5.1,5.1,4.6,7.4,6.4,6.1,5.1,6.1,7.7,7.2,6.2,5.7,5,5.2,7.2,4.9,5.9,6.3,5.1,6.3,4.7,6.9,6.5,5,5.3,4.4,5.8,5.7,6,5.6,7.1,5,6.8,5.4,6.9,4.6,7.7,5.9,6.3,6.4,5.8,5.2,6.9,5.5,6.2,5.4,4.9,5.2,6.5,6.5,4.5,6,6.3,5.5,5.5,7,5,5.1,5.4,4.6,5.7,5.6,5.5,5.7,6,4.6,5.5,5.8,6,6.6,6.5,6.8,7.9,6.7,6.5,5.6,5.9,6.7,6.7,5.1,6.1,6.4,5.1,5.7,5.7,7.6,6.3,5.1,7.3,5.8,6.1,4.7]
+var yTrain = [2.8,3,3.4,2.7,2.2,2.5,2.7,2.8,2.7,3.2,3.6,3.2,3.5,3.1,3.3,2.5,3.8,3.1,3.4,2.9,3,2.7,2.6,3.4,3.1,3,3,3.4,3.5,4.2,4.4,3.4,3,3,2.7,3.1,2.9,3.1,3.2,2.4,2.7,3.3,3.2,3.7,3.8,3.2,2.8,3.1,2.6,3.8,2.8,3,3.2,2.9,3.8,3.6,3.5,3,3.1,3.2,3.3,3.4,2.5,3.2,3.1,2.8,3.4,3.7,3.2,2.6,2.5,3,3,3,2.3,3,3.4,3.1,3.1,2.8,3,3.4,2.9,2.7,3.4,3.1,2.4,2.8,3.9,3,4.1,3.2,3,2.3,2.2,2.5,2.5,2.6,3.2,3.5,3.5,3.7,3.6,2.6,2.8,2.4,2.9,2.2,3.4,2.3,2.8,2.9,2.9,3,3.2,3.8,3,3,2.9,3,3.1,2.5,3.8,2.8,2.8,3.5,2.8,2.8,3,2.3,3.3,2.9,2.7,2.9,3.2]
+var zActualValue = [0,0,0,0,0,0,0,1,0,0,1,0,0,0,1,1,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,1,0,0,0,1,1,1,0,0,1,1,0,0,0,0,1,0,0,1,0,1,0,1,0,0,0,0,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,1,1,1,1,0,1,1,1,0,0,1,0,0,0,1,0,0,1,0,0,0]
+var matriz = []
+for (let i = 0; i < xTrain.length; i++) {
+    var matrizTMP = [] 
+    matrizTMP.push(xTrain[i])
+    matrizTMP = matrizTMP.concat(yTrain[i],zActualValue[i])
+    matriz.push(matrizTMP)
+}
+
+var logistic = new LogisticRegression()
+var fit = logistic.fit(matriz)
+var yPredict = []
+for(var i=0; i < matriz.length; ++i){
+    var p = logistic.transform(matriz[i]);
+    var predicted = p >= logistic.threshold ? 1 : 0;
+    console.log("logistic binary logistic testing: actual: " + matriz[i][2] + " predicted: " + predicted);
+    yPredict.push(predicted)
+}
+
+
+for (let i = 0; i < yPredict.length; i++) {
+    for (let j = 0; j < yPredict.length; j++) {
+        if (yPredict[j] > yPredict[j + 1]) {
+            let temp = yPredict[j];
+            yPredict[j] = yPredict[j + 1];
+            yPredict[j + 1] = temp;
+        }
+    }
+}
+
+// yPredict = logistic.grad(xTrain)
+document.getElementById("log").innerHTML+='<br>X Train:   '+xTrain+'<br>Y Train:   '+yTrain+'<br>Y Predict: '+yPredict
+for (let i = 0; i < xTrain.length; i++) {
+    xTrain[i] = xTrain[i]/10;
+    yTrain[i] = yTrain[i]/10;
+}
+var a = joinArrays('x',xTrain,'yTrain',yTrain,'yPredict',yPredict)
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+  
+function drawChart() {
+    var data = google.visualization.arrayToDataTable(a);
+    var options = {
+        seriesType : 'scatter',
+        trendlines: {
+            1: {
+                type: 'polynomial',
+                degree: 3,
+                visibleInLegend: true,
+            }
+        }
+    };  
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+    chart.draw(data, options);         
+}    
+</script>
+</body>
+</html>
