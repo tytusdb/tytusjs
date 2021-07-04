@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naive Bayes Method</title>
+    <!--Import library tytus.js-->
+    <script type="text/javascript" src="../dist/tytus.js"></script>
+    <!--style-->
+    <style>
+        div {
+            margin-right: 150px;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <hr color="mediumspringgreen" size=3></hr>
+    <div>
+       
+        <p><h1><center>Bayes Method</center> </h1></p>
+    
+    </div>
+    <hr color="mediumspringgreen" size=3></hr>
+    <div>
+        <p><b>Calculation</b></p>
+        <p>P(cause|effect 1, .....effect n) = P(cause) * II P(effect/cause)</p>
+    </div>
+    <hr color="mediumspringgreen" size=3></hr>
+    <div>
+        <p><b>Example:</b></p>
+    </div>
+    <div style="margin-left: 170px;">
+        A small training set
+        <table border="1" style="border: 1px; border-color: black;">
+            <thead>
+                <tr>
+                    <th colspan="1" style="background-color:mediumspringgreen">No</th>
+                    <th colspan="4" style="background-color:mediumspringgreen">Attributes</th>
+                    <th colspan="1" style="background-color:mediumspringgreen">Class</th>
+                </tr>
+                <tr>
+                    <th style="background-color:mediumaquamarine"></th>
+                    <th style="background-color:mediumaquamarine">Outlook</th>
+                    <th style="background-color:mediumaquamarine">Temperature</th>
+                    <th style="background-color:mediumaquamarine">Humidity</th>
+                    <th style="background-color:mediumaquamarine">Windy</th>
+                    <th style="background-color:mediumaquamarine"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>sunny</td>
+                    <td>hot</td>
+                    <td>high</td>
+                    <td>false</td>
+                    <td>N</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>sunny</td>
+                    <td>hot</td>
+                    <td>high</td>
+                    <td>true</td>
+                    <td>N</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>overcast</td>
+                    <td>hot</td>
+                    <td>high</td>
+                    <td>false</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>rain</td>
+                    <td>mild</td>
+                    <td>high</td>
+                    <td>false</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>rain</td>
+                    <td>cool</td>
+                    <td>normal</td>
+                    <td>false</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>rain</td>
+                    <td>cool</td>
+                    <td>normal</td>
+                    <td>true</td>
+                    <td>N</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>overcast</td>
+                    <td>cool</td>
+                    <td>normal</td>
+                    <td>true</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>sunny</td>
+                    <td>mild</td>
+                    <td>high</td>
+                    <td>false</td>
+                    <td>N</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>sunny</td>
+                    <td>cool</td>
+                    <td>normal</td>
+                    <td>false</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>rain</td>
+                    <td>mild</td>
+                    <td>normal</td>
+                    <td>false</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>sunny</td>
+                    <td>mild</td>
+                    <td>normal</td>
+                    <td>true</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>overcast</td>
+                    <td>mild</td>
+                    <td>high</td>
+                    <td>true</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>overcast</td>
+                    <td>hot</td>
+                    <td>normal</td>
+                    <td>false</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>rain</td>
+                    <td>mild</td>
+                    <td>high</td>
+                    <td>true</td>
+                    <td>N</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+    </br>
+        Suppose that N is Not Win and P is Win
+    </br>
+        1. Find the probability P(not win | sunny, hot, high, false)
+    </div>
+    <hr color="mediumspringgreen" size=3></hr>
+    <div>
+        <p><h3>Solution:</h3></p>
+    </div>
+    <div div style="margin-left: 170px;">
+       
+        <p><b>Calculation of P(not win| sunny, hot, high, false)</b></p>
+        <p>P(sunny| not_win): <b id="p1" style="color: blue;"></b></p>
+        <p>P(hot| not_win): <b id="p2" style="color: blue;"></b></p>
+        <p>P(high| not_win): <b id="p3" style="color: blue;"></b></p>
+        <p>P(false| not_win): <b id="p4" style="color: blue;"></b></p>
+        <p>P(not win| sunny, hot, high, false): <b id="res2" style="color: blue;"></b></p>
+        <p>The result of the probability calculation P(not win| sunny, hot, high, false) is <b id="res3"></b> </p>
+
+    </div>
+    <script>
+        //Bayes method from tytus.js
+        var bayes = new BayesMethod()   
+
+        //Outlook data
+        bayes.addAttribute(['sunny', 'sunny', 'overcast', 'rain', 'rain', 'rain', 'overcast', 'sunny', 'sunny', 'rain', 'sunny', 'overcast', 'overcast', 'rain'],'outlook')
+        //Temperature data
+        bayes.addAttribute(['hot', 'hot', 'hot', 'mild', 'cool', 'cool', 'cool', 'mild', 'cool', 'mild', 'mild', 'mild', 'hot', 'mild'],'temperature')
+        //humidity data
+        bayes.addAttribute(['high', 'high', 'high', 'high', 'normal', 'normal', 'normal', 'high', 'normal', 'normal', 'normal', 'high', 'normal', 'high'],'humidity')
+        //Windy data
+        bayes.addAttribute(['false', 'true', 'false', 'false', 'false', 'true', 'true', 'false', 'false', 'false', 'true', 'true', 'false', 'true'],'windy')
+        //class
+        bayes.addClass(['N', 'N', 'P', 'P', 'P', 'N', 'P', 'N', 'P', 'P', 'P', 'P', 'P', 'N'],'class')        
+        
+        bayes.train()
+        
+        //--------------------------------------probability calculation------------------------------------------------------
+        //P(sunny| not_win)
+        var p1 = bayes.probability('outlook', 'sunny', 'N')
+        var percentageP1= p1.toFixed(2);
+        document.getElementById('p1').innerHTML=p1 +' = ' + percentageP1+'%'  //set in <b>  with id p1
+        console.log(`P(N|sunny) = ${p1}`)
+        //P(hot| not_win):
+        var p2 = bayes.probability('temperature', 'hot', 'N')
+        var percentageP2= p2.toFixed(2);
+        document.getElementById('p2').innerHTML=p2+' = ' + percentageP2+'%'  //set in <b>  with id p2
+        console.log(`P(N|hot) = ${p2}`)
+        //P(high| not_win):
+        var p3 = bayes.probability('humidity', 'high', 'N')
+        var percentageP3= p3.toFixed(2);
+        document.getElementById('p3').innerHTML=p3 +' = ' + percentageP3+'%' //set in <b>  with id p3
+        console.log(`P(N|high) = ${p3}`)
+        //P(false| not_win)
+        var p4 = bayes.probability('windy', 'false', 'N')
+        var percentageP4= p4.toFixed(2);
+        document.getElementById('p4').innerHTML=p4 +' = ' + percentageP4+'%'; //set in <b>  with id p4
+        console.log(`P(N|false) = ${p4}`)
+
+        //------------------------------------calculation of probabilities using the predict method of bayes----------------
+        //P(not win| sunny, hot, high, false):
+        var res2 = bayes.predict(['sunny', 'hot', 'high', 'false'], 'N')
+        var resSplit= res2.toString().split(',')
+        document.getElementById('res2').innerHTML=res2  +' = '+parseFloat(resSplit[1]).toFixed(3)+"%"  //set in <b>  with id res2
+        document.getElementById('res3').innerHTML=parseFloat(resSplit[1]).toFixed(3)+"%"               //set in <b>  with id res3
+        
+        //---------------------------------------Others examples-------------------------------------------------------------
+        var res = bayes.predict(['sunny', 'hot'])
+        var res1 = bayes.predict(['sunny', 'hot', 'high', 'false'])
+        console.log(`Result if outlook='sunny', temperature='hot': ${res}`)
+        console.log(`Result if outlook='sunny', temperature='hot', humidity='high', windy='false': ${res1}`)
+        console.log(`P(N|sunny,hot,high,false) = ${res2}`)
+    </script>
+</body>
+</html>
