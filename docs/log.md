@@ -47,3 +47,4 @@ Log Notes
 |43|03/07/2021|1|marcolograjeda|13|Regresion polinomial|Implementación del algoritmo Regresion polinomial mejorando la solución finalizada por uhcorona previamente|Finalizado|03/07/2021|
 |44|03/07/2021|1|rafalejy|16|Naive Bayes|Análisis y diseño del algoritmo|En desarrollo|03/07/2021|
 |45|03/07/2021|1|jorsala1|7|Redes Neuronales|Prueba beta Neuronal Network|En desarrollo|03/07/2021|
+|46|03/07/2021|1|bchacon45|7|K-nearest neigbor|Prueba beta K-nearest neigbor|En desarrollo|03/07/2021|
