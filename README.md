@@ -66,6 +66,8 @@ Pure Javascript Machine Learning Library
 
 [31 Bayes Method Example](https://tytusdb.github.io/tytusjs/test/31_bayes.html)
 
+[32 Bayes Example (3)](https://tytusdb.github.io/tytusjs/test/28_NaiveBayesPrediction.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
 
