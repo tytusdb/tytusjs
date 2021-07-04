@@ -61,3 +61,5 @@ Log Notes
 |57|03/07/2021|1|MarielosH|7| Partial Least Squares |Prueba beta Partial Least Squares|Finalizado |03/07/2021|
 |58|03/07/2021|1|sandraeu|7|Linear Regression|Prueba beta Linear Regression |Finalizado |03/07/2021|
 |59|03/07/2021|1|javib94|7|KMeans |Clase para calcular y graficar centroides |Finalizado |03/07/2021|
+|60|03/07/2021|1|ChristianR007|8|Naive Bayes|Metodo de bayes por causa y efecto segun las probabilidades de la tabla|Finalizado|03/07/2021|
+
