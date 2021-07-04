@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Neural Network</title>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/journal/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <br />
+        <h1>Neural Network</h1>
+        <p>Trained with random numbers</p>
+        <p>[n1,n2]: Probability </p>
+
+        <h2>Prediction n1 > n2</h2>
+        <input style="width: 80%;margin-bottom: 10px;" id="n1_1" type="text" placeholder="Insert n1">
+        <br />
+        <input style="width: 80%;margin-bottom: 10px;" id="n2_1" type="text" placeholder="Insert n2">
+        <br />
+        <button id="predict1" style="margin-bottom: 10px;">Predict</button>
+        <p id="prediction_1"></p>
+
+        <h2>Prediction n1 < n2</h2>
+                <input style="width: 80%;margin-bottom: 10px;" id="n1_2" type="text" placeholder="Insert n1">
+                <br />
+                <input style="width: 80%;margin-bottom: 10px;" id="n2_2" type="text" placeholder="Insert n2">
+                <br />
+                <button id="predict2" style="margin-bottom: 10px;">Predict</button>
+                <p id="prediction_2"></p>
+    </div>
+</body>
+
+
+<script type="text/javascript" src="../dist/tytus.js"></script>
+<script>
+
+    document.getElementById('predict1').onclick = function () {
+        let design = [2, 4, 3, 2];
+
+        var n1 = document.getElementById('n1_1').value;
+        var n2 = document.getElementById('n2_1').value;
+        //n1 > n2 [n1, n2]
+        let brain = new NeuralNetwork(design);
+
+        for (let i = 0; i < 10000; i++) {
+            let num1 = Math.random(), num2 = Math.random();
+            brain.Entrenar([num1, num2], (num1 > num2 ? [1, 0] : [0, 1]));
+        }
+        var n = "[" + n1 + "," + n2 + "]: ";
+        document.getElementById("prediction_1").innerHTML = String(n + brain.Predecir([n1, n1]));
+
+    }
+
+
+    document.getElementById('predict2').onclick = function () {
+        let design = [2, 4, 3, 2];
+
+        var n1 = document.getElementById('n1_2').value;
+        var n2 = document.getElementById('n2_2').value;
+        //n1 < n2 [n1, n2]
+        let brain = new NeuralNetwork(design);
+
+        for (let i = 0; i < 10000; i++) {
+            let num1 = Math.random(), num2 = Math.random();
+            brain.Entrenar([num1, num2], (num1 < num2 ? [1, 0] : [0, 1]));
+        }
+        var n = "[" + n1 + "," + n2 + "]: ";
+        document.getElementById("prediction_2").innerHTML = String(n + brain.Predecir([n1, n1]));
+
+    }
+
+</script>
+
+</html>
