@@ -8,6 +8,13 @@ class KNearestNeighbor {
     this.individuals = individuals
   }
 
+  // Sobrecarga para uso en metodo de mapearGenerarDistancia
+  constructor(k = 1, data, labels) {
+    this.k = k;
+    this.data = data;
+    this.labels = labels;
+  }
+
   euclidean(point) {
     var distance = []
     var dimensions = this.individuals[0].length - 1
@@ -87,21 +94,21 @@ class KNearestNeighbor {
     const map = this.mapearGenerarDistancia(point);
     const votos = map.slice(0, this.k); //pasamos el valor k
     const votosCounts = votos
-        // Reduce a un objeto tipo {label: voteCount}
-        .reduce((obj, vote) => Object.assign({}, obj, {[vote.label]: (obj[vote.label] || 0) + 1}), {})
-    ;
+      // Reduce a un objeto tipo {label: voteCount}
+      .reduce((obj, vote) => Object.assign({}, obj, { [vote.label]: (obj[vote.label] || 0) + 1 }), {})
+      ;
     //Ordenar por medio del valor cantidad
     const sortedVotes = Object.keys(votosCounts)
-        .map(label => ({label, count: votosCounts[label]}))
-        .sort((a, b) => a.count > b.count ? -1 : 1)
-    ;
+      .map(label => ({ label, count: votosCounts[label] }))
+      .sort((a, b) => a.count > b.count ? -1 : 1)
+      ;
 
     return {
-        label: sortedVotes[0].label,
-        votosCounts,
-        votos
+      label: sortedVotes[0].label,
+      votosCounts,
+      votos
     };
 
-}
+  }
 
 }
