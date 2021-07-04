@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>Perceptron Test</title>
+<script src="../dist/tytus.js"></script>
+
+<body onLoad="perceptron();">
+    Perceptron:
+    <div id="output">
+    </div>
+
+<script type="text/javascript">
+
+function perceptron(){
+
+} 
+  var or = new Perceptron();
+  
+  or.train([0, 0], 0);
+  or.train([0, 1], 1);
+  or.train([1, 0], 1);
+  or.train([1, 1], 1);
+  
+  // practice makes perfect (we hope...)
+  var i = 0;
+  while(i++ < 10000 && !or.retrain()) {}
+  
+  printConsole('OR');
+  printConsole(or.perceive([0, 0]));
+  printConsole(or.perceive([0, 1]));
+  printConsole(or.perceive([1, 0]));
+  printConsole(or.perceive([1, 1]));
+  
+  var and = new Perceptron();
+  
+  and.train([0, 0], 0);
+  and.train([0, 1], 0);
+  and.train([1, 0], 0);
+  and.train([1, 1], 1);
+  
+  // practice makes perfect (we hope...)
+  var i = 0;
+  while(i++ < 10000 && !and.retrain()) {}
+  
+  printConsole('AND');
+  printConsole(and.perceive([0, 0]));
+  printConsole(and.perceive([0, 1]));
+  printConsole(and.perceive([1, 0]));
+  printConsole(and.perceive([1, 1]));
+
+  function printConsole(msg){
+
+    document.getElementById('output').innerHTML += msg + '<br/>';
+    console.log(msg);
+  }
+
+</script>
+
+<style type="text/css">
+body {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+}
+</style>
+
+</head>
+
+
+</body>
+</html>
