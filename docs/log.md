@@ -25,10 +25,11 @@ Log Notes
 |21|01/07/2021|2|esahuay|15|Regresión Lineal - Mínimos cuadarados |Análisis del algoritmo|En desarrollo|En desarrollo|
 |22|01/07/2021|2|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |En desarrollo|En desarrollo|
 |23|01/07/2021|2|wiicho57x|5|web unificada de ejemplox|diseño|Finalizado|Finalizado|02/07/2021|
-|24|02/07/2021|1|carlospnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
+|24|02/07/2021|1|
+spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |25|02/07/2021|1|andreaflores|5|Support Vector Machine|Análisis y diseño del algoritmo|Finalizado|03/07/2021|
-|26|02/07/2021|1|dodany|5|Partial Least-Squares|Codificación del algoritmo PLS|FInalizado|03/07/2021|
-|27|02/07/2021|1|dodany|5|Orthonormalized Partial Least Squares|Codificación del algoritmo OPLS|En desarrollo|En desarrollo|
+|26|02/07/2021|1|dodany|5|Partial Least-Squares|Codificación del algoritmo PLS|Finalizado|03/07/2021|
+|27|02/07/2021|1|dodany|5|Orthonormalized Partial Least Squares|Codificación del algoritmo OPLS|Finalizado|03/07/2021|
 |28|02/07/2021|1|Saulguz1|12|Regresión Logistica|Análisis del algoritmo|Finalizado|02/07/2021|
 |29|02/07/2021|1|coradowilly|12|Regresión Logistica|Construcción del algoritmo|En desarrollo|03/07/2021|
 |30|03/07/2021|2|wiicho57x|5|web unificada de ejemplo agregargando nuevos ejemplos|diseño|Finalizado|Finalizado|03/07/2021|
@@ -78,3 +79,4 @@ Log Notes
 |74|04/07/2021|1|PabloOsuna1997|1|Regresion Plynomial|Prueba Regresion Polinomial|Finalizado|04/07/2021|
 |75|04/07/2021|1|SergioGuoz|4|K-nearest neighbor|Desarrollo funcionalidad predecir|Finalizado|04/07/2021|
 |76|04/07/2021|1|rafalejy|16|Naive Bayes|Prueba beta y ejemplo |En desarrollo|04/07/2021|
+|77|02/07/2021|1|dodany|5|Perceptron |Prueba Beta Perceptron |Finalizado|04/07/2021|
