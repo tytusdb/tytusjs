@@ -69,3 +69,6 @@ Log Notes
 |65|04/07/2021|1|Saulguz1|12|Regresión Logistica|Diseño test Algoritmo Regresion Logistica Multiclase|En Desarrollo|04/07/2021|
 |66|03/07/2021|1|coradowilly|12|Regresión Logistica|Diseño test del algoritmo|Finalizado|04/07/2021|
 |67|04/07/2021|1|coradowilly|12|Regresión Logistica|Desarrollo y Diseño del algoritmo MultiClass|En desarrollo|04/07/2021|
+|68|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Prueba beta de algoritmo minimos cuadrados parciales|Finalizado|04/07/2021|
+|69|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Ejemplo del algoritmo de regresion minimos cuadrados parciales|Finalizado|04/07/2021|
+|70|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Ejecucion de tests del algoritmo desde el ejemplo|Finalizado|04/07/2021|
