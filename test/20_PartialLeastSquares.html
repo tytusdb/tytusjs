@@ -1,0 +1,169 @@
+<html>
+<head>
+<script type="text/javascript" src="../dist/tytus.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
+<script type="text/javascript" src="../dist/tytus.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<h1 class="display-1 w-100 text-center">Partial Least Squares</h1>
+<div class="container">
+    <p><b>Valores X: </b> </p>
+    <table class="table table-dark">
+        
+        <tbody>
+          <tr>
+            <td>0.22</td>
+            <td>0.5</td>
+          </tr>
+          <tr>
+            <td>0.55</td>
+            <td>2.2</td>
+          </tr>
+          <tr>
+            <td>2.05</td>
+            <td>1.01</td>
+          </tr>
+          <tr>
+            <td>1.01</td>
+            <td>1.96</td>
+          </tr>
+        </tbody>
+      </table>
+   
+    
+    <p> <b>Valores Y: </b></p>
+    <table class="table table-dark">
+        
+        <tbody>
+          <tr>
+            <td>2</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>2.5</td>
+          </tr>
+        </tbody>
+      </table>
+    
+    <p> <b>Valores: </b></p>
+    <p class="bg-dark p-4 text-muted" style="border-radius: 10px;">
+        <code class="text-center">
+            latentVectors: 10,
+            tolerance: 1e-4,
+        </code>
+      
+    </p>
+    
+    <p> <b> T - Score matrix of X  </b> </p>
+    <table  class="table table-dark" id="tabla3"></table>
+    
+    <p> <b> P - Loading matrix of X </b></p>
+    <table  class="table table-dark" id="tabla4"></table>
+    
+    <p> <b> U - Score matrix of Y  </b></p>
+    <table class="table table-dark" id="tabla5"></table>
+    
+    <p> <b> Q - Loading matrix of Y</b> </p>
+    <table class="table table-dark" id="tabla6"></table>
+    
+    <p> <b> B - Matrix of regression coefficient  </b></p>
+    <table class="table table-dark"  id="tabla7"></table>
+    
+    <p> <b> W - Weight matrix of X  </b> </p>
+    <table class="table table-dark" id="tabla8"></table>
+
+
+      <script>
+        var X = [
+          [0.22, 0.5],
+          [0.55, 2.2],
+          [2.05, 1.01],
+          [1.01, 1.96],
+        ];
+        var Y = [
+          [2, 0],
+          [4, 2],
+          [1, 0],
+          [2, 2.5],
+        ];
+        var options = {
+          latentVectors: 10,
+          tolerance: 1e-4,
+        };
+        
+        
+        var pls = new PLS(options);
+        pls.train(X, Y);
+        
+        var tabla3= " <table> "
+            for (const i in pls.T.data) {        
+            tabla3 += "<tr>"
+            tabla3 += "<td>" + pls.T.data[i].toString().replace(",","   ,   ") + "</td>"
+            tabla3 += "</tr>"
+          }
+          tabla3 += "</table>"
+          document.getElementById("tabla3").innerHTML = tabla3
+        
+          var tabla4= "<table>"
+    for (const i in pls.P.data) {        
+    tabla4 += "<tr>"
+    tabla4 += "<td>" + pls.P.data[i].toString().replace(",","   ,   ") + "</td>"
+    tabla4 += "</tr>"
+  }
+    tabla4 += "</table>"
+    document.getElementById("tabla4").innerHTML = tabla4
+
+    var tabla5= "<table>"
+        for (const i in pls.U.data) {        
+        tabla5 += "<tr>"
+        tabla5 += "<td>" + pls.U.data[i].toString().replace(",","   ,   ") + "</td>"
+        tabla5 += "</tr>"
+    }
+    tabla5 += "</table>"
+    document.getElementById("tabla5").innerHTML = tabla5
+
+    var tabla6= "<table>"
+        for (const i in pls.Q.data) {        
+        tabla6 += "<tr>"
+        tabla6 += "<td>" + pls.Q.data[i].toString().replace(",","   ,   ") + "</td>"
+        tabla6 += "</tr>"
+    }
+    tabla6 += "</table>"
+    document.getElementById("tabla6").innerHTML = tabla6
+
+    var tabla7= "<table>"
+        for (const i in pls.B.data) {        
+        tabla7 += "<tr>"
+        tabla7 += "<td>" + pls.B.data[i].toString().replace(",","   ,   ") + "</td>"
+        tabla7 += "</tr>"
+    }
+    tabla7 += "</table>"
+    document.getElementById("tabla7").innerHTML = tabla7
+
+    var tabla8= "<table>"
+        for (const i in pls.W.data) {        
+        tabla8 += "<tr>"
+        tabla8 += "<td>" + pls.W.data[i].toString().replace(",","   ,   ") + "</td>"
+        tabla8 += "</tr>"
+    }
+    tabla8 += "</table>"
+    document.getElementById("tabla8").innerHTML = tabla8
+
+          
+        </script>
+</div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

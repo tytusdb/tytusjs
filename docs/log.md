@@ -60,4 +60,6 @@ Log Notes
 |56|03/07/2021|1|brandonBBAL1994|17|Regresion Lineal|Prueba beta de regresion lineal|Finalizado|03/07/2021|
 |57|03/07/2021|1|MarielosH|7| Partial Least Squares |Prueba beta Partial Least Squares|Finalizado |03/07/2021|
 |58|03/07/2021|1|sandraeu|7|Linear Regression|Prueba beta Linear Regression |Finalizado |03/07/2021|
-|57|03/07/2021|1|WillyAlberto|8|K-nearest neighbor|Algoritmo K-nearest neighbor basico por Manhattan y Euclidiana|Finalizado|03/07/2021|
+|59|03/07/2021|1|javib94|7|KMeans |Clase para calcular y graficar centroides |Finalizado |03/07/2021|
+|60|03/07/2021|1|ChristianR007|8|Naive Bayes|Metodo de bayes por causa y efecto segun las probabilidades de la tabla|Finalizado|03/07/2021|
+|61|03/07/2021|1|WillyAlberto|8|K-nearest neighbor|Algoritmo K-nearest neighbor basico por Manhattan y Euclidiana|Finalizado|03/07/2021|
