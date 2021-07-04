@@ -26,7 +26,7 @@ Log Notes
 |22|01/07/2021|2|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |En desarrollo|En desarrollo|
 |23|01/07/2021|2|wiicho57x|5|web unificada de ejemplox|diseño|Finalizado|Finalizado|02/07/2021|
 |24|02/07/2021|1|carlospnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
-|25|02/07/2021|1|andreaflores|5|Support Vector Machine|Análisis y diseño del algoritmo|Codificación svm|En desarrollo|
+|25|02/07/2021|1|andreaflores|5|Support Vector Machine|Análisis y diseño del algoritmo|Finalizado|03/07/2021|
 |26|02/07/2021|1|dodany|5|Partial Least-Squares|Codificación del algoritmo PLS|FInalizado|03/07/2021|
 |27|02/07/2021|1|dodany|5|Orthonormalized Partial Least Squares|Codificación del algoritmo OPLS|En desarrollo|En desarrollo|
 |28|02/07/2021|1|Saulguz1|12|Regresión Logistica|Análisis del algoritmo|Finalizado|02/07/2021|
