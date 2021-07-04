@@ -1,3 +1,9 @@
+/*
+The Naive Bayes classifier is a pretty popular text classification algorithm because of it’s simplicity.
+The Naive Bayes classifier takes in a corpus (body of text) known as a document, 
+which then a stemmer runs through the document and returns a “bag or words” so to speak. 
+Stemming is the process of reducing an inflected word to it’s word stem (root).
+*/
 class BayesMethod{
 
     constructor(){              
@@ -7,7 +13,9 @@ class BayesMethod{
         this.attributeNames = []  
         this.className = null
     }
-
+    /*
+    this method checks if the attribute is valid, if is valid then its pushed to an array
+    */
     addAttribute(values, attributeName){
         //check if attribute exists
         if (attributeName){
@@ -39,7 +47,9 @@ class BayesMethod{
         }        
         return true
     }
-
+    /*
+    this method cheks if there is a valid class to asign the values
+    */
     addClass(values, className){        
         if (this.class){
             //there's already a class defined (just one is allowed)
@@ -68,7 +78,9 @@ class BayesMethod{
         }        
         return true
     }
-
+    /*
+    this is the train method, with this we train our model to calculete its probability for each atribute and each class
+    */
     train(){
         if (!this.isModelValid()){
             throw Exception('Model not valid')
@@ -115,7 +127,9 @@ class BayesMethod{
         })
         return true
     }
-
+    /*
+    here we get the actual probability in a numeric value
+    */
     probability(attributeName, cause, effect){
         
         var attribIndex = this.attributeNames.findIndex(n => n === attributeName)
@@ -139,14 +153,16 @@ class BayesMethod{
 
         return P_E_C * P_C / P_E
     }
-
+    /*
+    This is the predict methos, for the cause sequence provided calculate its probability for each class
+    */
     predict(causes, effect = null){
         var classProbabilities = [];
         var classFrecuencyTable = this.frecuencyTables[this.frecuencyTables.length - 1]
         
         var _classes = classFrecuencyTable.values
         
-        //for the cause sequence provided calculate its probability for each class
+        
         _classes.forEach((_class, i) => {
             //calculate P(E|C1, C2, ... Cn) =  P(E) * Multiplicatory(P(C1|E))
             
@@ -189,7 +205,9 @@ class BayesMethod{
         }
     }
 
-
+    /*
+    this verify if there is a valid model then returns true if is valid
+    */
     isModelValid(){
         if (!this.classes){
             //classes needed
@@ -211,7 +229,9 @@ class BayesMethod{
         }
         return true
     }
-
+    /*
+    this transforns the values of each class into a frecuency table.
+    */
     toFrecuencyTable(values){
         if (!Array.isArray(values)){
             //values must be array
