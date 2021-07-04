@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="../dist/tytus.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+
+<body>
+    <h2>K-Nearest Neighbor</h2>
+    <h3>Training</h3>
+    <table id="tabla"></table>
+    <h3>For point</h3>
+    <table id="punto"></table>
+    <h4>Euclidean</h4>
+    <p id="logE"></p>
+    <h4>Manhattan</h4>
+    <p id="logM"></p>
+    <br>
+    <h4>Grafica</h4>
+    <div style="height: 20px;width: 20px;background-color: rgb(214, 14, 14);">N</div>
+    <br>
+    <div style="width: 0;height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 20px solid rgb(255, 230, 0);">P</div>
+    <br>
+    <div style="height: 20px;width: 20px;background-color: rgb(0, 160, 13);border-radius: 50%;">Point</div>
+    <br>
+    <div style="height: 20px;width: 20px;background-color: rgb(0, 102, 255);border-radius: 50%;">Neighbor</div>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+</body>
+<script>
+    var ind = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
+    var x = [5, 9, 8, 2, 3, 6, 5, 4, 7]
+    var y = [6, 9, 2, 1, 5, 8, 9, 6, 3]
+    var group = ["N", "P", "N", "N", "P", "P", "P", "N", "N"]
+    var point = [5, 8]
+    var tabla = "<table>"
+    for (const i in x) {
+        tabla += "<tr>"
+        tabla += "<td>" + ind[i] + "</td><td>" + x[i] + "</td><td>" + y[i] + "</td><td>" + group[i] + "</td>"
+        tabla += "</tr>"
+    }
+    tabla += "</table>"
+    document.getElementById("tabla").innerHTML = tabla
+    tabla = "<table>"
+    tabla += "<td> J </td><td>" + point[0] + "</td><td>" + point[1] + "</td>"
+    tabla += "</table>"
+    document.getElementById("punto").innerHTML = tabla
+</script>
+<script>
+    var individuals = zip([x, y, group])
+    var knn = new KNearestNeighbor(individuals)
+    var euc = knn.euclidean(point)
+    var man = knn.manhattan(point)
+    document.getElementById("logE").innerHTML = euc
+    document.getElementById("logM").innerHTML = man
+    google.charts.load("current", { packages: ["corechart"] });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable
+            ([['X', '1', '2', '3', '4'],
+            [5, 6,6, null, null],
+            [9, null,null, 9, null],
+            [8, null,2, null, null],
+            [2, null,1, null, null],
+            [3, null,null, 5, null],
+            [6, 8,null, 8, null],
+            [5, 9,null, 9, null],
+            [4, null,6, null, null],
+            [7, null,3, null, null],
+            [5, null,null, null, 8]
+            ]);
+
+        var options = {
+            legend: 'none',
+            pointSize: 30,
+            series: {
+                0: { pointShape: 'circle' },
+                1: { pointShape: 'square' },
+                2: { pointShape: 'triangle' },
+                3: { pointShape: 'circle' }
+            }
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+
+</html>
