@@ -23,7 +23,7 @@ Log Notes
 |19|01/07/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo 2D|Finalizado|03/07/2021|
 |20|01/07/2021|2|Diegog56|14|K-Means|Codificacion del algoritmo 2D|Finalizado|03/07/2021|
 |21|01/07/2021|2|esahuay|15|Regresión Lineal - Mínimos cuadarados |Análisis del algoritmo|En desarrollo|En desarrollo|
-|22|01/07/2021|2|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |En desarrollo|En desarrollo|
+|22|01/07/2021|3|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |Finalizado|05/07/2021|
 |23|01/07/2021|2|wiicho57x|5|web unificada de ejemplox|diseño|Finalizado|Finalizado|02/07/2021|
 |24|02/07/2021|1|carlospnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |25|02/07/2021|1|andreaflores|5|Support Vector Machine|Análisis y diseño del algoritmo|Finalizado|03/07/2021|
