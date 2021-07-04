@@ -84,4 +84,5 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |79|04/07/2021|1|PabloOsuna1997|1|Naive Bayes|Prueba Naive Bayes|Finalizado|04/07/2021|
 |80|04/07/2021|1|brandonBBAL1994|17|Redes neuronales|Test de redes neuronales|Finalizado|04/07/2021|
 |81|04/06/2021|1|hernandezgramajo|6|Test K-means|Test del algoritmo|Finalizado|4/07/2021|
-|82|04/06/2021|1|hernandezgramajo|6|Test K-nearest|Test del algoritmo|Finalizado|4/07/2021|
+|82|04/06/2021|1|SergioGuoz|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
+|83|04/06/2021|1|hernandezgramajo|6|Test K-nearest|Test del algoritmo|Finalizado|4/07/2021|
