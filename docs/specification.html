@@ -976,39 +976,6 @@
 </div>
 
 
- 
-
-
-
-
-
- 
-<div class="row">
-    <div>
-        <h1 class="display-3 w-100 text-center">NaiveBayes</h1>
-        <hr>
-        <div class="container">
-            <h1 class="display-5 w-100">Class Diagram</h1>
-        </div>
-    </div>
-</div>
-<div class="mermaid text-center">
-    classDiagram
-
-    class NaiveBayes {
-    +causes : any[] = []
-    +insertCause(name : string, array : any[])
-    +predict(effect : string, events : []]) any[]
-    +getSimpleProbability(event : [])
-    +getConditionalProbability(eventA : [],eventB : [])
-    +getCauseByName(cause_name:string)
-    }
-
-</div>
-
-
-  
-    
     <div class="row">
         <div class="col-md-8 offset-md-2 mt-3">
             <h2 class="ml-3">Bayes Method</h2>
@@ -1190,6 +1157,150 @@
             </div>
         </div>
         <hr>
+
+        <div class="row">
+            <div>
+                <h1 class="display-3 w-100 text-center">NaiveBayes</h1>
+                <hr>
+                <div class="container">
+                    <h1 class="display-5 w-100">Class Diagram</h1>
+                </div>
+            </div>
+        </div>
+        <div class="mermaid text-center">
+            classDiagram
+        
+            class NaiveBayes {
+            +causes : any[] = []
+            +insertCause(name : string, array : any[])
+            +predict(effect : string, events : []]) any[]
+            +getSimpleProbability(event : [])
+            +getConditionalProbability(eventA : [],eventB : [])
+            +getCauseByName(cause_name:string)
+            }
+        
+        </div>
+        
+            
+        
+        
+        <div class="container mt-4">
+            <h3 class="display-5">NaiveBayes Class</h3>
+            <div class="dropdown-divider"></div>
+        
+            <div class="row">
+                <div>
+                    <h3 class="">Properties</h3>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>causes</td>
+                                <td>Array of the causes to be taken in count for the prediction</td>
+                            </tr>
+        
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <h3 class="">Methods</h3>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 10%;">Name</th>
+                                <th scope="col" style="width: 20%;">Parameters</th>
+                                <th scope="col" style="width: 70%;">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>insertCause</td>
+                                <td>
+                                    <ul>
+                                        <li>effect (string) </li>
+                                        <li>events (array)</li>
+                                    </ul>
+                                </td>
+                                <td>This method fills the data usted to make the predictions. Each cause added must have the
+                                    same events array as the others inserted, otherwise it will throw an error through console .
+                                    <ul>
+                                        <li>The <b>effect</b> parameter represents the name of the column / cause added and it
+                                            must be unique </li>
+                                        <li>The <b>events</b> parameter recieves the data used for the column/cause </li>
+        
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>predict</td>
+                                <td>
+                                    <ul>
+                                        <li>effect (string)</li>
+                                        <li>events (array)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    This is the main method that runs the prediction for the data entered through on the
+                                    parameters.
+                                    <ul>
+                                        <li>The <b>effect</b> parameter represents the name of the column/cause for which you
+                                            want to make the prediction </li>
+                                        <li>The <b>events</b> parameter recieves an array of tuples [column_name, value] for
+                                            known events. <br>eg. [["name", value],["name", value],["name", value] ...] </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>getSimpleProbability</td>
+                                <td>
+                                    <ul>
+                                        <li>event (array)</li>
+                                    </ul>
+                                </td>
+                                <td>This method returns the probability that an <b>event</b> ocurrs. Events are represented by
+                                    tuples with the format ["column_name", value]. In other words it
+                                    returns the probability of finding "value" on cause "column_name"
+        
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>getConditionalProbability</td>
+                                <td>
+                                    <ul>
+                                        <li>event_A (array)</li>
+                                        <li>event_B (array)</li>
+                                    </ul>
+                                </td>
+                                <td> Returns probability of <b>event_A</b> occurring given that <b>event_B</b> occurs. 
+                                    Events are represented by tuples with the format ["column_name", value]. 
+        
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>getCauseByName</td>
+                                <td>
+                                    <ul>
+                                        <li>cause_name (string)</li>
+                                    </ul>
+                                </td>
+                                <td> Returns the array of values corresponding to the column/cause identified with the value recieved in the parameter.
+        
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+               </div>
+        
+           </div>
+        
+        
+        </div>
+
  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
  <script>mermaid.initialize({startOnLoad:true});</script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
