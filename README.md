@@ -48,5 +48,7 @@ Pure Javascript Machine Learning Library
 
 [23 K-Nearest Neighbor Example](https://tytusdb.github.io/tytusjs/test/21_KnearestNeighbor.html)
 
+[24 G8 K-Means Usage Example](https://tytusdb.github.io/tytusjs/test/23_G8_KMeans.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
