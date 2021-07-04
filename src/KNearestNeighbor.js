@@ -82,4 +82,32 @@ class KNearestNeighbor {
     }
     return map;
   }
+
+  /**
+   * 
+   * @param {[val1,val2]} point 
+   * @returns json with the result
+   */
+  predecir(point) {
+
+    const map = this.mapearGenerarDistancia(point);
+    const votos = map.slice(0, this.k); //pasamos el valor k
+    const votosCounts = votos
+        // Reduce a un objeto tipo {label: voteCount}
+        .reduce((obj, vote) => Object.assign({}, obj, {[vote.label]: (obj[vote.label] || 0) + 1}), {})
+    ;
+    //Ordenar por medio del valor cantidad
+    const sortedVotes = Object.keys(votosCounts)
+        .map(label => ({label, count: votosCounts[label]}))
+        .sort((a, b) => a.count > b.count ? -1 : 1)
+    ;
+
+    return {
+        label: sortedVotes[0].label,
+        votosCounts,
+        votos
+    };
+
+}
+
 }
