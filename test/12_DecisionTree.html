@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID3 Decision Tree</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
+    <script type="text/javascript" src="../dist/tytus.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1 class="display-1 w-100 text-center">Decision Tree</h1>
+    <center>
+        <label>Header</label>
+        <br>
+        <input style="width: 80%;" id="header" type="text" placeholder="Insert header" value="Income,WorkTime,Married,Debts,Children,BuyHouse"> 
+        <br><br>
+        <label>Training example</label>
+        <br>
+        <textarea style="width: 80%;" id="textarea" rows="10" placeholder="Insert training data">High,Short,No,Yes,No,No
+High,Long,Yes,No,No,Yes
+Low,Long,No,No,No,Yes
+Medium,Short,Yes,No,Several,No
+High,Short,No,No,No,Yes
+High,Long,No,Yes,No,Yes
+Medium,Long,Yes,No,One,Yes
+Low,Long,Yes,Yes,One,No
+Low,Short,No,Yes,One,No
+Medium,Long,Yes,No,Several,Yes
+Low,Short,Yes,Yes,Several,No</textarea>
+        <br>
+        <button id="generate">Generate decision tree</button>
+        <br><br>
+        <label>Predict</label>
+        <br>
+        <input style="width: 80%;" id="data" type="text" placeholder="Insert data" value="Medium,Short,No,Yes,No">
+        <br><br>
+        <button id="predict">Predict with inserted data</button>
+        <br><br>
+        <p id="prediction" style="font-size: 20px;"></p>
+    </center>
+    <br>
+    <h3 class="display-6 text-center mt-5">Result Tree:<br /></h3>
+    <div class="container mb-5">
+        <div style="width: 100%; height: 500px; border: 2px solid rgb(96, 160, 255); border-radius: 10px;" id="tree">
+        </div>
+    </div>
+    <p class="text-muted">Test By Ingrid Perez</p>
+    <script type="text/javascript">
+        document.getElementById('predict').onclick = function () {
+            var chart = document.getElementById("tree");
+            var {
+                dotStr,
+                predictNode
+            } = testWithChart()
+            if (predictNode != null) {
+                var header = document.getElementById('header').value;
+                var arrHeader = header.split(",")
+                document.getElementById('prediction').innerText = arrHeader[arrHeader.length-1] + ": " + predictNode.value
+            } else {
+                document.getElementById('prediction').innerText = ""
+            }
+            var parsDot = vis.network.convertDot(dotStr);
+            var data = {
+                nodes: parsDot.nodes,
+                edges: parsDot.edges
+            }
+            var options = {
+                layout: {
+                    hierarchical: {
+                        levelSeparation: 100,
+                        nodeSpacing: 100,
+                        parentCentralization: true,
+                        direction: 'UD', // UD, DU, LR, RL
+                        sortMethod: 'directed', // hubsize, directed
+                        //shakeTowards: 'roots' // roots, leaves                        
+                    },
+                },
+            };
+            var network = new vis.Network(chart, data, options);
+        }
+        document.getElementById('generate').onclick = function () {
+            var chart = document.getElementById("tree");
+            var {
+                dotStr,
+                predictNode
+            } = testWithChart()
+            if (predictNode != null) {
+                var header = document.getElementById('header').value;
+                var arrHeader = header.split(",")
+                document.getElementById('prediction').innerText = arrHeader[arrHeader.length-1] + ": " + predictNode.value
+            } else {
+                document.getElementById('prediction').innerText = ""
+            }
+            var parsDot = vis.network.convertDot(dotStr);
+            var data = {
+                nodes: parsDot.nodes,
+                edges: parsDot.edges
+            }
+            var options = {
+                layout: {
+                    hierarchical: {
+                        levelSeparation: 100,
+                        nodeSpacing: 100,
+                        parentCentralization: true,
+                        direction: 'UD', // UD, DU, LR, RL
+                        sortMethod: 'directed', // hubsize, directed
+                        //shakeTowards: 'roots' // roots, leaves                        
+                    },
+                },
+            };
+            var network = new vis.Network(chart, data, options);
+        }
+        testWithChart = () => {
+            var header = document.getElementById('header').value;
+            var arrHeader = header.split(",")
+            var training = document.getElementById('textarea').value;
+            var arrTraining = training.split("\n")
+            var arrData = [arrHeader]
+            for (var i = 0; i < arrTraining.length; i++) {
+                arrData.push(arrTraining[i].split(","))
+            }
+            //class="display-6 text-center mb-5" 
+            let dtSt = arrData
+
+            let dTree = new DecisionTreeID3(dtSt);
+            let root = dTree.train(dTree.dataset);
+            var pred = document.getElementById('data').value;
+            var arrPred = pred.split(",")
+            var predHeader = []
+            for(var i = 0; i<arrHeader.length-1;i++){
+                predHeader.push(arrHeader[i])
+            }
+            let predict = pred != "" ? dTree.predict([predHeader,arrPred], root) : null;
+            return {
+                dotStr: dTree.generateDotString(root),
+                predictNode: predict
+            };
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
