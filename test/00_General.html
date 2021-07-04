@@ -26,6 +26,8 @@
 
 	<script type="text/javascript" src="../dist/tytus.js"></script>
 
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 </head>
 
 <body class="is-preload">
@@ -177,138 +179,7 @@
 						<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 							integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 							crossorigin="anonymous"></script>
-						<h1 class="display-1 w-100 text-center">Decision Tree</h1>
-						<center>
-							<label>Header</label>
-							<br>
-							<input style="width: 80%;" id="header" type="text" placeholder="Insert header"
-								value="Income,WorkTime,Married,Debts,Children,BuyHouse">
-							<br><br>
-							<label>Training example</label>
-							<br>
-							<textarea style="width: 80%;" id="textarea" rows="10" placeholder="Insert training data">High,Short,No,Yes,No,No
-High,Long,Yes,No,No,Yes
-Low,Long,No,No,No,Yes
-Medium,Short,Yes,No,Several,No
-High,Short,No,No,No,Yes
-High,Long,No,Yes,No,Yes
-Medium,Long,Yes,No,One,Yes
-Low,Long,Yes,Yes,One,No
-Low,Short,No,Yes,One,No
-Medium,Long,Yes,No,Several,Yes
-Low,Short,Yes,Yes,Several,No</textarea>
-							<br>
-							<button id="btngenerate">Generate decision tree</button>
-							<br><br>
-							<label>Predict</label>
-							<br>
-							<input style="width: 80%;" id="data" type="text" placeholder="Insert data"
-								value="Medium,Short,No,Yes,No">
-							<br><br>
-							<button id="predict">Predict with inserted data</button>
-							<br><br>
-							<p id="prediction" style="font-size: 20px;"></p>
-						</center>
-						<br>
-						<h3 class="display-6 text-center mt-5">Result Tree:<br /></h3>
-						<div class="container mb-5">
-							<div style="width: 100%; height: 500px; border: 2px solid rgb(96, 160, 255); border-radius: 10px;"
-								id="treed">
-							</div>
-						</div>
-						<p class="text-muted">Test By Ingrid Perez</p>
-						<script type="text/javascript">
-							generatechart = () => {
-								var header = document.getElementById('header').value;
-								var arrHeader = header.split(",")
-								var training = document.getElementById('textarea').value;
-								var arrTraining = training.split("\n")
-								var arrData = [arrHeader]
-								for (var i = 0; i < arrTraining.length; i++) {
-									arrData.push(arrTraining[i].split(","))
-								}
-								//class="display-6 text-center mb-5" 
-								let dtSt = arrData
-
-								let dTree = new DecisionTreeID3(dtSt);
-								let root = dTree.train(dTree.dataset);
-								var pred = document.getElementById('data').value;
-								var arrPred = pred.split(",")
-								var predHeader = []
-								for (var i = 0; i < arrHeader.length - 1; i++) {
-									predHeader.push(arrHeader[i])
-								}
-								let predict = pred != "" ? dTree.predict([predHeader, arrPred], root) : null;
-								return {
-									dotStr: dTree.generateDotString(root),
-									predictNode: predict
-								};
-							}
-							document.getElementById('predict').onclick = function () {
-								var chart = document.getElementById("treed");
-								var {
-									dotStr,
-									predictNode
-								} = generatechart()
-								if (predictNode != null) {
-									var header = document.getElementById('header').value;
-									var arrHeader = header.split(",")
-									document.getElementById('prediction').innerText = arrHeader[arrHeader.length - 1] + ": " + predictNode.value
-								} else {
-									document.getElementById('prediction').innerText = ""
-								}
-								var parsDot = vis.network.convertDot(dotStr);
-								var data = {
-									nodes: parsDot.nodes,
-									edges: parsDot.edges
-								}
-								var options = {
-									layout: {
-										hierarchical: {
-											levelSeparation: 100,
-											nodeSpacing: 100,
-											parentCentralization: true,
-											direction: 'UD', // UD, DU, LR, RL
-											sortMethod: 'directed', // hubsize, directed
-											//shakeTowards: 'roots' // roots, leaves                        
-										},
-									},
-								};
-								var network = new vis.Network(chart, data, options);
-							}
-							document.getElementById('btngenerate').onclick = function () {
-								var chart = document.getElementById("treed");
-								var {
-									dotStr,
-									predictNode
-								} = generatechart()
-								if (predictNode != null) {
-									var header = document.getElementById('header').value;
-									var arrHeader = header.split(",")
-									document.getElementById('prediction').innerText = arrHeader[arrHeader.length - 1] + ": " + predictNode.value
-								} else {
-									document.getElementById('prediction').innerText = ""
-								}
-								var parsDot = vis.network.convertDot(dotStr);
-								var data = {
-									nodes: parsDot.nodes,
-									edges: parsDot.edges
-								}
-								var options = {
-									layout: {
-										hierarchical: {
-											levelSeparation: 100,
-											nodeSpacing: 100,
-											parentCentralization: true,
-											direction: 'UD', // UD, DU, LR, RL
-											sortMethod: 'directed', // hubsize, directed
-											//shakeTowards: 'roots' // roots, leaves                        
-										},
-									},
-								};
-								var network = new vis.Network(chart, data, options);
-							}
-						</script>
+						
 					</div>
 
 
@@ -683,6 +554,229 @@ Low,Short,Yes,Yes,Several,No</textarea>
 									if they get too long. You can also remove the <p> entirely if you don't
 									need a subtitle.
 								-->
+						<h2><a href="#">Generate decision tree</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+					</div>
+
+					
+					<center>
+						<label>Header</label>
+						<br>
+						<input style="width: 80%;" id="header" type="text" placeholder="Insert header"
+							value="Income,WorkTime,Married,Debts,Children,BuyHouse">
+						<br><br>
+						<label>Training example</label>
+						<br>
+						<textarea style="width: 80%;" id="textarea" rows="10" placeholder="Insert training data">High,Short,No,Yes,No,No
+							High,Long,Yes,No,No,Yes
+							Low,Long,No,No,No,Yes
+							Medium,Short,Yes,No,Several,No
+							High,Short,No,No,No,Yes
+							High,Long,No,Yes,No,Yes
+							Medium,Long,Yes,No,One,Yes
+							Low,Long,Yes,Yes,One,No
+							Low,Short,No,Yes,One,No
+							Medium,Long,Yes,No,Several,Yes
+							Low,Short,Yes,Yes,Several,No
+						</textarea>
+						<br>
+						<button id="btngenerate">Generate decision tree</button>
+						<br><br>
+						<label>Predict</label>
+						<br>
+						<input style="width: 80%;" id="data" type="text" placeholder="Insert data"
+							value="Medium,Short,No,Yes,No">
+						<br><br>
+						<button id="predict">Predict with inserted data</button>
+						<br><br>
+						<p id="prediction" style="font-size: 20px;"></p>
+					</center>
+					<br>
+					<h3 class="display-6 text-center mt-5">Result Tree:<br /></h3>
+					<div class="container mb-5">
+						<div style="width: 100%; height: 500px; border: 2px solid rgb(96, 160, 255); border-radius: 10px;"
+							id="treed">
+						</div>
+					</div>
+					<p class="text-muted">Test By Ingrid Perez</p>
+					<script type="text/javascript">
+						generatechart = () => {
+							var header = document.getElementById('header').value;
+							var arrHeader = header.split(",")
+							var training = document.getElementById('textarea').value;
+							var arrTraining = training.split("\n")
+							var arrData = [arrHeader]
+							for (var i = 0; i < arrTraining.length; i++) {
+								arrData.push(arrTraining[i].split(","))
+							}
+							//class="display-6 text-center mb-5" 
+							let dtSt = arrData
+
+							let dTree = new DecisionTreeID3(dtSt);
+							let root = dTree.train(dTree.dataset);
+							var pred = document.getElementById('data').value;
+							var arrPred = pred.split(",")
+							var predHeader = []
+							for (var i = 0; i < arrHeader.length - 1; i++) {
+								predHeader.push(arrHeader[i])
+							}
+							let predict = pred != "" ? dTree.predict([predHeader, arrPred], root) : null;
+							return {
+								dotStr: dTree.generateDotString(root),
+								predictNode: predict
+							};
+						}
+						document.getElementById('predict').onclick = function () {
+							var chart = document.getElementById("treed");
+							var {
+								dotStr,
+								predictNode
+							} = generatechart()
+							if (predictNode != null) {
+								var header = document.getElementById('header').value;
+								var arrHeader = header.split(",")
+								document.getElementById('prediction').innerText = arrHeader[arrHeader.length - 1] + ": " + predictNode.value
+							} else {
+								document.getElementById('prediction').innerText = ""
+							}
+							var parsDot = vis.network.convertDot(dotStr);
+							var data = {
+								nodes: parsDot.nodes,
+								edges: parsDot.edges
+							}
+							var options = {
+								layout: {
+									hierarchical: {
+										levelSeparation: 100,
+										nodeSpacing: 100,
+										parentCentralization: true,
+										direction: 'UD', // UD, DU, LR, RL
+										sortMethod: 'directed', // hubsize, directed
+										//shakeTowards: 'roots' // roots, leaves                        
+									},
+								},
+							};
+							var network = new vis.Network(chart, data, options);
+						}
+						document.getElementById('btngenerate').onclick = function () {
+							var chart = document.getElementById("treed");
+							var {
+								dotStr,
+								predictNode
+							} = generatechart()
+							if (predictNode != null) {
+								var header = document.getElementById('header').value;
+								var arrHeader = header.split(",")
+								document.getElementById('prediction').innerText = arrHeader[arrHeader.length - 1] + ": " + predictNode.value
+							} else {
+								document.getElementById('prediction').innerText = ""
+							}
+							var parsDot = vis.network.convertDot(dotStr);
+							var data = {
+								nodes: parsDot.nodes,
+								edges: parsDot.edges
+							}
+							var options = {
+								layout: {
+									hierarchical: {
+										levelSeparation: 100,
+										nodeSpacing: 100,
+										parentCentralization: true,
+										direction: 'UD', // UD, DU, LR, RL
+										sortMethod: 'directed', // hubsize, directed
+										//shakeTowards: 'roots' // roots, leaves                        
+									},
+								},
+							};
+							var network = new vis.Network(chart, data, options);
+						}
+					</script>
+		
+				</article>
+			</section>
+
+			<section id="septimo">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">Linear Regression</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+
+					</div>
+					<div>
+						<p id="log7"></p>    
+						<div id="chart_div7" style="width: 900px; height: 500px;"></div>
+						<script type="text/javascript">
+							var xTrain = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+							var yTrain = [1, 4, 1, 5, 3, 7, 2, 7, 4, 9]
+							var linear = new LinearRegression()
+							linear.fit(xTrain, yTrain)
+							yPredict = linear.predict(xTrain)
+							document.getElementById("log7").innerHTML+='<br>X Train:   '+xTrain+'<br>Y Train:   '+yTrain+'<br>Y Predict: '+yPredict
+							var a = joinArrays('x',xTrain,'yTrain',yTrain,'yPredict',yPredict)
+
+							google.charts.load('current', {'packages':['corechart']});
+							google.charts.setOnLoadCallback(drawChart);
+							
+							function drawChart() {
+								var data = google.visualization.arrayToDataTable(a);
+								var options = {
+									seriesType : 'scatter',
+									series: {1: {type: 'line'}}
+								};  
+								var chart = new google.visualization.ComboChart(document.getElementById('chart_div7'));
+								chart.draw(data, options);         
+							}    
+						</script>
+					</div>
+				</article>
+			</section>
+
+			
+			<section id="sexto">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
 						<h2><a href="#">tercero</a></h2>
 						<p>En esta pagina encontra la informacion centralizada de las ejemplos de las funciones de
 							machine learning</p>
@@ -716,7 +810,7 @@ Low,Short,Yes,Yes,Several,No</textarea>
 	<div id="sidebar">
 
 		<!-- Logo -->
-		<h1 id="logo"><a href="#">IA USAC</a></h1>
+		<h1 id="logo"><a href="#">IA USAC G5</a></h1>
 
 		<!-- Nav -->
 		<nav id="nav">
@@ -726,6 +820,9 @@ Low,Short,Yes,Yes,Several,No</textarea>
 				<li><a href="#tercero">FuzzySet</a></li>
 				<li><a href="#cuarto">K-Nearest Neighbor</a></li>
 				<li><a href="#quinto">Simple Neural Networks</a></li>
+				<li><a href="#sexto">Decision Tree</a></li>
+				<li><a href="#septimo">Linear Regression</a></li>
+				
 
 			</ul>
 		</nav>

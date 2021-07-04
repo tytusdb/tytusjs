@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>G18 - Neuronal Network</title>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/journal/bootstrap.min.css">
+</head>
+
+<body>
+    <h1>G18 - Neuronal Network</h1>
+    <p>[n1,n2]: Probability </p>
+
+    <h2>Prediction n1 > n2</h2>
+    <p id="n1mayn2_1"></p>
+    <p id="n1mayn2_2"></p>
+
+    <h2>Prediction n1 < n2</h2>
+    <p id="n1menn2_1"></p>
+    <p id="n1menn2_2"></p>
+
+</body>
+
+
+<script src="../src/NeuronalNetwork.js"></script>
+<script>
+    let design = [2, 4, 3, 2];
+
+    //n1 > n2 [n1, n2]
+    let brain = new NeuralNetwork(design);
+    for (let x = 0; x < 2; x++) {
+        for (let i = 0; i < 10000; i++) {
+            let num1 = Math.random(), num2 = Math.random();
+            brain.Entrenar([num1, num2], (num1 > num2 ? [1, 0] : [0, 1]));
+        }
+        if (x == 0) { document.getElementById("n1mayn2_1").innerHTML = String("[50,15]: " + brain.Predecir([50, 15])); }
+        else { document.getElementById("n1mayn2_2").innerHTML = String("[15,50]: " + brain.Predecir([15, 50])); }
+    }
+
+    //n1 < n2 [n1, n2]
+    brain = new NeuralNetwork(design);
+    for (let x = 0; x < 2; x++) {
+        for (let i = 0; i < 10000; i++) {
+            let num1 = Math.random(), num2 = Math.random();
+            brain.Entrenar([num1, num2], (num1 < num2 ? [1, 0] : [0, 1]));
+        }
+        if (x == 0) { document.getElementById("n1menn2_1").innerHTML = String("[23,17]: " + brain.Predecir([23, 17])); }
+        else { document.getElementById("n1menn2_2").innerHTML = String("[12,25]: " + brain.Predecir([12, 25])); }
+    }
+
+</script>
+
+</html>
