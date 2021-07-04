@@ -1,50 +1,55 @@
 <!DOCTYPE HTML>
 <script>
-const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
+	const monthNames = ["January", "February", "March", "April", "May", "June",
+		"July", "August", "September", "October", "November", "December"
+	];
 
-const d = new Date();
+	const d = new Date();
 
 </script>
 <html>
-	<head>
-		<title>IA MACHINE LEARNING</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
 
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
-    	<script type="text/javascript" src="../src/DecisionTreeID3.js"></script>
-    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+	<title>IA MACHINE LEARNING</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
 
-		 <script type="text/javascript" src="../src/kmeans.js"></script>
-		<!--graficada -->
-		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
+	<script type="text/javascript" src="../src/DecisionTreeID3.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-		<script type="text/javascript" src="../dist/tytus.js"></script>
-		
-	</head>
-	<body class="is-preload">
+	<script type="text/javascript" src="../src/kmeans.js"></script>
+	<!--graficada -->
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-		<!-- Content -->
-			<div id="content">
-				<div class="inner">
+	<script type="text/javascript" src="../dist/tytus.js"></script>
 
-					<!-- Post -->
-					<section id="primero">
-						<article class="box post post-excerpt">
-							<header>
-								<!--
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+
+<body class="is-preload">
+
+	<!-- Content -->
+	<div id="content">
+		<div class="inner">
+
+			<!-- Post -->
+			<section id="primero">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
 									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
 									if they get too long. You can also remove the <p> entirely if you don't
 									need a subtitle.
 								-->
-								<h2><a href="#">Decision Tree ID3</a></h2>
-								<p></p>
-							</header>
-							<div class="info">
-								<!--
+						<h2><a href="#">Decision Tree ID3</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
 									Note: The date should be formatted exactly as it's shown below. In particular, the
 									"least significant" characters of the month should be encapsulated in a <span>
 									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
@@ -52,17 +57,20 @@ const d = new Date();
 									the entire "date" element.
 
 								-->
-								<span class="date"><span class="month"> <script>document.write(monthNames[d.getMonth()]);</script><span>y</span></span> <span class="day">
-									<script>var dd = new Date(); document.write(dd.getDate());</script></span><span class="year">, 2014</span></span>
-								
-								
-							</div>
-							
-							<div>
-								<div class="container">
-									<h3 class="display-6 mt-5">Used Data Set:<br /></h3>
-									<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
-										<code class="text-info">
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+
+					</div>
+
+					<div>
+						<div class="container">
+							<h3 class="display-6 mt-5">Used Data Set:<br /></h3>
+							<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+								<code class="text-info">
 											[<br />
 											&nbsp;&nbsp;&nbsp;&nbsp;["Outlook", "Temperature", "Humidity", "Windy", "Play Tennis"], //The header is considering as Attribute <br />
 											&nbsp;&nbsp;&nbsp;&nbsp;["Sunny", "Hot", "High", "Weak", "No" ], <br />
@@ -81,21 +89,21 @@ const d = new Date();
 											&nbsp;&nbsp;&nbsp;&nbsp;["Rainy", "Mild", "High", "Strong", "No" ], <br />
 											]<br />
 										</code>
-									</p>
+							</p>
 
-									<h3 class="display-6 mt-5">Data to Predict:<br /></h3>
-									<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
-										<code class="text-info">
+							<h3 class="display-6 mt-5">Data to Predict:<br /></h3>
+							<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+								<code class="text-info">
 											[<br />
 											&nbsp;&nbsp;&nbsp;&nbsp;["Outlook", "Temperature", "Humidity", "Windy"], //The header must be in the data <br />
 											&nbsp;&nbsp;&nbsp;&nbsp;["Overcast", "Cool", "Normal", "Strong"], <br />
 											]<br />
 										</code>
-									</p>
+							</p>
 
-									<h3 class="display-6 mt-5">Result of predict:<br /></h3>
-									<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
-										<code class="text-info">
+							<h3 class="display-6 mt-5">Result of predict:<br /></h3>
+							<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+								<code class="text-info">
 											{<br />
 											&nbsp;&nbsp;&nbsp;&nbsp;childs: []<br />
 											&nbsp;&nbsp;&nbsp;&nbsp;id: "3eb4d4228163"<br />
@@ -103,91 +111,619 @@ const d = new Date();
 											&nbsp;&nbsp;&nbsp;&nbsp;value: "Yes"<br />
 											}
 										</code>
-									</p>
-								</div>
-								<h3 class="display-6 text-center mt-5">Result Tree:<br /></h3>
-								<div class="container mb-5">
-									<div style="width: 100%; height: 500px; border: 2px dashed red; border-radius: 10px;" id="tree"></div>
-								</div>
-								<p class="text-muted">Test By HenryGalvez</p>
-								<script type="text/javascript">
-									testWithChart = () => {
+							</p>
+						</div>
+						<h3 class="display-6 text-center mt-5">Result Tree:<br /></h3>
+						<div class="container mb-5">
+							<div style="width: 100%; height: 500px; border: 2px dashed red; border-radius: 10px;"
+								id="tree"></div>
+						</div>
+						<p class="text-muted">Test By HenryGalvez</p>
+						<script type="text/javascript">
+							testWithChart = () => {
 
-										let dtSt = [
-											["Outlook", "Temperature", "Humidity", "Windy", "Play Tennis"], //The header is considering as Attribute
-											["Sunny", "Hot", "High", "Weak", "No"],
-											["Sunny", "Hot", "High", "Strong", "No"],
-											["Overcast", "Hot", "High", "Weak", "Yes"],
-											["Rainy", "Mild", "High", "Weak", "Yes"],
-											["Rainy", "Cool", "Normal", "Weak", "Yes"],
-											["Rainy", "Cool", "Normal", "Strong", "No"],
-											["Overcast", "Cool", "Normal", "Strong", "Yes"], //Every data is considering as Feature
-											["Sunny", "Mild", "High", "Weak", "No"],
-											["Sunny", "Cool", "Normal", "Weak", "Yes"],
-											["Rainy", "Mild", "Normal", "Weak", "Yes"],
-											["Sunny", "Mild", "Normal", "Strong", "Yes"],
-											["Overcast", "Mild", "High", "Strong", "Yes"],
-											["Overcast", "Hot", "Normal", "Weak", "Yes"],
-											["Rainy", "Mild", "High", "Strong", "No"],
-										]
+								let dtSt = [
+									["Outlook", "Temperature", "Humidity", "Windy", "Play Tennis"], //The header is considering as Attribute
+									["Sunny", "Hot", "High", "Weak", "No"],
+									["Sunny", "Hot", "High", "Strong", "No"],
+									["Overcast", "Hot", "High", "Weak", "Yes"],
+									["Rainy", "Mild", "High", "Weak", "Yes"],
+									["Rainy", "Cool", "Normal", "Weak", "Yes"],
+									["Rainy", "Cool", "Normal", "Strong", "No"],
+									["Overcast", "Cool", "Normal", "Strong", "Yes"], //Every data is considering as Feature
+									["Sunny", "Mild", "High", "Weak", "No"],
+									["Sunny", "Cool", "Normal", "Weak", "Yes"],
+									["Rainy", "Mild", "Normal", "Weak", "Yes"],
+									["Sunny", "Mild", "Normal", "Strong", "Yes"],
+									["Overcast", "Mild", "High", "Strong", "Yes"],
+									["Overcast", "Hot", "Normal", "Weak", "Yes"],
+									["Rainy", "Mild", "High", "Strong", "No"],
+								]
 
-										let dTree = new DecisionTreeID3(dtSt);
-										let root = dTree.train(dTree.dataset);
-										let predict = dTree.predict([
-											["Outlook", "Temperature", "Humidity", "Windy"],
-											["Overcast", "Cool", "Normal", "Strong"],
-										], root)
-										return {
-											dotStr: dTree.generateDotString(root),
-											predictNode: predict
-										};
-									}
-									var chart = document.getElementById("tree");
-									var {
-										dotStr,
-										predictNode
-									} = this.testWithChart()
-									//console.log(predictNode);
-									var parsDot = vis.network.convertDot(dotStr);
-									var data = {
-										nodes: parsDot.nodes,
-										edges: parsDot.edges
-									}
-									var options = {
-										layout: {
-											hierarchical: {
-												levelSeparation: 100,
-												nodeSpacing: 100,
-												parentCentralization: true,
-												direction: 'UD', // UD, DU, LR, RL
-												sortMethod: 'directed', // hubsize, directed
-												//shakeTowards: 'roots' // roots, leaves                        
-											},
-										},
-									};
-									var network = new vis.Network(chart, data, options);
-								</script>
-								<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-														
-							</div>
-							
-							
-						</article>
-					</section>
+								let dTree = new DecisionTreeID3(dtSt);
+								let root = dTree.train(dTree.dataset);
+								let predict = dTree.predict([
+									["Outlook", "Temperature", "Humidity", "Windy"],
+									["Overcast", "Cool", "Normal", "Strong"],
+								], root)
+								return {
+									dotStr: dTree.generateDotString(root),
+									predictNode: predict
+								};
+							}
+							var chart = document.getElementById("tree");
+							var {
+								dotStr,
+								predictNode
+							} = this.testWithChart()
+							//console.log(predictNode);
+							var parsDot = vis.network.convertDot(dotStr);
+							var data = {
+								nodes: parsDot.nodes,
+								edges: parsDot.edges
+							}
+							var options = {
+								layout: {
+									hierarchical: {
+										levelSeparation: 100,
+										nodeSpacing: 100,
+										parentCentralization: true,
+										direction: 'UD', // UD, DU, LR, RL
+										sortMethod: 'directed', // hubsize, directed
+										//shakeTowards: 'roots' // roots, leaves                        
+									},
+								},
+							};
+							var network = new vis.Network(chart, data, options);
+						</script>
+						<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+							integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+							crossorigin="anonymous"></script>
+						
+					</div>
+
+
+				</article>
+			</section>
+
+			<section id="segundo">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">KMeans</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+
+					</div>
+					<div style="width: 100%;">
+
+						<label for="linear_data"> Datos lineales (x)</label>
+						<br>
+
+						<input style="width: 60%;" id="cluster_count" type="number"
+							placeholder="Ingrese la cantidad de clusters" value=3>
+						<br>
+
+						<input style="width: 60%;" id="linear_data" type="text"
+							placeholder="Ingrese los numeros separados por comas (0,1,2,3,...)"
+							value="-99,-92,-89,-87,-83,-82,-78,-76,-70,-62,-57,-55,-50,-42,-35,-33,-32,-30,-27,-17,-12,-10,0,1,2,25,29,33,39,41,53,54,67">
+						<br>
+
+						<input style="width: 60%;" id="iterations" type="number"
+							placeholder="Ingrese la cantidad de iteraciones a realizar" value=3>
+						<br>
+
+						<button id="btnLineal">Calcular KMeans Lineal</button>
+
+						<center>
+							<div id="chart_div" style="width: 900px; height: 500px;"></div>
+						</center>
+
+					</div>
+
+					<script>
+
+						document.getElementById('btnLineal').onclick = function () {
+							var linear_data = document.getElementById('linear_data').value
+							var k = document.getElementById('cluster_count').value
+							var iterations = document.getElementById('iterations').value
+							var data = []
+							var split = linear_data.split(',')
+							// <!--pendiente añadir cantidad de pasos -->
+							split.forEach(d => {
+								data.push(parseInt(d))
+							});
+
+							if (data.length < k) {
+								alert(`El numero de clusters (${k}) no puede ser menor a la cantidad de datos (${data.length})`)
+							}
+							var kmeans = new LinearKMeans(k, data)
+							let clusterized_data = kmeans.clusterize(k, data, iterations)
+
+							let clusters = new Set([...clusterized_data.map(a => a[1])])
+
+							clusters = Array.from(clusters)
+
+
+							clusters.forEach((cluster, i) => {
+								clusters[i] = [cluster, "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })]
+							});
+
+							// console.log('clusters set: ', clusters)
+							//Graficada
+
+							google.charts.load('current', { 'packages': ['corechart'] });
+							google.charts.setOnLoadCallback(function () { drawChart(clusters) });
+
+							function drawChart(clusters) {
+								//let y = Array(data.length).fill(0)
+								var graph_data = new google.visualization.DataTable();
+								graph_data.addColumn('number', 'X')
+								graph_data.addColumn('number', 'Y')
+								graph_data.addColumn({ type: 'string', role: 'style' }); // style col.
+								let a = clusterized_data.map(e => [e[0], 0, `point { size: 7; shape-type: diamond; fill-color: ${clusters[clusters.findIndex(a => a[0] == e[1])][1]}}`])
+
+								// console.log(a)
+								graph_data.addRows(a)
+
+								clusters.forEach(c => {
+									graph_data.addRow([c[0], 0, `point { size: 3; shape-type: square; fill-color: #ff0000`])
+								});
+
+								var options = {
+									title: 'Puntos',
+									seriesType: 'scatter',
+									series: { 1: { type: 'line' } },
+									hAxis: { title: 'X', minValue: 0, maxValue: Math.max(this.data) + 10 },
+									yAxis: { title: 'Y', minValue: 0, maxValue: 5 },
+									legend: 'none'
+								};
+
+								var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+								chart.draw(graph_data, options);
+							}
+
+
+						}
+
+					</script>
+				</article>
+			</section>
+
+			<section id="tercero">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">Fuzzyset</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+
+					</div>
+					<div>
+						<h3>Training</h3>
+						<table id="tabla"></table>
+
+						<h3>For point</h3>
+						<table id="punto"></table>
+
+						<h4>Euclidean</h4>
+						<p id="logE"></p>
+
+						<h4>Manhattan</h4>
+						<p id="logM"></p>
+					</div>
+					<script>
+						var ind = ["A", "B", "C", "D", "E", "F", "G"]
+						var x = [1, 9, 2, 9, 2, 9, 8]
+						var y = [9, 8, 8, 1, 8, 8, 2]
+						var z = [2, 8, 3, 8, 2, 9, 9]
+						var group = ["I", "III", "I", "II", "I", "III", "II"]
+						var point = [7, 5, 6]
+						var tabla = "<table>"
+
+						for (const i in x) {
+							tabla += "<tr>"
+							tabla += "<td>" + ind[i] + "</td><td>" + x[i] + "</td><td>" + y[i] + "</td><td>" + z[i] + "</td><td>" + group[i] + "</td>"
+							tabla += "</tr>"
+						}
+
+						tabla += "</table>"
+						document.getElementById("tabla").innerHTML = tabla
+						tabla = "<table>"
+						tabla += "<td> G </td><td>" + point[0] + "</td><td>" + point[1] + "</td><td>" + point[2] + "</td>"
+						tabla += "</table>"
+						document.getElementById("punto").innerHTML = tabla
+					</script>
+					<script>
+						var individuals = zip([x, y, z, group])
+						var fs = new FuzzySet(individuals)
+						var euc = fs.euclidean(point)
+						var man = fs.manhattan(point)
+						document.getElementById("logE").innerHTML = euc
+						document.getElementById("logM").innerHTML = man
+					</script>
+
+				</article>
+			</section>
+
+			<section id="cuarto">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">K-Nearest Neighbor</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+
+					</div>
+
+					<h3>Training</h3>
+					<table id="tabla1"></table>
+
+					<h3>For point</h3>
+					<table id="punto1"></table>
+
+					<h4>Euclidean</h4>
+					<p id="logE1"></p>
+
+					<h4>Manhattan</h4>
+					<p id="logM1"></p>
+
+
+					<script>
+						var ind = ["A", "B", "C", "D", "E", "F"]
+						var x = [3, 5, 2, 2, 6, 6]
+						var y = [2, 3, 1, 2, 3, 4]
+						var group = ["N", "P", "N", "N", "P", "P"]
+						var point = [4, 4]
+						var tabla = "<table>"
+
+						for (const i in x) {
+							tabla += "<tr>"
+							tabla += "<td>" + ind[i] + "</td><td>" + x[i] + "</td><td>" + y[i] + "</td><td>" + group[i] + "</td>"
+							tabla += "</tr>"
+						}
+
+						tabla += "</table>"
+						document.getElementById("tabla1").innerHTML = tabla
+						tabla = "<table>"
+						tabla += "<td> G </td><td>" + point[0] + "</td><td>" + point[1] + "</td>"
+						tabla += "</table>"
+						document.getElementById("punto1").innerHTML = tabla
+
+					</script>
+					<script>
+						var individuals = zip([x, y, group])
+						var knn = new KNearestNeighbor(individuals)
+						var euc = knn.euclidean(point)
+						var man = knn.manhattan(point)
+						document.getElementById("logE1").innerHTML = euc
+						document.getElementById("logM1").innerHTML = man
+					</script>
+
+
+
+				</article>
+			</section>
+
+
+
+			<section id="quinto">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">Simple Neural Networks</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+					</div>
+
+					<body id="id2">
+						<textarea id="id1"
+							rows="10">Predecir que segundo numero sea mayor al primero [10,20], el resultado mostrado es segun entrenamiento realizado.</textarea>
+
+						<p id="logE"></p>
+						<p id="logE">
+							----------------------------------------------------------------------------------------------
+						</p>
+						<textarea id="id2"
+							rows="10">Predecir que primer numero sea mayor al segundo [20,5], el resultado mostrado es segun entrenamiento realizado.</textarea>
+
+						<p id="logEE"></p>
+					</body>
+
+
+					<script src="../src/NeuronalNetwork.js"></script>
+					<script>
+						let design = [2, 4, 3, 2];
+						let brain = new NeuralNetwork(design);
+						for (let i = 0; i < 10000; i++) {
+							let num1 = Math.random();
+							let num2 = Math.random();
+							brain.Entrenar([num1, num2], (num1 > num2 ? [1, 0] : [0, 1]));
+						}
+
+						largest = brain.Predecir([10, 20]);
+
+						document.getElementById("logE").innerHTML = String("Probability Score for Largest: " + brain.Predecir([10, 20]));
+
+
+						console.log(`Probability Score for Largest: ${largest}`)
+
+						let design2 = [2, 4, 3, 2];
+						let brain2 = new NeuralNetwork(design2);
+						for (let i = 0; i < 10000; i++) {
+							let num1 = Math.random();
+							let num2 = Math.random();
+							brain.Entrenar([num1, num2], (num1 < num2 ? [1, 0] : [0, 1]));
+						}
+
+						largest = brain2.Predecir([20, 5]);
+
+						document.getElementById("logEE").innerHTML = String("Probability Score for Largest: " + brain.Predecir([20, 5]));
+
+
+						console.log(`Probability Score for Largest: ${largest}`)
+
+					</script>
+
+
+				</article>
+			</section>
+
+			<section id="sexto">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">Generate decision tree</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+					</div>
+
 					
-					<section id="segundo">
-						<article class="box post post-excerpt">
-							<header>
-								<!--
+					<center>
+						<label>Header</label>
+						<br>
+						<input style="width: 80%;" id="header" type="text" placeholder="Insert header"
+							value="Income,WorkTime,Married,Debts,Children,BuyHouse">
+						<br><br>
+						<label>Training example</label>
+						<br>
+						<textarea style="width: 80%;" id="textarea" rows="10" placeholder="Insert training data">High,Short,No,Yes,No,No
+							High,Long,Yes,No,No,Yes
+							Low,Long,No,No,No,Yes
+							Medium,Short,Yes,No,Several,No
+							High,Short,No,No,No,Yes
+							High,Long,No,Yes,No,Yes
+							Medium,Long,Yes,No,One,Yes
+							Low,Long,Yes,Yes,One,No
+							Low,Short,No,Yes,One,No
+							Medium,Long,Yes,No,Several,Yes
+							Low,Short,Yes,Yes,Several,No
+						</textarea>
+						<br>
+						<button id="btngenerate">Generate decision tree</button>
+						<br><br>
+						<label>Predict</label>
+						<br>
+						<input style="width: 80%;" id="data" type="text" placeholder="Insert data"
+							value="Medium,Short,No,Yes,No">
+						<br><br>
+						<button id="predict">Predict with inserted data</button>
+						<br><br>
+						<p id="prediction" style="font-size: 20px;"></p>
+					</center>
+					<br>
+					<h3 class="display-6 text-center mt-5">Result Tree:<br /></h3>
+					<div class="container mb-5">
+						<div style="width: 100%; height: 500px; border: 2px solid rgb(96, 160, 255); border-radius: 10px;"
+							id="treed">
+						</div>
+					</div>
+					<p class="text-muted">Test By Ingrid Perez</p>
+					<script type="text/javascript">
+						generatechart = () => {
+							var header = document.getElementById('header').value;
+							var arrHeader = header.split(",")
+							var training = document.getElementById('textarea').value;
+							var arrTraining = training.split("\n")
+							var arrData = [arrHeader]
+							for (var i = 0; i < arrTraining.length; i++) {
+								arrData.push(arrTraining[i].split(","))
+							}
+							//class="display-6 text-center mb-5" 
+							let dtSt = arrData
+
+							let dTree = new DecisionTreeID3(dtSt);
+							let root = dTree.train(dTree.dataset);
+							var pred = document.getElementById('data').value;
+							var arrPred = pred.split(",")
+							var predHeader = []
+							for (var i = 0; i < arrHeader.length - 1; i++) {
+								predHeader.push(arrHeader[i])
+							}
+							let predict = pred != "" ? dTree.predict([predHeader, arrPred], root) : null;
+							return {
+								dotStr: dTree.generateDotString(root),
+								predictNode: predict
+							};
+						}
+						document.getElementById('predict').onclick = function () {
+							var chart = document.getElementById("treed");
+							var {
+								dotStr,
+								predictNode
+							} = generatechart()
+							if (predictNode != null) {
+								var header = document.getElementById('header').value;
+								var arrHeader = header.split(",")
+								document.getElementById('prediction').innerText = arrHeader[arrHeader.length - 1] + ": " + predictNode.value
+							} else {
+								document.getElementById('prediction').innerText = ""
+							}
+							var parsDot = vis.network.convertDot(dotStr);
+							var data = {
+								nodes: parsDot.nodes,
+								edges: parsDot.edges
+							}
+							var options = {
+								layout: {
+									hierarchical: {
+										levelSeparation: 100,
+										nodeSpacing: 100,
+										parentCentralization: true,
+										direction: 'UD', // UD, DU, LR, RL
+										sortMethod: 'directed', // hubsize, directed
+										//shakeTowards: 'roots' // roots, leaves                        
+									},
+								},
+							};
+							var network = new vis.Network(chart, data, options);
+						}
+						document.getElementById('btngenerate').onclick = function () {
+							var chart = document.getElementById("treed");
+							var {
+								dotStr,
+								predictNode
+							} = generatechart()
+							if (predictNode != null) {
+								var header = document.getElementById('header').value;
+								var arrHeader = header.split(",")
+								document.getElementById('prediction').innerText = arrHeader[arrHeader.length - 1] + ": " + predictNode.value
+							} else {
+								document.getElementById('prediction').innerText = ""
+							}
+							var parsDot = vis.network.convertDot(dotStr);
+							var data = {
+								nodes: parsDot.nodes,
+								edges: parsDot.edges
+							}
+							var options = {
+								layout: {
+									hierarchical: {
+										levelSeparation: 100,
+										nodeSpacing: 100,
+										parentCentralization: true,
+										direction: 'UD', // UD, DU, LR, RL
+										sortMethod: 'directed', // hubsize, directed
+										//shakeTowards: 'roots' // roots, leaves                        
+									},
+								},
+							};
+							var network = new vis.Network(chart, data, options);
+						}
+					</script>
+		
+				</article>
+			</section>
+
+			<section id="septimo">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
 									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
 									if they get too long. You can also remove the <p> entirely if you don't
 									need a subtitle.
 								-->
-								<h2><a href="#">KMeans</a></h2>
-								<p></p>
-							</header>
-							<div class="info">
-								<!--
+						<h2><a href="#">Linear Regression</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
 									Note: The date should be formatted exactly as it's shown below. In particular, the
 									"least significant" characters of the month should be encapsulated in a <span>
 									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
@@ -195,120 +731,58 @@ const d = new Date();
 									the entire "date" element.
 
 								-->
-								<span class="date"><span class="month"> <script>document.write(monthNames[d.getMonth()]);</script><span>y</span></span> <span class="day">
-									<script>var dd = new Date(); document.write(dd.getDate());</script></span><span class="year">, 2014</span></span>
-								
-								
-							</div>
-							<div style="width: 100%;">
-								
-								<label for="linear_data"> Datos lineales (x)</label>
-								<br>
-								
-								<input style="width: 60%;" id="cluster_count" type="number" placeholder="Ingrese la cantidad de clusters"
-									value=3>
-								<br>
-								
-								<input style="width: 60%;" id="linear_data" type="text"
-									placeholder="Ingrese los numeros separados por comas (0,1,2,3,...)"
-									value="-99,-92,-89,-87,-83,-82,-78,-76,-70,-62,-57,-55,-50,-42,-35,-33,-32,-30,-27,-17,-12,-10,0,1,2,25,29,33,39,41,53,54,67">
-								<br>
-								
-								<input style="width: 60%;" id="iterations" type="number"
-									placeholder="Ingrese la cantidad de iteraciones a realizar" value=3>
-								<br>
-
-								<button id="btnLineal">Calcular KMeans Lineal</button>
-								
-								<center>
-									<div id="chart_div" style="width: 900px; height: 500px;"></div>
-								</center>
-								
-							</div>
-
-							<script>
-
-								document.getElementById('btnLineal').onclick = function () {
-									var linear_data = document.getElementById('linear_data').value
-									var k = document.getElementById('cluster_count').value
-									var iterations = document.getElementById('iterations').value
-									var data = []
-									var split = linear_data.split(',')
-									// <!--pendiente añadir cantidad de pasos -->
-									split.forEach(d => {
-										data.push(parseInt(d))
-									});
-
-									if (data.length < k) {
-										alert(`El numero de clusters (${k}) no puede ser menor a la cantidad de datos (${data.length})`)
-									}
-									var kmeans = new LinearKMeans(k, data)
-									let clusterized_data = kmeans.clusterize(k, data, iterations)
-
-									let clusters = new Set([...clusterized_data.map(a => a[1])])
-
-									clusters = Array.from(clusters)
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
 
 
-									clusters.forEach((cluster, i) => {
-										clusters[i] = [cluster, "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })]
-									});
+					</div>
+					<div>
+						<p id="log7"></p>    
+						<div id="chart_div7" style="width: 900px; height: 500px;"></div>
+						<script type="text/javascript">
+							var xTrain = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+							var yTrain = [1, 4, 1, 5, 3, 7, 2, 7, 4, 9]
+							var linear = new LinearRegression()
+							linear.fit(xTrain, yTrain)
+							yPredict = linear.predict(xTrain)
+							document.getElementById("log7").innerHTML+='<br>X Train:   '+xTrain+'<br>Y Train:   '+yTrain+'<br>Y Predict: '+yPredict
+							var a = joinArrays('x',xTrain,'yTrain',yTrain,'yPredict',yPredict)
 
-									// console.log('clusters set: ', clusters)
-									//Graficada
+							google.charts.load('current', {'packages':['corechart']});
+							google.charts.setOnLoadCallback(drawChart);
+							
+							function drawChart() {
+								var data = google.visualization.arrayToDataTable(a);
+								var options = {
+									seriesType : 'scatter',
+									series: {1: {type: 'line'}}
+								};  
+								var chart = new google.visualization.ComboChart(document.getElementById('chart_div7'));
+								chart.draw(data, options);         
+							}    
+						</script>
+					</div>
+				</article>
+			</section>
 
-									google.charts.load('current', { 'packages': ['corechart'] });
-									google.charts.setOnLoadCallback(function () { drawChart(clusters) });
-
-									function drawChart(clusters) {
-										//let y = Array(data.length).fill(0)
-										var graph_data = new google.visualization.DataTable();
-										graph_data.addColumn('number', 'X')
-										graph_data.addColumn('number', 'Y')
-										graph_data.addColumn({ type: 'string', role: 'style' }); // style col.
-										let a = clusterized_data.map(e => [e[0], 0, `point { size: 7; shape-type: diamond; fill-color: ${clusters[clusters.findIndex(a => a[0] == e[1])][1]}}`])
-
-										// console.log(a)
-										graph_data.addRows(a)
-
-										clusters.forEach(c => {
-											graph_data.addRow([c[0], 0, `point { size: 3; shape-type: square; fill-color: #ff0000`])
-										});
-
-										var options = {
-											title: 'Puntos',
-											seriesType: 'scatter',
-											series: { 1: { type: 'line' } },
-											hAxis: { title: 'X', minValue: 0, maxValue: Math.max(this.data) + 10 },
-											yAxis: { title: 'Y', minValue: 0, maxValue: 5 },
-											legend: 'none'
-										};
-
-										var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
-
-										chart.draw(graph_data, options);
-									}
-
-
-								}
-
-							</script>
-						</article>
-					</section>
-					
-					<section id="tercero">
-						<article class="box post post-excerpt">
-							<header>
-								<!--
+			
+			<section id="sexto">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
 									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
 									if they get too long. You can also remove the <p> entirely if you don't
 									need a subtitle.
 								-->
-								<h2><a href="#">Fuzzyset</a></h2>
-								<p></p>
-							</header>
-							<div class="info">
-								<!--
+						<h2><a href="#">tercero</a></h2>
+						<p>En esta pagina encontra la informacion centralizada de las ejemplos de las funciones de
+							machine learning</p>
+					</header>
+					<div class="info">
+						<!--
 									Note: The date should be formatted exactly as it's shown below. In particular, the
 									"least significant" characters of the month should be encapsulated in a <span>
 									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
@@ -316,271 +790,53 @@ const d = new Date();
 									the entire "date" element.
 
 								-->
-								<span class="date"><span class="month"> <script>document.write(monthNames[d.getMonth()]);</script><span>y</span></span> <span class="day">
-									<script>var dd = new Date(); document.write(dd.getDate());</script></span><span class="year">, 2014</span></span>
-								
-								
-							</div>
-							<div>
-								<h3>Training</h3>
-								<table id="tabla"></table>
-								
-								<h3>For point</h3>
-								<table id="punto"></table>
-								
-								<h4>Euclidean</h4>
-								<p id="logE"></p>
-								
-								<h4>Manhattan</h4>
-								<p id="logM"></p>
-							</div>
-							<script>
-								var ind = ["A", "B", "C", "D", "E", "F", "G"]
-								var x = [1, 9, 2, 9, 2, 9, 8]
-								var y = [9, 8, 8, 1, 8, 8, 2]
-								var z = [2, 8, 3, 8, 2, 9, 9]
-								var group = ["I", "III", "I", "II", "I", "III", "II"]
-								var point = [7, 5, 6]
-								var tabla = "<table>"
-								
-								for (const i in x) {
-									tabla += "<tr>"
-									tabla += "<td>" + ind[i] + "</td><td>" + x[i] + "</td><td>" + y[i] + "</td><td>" + z[i] + "</td><td>" + group[i] + "</td>"
-									tabla += "</tr>"
-								}
-
-								tabla += "</table>"
-								document.getElementById("tabla").innerHTML = tabla
-								tabla = "<table>"
-								tabla += "<td> G </td><td>" + point[0] + "</td><td>" + point[1] + "</td><td>" + point[2] + "</td>"
-								tabla += "</table>"
-								document.getElementById("punto").innerHTML = tabla
-							</script>
-							<script>
-								var individuals = zip([x, y, z, group])
-								var fs = new FuzzySet(individuals)
-								var euc = fs.euclidean(point)
-								var man = fs.manhattan(point)
-								document.getElementById("logE").innerHTML = euc
-								document.getElementById("logM").innerHTML = man
-							</script>
-							
-						</article>
-					</section>
-
-					<section id="cuarto">
-						<article class="box post post-excerpt">
-							<header>
-								<!--
-									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									if they get too long. You can also remove the <p> entirely if you don't
-									need a subtitle.
-								-->
-								<h2><a href="#">K-Nearest Neighbor</a></h2>
-								<p></p>
-							</header>
-							<div class="info">
-								<!--
-									Note: The date should be formatted exactly as it's shown below. In particular, the
-									"least significant" characters of the month should be encapsulated in a <span>
-									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									Oh, and if you don't need a date for a particular page or post you can simply delete
-									the entire "date" element.
-
-								-->
-								<span class="date"><span class="month"> <script>document.write(monthNames[d.getMonth()]);</script><span>y</span></span> <span class="day">
-									<script>var dd = new Date(); document.write(dd.getDate());</script></span><span class="year">, 2014</span></span>
-								
-								
-							</div>
-							
-							<h3>Training</h3>
-							<table id="tabla1"></table>
-							
-							<h3>For point</h3>
-							<table id="punto1"></table>
-							
-							<h4>Euclidean</h4>
-							<p id="logE1"></p>
-							
-							<h4>Manhattan</h4>
-							<p id="logM1"></p>
-							
-							
-							<script>
-								var ind = ["A", "B", "C", "D", "E", "F"]
-								var x = [3, 5, 2, 2, 6, 6]
-								var y = [2, 3, 1, 2, 3, 4]
-								var group = ["N", "P", "N", "N", "P", "P"]
-								var point = [4, 4]
-								var tabla = "<table>"
-								
-								for (const i in x) {
-									tabla += "<tr>"
-									tabla += "<td>" + ind[i] + "</td><td>" + x[i] + "</td><td>" + y[i] + "</td><td>" + group[i] + "</td>"
-									tabla += "</tr>"
-								}
-
-								tabla += "</table>"
-								document.getElementById("tabla1").innerHTML = tabla
-								tabla = "<table>"
-								tabla += "<td> G </td><td>" + point[0] + "</td><td>" + point[1] + "</td>"
-								tabla += "</table>"
-								document.getElementById("punto1").innerHTML = tabla
-
-							</script>
-							<script>
-								var individuals = zip([x, y, group])
-								var knn = new KNearestNeighbor(individuals)
-								var euc = knn.euclidean(point)
-								var man = knn.manhattan(point)
-								document.getElementById("logE1").innerHTML = euc
-								document.getElementById("logM1").innerHTML = man
-							</script>
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
 
 
-							
-						</article>
-					</section>
-					
-					
+					</div>
 
-					<section id="quinto">
-						<article class="box post post-excerpt">
-							<header>
-								<!--
-									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									if they get too long. You can also remove the <p> entirely if you don't
-									need a subtitle.
-								-->
-								<h2><a href="#">Simple Neural Networks</a></h2>
-								<p></p>
-							</header>
-							<div class="info">
-								<!--
-									Note: The date should be formatted exactly as it's shown below. In particular, the
-									"least significant" characters of the month should be encapsulated in a <span>
-									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									Oh, and if you don't need a date for a particular page or post you can simply delete
-									the entire "date" element.
-
-								-->
-								<span class="date"><span class="month"> <script>document.write(monthNames[d.getMonth()]);</script><span>y</span></span> <span class="day">
-									<script>var dd = new Date(); document.write(dd.getDate());</script></span><span class="year">, 2014</span></span>
-								
-							</div>
-							
-							<body id="id2">
-								<textarea id="id1"
-									rows="10">Predecir que segundo numero sea mayor al primero [10,20], el resultado mostrado es segun entrenamiento realizado.</textarea>
-
-								<p id="logE"></p>
-								<p id="logE">----------------------------------------------------------------------------------------------</p>
-								<textarea id="id2"
-									rows="10">Predecir que primer numero sea mayor al segundo [20,5], el resultado mostrado es segun entrenamiento realizado.</textarea>
-
-								<p id="logEE"></p>
-							</body>
+				</article>
+			</section>
 
 
-							<script src="../src/NeuronalNetwork.js"></script>
-							<script>
-								let design = [2, 4, 3, 2];
-								let brain = new NeuralNetwork(design);
-								for (let i = 0; i < 10000; i++) {
-									let num1 = Math.random();
-									let num2 = Math.random();
-									brain.Entrenar([num1, num2], (num1 > num2 ? [1, 0] : [0, 1]));
-								}
+		</div>
+	</div>
 
-								largest = brain.Predecir([10, 20]);
+	<!-- Sidebar -->
+	<div id="sidebar">
 
-								document.getElementById("logE").innerHTML = String("Probability Score for Largest: " + brain.Predecir([10, 20]));
+		<!-- Logo -->
+		<h1 id="logo"><a href="#">IA USAC G5</a></h1>
 
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li class="current"><a href="#primero">ID3 Decision Tree</a></li>
+				<li><a href="#segundo">KMeans</a></li>
+				<li><a href="#tercero">FuzzySet</a></li>
+				<li><a href="#cuarto">K-Nearest Neighbor</a></li>
+				<li><a href="#quinto">Simple Neural Networks</a></li>
+				<li><a href="#sexto">Decision Tree</a></li>
+				<li><a href="#septimo">Linear Regression</a></li>
+				
 
-								console.log(`Probability Score for Largest: ${largest}`)
-
-								let design2 = [2, 4, 3, 2];
-								let brain2 = new NeuralNetwork(design2);
-								for (let i = 0; i < 10000; i++) {
-									let num1 = Math.random();
-									let num2 = Math.random();
-									brain.Entrenar([num1, num2], (num1 < num2 ? [1, 0] : [0, 1]));
-								}
-
-								largest = brain2.Predecir([20, 5]);
-
-								document.getElementById("logEE").innerHTML = String("Probability Score for Largest: " + brain.Predecir([20, 5]));
+			</ul>
+		</nav>
 
 
-								console.log(`Probability Score for Largest: ${largest}`)
+	</div>
 
-							</script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
+</body>
 
-						</article>
-					</section>
-
-					<section id="sexto">
-						<article class="box post post-excerpt">
-							<header>
-								<!--
-									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									if they get too long. You can also remove the <p> entirely if you don't
-									need a subtitle.
-								-->
-								<h2><a href="#">tercero</a></h2>
-								<p>En esta pagina encontra la informacion centralizada de las ejemplos de las funciones de machine learning</p>
-							</header>
-							<div class="info">
-								<!--
-									Note: The date should be formatted exactly as it's shown below. In particular, the
-									"least significant" characters of the month should be encapsulated in a <span>
-									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									Oh, and if you don't need a date for a particular page or post you can simply delete
-									the entire "date" element.
-
-								-->
-								<span class="date"><span class="month"> <script>document.write(monthNames[d.getMonth()]);</script><span>y</span></span> <span class="day">
-									<script>var dd = new Date(); document.write(dd.getDate());</script></span><span class="year">, 2014</span></span>
-								
-								
-							</div>
-							
-						</article>
-					</section>
-
-
-				</div>
-			</div>
-
-		<!-- Sidebar -->
-			<div id="sidebar">
-
-				<!-- Logo -->
-					<h1 id="logo"><a href="#">IA USAC</a></h1>
-
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="#primero">ID3 Decision Tree</a></li>
-							<li><a href="#segundo">KMeans</a></li>
-							<li><a href="#tercero">FuzzySet</a></li>
-							<li><a href="#cuarto">K-Nearest Neighbor</a></li>
-							<li><a href="#quinto">Simple Neural Networks</a></li>
-							
-						</ul>
-					</nav>
-
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>

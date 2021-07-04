@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Nearest Neighbor</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
+    <script type="text/javascript" src="../dist/tytus.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+    <h1 class="display-1 w-100 text-center">K-Nearest Neighbor</h1>
+    <div class="container">
+        <h3 class="display-6 mt-5">Training:<br /></h3>
+        <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+            <code class="text-info">
+                [<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;[A	9	8	8	I] <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;[B	2	1	2	III] <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;[C	9	8	9	I] <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;[D	8	9	9	II] <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;[E	1	8	2	I] <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;[F	9	8	8	III] <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;[G	2	2	3	II] <br />
+                ]<br />
+            </code>
+        </p>
+
+        <h3 class="display-6 mt-5">For point:<br /></h3>
+        <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+            <code class="text-muted">
+                [<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;[H	5  7  9] <br />
+                ]<br />
+            </code>
+        </p>
+
+        <h3 class="display-6 mt-5">Euclidean:<br /></h3>
+        <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+            <code class="text-center" id="logE">
+
+            </code>
+        </p>
+
+        <h3 class="display-6 mt-5">Manhattan:<br /></h3>
+        <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+            <code class="text-center" id="logM">
+            </code>
+        </p>
+    </div>
+
+</body>
+<script>
+  var ind = ["A", "B", "C", "D", "E", "F", "G"]
+  var x = [9, 2, 9, 8, 1, 9, 2]
+  var y = [8, 1, 8, 9, 8, 8, 2]
+  var z = [8, 2, 9, 9, 2, 8, 3]
+  var group = ["I", "III", "I", "II", "I", "III", "II"]
+  var point = [5, 7, 9]
+</script>
+
+<script>
+  var individuals = zip([x, y, z, group])
+  var knn = new KNearestNeighbor(individuals)
+  var euc = knn.euclidean(point)
+  var man = knn.manhattan(point)
+  document.getElementById("logE").innerHTML = euc
+  document.getElementById("logM").innerHTML = man
+</script>
+</html>
