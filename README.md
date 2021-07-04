@@ -6,7 +6,7 @@ Pure Javascript Machine Learning Library
 
 [02 Polynomial Regression Example](https://tytusdb.github.io/tytusjs/test/02_polynomialregression.html)
 
-[03 Polynomial Regression COVID-19 Example](https://tytusdb.github.io/tytusjs/test/03_COVIDPolynomialRegression.html)
+[03 Polynomial Regression COVID-19 Example (02)](https://tytusdb.github.io/tytusjs/test/03_COVIDPolynomialRegression.html)
 
 [04 KMeans (LINEAR) Example and Test Page](https://tytusdb.github.io/tytusjs/test/04_kmeans.html)
 
@@ -28,7 +28,7 @@ Pure Javascript Machine Learning Library
 
 [13 SVM Example](https://tytusdb.github.io/tytusjs/test/13_svm.html)
 
-[14 Linear Regression Example](https://tytusdb.github.io/tytusjs/test/14_linearRegresionExample)
+[14 Linear Regression Example (02)](https://tytusdb.github.io/tytusjs/test/14_linearRegresionExample)
 
 [15 Sample Neuronal Network Example](https://tytusdb.github.io/tytusjs/test/15_NeuronalNetwork.html)
 
@@ -51,6 +51,8 @@ Pure Javascript Machine Learning Library
 [23 K-Nearest Neighbor Example](https://tytusdb.github.io/tytusjs/test/21_KnearestNeighbor.html)
 
 [24 G8 K-Means Usage Example](https://tytusdb.github.io/tytusjs/test/23_G8_KMeans.html)
+
+[25 Polynomial Regression Example (03)](https://tytusdb.github.io/tytusjs/test/25_polinomialRegressionExample.html)
 
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)

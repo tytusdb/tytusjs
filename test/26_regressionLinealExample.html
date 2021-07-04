@@ -1,0 +1,89 @@
+<html>
+<head>
+    <script type="text/javascript" src="../dist/tytus.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="display-1 w-100 text-center">Regresion Lineal</h1>
+    <div class="container">
+
+        <div class="container" style="margin-left: 10%;">
+            <div class="row">
+                <div class="col" style="align-content: center;">
+                    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="align-content: center;">
+                        <h3 style="margin-left: 5em;">Tabla de valores:</h3>
+                        <table id="tabla" class="table table-Primary" style="height: 1%; overflow: auto;">
+                        </table>
+                    </div>
+                </div>
+                <div class="col ">
+                    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="width: 50%;">
+                        <h3 style="margin-left: 2em;" > Y Prediccion: </h3>
+                        <table id="prediction" class="table table-Primary" >
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var xValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        var yValues = [Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        ]
+        var linear = new LinearRegression()
+
+        linear.fit(xValues, yValues);
+        prediction = linear.predict(xValues);
+
+        let content = `<thead>
+                <tr>
+                    <th scope=\"col\">valor</th>
+                    <th scope=\"col\">X</th>
+                    <th scope=\"col\">Y</th>
+                </tr>
+            </thead>
+            <tbody>`;
+        for (let i = 0; i < xValues.length; i++) {
+            content += "  <tr><th scope=\"row\">" + i + "</th> <td> " + xValues[i] + " </td> <td> " + yValues[i] + "</td></tr>";
+        }
+
+        let content2 = `<thead>
+                <tr>
+                    <th scope=\"col\">X</th>
+                    <th scope=\"col\">Y-PREDCCION</th>
+                </tr>
+            </thead>
+            <tbody>`;
+        for (let i = 0; i < prediction.length; i++) {
+            content2 += "  <tr><th scope=\"row\">" + xValues[i] + "</th> <td> " + prediction[i] + "</td></tr>";
+        }
+        content2 += " </tbody>";
+
+        document.getElementById("tabla").innerHTML = content;
+        document.getElementById("prediction").innerHTML = content2;
+    </script>
+</body>
+</html>
