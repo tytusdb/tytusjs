@@ -876,8 +876,138 @@
     </div>
 
     <hr>
-    
-    
+
+
+    <div class="container mt-4">
+    <h3 class="display-5">LinearKMeans Class</h3>
+    <div class="dropdown-divider"></div>
+
+    <div class="row">
+        <div>
+            <h3 class="">Properties</h3>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>k</td>
+                        <td>Number of clusters in wich the points will be grouped.</td>
+                    </tr>
+                    <tr>
+                        <td>data</td>
+                        <td>Array of numbers representing each point on the X axis.</td>
+                    </tr>
+                    <tr>
+                        <td>iterations</td>
+                        <td>Amount of repetitions that the algorithm will perform. The iterations apply specifically to the randomization of possible cluster points.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h3 class="">Methods</h3>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 10%;">Name</th>
+                        <th scope="col"  style="width: 20%;">Parameters</th> 
+                        <th scope="col"  style="width: 70%;">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>clusterize</td>
+                        <td>
+                            <ul>
+                                <li>k</li>
+                                <li>data</li>
+                                <li>iterations</li>
+                            </ul>
+                        </td>
+                        <td>This is the main method of the KMeans algorithm, which follows the following steps:
+                            <ol>
+                                <li><b>k</b> ammount of random points are selected from the <b>data</b> array without repetition. This are the potential clusters. </li>
+                                <li>The distance between each point on the <b>data</b> array and each potential cluster is calculated and stored in the same array.</li>
+                                <li>Each point gets assigned to the closest (less distance) potential cluster point. </li>
+                                <li>The mean and variance of each cluster group is calculated and stored.</li>
+                                <li>The points are reasigned to the potential clusters but this time the distance is calculated between the point and the cluster group mean. This step is repeated untill there are no more changes in the cluster groups. </li>
+                                <li>The sum of each group variance (total variance) of the potential cluster is stored.</li>
+                                <li>Steps 1 through 6 are repeated <b>iterations</b> times </li>
+                                <li>The potential cluster who has the lesser total variance is selected as the optimal solution, and send as the returned value.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>distance</td>
+                        <td>
+                            <ul>
+                                <li>point_a</li>
+                                <li>point_b</li>
+                            </ul>
+                        </td>
+                        <td>This method returns the distance between two points (<b>point_b</b> - <b>point_a</b>)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>calculateMeanVariance</td>
+                        <td>
+                            <ul>
+                                <li>arr</li>
+                            </ul>
+                        </td>
+                        <td>This method returns the mean and variance of an array of values.
+                           The mean of <b>arr</b> is the sum of all the data divided by the item count.
+                           The variance of <b>arr</b> is the sum of the substraction of each point and the mean, to the power of 2, divided by de item count.
+
+                       </td>
+                   </tr>
+               </tbody>
+           </table>
+       </div>
+
+   </div>
+
+
+</div>
+
+
+ 
+
+
+
+
+
+ 
+<div class="row">
+    <div>
+        <h1 class="display-3 w-100 text-center">NaiveBayes</h1>
+        <hr>
+        <div class="container">
+            <h1 class="display-5 w-100">Class Diagram</h1>
+        </div>
+    </div>
+</div>
+<div class="mermaid text-center">
+    classDiagram
+
+    class NaiveBayes {
+    +causes : any[] = []
+    +insertCause(name : string, array : any[])
+    +predict(effect : string, events : []]) any[]
+    +getSimpleProbability(event : [])
+    +getConditionalProbability(eventA : [],eventB : [])
+    +getCauseByName(cause_name:string)
+    }
+
+</div>
+
+
+  
  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
  <script>mermaid.initialize({startOnLoad:true});</script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
