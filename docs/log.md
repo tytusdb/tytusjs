@@ -23,12 +23,13 @@ Log Notes
 |19|01/07/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo 2D|Finalizado|03/07/2021|
 |20|01/07/2021|2|Diegog56|14|K-Means|Codificacion del algoritmo 2D|Finalizado|03/07/2021|
 |21|01/07/2021|2|esahuay|15|Regresión Lineal - Mínimos cuadarados |Análisis del algoritmo|En desarrollo|En desarrollo|
-|22|01/07/2021|2|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |En desarrollo|En desarrollo|
+|22|01/07/2021|3|georgeno1ukno|15|Redes Neuronales |Analisis de algoritmo, Entrenamiendo, Prediccion, Implementacion simple de algoritmo |Finalizado|05/07/2021|
 |23|01/07/2021|2|wiicho57x|5|web unificada de ejemplox|diseño|Finalizado|Finalizado|02/07/2021|
-|24|02/07/2021|1|carlospnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
+|24|02/07/2021|1|
+spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |25|02/07/2021|1|andreaflores|5|Support Vector Machine|Análisis y diseño del algoritmo|Finalizado|03/07/2021|
-|26|02/07/2021|1|dodany|5|Partial Least-Squares|Codificación del algoritmo PLS|FInalizado|03/07/2021|
-|27|02/07/2021|1|dodany|5|Orthonormalized Partial Least Squares|Codificación del algoritmo OPLS|En desarrollo|En desarrollo|
+|26|02/07/2021|1|dodany|5|Partial Least-Squares|Codificación del algoritmo PLS|Finalizado|03/07/2021|
+|27|02/07/2021|1|dodany|5|Orthonormalized Partial Least Squares|Codificación del algoritmo OPLS|Finalizado|03/07/2021|
 |28|02/07/2021|1|Saulguz1|12|Regresión Logistica|Análisis del algoritmo|Finalizado|02/07/2021|
 |29|02/07/2021|1|coradowilly|12|Regresión Logistica|Construcción del algoritmo|En desarrollo|03/07/2021|
 |30|03/07/2021|2|wiicho57x|5|web unificada de ejemplo agregargando nuevos ejemplos|diseño|Finalizado|Finalizado|03/07/2021|
@@ -36,8 +37,8 @@ Log Notes
 |32|03/07/2021|1|LuisAlfonsoMelgarArizpe|14|K-Means|Añadida documentacion de las clases (SPECIFICATIONS) y libreria de distribucion|Finalizado|03/07/2021|
 |33|03/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal|Finalizado|03/07/2021|
 |34|03/07/2021|1|carlospnd|5|Partial Least-Squares|Prueba Beta Partial Least-Squares|Finalizado|03/07/2021|
-|35|03/07/2021|1|PabloOsuna1997|1|Regresion Lineal|Prueba Regresion Lineal|En desarrollo|03/07/2021|
-|36|03/07/2021|1|Ingridrpm|1|Árboles de decisión|Prueba Árboles de decisión|En desarrollo|03/07/2021|
+|35|03/07/2021|1|PabloOsuna1997|1|Regresion Lineal|Prueba Regresion Lineal|Finalizado|03/07/2021|
+|36|03/07/2021|1|Ingridrpm|1|Árboles de decisión|Prueba Árboles de decisión|Finalizado|03/07/2021|
 |37|03/07/2021|1|davidsalguero|1|Progresión polinomial|Pruebas de progresión polinomial|En desarrollo|03/07/2021|
 |38|03/07/2021|1|gerchay|13|Naive Bayes|Implementación del algoritmo Naiva Bayes tipo Gaussian|Finalizado|03/07/2021|
 |39|03/07/2021|1|gerchay|13|K-means|Implementación del algoritmo K-means tipo Density-Based Clustering.|Finalizado|03/07/2021|
@@ -45,7 +46,7 @@ Log Notes
 |41|03/07/2021|1|ronald1512|13|K-nearest neighbor|Implementación del algoritmo K-nearest neighbor mejorando la solución finalizada por otro compañero previamente|Finalizado|03/07/2021|
 |42|03/07/2021|1|marcolograjeda|13|Regresion lineal|Implementación del algoritmo Regresion lineal mejorando la solución finalizada por ing. Espino previamente|Finalizado|03/07/2021|
 |43|03/07/2021|1|marcolograjeda|13|Regresion polinomial|Implementación del algoritmo Regresion polinomial mejorando la solución finalizada por uhcorona previamente|Finalizado|03/07/2021|
-|44|03/07/2021|1|rafalejy|16|Naive Bayes|Análisis y diseño del algoritmo|En desarrollo|03/07/2021|
+|44|03/07/2021|1|rafalejy|16|Naive Bayes|Análisis y diseño del algoritmo|Finalizado|03/07/2021|
 |45|03/07/2021|1|michikatrins|9|Metodo de Bayes Gaussian|Test del argoritmo |Desarrollo|03/07/2021|
 |46|03/07/2021|1|CPeraltaa|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
 |47|03/07/2021|1|jossiebk|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
@@ -72,3 +73,12 @@ Log Notes
 |68|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Prueba beta de algoritmo minimos cuadrados parciales|Finalizado|04/07/2021|
 |69|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Ejemplo del algoritmo de regresion minimos cuadrados parciales|Finalizado|04/07/2021|
 |70|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Ejecucion de tests del algoritmo desde el ejemplo|Finalizado|04/07/2021|
+|71|04/07/2021|1|gpeitzner|1|Regresión Polinomial|Prueba Beta de Regresión Polinomial|Finalizado|04/07/2021|
+|72|04/07/2021|1|carlospnd|5|Perceptron|Diseño del algoritmo Perceptron|En desarrollo|En desarrollo|
+|73|04/07/2021|1|Ingridrpm|1|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|04/07/2021|
+|74|04/07/2021|1|PabloOsuna1997|1|Regresion Plynomial|Prueba Regresion Polinomial|Finalizado|04/07/2021|
+|75|04/07/2021|1|SergioGuoz|4|K-nearest neighbor|Desarrollo funcionalidad predecir|Finalizado|04/07/2021|
+|76|04/07/2021|1|rafalejy|16|Naive Bayes|Prueba beta y ejemplo |En desarrollo|04/07/2021|
+|77|02/07/2021|1|dodany|5|Perceptron |Prueba Beta Perceptron |Finalizado|04/07/2021|
+|78|04/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal Custom|Finalizado|04/07/2021|
+|79|04/07/2021|1|PabloOsuna1997|1|Naive Bayes|Prueba Naive Bayes|Finalizado|04/07/2021|

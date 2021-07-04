@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Neural Networks</title>
+</head>
+
+<body id="id2">
+
+
+    <h1>Test Redes Neuronales Grupo 6</h1>
+
+    <h2>Test no 1</h2>
+    <h3>Por medio del algoritmo de redes nueronales se predecirá entre dos números N si el segundo es mayor que el priemro, en este ejemplo se utilizara el 33 y  39</h3>
+
+    <p id="logE"></p>
+  
+    <h2>Test no 2</h2>
+    <h3>Por medio del algoritmo de redes nueronales se predecirá entre dos números N si el primero es mayor que el segundo, en este ejemplo se utilizara el 13 y 2</h3>
+
+
+    <p id="logEE"></p>
+</body>
+<script type="text/javascript" src="../dist/tytus.js"></script>
+<script>
+    let design = [2, 4, 3, 2];
+    let brain = new NeuralNetwork(design);
+    for (let i = 0; i < 10000; i++) {
+        let num1 = Math.random();
+        let num2 = Math.random();
+        brain.Entrenar([num1, num2], (num1 > num2 ? [1, 0] : [0, 1]));
+    }
+
+    largest = brain.Predecir([33, 39]);
+
+    document.getElementById("logE").innerHTML = String("Probability Score for Largest: " + brain.Predecir([33, 39]));
+
+
+ 
+
+    let design2 = [2, 4, 3, 2];
+    let brain2 = new NeuralNetwork(design2);
+    for (let i = 0; i < 10000; i++) {
+        let num1 = Math.random();
+        let num2 = Math.random();
+        brain.Entrenar([num1, num2], (num1 < num2 ? [1, 0] : [0, 1]));
+    }
+
+    largest = brain2.Predecir([13, 2]);
+
+    document.getElementById("logEE").innerHTML = String("Probability Score for Largest: " + brain.Predecir([13, 2]));
+
+
+    
+
+
+</script>
+
+</html>
