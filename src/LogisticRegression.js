@@ -13,6 +13,7 @@ class LogisticRegression extends LogisticModel {
 
     // Fit regression
     fit(data) {
+        console.log(data)
         this.dim = data[0].length;
         var N = data.length;
         
@@ -139,7 +140,12 @@ class LogisticRegression extends LogisticModel {
 
 
 class MultiClassLogistic extends LogisticModel {
-    
+    constructor() {
+        super()  
+        this.alpha = 0.001;
+        this.lambda = 0;
+        this.iterations = 100;     
+    }
     fit(data, classes) {
         this.dim = data[0].length;
         var N = data.length;
@@ -162,12 +168,14 @@ class MultiClassLogistic extends LogisticModel {
         }
         
         this.classes = classes;
+
+        console.log(this.classes)
         
         this.logistics = {};
         var result = {};
         for(var k = 0; k < this.classes.length; ++k){
             var c = this.classes[k];
-            this.logistics[c] = new jsr.LogisticRegression({
+            this.logistics[c] = new LogisticRegression({
                 alpha: this.alpha,
                 lambda: this.lambda,
                 iterations: this.iterations
