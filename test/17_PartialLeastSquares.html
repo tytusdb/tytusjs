@@ -13,7 +13,9 @@
         <p><h1 class="text-center display-5" style="margin-bottom: 5%;">Partial Least Square</h1></p>
 
         <div class="container">
-            <div class="row">
+            <div class="row text-center" >
+                
+                <div class="col-lg-2"></div>
                 <div class="col-lg-4">
                     <table class="table table-dark table-hover text-center" id="valoresX">
                         <thead>
@@ -26,7 +28,6 @@
                         </tbody>
                     </table> 
                 </div>
-                <div class="col-lg-4"></div>
                 <div class="col-lg-4">
                     <table class="table table-dark table-hover text-center" id="valoresY">
                         <thead>
@@ -40,14 +41,109 @@
                     </table> 
                 </div>
             </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <table class="table table-dark table-hover text-center" id="tablaValoresIniciales">
+                        <thead>
+                            <tr>
+                              <th colspan="2">Valores Iniciales</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoValoresIniciales">
+    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-dark table-hover text-center" id="tablaPuntuacionX">
+                    <thead>
+                        <tr>
+                          <th id="tituloX" colspan="2">Matriz de puntuacion X</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaPuntuacionX">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-dark table-hover text-center" id="tablaCargaX">
+                    <thead>
+                        <tr>
+                          <th id="tituloCX" colspan="2">Matriz de carga X</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaCargaX">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-dark table-hover text-center" id="tablaPuntuacionY">
+                    <thead>
+                        <tr>
+                          <th id="tituloY" colspan="2">Matriz de puntuacion Y</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaPuntuacionY">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-dark table-hover text-center" id="tablaCargaY">
+                    <thead>
+                        <tr>
+                          <th id="tituloCY" colspan="2">Matriz de carga Y</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaCargaY">
+
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-dark table-hover text-center" id="tablaCoeficiente">
+                    <thead>
+                        <tr>
+                          <th id="tituloCoeficiente" colspan="2">Matriz de Coeficiente de Regresion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaCoeficiente">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <table class="table table-dark table-hover text-center" id="tablaPesoX">
+                    <thead>
+                        <tr>
+                          <th id="tituloPesoX" colspan="2">Matriz de peso de X</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaPesoX">
+
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </body>
     <script>
-        var valoresX = [[0.01,0.02],[0.02,0.03],[0.25,0.69],[0.58,0.74],[0.95,1.2]];
-        var valoresY = [[1,0],[0,1],[0,1],[1,0],[0,1]];
+        //var valoresX = [[0.01,0.02],[0.02,0.03],[0.25,0.69],[0.58,0.74],[0.95,1.2]];
+        //var valoresY =[[1,0],[0,1],[0,1],[1,0],[0,1]];
+        
+        var valoresX = [[0.12, 0.02],[0.25, 1.01],[0.95, 0.01],[1.01, 0.96]];
+        var valoresY = [[1, 0],[1, 0],[1, 0],[0, 1]];
+        
         var hiperparams = {
-            tolerancia : 0.0001,
-            vectoresLatentes:10
+            tolerance : 0.0001,
+            latentVectors:10
         }
         
         function colocarValoresX(){
@@ -73,7 +169,34 @@
             htmlTabla= htmlTabla+"\n</tbody>";
             document.getElementById("cuerpoValoresY").innerHTML = htmlTabla;
         }
+        function colocarValoresIniciales(){
+            var htmlTabla = "<tbody>";
+            htmlTabla = htmlTabla + "\n\t<tr>";
+            htmlTabla = htmlTabla + "\n\t\t<td> Vectores Latentes </td>";
+            htmlTabla = htmlTabla + "\n\t\t<td> "+hiperparams.latentVectors+" </td>"; 
+            htmlTabla = htmlTabla + "\n\t</tr>";
+            htmlTabla = htmlTabla + "\n\t<tr>";
+            htmlTabla = htmlTabla + "\n\t\t<td> Tolerancia </td>";
+            htmlTabla = htmlTabla + "\n\t\t<td> "+hiperparams.tolerance+" </td>"; 
+            htmlTabla = htmlTabla + "\n\t</tr>";
+            htmlTabla = htmlTabla + "\n</tbody>";
+            document.getElementById("cuerpoValoresIniciales").innerHTML = htmlTabla;
+        }
+
+
+
+        function ejecutarAlgoritmo(){
+            var minimosCuadradosParciales = new PLS(hiperparams);
+            minimosCuadradosParciales.train(valoresX, valoresY);
+
+        }
+
+        
         colocarValoresX();
         colocarValoresY();
+        colocarValoresIniciales();
+
+        /**/
+        ejecutarAlgoritmo();
     </script>
 </html>
