@@ -8,12 +8,6 @@ class KNearestNeighbor {
     this.individuals = individuals
   }
 
-  constructor(k = 1, data, labels) {
-    this.k = k;
-    this.data = data;
-    this.labels = labels;
-  }
-
   euclidean(point) {
     var distance = []
     var dimensions = this.individuals[0].length - 1
