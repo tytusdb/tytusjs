@@ -35,12 +35,12 @@
 
 <script src="../src/NeuronalNetwork.js"></script>
 <script>
-    let diseño = [2, 4, 3, 2];
-    let redNeural = new NeuralNetwork(diseño);
+    let arreglodesignado = [2, 4, 3, 2];
+    let redNeural = new NeuralNetwork(arreglodesignado);
     for (let i = 0; i < 10000; i++) {
-        let num1 = Math.random();
-        let num2 = Math.random();
-        redNeural.Entrenar([num1, num2], (num1 != num2 ? [1, 0] : [0, 1]));
+        let numero1 = Math.random();
+        let numero2 = Math.random();
+        redNeural.Entrenar([numero1, numero2], (numero1 != numero2 ? [1, 0] : [0, 1]));
     }
 
     diferent = redNeural.Predecir([10, 20]);
@@ -48,7 +48,7 @@
     document.getElementById("Resultado").innerHTML = String( "&nbsp;&nbsp;&nbsp;&nbsp;" + redNeural.Predecir([5, 10]));
 
 
-    console.log(`Probability Score for diferent: ${diferent}`)
+    //console.log(`Probability Score for diferent: ${diferent}`)
 
     
 
