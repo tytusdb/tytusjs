@@ -54,7 +54,31 @@ class KNearestNeighbor {
     let maxDistanceInMap;
 
     for (let index = 0, len = this.data.length; index < len; index++) {
+      const otroPunto = this.data[index];
+      const otroPuntoLabel = this.labels[index];
+      const distancia = distance(point, otroPunto);
 
+      if (!maxDistanceInMap || distancia < maxDistanceInMap) {
+
+        // Añador solo si es la mas cercana
+        map.push({
+          index,
+          distance: distancia,
+          label: otroPuntoLabel
+        });
+
+        // Ordenar el map
+        map.sort((a, b) => a.distance < b.distance ? -1 : 1);
+
+        // Si el map es muy grande, se elimina el item
+        if (map.length > this.k) {
+          map.pop();
+        }
+
+        // Actualizar el valor siguiente
+        maxDistanceInMap = map[map.length - 1].distance;
+
+      }
     }
     return map;
   }
