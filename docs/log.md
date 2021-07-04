@@ -46,3 +46,4 @@ Log Notes
 |42|03/07/2021|1|marcolograjeda|13|Regresion lineal|Implementación del algoritmo Regresion lineal mejorando la solución finalizada por ing. Espino previamente|Finalizado|03/07/2021|
 |43|03/07/2021|1|marcolograjeda|13|Regresion polinomial|Implementación del algoritmo Regresion polinomial mejorando la solución finalizada por uhcorona previamente|Finalizado|03/07/2021|
 |44|03/07/2021|1|rafalejy|16|Naive Bayes|Análisis y diseño del algoritmo|En desarrollo|03/07/2021|
+|58|03/07/2021|1|ChristianR007|8|Naive Bayes|Metodo de bayes por causa y efecto segun las probabilidades de la tabla|Finalizado|03/07/2021|
