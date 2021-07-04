@@ -36,7 +36,7 @@ Log Notes
 |32|03/07/2021|1|LuisAlfonsoMelgarArizpe|14|K-Means|Añadida documentacion de las clases (SPECIFICATIONS) y libreria de distribucion|Finalizado|03/07/2021|
 |33|03/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal|Finalizado|03/07/2021|
 |34|03/07/2021|1|carlospnd|5|Partial Least-Squares|Prueba Beta Partial Least-Squares|Finalizado|03/07/2021|
-|35|03/07/2021|1|PabloOsuna1997|1|Regresion Lineal|Prueba Regresion Lineal|En desarrollo|03/07/2021|
+|35|03/07/2021|1|PabloOsuna1997|1|Regresion Lineal|Prueba Regresion Lineal|Finalizado|03/07/2021|
 |36|03/07/2021|1|Ingridrpm|1|Árboles de decisión|Prueba Árboles de decisión|Finalizado|03/07/2021|
 |37|03/07/2021|1|davidsalguero|1|Progresión polinomial|Pruebas de progresión polinomial|En desarrollo|03/07/2021|
 |38|03/07/2021|1|gerchay|13|Naive Bayes|Implementación del algoritmo Naiva Bayes tipo Gaussian|Finalizado|03/07/2021|
@@ -75,3 +75,4 @@ Log Notes
 |71|04/07/2021|1|gpeitzner|1|Regresión Polinomial|Prueba Beta de Regresión Polinomial|Finalizado|04/07/2021|
 |72|04/07/2021|1|carlospnd|5|Perceptron|Diseño del algoritmo Perceptron|En desarrollo|En desarrollo|
 |73|04/07/2021|1|Ingrdrpm|1|K-nearest neighbor|Prueba beta K-nearest neighbor|En desarrollo|04/07/2021|
+|74|04/07/2021|1|PabloOsuna1997|1|Regresion Plynomial|Prueba Regresion Polinomial|Finalizado|04/07/2021|
