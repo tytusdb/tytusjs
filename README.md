@@ -60,6 +60,8 @@ Pure Javascript Machine Learning Library
 
 [28 K-Nearest Neighbor Example and Graph](https://tytusdb.github.io/tytusjs/test/28_knearest.html)
 
+[29 Bayes Method Example](https://tytusdb.github.io/tytusjs/test/29_bayes.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
 
