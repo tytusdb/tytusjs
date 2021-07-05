@@ -82,3 +82,4 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |77|02/07/2021|1|dodany|5|Perceptron |Prueba Beta Perceptron |Finalizado|04/07/2021|
 |78|04/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal Custom|Finalizado|04/07/2021|
 |79|04/07/2021|1|PabloOsuna1997|1|Naive Bayes|Prueba Naive Bayes|Finalizado|04/07/2021|
+|80|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregó documentación del funcionamiento del algoritmo.|Finalizado|04/07/2021|
