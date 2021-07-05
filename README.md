@@ -76,6 +76,8 @@ Pure Javascript Machine Learning Library
 
 [36 Neural network](https://tytusdb.github.io/tytusjs/test/36_NeuralNetwork.html)
 
+[37 Arbol de decision](https://tytusdb.github.io/tytusjs/test/37_ArbolesDecision_ID3.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
 
