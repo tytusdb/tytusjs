@@ -201,6 +201,209 @@ Bayes.prototype.pOfV = function(d, value, index){
     return p;
 } 
 
+//c
+
+/******* NODO DEL ARBOL DE DECISIONES ******/
+
+function Nodo_Arbol(nodoNombre, nodoTipo){
+    this.nombre = nodoNombre || null;  
+    this.tipo = nodoTipo || null;
+    this.valor = new Array();
+}
+  
+Nodo_Arbol.prototype = {
+    getNombre: function() {
+        return this.nombre;
+    },
+    setNombre: function(nodeNombre) {
+        this.nombre = nodeNombre;
+    },
+    getTipo: function() {
+        return this.tipo;
+    },
+    setTipo: function(nodeTipo) {
+        this.tipo = nodeTipo;
+    },
+    getValor: function(){
+        return this.valor;
+    },
+    setValor: function(valor) {
+        this.valor = valor;
+    },
+  }
+
+/********** ARBOL DE DECISIONES **********/
+//const HashMap = require('./HashMap');          se usan en el árbol
+//const InfoGanancia = require('./InfoGain');    se usan en el  árbol
+
+function IteratorArbol(arr){
+    if(!(arr instanceof Array)){
+        throw new Error('iterator necesita un parmatro del tipo arreglo!');
+    }
+    this.arreglo = arr;
+    this.tamanio = arr.length;
+    this.indice = 0;
+}
+
+IteratorArbol.prototype.current = function() {
+    return this.arreglo[this.indice-1];
+}
+
+IteratorArbol.prototype.next = function(){
+    this.indice += 1;
+    if(this.indice > this.tamanio || this.arreglo[this.indice-1] === null)
+        return false;
+    return true;
+}
+
+function ArbolDecisiones(datos, atributos) {
+    if(!(datos instanceof Array) || !(atributos instanceof Array)){
+        throw new Error('Los parametros deben ser del tipo arreglo!');
+    }
+    this._datos = datos;
+    this._atributos = atributos;
+    this._nodo = this.crearArbolDecision(this._datos,this._atributos);
+}
+
+ArbolDecisiones.prototype.crearArbolDecision = function(datos, listaAtributos) {
+    var nodo = new Nodo_Arbol();
+    var mapaResultados = this.isPuro(this.getClasificacion(datos));
+  
+    if(mapaResultados.size() === 1){
+        nodo.setTipo('result');
+        nodo.setNombre(mapaResultados.keys()[0]);
+        nodo.setValor(mapaResultados.keys()[0]);
+        // console.log('Arbol con un solo hijo：' + nodo.getVals());
+        return nodo;
+    }
+    if(listaAtributos.length === 0){
+        var max = this.getMaxVal(mapaResultados);
+        nodo.setTipo('result');
+        nodo.setNombre(max)
+        nodo.setValor(max);
+        // console.log('Valor mayor：'+ max);
+        return nodo;
+    }
+
+    var indiceAtributo = this.getMaximaGanancia(datos, listaAtributos).indiceAtributo
+    // console.log('La ganancia Máxima es：'+ listaAtributos[indiceAtributo);
+    // console.log('Nodo creado：'+ listaAtributos[indiceAtributo])
+    nodo.setNombre(listaAtributos[indiceAtributo]);
+    nodo.setTipo('atributo');
+
+    var atributoAux = new Array();
+    atributoAux = listaAtributos;
+    // atributoAux.splice(indiceAtributo, 1);
+
+    var mapaValorAtributo = gain.getAttrValue(indiceAtributo); //valor del Map mejor clasificado
+    var posibleValores = mapaValorAtributo.keys();
+    
+    nodo_valores = posibleValores.map(function(v) {
+        // console.log('crear rama：'+v);
+        var nuevosDatos = datos.filter(function(x) {
+            return x[indiceAtributo] === v;
+        });
+
+        var nodo_hijo = new Nodo_Arbol(v, 'valores caracteristicos');
+        var nodo_hoja = self.crearArbolDecision(nuevosDatos, atributoAux);
+        nodo_hijo.setValor(nodo_hoja);
+        return nodo_hijo;
+    })
+    
+    nodo.setValor(nodo_valores);
+
+    this._nodo = nodo;
+    return nodo;
+}
+
+/**
+ * Determinar si la clasificación de pureza de los datos 
+ * de entrenamiento es una clasificación o no es 
+ * una clasificación.
+ **/
+ArbolDecisiones.prototype.getClasificacion = function(datos){
+    var lista = new Array();
+    var iteracion = new IteratorArbol(datos);
+    while(iteracion.next()){
+        var indice = iteracion.current().length - 1;
+        var valor = iteracion.current()[indice];
+        lista.push(valor);
+    }
+    return lista;
+}
+
+/**
+* Obtener un conjunto de resultados de la clasificación y juzgar la pureza
+**/
+ArbolDecisiones.prototype.isPuro = function(lista) {
+    var mapa = new HashMap(), contador = 1;
+    lista.forEach(function(item) {
+        if(map.get(item)){
+            contador++;
+        }
+        map.put(item, contador);
+    });
+    return map;
+}
+
+/**
+* Obtener la máxima ganancia
+**/
+ArbolDecisiones.prototype.getMaximaGancia = function(datos, listaAtributos) {
+    var ganancia = new InfoGanancia(datos, listaAtributos);
+    var maximaGanacia = 0;
+    var indiceAtributo = -1;
+    for(var i = 0; i < listaAtributos.length; i++){
+        var temp = ganancia.getRadioGanancia(i);
+        if(maxGain < temp){
+            maximaGanacia = temp;
+            indiceAtributo = i;
+        }
+    }
+    return {indiceAtributo: indiceAtributo, maximaGanacia: maximaGanacia};
+}
+/**
+ * Obtener la clave con el mayor valor en resultMap
+ */
+ArbolDecisiones.prototype.getMaxVal = function(map){
+    var obj = map.obj, temp = 0, okey = '';
+    for(var key in obj){
+        if(temp < obj[key] && typeof obj[key] === 'numero'){
+            temp = obj[key];
+            okey = key;
+        };
+    }
+    return okey;
+}
+/**
+ * Atributos 
+ */
+DecisionTree.prototype.predictClass = function(ejemplo){
+    var raiz = this._nodo;
+    var map = new HashMap();
+    var listaAtributos = this._atributos;
+    for(var i = 0; i < listaAtributos.length; i++){
+        map.put(listaAtributos[i], ejemplo[i]);
+    }
+
+    while(raiz.tipo !== 'resultado'){
+        if(raiz.nombre === undefined){
+            return raiz = 'No se puede clasificar';
+        }
+        var atributo = raiz.nombre;
+        var ejemplo = map.get(atributo);
+        var nodoHijo = raiz.valor.filter(function(nodo) {
+            return nodo.nombre === ejemplo;
+        });
+        if(nodoHijo.length === 0){
+        return raiz = 'No se puede clasificar';
+        }
+        raiz = nodoHijo[0].valor; // 只遍历attribute节点
+    }
+    return raiz.vals;
+}
+
+//fin c
 
 
 /*
