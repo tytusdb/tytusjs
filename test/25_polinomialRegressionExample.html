@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Linear Regresion Example</title>
+		<style>
+			table,
+			th,
+			td {
+				border: 1px solid black;
+			}
+		</style>
+		<script src="../dist/tytus.js"></script>
+		<script
+			type="text/javascript"
+			src="https://www.gstatic.com/charts/loader.js"
+		></script>
+	</head>
+	<body>
+		<center>
+			<h1>Polynomial Regression</h1>
+			<h2>Current Model</h2>
+			<table style="text-align: center">
+				<tr>
+					<th>X Train</th>
+					<th>Y Train</th>
+				</tr>
+				<tr>
+					<td>0</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>5</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>6</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>11</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>5</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>20</td>
+				</tr>
+			</table>
+			<h2>Predicted Data</h2>
+			<table id="displayTable" style="text-align: center">
+				<tr>
+					<th>X Base</th>
+					<th>Grade 2</th>
+					<th>Grade 3</th>
+					<th>Grade 4</th>
+				</tr>
+			</table>
+			<h2>Graph</h2>
+			<div id="curve_chart" style="width: 900px; height: 500px"></div>
+		</center>
+		<script>
+			let xValues = [0, 1, 2, 3, 4, 5, 6, 7];
+			let yValues = [3, 5, 1, 6, 10, 11, 5, 20];
+			let polynomialRegression = new PolynomialRegression();
+
+			polynomialRegression.fit(xValues, yValues, 2);
+			let grade2 = polynomialRegression.predict(xValues);
+			polynomialRegression.fit(xValues, yValues, 3);
+			let grade3 = polynomialRegression.predict(xValues);
+			polynomialRegression.fit(xValues, yValues, 4);
+			let grade4 = polynomialRegression.predict(xValues);
+
+			let displayTable = document.getElementById("displayTable");
+			for (let i = 0; i < xValues.length; i++) {
+				const x = xValues[i];
+				let row = document.createElement("tr");
+				let xCol = document.createElement("td");
+				xCol.innerText = x.toString();
+				let grade2Col = document.createElement("td");
+				grade2Col.innerText = grade2[2].toString();
+				let grade3Col = document.createElement("td");
+				grade3Col.innerText = grade3[2].toString();
+				let grade4Col = document.createElement("td");
+				grade4Col.innerText = grade4[2].toString();
+				row.appendChild(xCol);
+				row.appendChild(grade2Col);
+				row.appendChild(grade3Col);
+				row.appendChild(grade4Col);
+				displayTable.appendChild(row);
+			}
+
+			var graphDataSet = [];
+			graphDataSet.push(["X", "Y", "Grade 2", "Grade 3", "Grade 4"]);
+			for (let i = 0; i < xValues.length; i++) {
+				const x = xValues[i];
+				graphDataSet.push([
+					x.toString(),
+					yValues[i],
+					grade2[i],
+					grade3[i],
+					grade4[i],
+				]);
+			}
+
+			google.charts.load("current", { packages: ["corechart"] });
+			google.charts.setOnLoadCallback(drawChart);
+
+			function drawChart() {
+				var data = google.visualization.arrayToDataTable(graphDataSet);
+
+				var options = {
+					title: "Polynomial Regression",
+					legend: { position: "bottom" },
+				};
+
+				var chart = new google.visualization.LineChart(
+					document.getElementById("curve_chart")
+				);
+
+				chart.draw(data, options);
+			}
+		</script>
+	</body>
+</html>

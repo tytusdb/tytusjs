@@ -1,0 +1,53 @@
+<html>
+<head>
+<script type="text/javascript" src="../dist/tytus.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+<h2>Linear Regression</h2>
+<h3>Ejemplo con Puntos dispersos</h3>
+<p id="log"></p>    
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+<h3>Ejemplo con Puntos ideales</h3>
+<p id="logi"></p>    
+<div id="chart_divi" style="width: 900px; height: 500px;"></div>
+<script type="text/javascript">
+var xTrain = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15]
+var yTrain = [10, 5, 3, 15, 13, 1, 25, 0, 11,20,16,9,2,15,9,0]
+var yTrain_ideal = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15]
+var linear = new LinearRegression()
+var linear_ideal = new LinearRegression()
+
+linear.fit(xTrain, yTrain)
+yPredict = linear.predict(xTrain)
+
+linear_ideal.fit(xTrain, yTrain_ideal)
+yPredict_ideal = linear_ideal.predict(xTrain)
+
+var errors=linear.coeficientR2(yTrain,yPredict)
+var errors_ideal=linear_ideal.coeficientR2(yTrain_ideal,yPredict_ideal)
+document.getElementById("log").innerHTML+='<br>X Train:   '+xTrain+'<br>Y Train:   '+yTrain+'<br>Y Predict: '+yPredict+'<br>R2 : '+errors
+var a = joinArrays('x',xTrain,'yTrain',yTrain,'yPredict',yPredict)
+document.getElementById("logi").innerHTML+='<br>X Train:   '+xTrain+'<br>Y Train:   '+yTrain_ideal+'<br>Y Predict: '+yPredict_ideal+'<br>R2 : '+errors_ideal
+var b = joinArrays('x',xTrain,'yTrain',yTrain_ideal,'yPredict',yPredict_ideal)
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+  
+function drawChart() {
+    var data = google.visualization.arrayToDataTable(a);
+    var data_ideal = google.visualization.arrayToDataTable(b);
+    var options = {
+        seriesType : 'scatter',
+        series: {1: {type: 'line'}}
+    };  
+    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+    chart.draw(data, options);        
+    var chart_ideal = new google.visualization.ComboChart(document.getElementById('chart_divi'));
+    chart_ideal.draw(data_ideal, options);          
+}    
+
+</script>
+
+</body>
+</html>
