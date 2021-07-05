@@ -82,14 +82,18 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |77|02/07/2021|1|dodany|5|Perceptron |Prueba Beta Perceptron |Finalizado|04/07/2021|
 |78|04/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal Custom|Finalizado|04/07/2021|
 |79|04/07/2021|1|PabloOsuna1997|1|Naive Bayes|Prueba Naive Bayes|Finalizado|04/07/2021|
-|80|04/07/2021|1|brandonBBAL1994|17|Redes neuronales|Test de redes neuronales|Finalizado|04/07/2021|
-|81|04/06/2021|1|hernandezgramajo|6|Test K-means|Test del algoritmo|Finalizado|4/07/2021|
-|82|04/06/2021|1|SergioGuoz|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
-|83|04/06/2021|1|hernandezgramajo|6|Test K-nearest|Test del algoritmo|Finalizado|4/07/2021|
-|84|04/07/2021|1|Ingridrpm|1|Neural network|Neural network test| Finalizado |04/07/2021|
-|85|04/07/2021|1|Azurdia90|9|Metodo de Bayes Gaussian|Implementación y Test del argoritmo |En Desarrollo|04/07/2021|
-|86|04/07/2021|1|ramiromateo|17|Regresion lineal|Implementacion del coeficiente de correlacion, testeo con dos ejemplos con puntos muy dispersos y con puntos ideales|Finalizado|04/07/2021|
-|87|04/07/2021|1|ChristianR007|8|Arboles de decision|Implementacion de Arboles de decision utilizando algoritmo ID3 con el calculo de la ganancia de la informacion|Finalizado|04/07/2021|
-|88|04/07/2021|1|WillyAlberto|8|Regresion lineal|Minimos cuadrados|Finalizado|04/07/2021|
-|89|04/07/2021|1|coradowilly|12|Regresión Logistica|Algoritmo Binario y Multicase. Pruebas Beta|Finalizado|04/07/2021|
-|90|04/07/2021|1|Saulguz1|12|Regresión Logistica|Documentacion y Especificaciones Regresion Logistica Binaria Simple y Multiclase|Finalizado|04/07/2021|
+|80|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregó documentación del funcionamiento del algoritmo.|Finalizado|04/07/2021|
+|81|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregó variación del algoritmo de limites cuadrados "".|Finalizado|04/07/2021|
+|82|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregarón pruebas "01_regression_LinearLeastSquares.html" utilizando la variación del algoritmo de limites cuadrados.|Finalizado|04/07/2021|
+|83|04/07/2021|1|brandonBBAL1994|17|Redes neuronales|Test de redes neuronales|Finalizado|04/07/2021|
+|84|04/06/2021|1|hernandezgramajo|6|Test K-means|Test del algoritmo|Finalizado|4/07/2021|
+|85|04/06/2021|1|SergioGuoz|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
+|86|04/06/2021|1|hernandezgramajo|6|Test K-nearest|Test del algoritmo|Finalizado|4/07/2021|
+|87|04/07/2021|1|Ingridrpm|1|Neural network|Neural network test| Finalizado |04/07/2021|
+|88|04/07/2021|1|Azurdia90|9|Metodo de Bayes Gaussian|Implementación y Test del argoritmo |En Desarrollo|04/07/2021|
+|89|04/07/2021|1|ramiromateo|17|Regresion lineal|Implementacion del coeficiente de correlacion, testeo con dos ejemplos con puntos muy dispersos y con puntos ideales|Finalizado|04/07/2021|
+|90|04/07/2021|1|ChristianR007|8|Arboles de decision|Implementacion de Arboles de decision utilizando algoritmo ID3 con el calculo de la ganancia de la informacion|Finalizado|04/07/2021|
+|91|04/07/2021|1|WillyAlberto|8|Regresion lineal|Minimos cuadrados|Finalizado|04/07/2021|
+|92|04/07/2021|1|coradowilly|12|Regresión Logistica|Algoritmo Binario y Multicase. Pruebas Beta|Finalizado|04/07/2021|
+|93|04/07/2021|1|Saulguz1|12|Regresión Logistica|Documentacion y Especificaciones Regresion Logistica Binaria Simple y Multiclase|Finalizado|04/07/2021|
+|94|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregaron validaciones en el archivo "LinearModel.js" escrito por el ingeniero "Luis.Espino" esto para controlar los posibles errores al utilizar la biblioteca.|Finalizado|04/07/2021|
