@@ -11,7 +11,7 @@ Log Notes
 |7|29/06/2021|2|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo lineal y pruebas|Finalizado|01/07/2021|
 |8|29/06/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo lineal|Finalizado|01/07/2021|
 |9|29/06/2021|1|pablorrp1|2|K-nearest neigbor|Cálculo del punto a clasificar contra datos de entrenamiento|Finalizado|29/06/2021|
-|10|29/06/2021|3|cristianncaste18|13|Redes neuronales|Análisis y diseño del algoritmo|En desarrollo|En desarrollo|
+|10|29/06/2021|3|cristianncaste18|13|Redes neuronales|Análisis y diseño del algoritmo|Finalizado|04/07/2021|
 |11|29/06/2021|1|pablorrp1|2|Conjuntos difusos|Cálculo del punto a clasificar por conjuntos difusos|Finalizado|30/06/2021|
 |12|29/06/2021|-|cesarsazo|6|Regresion Lineal|Regresion con minimos cuadrados.|En desarrollo|En desarrollo|
 |13|29/06/2021|-|jj196|6|Método de Bayes|Análisis|En desarrollo|En desarrollo|En desarrollo|
@@ -107,4 +107,5 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |102|04/07/2021|1|marcolograjeda|13|Regresión Linea|Finalizado|Desarrollo|04/07/2021|
 |103|04/07/2021|1|marcolograjeda|13|Regresion polinomial|Prueba|Test|04/07/2021|
 |104|04/07/2021|1|marcolograjeda|13|Regresion polinomial|Prueba polinomial|Finalizado|04/07/2021|
-|105|04/06/2021|1|hugofiguer9777|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
+|105|04/07/2021|3|cristianncaste18|13|Redes neuronales|Pruebas Beta|Finalizado|04/07/2021|
+|106|04/06/2021|1|hugofiguer9777|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
