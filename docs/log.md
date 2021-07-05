@@ -86,5 +86,5 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |81|04/06/2021|1|hernandezgramajo|6|Test K-means|Test del algoritmo|Finalizado|4/07/2021|
 |82|04/06/2021|1|SergioGuoz|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
 |83|04/06/2021|1|hernandezgramajo|6|Test K-nearest|Test del algoritmo|Finalizado|4/07/2021|
-|84|04/07/2021|1|Ingridrpm|1|Neural network|Neural network test| En desarrollo |04/07/2021|
+|84|04/07/2021|1|Ingridrpm|1|Neural network|Neural network test| Finalizado |04/07/2021|
 |85|04/07/2021|1|Azurdia90|9|Metodo de Bayes Gaussian|Implementación y Test del argoritmo |En Desarrollo|04/07/2021|

@@ -74,6 +74,8 @@ Pure Javascript Machine Learning Library
 
 [35 K-nearest](https://tytusdb.github.io/tytusjs/test/34_k_nearest_neighbor.html)
 
+[36 Neural network](https://tytusdb.github.io/tytusjs/test/36_NeuralNetwork.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
 
