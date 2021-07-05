@@ -1301,6 +1301,177 @@
         
         </div>
 
+        <div class="row">
+            <div>
+                <h1 class="display-3 w-100 text-center">Logisti Regression</h1>
+                <hr>
+                <div class="container">
+                    <h1 class="display-5 w-100">Class Diagram</h1>
+                </div>
+            </div>
+        </div>
+        <div class="mermaid text-center">
+        
+            classDiagram
+            LogisticModel <|-- LogisticRegression
+            LogisticModel <|-- MultiClassLogistic
+            class LogisticModel {
+            }
+            class LogisticRegression {
+                + alpha: int , 0.001
+                + lambda: int, 0
+                + iterations: int, 100
+                + fit(data)
+                + computeThreshold(X,Y)
+                + grad(X,Y,theta)
+                + h(x_i, theta)
+                + transform(x)
+                + cost(X,Y,theta)
+            }
+            class MultiClassLogistic {
+                + alpha: int , 0.001
+                + lambda: int, 0
+                + iterations: int, 100
+                + fit(data,classes)
+                + transform(x)
+            }
+        </div>
+        
+            
+        
+        
+        <div class="container mt-4">
+            <h3 class="display-5">Logisti Regression</h3>
+            <div class="dropdown-divider"></div>
+        
+            <div class="row">
+                <div>
+                    <h3 class="">Properties</h3>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>alpha</td>
+                                <td>percentage of certainty
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>lambda</td>
+                                <td>Number of lambda of the function</td>
+                            </tr>
+                            <tr>
+                                <td>iterations</td>
+                                <td>number of iterations that the algorithm must perform
+                                </td>
+                            </tr>
+        
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <h3 class="">Methods</h3>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 10%;">Name</th>
+                                <th scope="col" style="width: 20%;">Parameters</th>
+                                <th scope="col" style="width: 70%;">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>fit</td>
+                                <td>
+                                    <ul>
+                                        <li>data (matrix) for simple </li>
+                                        <li>classes (array) for multiclass</li>
+                                    </ul>
+                                </td>
+                                <td>This method separates the input matrix into respective arrays of X, Y, and the current value (s). To later carry out the transformation and evaluation of the function
+
+                                    <ul>
+                                        <li>The <b>data</b> parameter represents the matrix data to analyze </li>
+                                        <li>The <b>classes</b> parameter recieves the data array of multiclass </li>
+        
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>computeThreshold</td>
+                                <td>
+                                    <ul>
+                                        <li>X (int0)</li>
+                                        <li>Y (int)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    This Method obtains the threshold of the coordinates obtained in X and Y
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>grad</td>
+                                <td>
+                                    <ul>
+                                        <li>X (int)</li>
+                                        <li>Y (int)</li>
+                                        <li>theta (int)</li>
+                                    </ul>
+                                </td>
+                                <td>this method calculates and obtains the gradient with which the function will be evaluated
+
+        
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>h</td>
+                                <td>
+                                    <ul>
+                                        <li>x_i (int)</li>
+                                        <li>theta (int)</li>
+                                    </ul>
+                                </td>
+                                <td> This method evaluates the X coordinate with the theta coefficient in the logistic regression function.
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>transform</td>
+                                <td>
+                                    <ul>
+                                        <li>X (int)</li>
+                                    </ul>
+                                </td>
+                                <td> This method returns the transformation of the prediction, in this case if it is binary it checks if it is 1 or 0 and if it is multiclass it compares the classes with the array.
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>cost</td>
+                                <td>
+                                    <ul>
+                                        <li>X (int)</li>
+                                        <li>Y (int)</li>
+                                        <li>theta (int)</li>
+                                    </ul>
+                                </td>
+                                <td> The method returns the cost of the function, this is achieved by evaluating the function in the equation of the method h ()
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+               </div>
+        
+           </div>
+        
+        
+        </div>
+
  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
  <script>mermaid.initialize({startOnLoad:true});</script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
