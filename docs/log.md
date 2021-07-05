@@ -65,9 +65,9 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |60|03/07/2021|1|ChristianR007|8|Naive Bayes|Metodo de bayes por causa y efecto segun las probabilidades de la tabla|Finalizado|03/07/2021|
 |61|03/07/2021|1|WillyAlberto|8|K-nearest neighbor|Algoritmo K-nearest neighbor basico por Manhattan y Euclidiana|Finalizado|03/07/2021|
 |62|03/07/2021|1|javib94|8|KMeans |Ejemplo del uso de G8_KMeans |Finalizado |03/07/2021|
-|63|03/07/2021|2|Saulguz1|12|Regresión Logistica|Desarrollo y Diseño del algoritmo|En Desarrollo|04/07/2021|
+|63|03/07/2021|2|Saulguz1|12|Regresión Logistica|Desarrollo y Diseño del algoritmo|Finalizado|04/07/2021|
 |64|03/07/2021|1|coradowilly|12|Regresión Logistica|Diseño test del algoritmo|En desarrollo|04/07/2021|
-|65|04/07/2021|1|Saulguz1|12|Regresión Logistica|Diseño test Algoritmo Regresion Logistica Multiclase|En Desarrollo|04/07/2021|
+|65|04/07/2021|1|Saulguz1|12|Regresión Logistica|Diseño test Algoritmo Regresion Logistica Multiclase|Finalizado|04/07/2021|
 |66|03/07/2021|1|coradowilly|12|Regresión Logistica|Diseño test del algoritmo|Finalizado|04/07/2021|
 |67|04/07/2021|1|coradowilly|12|Regresión Logistica|Desarrollo y Diseño del algoritmo MultiClass|En desarrollo|04/07/2021|
 |68|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Prueba beta de algoritmo minimos cuadrados parciales|Finalizado|04/07/2021|
@@ -91,3 +91,5 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |86|04/07/2021|1|ramiromateo|17|Regresion lineal|Implementacion del coeficiente de correlacion, testeo con dos ejemplos con puntos muy dispersos y con puntos ideales|Finalizado|04/07/2021|
 |87|04/07/2021|1|ChristianR007|8|Arboles de decision|Implementacion de Arboles de decision utilizando algoritmo ID3 con el calculo de la ganancia de la informacion|Finalizado|04/07/2021|
 |88|04/07/2021|1|WillyAlberto|8|Regresion lineal|Minimos cuadrados|Finalizado|04/07/2021|
+|89|04/07/2021|1|coradowilly|12|Regresión Logistica|Algoritmo Binario y Multicase. Pruebas Beta|Finalizado|04/07/2021|
+|90|04/07/2021|1|Saulguz1|12|Regresión Logistica|Documentacion y Especificaciones Regresion Logistica Binaria Simple y Multiclase|Finalizado|04/07/2021|
