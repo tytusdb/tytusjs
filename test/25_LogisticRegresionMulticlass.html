@@ -1,8 +1,8 @@
 <html>
 <head>
 <script type="text/javascript" src="../dist/tytus.js"></script>
-<script type="text/javascript" src="../src/LogisticRegression.js"></script>
-<script type="text/javascript" src="../src/Arrays.js"></script>
+<!-- <script type="text/javascript" src="../src/LogisticRegression.js"></script>
+<script type="text/javascript" src="../src/Arrays.js"></script> -->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
@@ -36,7 +36,7 @@ for(var i=0; i < matriz.length; ++i){
 
 
 // yPredict = logistic.grad(xTrain)
-document.getElementById("log").innerHTML+='<br>X Train:   '+xTrain+'<br>Y Train:   '+yTrain+'<br>Y Predict: '+yPredict
+document.getElementById("log").innerHTML+='<br>X Train:   '+xTrain+'<br>Y Train:   '+yTrain+'<br>Z Train: '+zActualValue+'<br>Y Predict: '+yPredict
 for (let i = 0; i < xTrain.length; i++) {
     xTrain[i] = xTrain[i]/10;
     yTrain[i] = yTrain[i]/10;

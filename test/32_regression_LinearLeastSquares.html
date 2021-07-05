@@ -1,0 +1,35 @@
+<html>
+<head>
+<script type="text/javascript" src="../src/LineLeastSquares.js"></script>
+<script type="text/javascript" src="../dist/tytus.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+<h2>Linear Regression</h2>
+<p id="log"></p>    
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+<script type="text/javascript">
+var xTrain = [7, 1, 10, 5, 4, 3, 13, 10, 2]
+var yTrain = [2, 9, 2, 5, 7, 11, 2, 5, 14]
+var linear = new LineLeastSquares(xTrain,yTrain)
+var valm = linear[0]
+var valb = linear[1]
+yPredict = linear[2]
+document.getElementById("log").innerHTML+='<br>X Train:   '+xTrain+'<br>Y Train:   '+yTrain+'<br>m: '+ valm +'<br>b: '+ valb +'<br>Y Predict: '+yPredict
+var a = joinArrays('x',xTrain,'yTrain',yTrain,'yPredict',yPredict)
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+  
+function drawChart() {
+    var data = google.visualization.arrayToDataTable(a);
+    var options = {
+        seriesType : 'scatter',
+        series: {1: {type: 'line'}}
+    };  
+    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+    chart.draw(data, options);         
+}    
+</script>
+</body>
+</html>

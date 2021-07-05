@@ -19,9 +19,7 @@ var atributos = new Array(
 );
 // Ingrese la condicion
 var condicion = new Array("sunny", "hot", "high", "false");             // Usuario
-// Ingrese la condicion de ganar
 var varGanar = "P";                                                     // Usuario
-// Ingrese la condicion de no ganar
 var varPerder = "N";                                                    // Usuario
 var totalGanar = 0;
 var totalPerder = 0;
@@ -134,22 +132,77 @@ function inicio(){
     var p2 = document.createTextNode(condicion)
 
     if(probabilidadGanar>probabilidadPerder){
-        console.log("Ganar");
+        //console.log("Ganar");
         p1 = document.createTextNode("Ganar")
     }else{
-        console.log("No ganar");
+        //console.log("No ganar");
         p1 = document.createTextNode("No ganar")
     }
     document.getElementById("salida4").appendChild(p1);
-    document.getElementById("salida1").appendChild(p2);
+    document.getElementById("salida1").value = condicion;
+    document.getElementById("atrWin").value = varGanar;
+    document.getElementById("atrLose").value = varPerder;
 }
 
 function cambioCondicion(){
-    var msj = prompt("Escrite la condicion separadas por coma y sin espacio","");
-    condicion = msj;
+    //var msj = prompt("Escrite la condicion separadas por coma y sin espacio","");
+    condicion = document.getElementById("salida1").value.split(",");
+    resetValores()
+    inicio()
+}
+function resetValores(){
     var tab = document.getElementById("tab123")
     document.getElementById("salida").removeChild(tab);
-    inicio()
+    
+    var nuevoS1 = document.createElement("p");
+    var nuevoS2 = document.createElement("p");
+    var nuevoS3 = document.createElement("p");
+    var nuevoS4 = document.createElement("p");
+    nuevoS1.id = "salida1";
+    nuevoS2.id = "salida2";
+    nuevoS3.id = "salida3";
+    nuevoS4.id = "salida4";
+    //document.getElementById("s1").replaceChild(nuevoS1, document.getElementById("salida1"));
+    document.getElementById("s2").replaceChild(nuevoS2, document.getElementById("salida2"));
+    document.getElementById("s3").replaceChild(nuevoS3, document.getElementById("salida3"));
+    document.getElementById("s4").replaceChild(nuevoS4, document.getElementById("salida4"));
+}
+
+function borrarTabla(){
+    atributos = new Array();
+    resetValores()
+
+    totalGanar = cantidad(varGanar);
+    totalPerder = cantidad(varPerder);
+    total = totalGanar + totalPerder;
+    let probabilidadGanar = ganar();
+    let probabilidadPerder = perder();
+    imprimirTabla(probabilidadGanar, probabilidadPerder)
+}
+
+/*
+    Outlook,Temperature,Humidity,Windy,Class
+    sunny,hot,high,false,N
+*/
+
+function agregarFila(){
+    atributos[atributos.length] = document.getElementById("addFile").value.split(",");
+    
+    varGanar = document.getElementById("atrWin").value;
+    varPerder = document.getElementById("atrLose").value;
+    
+    if(atributos.length == 1){
+        totalGanar = cantidad(varGanar);
+        totalPerder = cantidad(varPerder);
+        total = totalGanar + totalPerder;
+        let probabilidadGanar = ganar();
+        let probabilidadPerder = perder();
+        resetValores()
+        imprimirTabla(probabilidadGanar, probabilidadPerder)
+        alert("Encabezados agregados correctamente")
+    }else{
+        cambioCondicion()
+    }
 }
 
 inicio();

@@ -1054,6 +1054,272 @@
 				</article>
 			</section>
 
+			
+			<section id="once">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">SVM</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+
+					</div>
+					<script type="text/javascript">
+
+						// MATLAB Reference code is available in testsvm.m
+						function testsvm(){
+						  
+						  // Linearly non-separable test
+						  var N=10;
+						  var data = new Array(N);
+						  var labels= new Array(N);
+						  data[0]=[-0.4326  ,  1.1909 ];
+						  data[1]= [3.0, 4.0]; // this point makes data non-separable
+						  data[2]=[0.1253 , -0.0376   ];
+						  data[3]=[0.2877 ,   0.3273  ];
+						  data[4]=[-1.1465 ,   0.1746 ];
+						  data[5]=[1.8133 ,   2.1139  ];
+						  data[6]=[2.7258 ,   3.0668  ];
+						  data[7]=[1.4117 ,   2.0593  ];
+						  data[8]=[4.1832 ,   1.9044  ];
+						  data[9]=[1.8636 ,   1.1677  ];
+						  
+						  labels[0]= 1;
+						  labels[1]= 1;
+						  labels[2]= 1;
+						  labels[3]= 1;
+						  labels[4]= 1;
+						  labels[5]= -1;
+						  labels[6]= -1;
+						  labels[7]= -1;
+						  labels[8]= -1;
+						  labels[9]= -1;
+						  
+						  var svm= new svmjs.SVM();
+						  svm.train(data, labels, { C: 3, numpasses: 100 }); // make more passes to increase precision
+						  
+						  if(console) {
+							// print weights and offset
+							wb = svm.getWeights();
+							for(var i=0;i<wb.w.length;i++) {
+							  console.log("w_%d = %f", i, wb.w[i]);
+							}
+							console.log("b = %f", wb.b);
+							
+							// print predicted margins
+							var marg= svm.margins(data);
+							for(var i=0;i<N;i++) {
+							  console.log("%f, %f", labels[i], marg[i]);
+							}
+						  }
+						  
+						  asserteqf(wb.w[0], -1.1096);
+						  asserteqf(wb.w[1], -0.0590);
+						  asserteqf(wb.b, 1.1368);
+						  asserteqf(marg[0], 1.5466);
+						  asserteqf(marg[1], -2.4281);
+						  asserteqf(marg[2], 1.0000);
+						  asserteqf(marg[3], 0.7983);
+						  asserteqf(marg[4], 2.3987);
+						  asserteqf(marg[5], -1.0000);
+						  asserteqf(marg[6], -2.0688);
+						  asserteqf(marg[7], -0.5511);
+						  asserteqf(marg[8], -3.6174);
+						  asserteqf(marg[9], -1.0000);
+						  if(pass) { document.bgColor = "#9F9"; } 
+						  else { document.bgColor = "#F99"; }
+						}
+						
+						// "unit testing" >.<
+						var pass= true;
+						function myprint(s) {
+						  document.getElementById("printdiv").innerHTML += s+"<br />"
+						}
+						function asserteqf(got, want) {
+						  if(Math.abs(want-got) > 1e-3) {
+							myprint("wanted " + want + " but got " + got);
+							pass= false;
+						  }  else {
+							myprint("wanted " + want + " and got " + got + " OK.");
+						  }
+						}
+						
+						</script>
+					<div onLoad="testsvm();">
+						Poor man's unit tests:
+						<div id="printdiv"></div>
+					</div>
+
+				</article>
+			</section>
+
+			
+			<section id="sexto">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">Polynomial Regression</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
+
+
+					</div>
+					<center>
+						<h1>Polynomial Regression</h1>
+						<h2>Current Model</h2>
+						<table style="text-align: center">
+							<tr>
+								<th>X Train</th>
+								<th>Y Train</th>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>11</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>20</td>
+							</tr>
+						</table>
+						<h2>Predicted Data</h2>
+						<table id="displayTable11" style="text-align: center">
+							<tr>
+								<th>X Base</th>
+								<th>Grade 2</th>
+								<th>Grade 3</th>
+								<th>Grade 4</th>
+							</tr>
+						</table>
+						<h2>Graph</h2>
+						<div id="curve_chart11" style="width: 900px; height: 500px"></div>
+					</center>
+					<script>
+						let xValues = [0, 1, 2, 3, 4, 5, 6, 7];
+						let yValues = [3, 5, 1, 6, 10, 11, 5, 20];
+						let polynomialRegression = new PolynomialRegression();
+			
+						polynomialRegression.fit(xValues, yValues, 2);
+						let grade2 = polynomialRegression.predict(xValues);
+						polynomialRegression.fit(xValues, yValues, 3);
+						let grade3 = polynomialRegression.predict(xValues);
+						polynomialRegression.fit(xValues, yValues, 4);
+						let grade4 = polynomialRegression.predict(xValues);
+			
+						let displayTable = document.getElementById("displayTable11");
+						for (let i = 0; i < xValues.length; i++) {
+							const x = xValues[i];
+							let row = document.createElement("tr");
+							let xCol = document.createElement("td");
+							xCol.innerText = x.toString();
+							let grade2Col = document.createElement("td");
+							grade2Col.innerText = grade2[2].toString();
+							let grade3Col = document.createElement("td");
+							grade3Col.innerText = grade3[2].toString();
+							let grade4Col = document.createElement("td");
+							grade4Col.innerText = grade4[2].toString();
+							row.appendChild(xCol);
+							row.appendChild(grade2Col);
+							row.appendChild(grade3Col);
+							row.appendChild(grade4Col);
+							displayTable.appendChild(row);
+						}
+			
+						var graphDataSet = [];
+						graphDataSet.push(["X", "Y", "Grade 2", "Grade 3", "Grade 4"]);
+						for (let i = 0; i < xValues.length; i++) {
+							const x = xValues[i];
+							graphDataSet.push([
+								x.toString(),
+								yValues[i],
+								grade2[i],
+								grade3[i],
+								grade4[i],
+							]);
+						}
+			
+						google.charts.load("current", { packages: ["corechart"] });
+						google.charts.setOnLoadCallback(drawChart);
+			
+						function drawChart() {
+							var data = google.visualization.arrayToDataTable(graphDataSet);
+			
+							var options = {
+								title: "Polynomial Regression",
+								legend: { position: "bottom" },
+							};
+			
+							var chart = new google.visualization.LineChart(
+								document.getElementById("curve_chart11")
+							);
+			
+							chart.draw(data, options);
+						}
+					</script>
+
+				</article>
+			</section>
+
 			<section id="sexto">
 				<article class="box post post-excerpt">
 					<header>
@@ -1087,7 +1353,6 @@
 				</article>
 			</section>
 
-
 		</div>
 	</div>
 
@@ -1110,6 +1375,10 @@
 				<li><a href="#octavo">K-Nearest Neighbor 2</a></li>
 				<li><a href="#noveno">Neuronal Network</a></li>
 				<li><a href="#decimo">Linear Regression 2</a></li>
+				<li><a href="#once">SVM</a></li>
+				<li><a href="#once">Polynomial Regression</a></li>
+				
+				
 				
 
 			</ul>

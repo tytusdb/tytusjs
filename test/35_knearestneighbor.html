@@ -36,7 +36,7 @@
 <p>Result: <span id="result"></span></p> 
 
 <table id="datavotos"></table>
-<script type="text/javascript" src="../dist/tytus.js"></script>
+<script type="text/javascript" src="../src/KNearestNeighbor.js"></script>
 
 
 
@@ -1006,7 +1006,7 @@
     tabla += "</table>"
     document.getElementById("info").innerHTML = tabla
 
-    var solver1 = new KNN();
+    var solver1 = new KNearestNeighbor();
     solver1.inicializar(5, weight_height.data, weight_height.labels);
     var resultPredict=solver1.predecir([170, 70]);
     
