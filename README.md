@@ -48,7 +48,7 @@ Pure Javascript Machine Learning Library
 
 [21 Linear Regression Example (05)](https://tytusdb.github.io/tytusjs/test/21_regression.html)
 
-[22 Partial Least Squares Example](https://tytusdb.github.io/tytusjs/test/22_Naive_Bayes.html)
+[22 Naive Bayes](https://tytusdb.github.io/tytusjs/test/22_Naive_Bayes.html)
 
 [23 K-Nearest Neighbor Example](https://tytusdb.github.io/tytusjs/test/21_KnearestNeighbor.html)
 
