@@ -51,8 +51,8 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |46|03/07/2021|1|CPeraltaa|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
 |47|03/07/2021|1|jossiebk|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
 |48|03/07/2021|1|huriel2g|18|Redes Neuronales|Prueba Beta Redes Neuronales|Finalizado|03/07/2021| 
-|49|03/07/2021|1|dianajimeneza|4|Método de Bayes|Pruebas del método|Desarrollo|04/07/2021| 
-|50|03/07/2021|1|QuiqueMRamirez|4|Método de Bayes|Especificaciones del software|Desarrollo|04/07/2021| 
+|49|03/07/2021|1|dianajimeneza|4|Método de Bayes|Pruebas del método|Finalizado|04/07/2021| 
+|50|03/07/2021|1|QuiqueMRamirez|4|Método de Bayes|Especificaciones del software|Finalizado|04/07/2021| 
 |51|03/07/2021|1|jorsala1|7|Redes Neuronales|Prueba beta Neuronal Network| Finalizado |03/07/2021|
 |52|03/07/2021|1|bchacon45|7|K-nearest neigbor|Prueba beta K-nearest neigbor|Finalizado |03/07/2021|
 |53|03/07/2021|1|andreaflores|5|Web unificada|Diseño y ejemplos|Finalizado|03/07/2021|
