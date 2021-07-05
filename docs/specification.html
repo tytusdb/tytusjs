@@ -168,45 +168,80 @@
           </tr>
           <tr>
               <th>8</th>
+             
               <td>nElements</td>
+             
               <td>Method fit - PolynomialRegression Class</td>
+             
               <td>Attribute that defines the number columns that are going to be used in the matrix for the model</td>
           </tr>
+          
           <tr>
+            
             <th>9</th>
+            
             <td>equations</td>
+            
+            
             <td>Method fit - PolynomialRegression Class</td>
+            
             <td>Matrix that stores the equations and solutions for the polynomial model</td>
+        
         </tr>
         <tr>
+            
             <th>10</th>
+            
             <td>predict</td>
+            
             <td>PolynomialRegression Class</td>
+            
             <td>Function that returns the predicted values based on the traning done before by the model</td>
         </tr>
+        
         <tr>
+            
             <th>10</th>
+            
             <td>xArray</td>
+            
             <td>Method predict - PolynomialRegression Class</td>
+            
             <td>Parameter with the x Array values to be predicted</td>
         </tr>
+        
         <tr>
+            
             <th>11</th>
+            
             <td>yArray</td>
+            
             <td>Method predict - PolynomialRegression Class</td>
+            
             <td>Array with y values predicted by the model</td>
         </tr>
+        
         <tr>
+            
             <th>12</th>
+            
             <td>calculateR2</td>
+            
             <td>Method calculateR2 - PolynomialRegression Class</td>
+            
             <td>Method that creates the r^2 error of the trained model</td>
         </tr>
+       
         <tr>
+            
             <th>13</th>
+            
             <td>getError</td>
+            
             <td>Method getError - PolynomialRegression Class</td>
+            
             <td>Method that return the r^2 value for the trained model</td>
+        
         </tr>
     </tbody>
 </table>
@@ -223,13 +258,21 @@
             In order to train the model to get an accurate prediction based in the input degree, it was used several math concepts to get a precise function for the model, in this library it was used the following concepts to develop the solution: 
         </p>
         <div class="row">
+            
             <div class="col-md-6 offset-md-3">
+                
                 <ul class="list-group">
+                    
                     <li class="list-group-item">Least Squares</li>
+                    
                     <li class="list-group-item">Gauss Jordan</li>
+                
                 </ul>
+           
             </div>
+        
         </div>
+       
         <h3>Least Squares</h3>
         <p>
             This method was used to build a coefficent matrix for the equation system solution, this matrix is simetric and it is created based in an input degree that we call "m", the logic of least squares is pretty simple, it just consist in creating a matrix that contains a group of equations that increase their degree as we create new equations in the matrix, this matrix is later solved to get the coefficents for the solution of the Regression Model.
@@ -237,48 +280,84 @@
         <div class="text-center">
             <table class="table table-striped table-bordered table-responsive">
                 <tr>
+                    
                     <td>n</td>
+                    
                     <td>Σx</td>
+                    
                     <td>Σx^2</td>
+                    
                     <td>Σx^3</td>
+                    
                     <td>...</td>
+                    
                     <td>Σx^m</td>
+                    
                     <td>Σy</td>
+                
                 </tr>
                 <tr>
+                    
                     <td>Σx</td>
+                    
                     <td>Σx^2</td>
+                    
                     <td>Σx^3</td>
+                    
                     <td>Σx^4</td>
+                    
                     <td>...</td>
+                    
                     <td>Σx^m</td>
+                    
                     <td>Σxy</td>
                 </tr>
                 <tr>
+                    
                     <td>Σx^2</td>
+                    
                     <td>Σx^3</td>
+                    
                     <td>Σx^4</td>
+                    
                     <td>Σx^5</td>
+                    
                     <td>...</td>
+                    
                     <td>Σx^m</td>
+                    
                     <td>Σx^2*y</td>
                 </tr>
                 <tr>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
                 </tr>
                 <tr>
+                    
                     <td>Σx^m</td>
+                    
                     <td>Σx^m+1</td>
+                    
                     <td>Σx^m+2</td>
+                    
                     <td>Σx^m+3</td>
+                    
                     <td>...</td>
+                    
                     <td>Σx^m+n</td>
+                    
                     <td>Σx^m*y</td>
                 </tr>
             </table>
@@ -290,21 +369,35 @@
         <div class="text-center">
             <table class="table table-striped table-bordered table-responsive">
                 <tr>
+                    
                     <td>1</td>
+                    
                     <td>2</td>
+                    
                     <td>3</td>
+                    
                     <td>4</td>
+                    
                     <td>...</td>
+                    
                     <td>n</td>
+                    
                     <td>m</td>
                 </tr>
                 <tr>
                     <td>0</td>
+                    
+                    
                     <td>1</td>
+                    
                     <td>2</td>
+                    
                     <td>3</td>
+                    
                     <td>...</td>
+                    
                     <td>n</td>
+                    
                     <td>m</td>
                 </tr>
                 <tr>
