@@ -286,7 +286,7 @@
         document.getElementById('res5').innerHTML=parseFloat(resSplit4[1]).toFixed(3)+"%"               //set in <b>  with id res3    
 
         //---------------------------------------Others examples-------------------------------------------------------------
-        var res = bayes.predict(['sunny', 'hot'],'P')
+        var res = bayes.predict(['sunny', 'hot'])
         var resSplit= res.toString().split(',')
         document.getElementById('p9').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"
         var res1 = bayes.predict(['sunny', 'hot', 'high', 'false'])
