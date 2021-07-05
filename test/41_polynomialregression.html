@@ -1,0 +1,233 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="../dist/tytus.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2 mt-5">
+            <h1 class="display-3 text-center">Polynomial Regression Demostration</h1>
+        </div>
+    </div>
+
+
+    <hr>
+    
+
+    <div class="row">
+        <div class="col-md-8 offset-md-3 mt-3">
+            <div id="Graph" style="width: 900px; height: 500px;"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2 mt-5">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Values</th>
+                    <th scope="col">X</th>
+                    <th scope="col">Y</th>
+                    <th scope="col">Grade 2</th>
+                    <th scope="col">Grade 3</th>
+                    <th scope="col">Grade 4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>0</td>
+                    <td>2.1</td>
+                    <td id = "G20"></td>
+                    <td id = "G30"></td>
+                    <td id = "G40"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>1</td>
+                    <td>20.4</td>
+                    <td id = "G21"></td>
+                    <td id = "G31"></td>
+                    <td id = "G41"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>2</td>
+                    <td>113.6</td>
+                    <td id = "G22"></td>
+                    <td id = "G32"></td>
+                    <td id = "G42"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>3</td>
+                    <td>217.2</td>
+                    <td id = "G23"></td>
+                    <td id = "G33"></td>
+                    <td id = "G43"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>4</td>
+                    <td>340.4</td>
+                    <td id = "G24"></td>
+                    <td id = "G34"></td>
+                    <td id = "G44"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>5</td>
+                    <td>61.1</td>
+                    <td id = "G25"></td>
+                    <td id = "G35"></td>
+                    <td id = "G45"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>6</td>
+                    <td>20.4</td>
+                    <td id = "G26"></td>
+                    <td id = "G36"></td>
+                    <td id = "G46"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>7</td>
+                    <td>134.3</td>
+                    <td id = "G27"></td>
+                    <td id = "G37"></td>
+                    <td id = "G47"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>8</td>
+                    <td>154.5</td>
+                    <td id = "G28"></td>
+                    <td id = "G38"></td>
+                    <td id = "G48"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>9</td>
+                    <td>1023.14</td>
+                    <td id = "G29"></td>
+                    <td id = "G39"></td>
+                    <td id = "G49"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td>10</td>
+                    <td>3405.4</td>
+                    <td id = "G210"></td>
+                    <td id = "G310"></td>
+                    <td id = "G410"></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    
+
+    <script type="text/javascript">
+        function joinArrays() {
+            var a = []
+            if (arguments.length == 10) {
+                a.push([arguments[0], arguments[2], arguments[4], arguments[6], arguments[8]]);
+                for (var i = 0; i < arguments[1].length; i++) {
+                    a.push([arguments[1][i], arguments[3][i], arguments[5][i], arguments[7][i], arguments[9][i]]);
+                }
+            }
+            return a;
+        }
+
+        var x = [0, 1, 2, 3, 4, 5, 6 ,7 ,8 ,9, 10];
+        var y = [2.1, 20.4, 113.6, 217.2, 340.4, 61.1, 20.4, 134.3, 154.5, 1023.14, 3405.4];
+        var positions = [0, 1, 2, 3, 4, 5, 6 ,7 ,8 ,9, 10];
+        var polynomial = new PolynomialRegression();
+
+        polynomial.fit(x, y, 2);
+        prediction = polynomial.predict(positions);
+        r2 = polynomial.getError();
+
+        polynomial.fit(x, y, 3);
+        prediction2 = polynomial.predict(positions);
+        r22 = polynomial.getError();
+
+        polynomial.fit(x, y, 4);
+        prediction3 = polynomial.predict(positions);
+        r23 = polynomial.getError();
+
+        for (let i = 0; i < positions.length; i++) {
+            prediction[i] = Number(prediction[i].toFixed(2));
+            prediction2[i] = Number(prediction2[i].toFixed(2));
+            prediction3[i] = Number(prediction3[i].toFixed(2));
+        }
+
+        document.getElementById("G20").innerHTML += prediction[0];
+        document.getElementById("G21").innerHTML += prediction[1];
+        document.getElementById("G22").innerHTML += prediction[2];
+        document.getElementById("G23").innerHTML += prediction[3];
+        document.getElementById("G24").innerHTML += prediction[4];
+        document.getElementById("G25").innerHTML += prediction[5];
+        document.getElementById("G26").innerHTML += prediction[6];
+        document.getElementById("G27").innerHTML += prediction[7];
+        document.getElementById("G28").innerHTML += prediction[8];
+        document.getElementById("G29").innerHTML += prediction[9];
+        document.getElementById("G210").innerHTML += prediction[10];
+
+        document.getElementById("G30").innerHTML += prediction2[0];
+        document.getElementById("G31").innerHTML += prediction2[1];
+        document.getElementById("G32").innerHTML += prediction2[2];
+        document.getElementById("G33").innerHTML += prediction2[3];
+        document.getElementById("G34").innerHTML += prediction2[4];
+        document.getElementById("G35").innerHTML += prediction2[5];
+        document.getElementById("G36").innerHTML += prediction2[6];
+        document.getElementById("G37").innerHTML += prediction2[7];
+        document.getElementById("G38").innerHTML += prediction2[8];
+        document.getElementById("G39").innerHTML += prediction2[9];
+        document.getElementById("G310").innerHTML += prediction2[10];
+
+        document.getElementById("G40").innerHTML += prediction3[0];
+        document.getElementById("G41").innerHTML += prediction3[1];
+        document.getElementById("G42").innerHTML += prediction3[2];
+        document.getElementById("G43").innerHTML += prediction3[3];
+        document.getElementById("G44").innerHTML += prediction3[4];
+        document.getElementById("G45").innerHTML += prediction3[5];
+        document.getElementById("G46").innerHTML += prediction3[6];
+        document.getElementById("G47").innerHTML += prediction3[7];
+        document.getElementById("G48").innerHTML += prediction3[8];
+        document.getElementById("G49").innerHTML += prediction3[9];
+        document.getElementById("G410").innerHTML += prediction3[10];
+
+        var a = joinArrays('x', x, 'Training', y, 'Prediction Degree 2', prediction, 'Prediction Degree 3', prediction2, 'Prediction Degree 4', prediction3);
+
+        google.charts.load('current', { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable(a);
+            var options = {
+                seriesType: 'scatter',
+                series: {
+                    1: { type: 'dots' },
+                    2: { type: 'dots' },
+                    3: { type: 'line' } 
+                }
+            };
+            var chart = new google.visualization.ComboChart(document.getElementById('Graph'));
+            chart.draw(data, options);
+        }
+        
+    </script>
+</body>
+
+</html>
