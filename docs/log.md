@@ -113,3 +113,5 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |108|03/07/2021|1|michikatrins|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Finalizado|03/07/2021|
 |109|03/07/2021|1|CPeraltaa|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Finalizado|03/07/2021|
 |110|03/07/2021|1|jossiebk|9|Metodo de Bayes Gaussian|Test del argoritmo |Finalizado|03/07/2021|
+|111|04/07/2021|1|ChristianR007|8|Arboles de decision|Implementacion de test para Arboles de decision utilizando el algoritmo de ID3|Finalizado|04/07/2021|
+
