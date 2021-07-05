@@ -15,7 +15,7 @@ Log Notes
 |11|29/06/2021|1|pablorrp1|2|Conjuntos difusos|Cálculo del punto a clasificar por conjuntos difusos|Finalizado|30/06/2021|
 |12|29/06/2021|-|cesarsazo|6|Regresion Lineal|Regresion con minimos cuadrados.|En desarrollo|En desarrollo|
 |13|29/06/2021|-|jj196|6|Método de Bayes|Análisis|En desarrollo|En desarrollo|En desarrollo|
-|14|29/06/2021|-|hernandezgramajo|6|Redes neuronales|Análisis del algoritmo|En desarrollo|En desarrollo|
+|14|30/06/2021|5|hernandezgramajo|6|Test Redes neuronales|Test del algoritmo|Finalizado|4/07/2021|
 |15|30/06/2021|1|uhcorona|3|Prueba Beta Regresión polinómica|Prueba Beta Regresión polinómica|Finalizado|01/07/2021|
 |16|30/06/2021|1|HenryGalvez|3|Prueba Beta Árboles de decisión|Prueba Beta Árboles de decisión|Finalizado|01/07/2021|
 |17|30/06/2021|1|Diegog56|14|K-Means|Codificacion del algoritmo lineal|Finalizado|01/07/2021|
@@ -57,7 +57,7 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |52|03/07/2021|1|bchacon45|7|K-nearest neigbor|Prueba beta K-nearest neigbor|Finalizado |03/07/2021|
 |53|03/07/2021|1|andreaflores|5|Web unificada|Diseño y ejemplos|En desarrollo|En desarrollo|
 |54|03/07/2021|1|pablorrp1|2|Librería unificada|Unificar archivos Arrays, BayesMethod, DecissionTreeID3, Distance, FuzzySet, kmeans, KNearestNeighbor, Linear Model, NaiveBayes, NeuronalNetwork, PartialLeastSquares, PolynomialModel y svm|Finalizado|03/07/2021|
-|55|03/07/2021|1|hugofiguer9777|4|K-nearest neigbor|Codificacion de metodo para mapear distancia|En Desarrollo|03/07/2021|
+|55|03/07/2021|1|hugofiguer9777|4|K-nearest neigbor|Codificacion de metodo para mapear distancia|Finalizado|03/07/2021|
 |56|03/07/2021|1|brandonBBAL1994|17|Regresion Lineal|Prueba beta de regresion lineal|Finalizado|03/07/2021|
 |57|03/07/2021|1|MarielosH|7| Partial Least Squares |Prueba beta Partial Least Squares|Finalizado |03/07/2021|
 |58|03/07/2021|1|sandraeu|7|Linear Regression|Prueba beta Linear Regression |Finalizado |03/07/2021|
@@ -82,3 +82,9 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |77|02/07/2021|1|dodany|5|Perceptron |Prueba Beta Perceptron |Finalizado|04/07/2021|
 |78|04/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal Custom|Finalizado|04/07/2021|
 |79|04/07/2021|1|PabloOsuna1997|1|Naive Bayes|Prueba Naive Bayes|Finalizado|04/07/2021|
+|80|04/07/2021|1|brandonBBAL1994|17|Redes neuronales|Test de redes neuronales|Finalizado|04/07/2021|
+|81|04/06/2021|1|hernandezgramajo|6|Test K-means|Test del algoritmo|Finalizado|4/07/2021|
+|82|04/06/2021|1|SergioGuoz|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
+|83|04/06/2021|1|hernandezgramajo|6|Test K-nearest|Test del algoritmo|Finalizado|4/07/2021|
+|84|04/07/2021|1|Ingridrpm|1|Neural network|Neural network test| Finalizado |04/07/2021|
+|85|04/07/2021|1|Azurdia90|9|Metodo de Bayes Gaussian|Implementación y Test del argoritmo |En Desarrollo|04/07/2021|
