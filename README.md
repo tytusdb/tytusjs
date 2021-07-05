@@ -2,6 +2,8 @@
 Pure Javascript Machine Learning Library
 
 ## Examples
+[00 Web unificada](https://tytusdb.github.io/tytusjs/test/00_General.html)
+
 [01 Linear Regression Example](https://tytusdb.github.io/tytusjs/test/01_regression.html)
 
 [02 Polynomial Regression Example](https://tytusdb.github.io/tytusjs/test/02_polynomialregression.html)
@@ -79,6 +81,15 @@ Pure Javascript Machine Learning Library
 [37 Linear Model Example (08)](https://tytusdb.github.io/tytusjs/test/37_regressionWhitR2.html)
 
 [38 Arbol de decision](https://tytusdb.github.io/tytusjs/test/37_ArbolesDecision_ID3.html)
+
+[39 Linear Regression ](https://tytusdb.github.io/tytusjs/test/38_RegresionLineal.html)
+
+[40 Logistic Regression Simple](https://tytusdb.github.io/tytusjs/test/24_LogisticRegresionBinary.html)
+
+[41 Logistic Regression Multiclass](https://tytusdb.github.io/tytusjs/test/25_LogisticRegresionMulticlass.html)
+
+[42 K-Nearest Neighboar Example 7](https://tytusdb.github.io/tytusjs/test/40_knearestneighbor.html)
+
 
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)

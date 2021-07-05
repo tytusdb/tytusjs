@@ -55,7 +55,7 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |50|03/07/2021|1|QuiqueMRamirez|4|Método de Bayes|Especificaciones del software|Desarrollo|04/07/2021| 
 |51|03/07/2021|1|jorsala1|7|Redes Neuronales|Prueba beta Neuronal Network| Finalizado |03/07/2021|
 |52|03/07/2021|1|bchacon45|7|K-nearest neigbor|Prueba beta K-nearest neigbor|Finalizado |03/07/2021|
-|53|03/07/2021|1|andreaflores|5|Web unificada|Diseño y ejemplos|En desarrollo|En desarrollo|
+|53|03/07/2021|1|andreaflores|5|Web unificada|Diseño y ejemplos|Finalizado|03/07/2021|
 |54|03/07/2021|1|pablorrp1|2|Librería unificada|Unificar archivos Arrays, BayesMethod, DecissionTreeID3, Distance, FuzzySet, kmeans, KNearestNeighbor, Linear Model, NaiveBayes, NeuronalNetwork, PartialLeastSquares, PolynomialModel y svm|Finalizado|03/07/2021|
 |55|03/07/2021|1|hugofiguer9777|4|K-nearest neigbor|Codificacion de metodo para mapear distancia|Finalizado|03/07/2021|
 |56|03/07/2021|1|brandonBBAL1994|17|Regresion Lineal|Prueba beta de regresion lineal|Finalizado|03/07/2021|
@@ -65,9 +65,9 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |60|03/07/2021|1|ChristianR007|8|Naive Bayes|Metodo de bayes por causa y efecto segun las probabilidades de la tabla|Finalizado|03/07/2021|
 |61|03/07/2021|1|WillyAlberto|8|K-nearest neighbor|Algoritmo K-nearest neighbor basico por Manhattan y Euclidiana|Finalizado|03/07/2021|
 |62|03/07/2021|1|javib94|8|KMeans |Ejemplo del uso de G8_KMeans |Finalizado |03/07/2021|
-|63|03/07/2021|2|Saulguz1|12|Regresión Logistica|Desarrollo y Diseño del algoritmo|En Desarrollo|04/07/2021|
+|63|03/07/2021|2|Saulguz1|12|Regresión Logistica|Desarrollo y Diseño del algoritmo|Finalizado|04/07/2021|
 |64|03/07/2021|1|coradowilly|12|Regresión Logistica|Diseño test del algoritmo|En desarrollo|04/07/2021|
-|65|04/07/2021|1|Saulguz1|12|Regresión Logistica|Diseño test Algoritmo Regresion Logistica Multiclase|En Desarrollo|04/07/2021|
+|65|04/07/2021|1|Saulguz1|12|Regresión Logistica|Diseño test Algoritmo Regresion Logistica Multiclase|Finalizado|04/07/2021|
 |66|03/07/2021|1|coradowilly|12|Regresión Logistica|Diseño test del algoritmo|Finalizado|04/07/2021|
 |67|04/07/2021|1|coradowilly|12|Regresión Logistica|Desarrollo y Diseño del algoritmo MultiClass|En desarrollo|04/07/2021|
 |68|04/07/2021|1|abnerFCR|17|Regresion de Minimos cuadrados parciales|Prueba beta de algoritmo minimos cuadrados parciales|Finalizado|04/07/2021|
@@ -78,15 +78,23 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |73|04/07/2021|1|Ingridrpm|1|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|04/07/2021|
 |74|04/07/2021|1|PabloOsuna1997|1|Regresion Plynomial|Prueba Regresion Polinomial|Finalizado|04/07/2021|
 |75|04/07/2021|1|SergioGuoz|4|K-nearest neighbor|Desarrollo funcionalidad predecir|Finalizado|04/07/2021|
-|76|04/07/2021|1|rafalejy|16|Naive Bayes|Prueba beta y ejemplo |En desarrollo|04/07/2021|
+|76|04/07/2021|1|rafalejy|16|Naive Bayes|Mejoras en Prueba beta y ejemplo |Finalizado|04/07/2021|
 |77|02/07/2021|1|dodany|5|Perceptron |Prueba Beta Perceptron |Finalizado|04/07/2021|
 |78|04/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal Custom|Finalizado|04/07/2021|
 |79|04/07/2021|1|PabloOsuna1997|1|Naive Bayes|Prueba Naive Bayes|Finalizado|04/07/2021|
-|80|04/07/2021|1|brandonBBAL1994|17|Redes neuronales|Test de redes neuronales|Finalizado|04/07/2021|
-|81|04/06/2021|1|hernandezgramajo|6|Test K-means|Test del algoritmo|Finalizado|4/07/2021|
-|82|04/06/2021|1|SergioGuoz|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
-|83|04/06/2021|1|hernandezgramajo|6|Test K-nearest|Test del algoritmo|Finalizado|4/07/2021|
-|84|04/07/2021|1|Ingridrpm|1|Neural network|Neural network test| Finalizado |04/07/2021|
-|85|04/07/2021|1|Azurdia90|9|Metodo de Bayes Gaussian|Implementación y Test del argoritmo |En Desarrollo|04/07/2021|
-|86|04/07/2021|1|ramiromateo|17|Regresion lineal|Implementacion del coeficiente de correlacion, testeo con dos ejemplos con puntos muy dispersos y con puntos ideales|Finalizado|04/07/2021|
-|87|04/07/2021|1|ChristianR007|8|Arboles de decision|Implementacion de Arboles de decision utilizando algoritmo ID3 con el calculo de la ganancia de la informacion|Finalizado|04/07/2021|
+|80|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregó documentación del funcionamiento del algoritmo.|Finalizado|04/07/2021|
+|81|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregó variación del algoritmo de limites cuadrados "".|Finalizado|04/07/2021|
+|82|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregarón pruebas "01_regression_LinearLeastSquares.html" utilizando la variación del algoritmo de limites cuadrados.|Finalizado|04/07/2021|
+|83|04/07/2021|1|brandonBBAL1994|17|Redes neuronales|Test de redes neuronales|Finalizado|04/07/2021|
+|84|04/06/2021|1|hernandezgramajo|6|Test K-means|Test del algoritmo|Finalizado|4/07/2021|
+|85|04/06/2021|1|SergioGuoz|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
+|86|04/06/2021|1|hernandezgramajo|6|Test K-nearest|Test del algoritmo|Finalizado|4/07/2021|
+|87|04/07/2021|1|Ingridrpm|1|Neural network|Neural network test| Finalizado |04/07/2021|
+|88|04/07/2021|1|Azurdia90|9|Metodo de Bayes Gaussian|Implementación y Test del argoritmo |En Desarrollo|04/07/2021|
+|89|04/07/2021|1|ramiromateo|17|Regresion lineal|Implementacion del coeficiente de correlacion, testeo con dos ejemplos con puntos muy dispersos y con puntos ideales|Finalizado|04/07/2021|
+|90|04/07/2021|1|ChristianR007|8|Arboles de decision|Implementacion de Arboles de decision utilizando algoritmo ID3 con el calculo de la ganancia de la informacion|Finalizado|04/07/2021|
+|91|04/07/2021|1|WillyAlberto|8|Regresion lineal|Minimos cuadrados|Finalizado|04/07/2021|
+|92|04/07/2021|1|coradowilly|12|Regresión Logistica|Algoritmo Binario y Multicase. Pruebas Beta|Finalizado|04/07/2021|
+|93|04/07/2021|1|Saulguz1|12|Regresión Logistica|Documentacion y Especificaciones Regresion Logistica Binaria Simple y Multiclase|Finalizado|04/07/2021|
+|94|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregaron validaciones en el archivo "LinearModel.js" escrito por el ingeniero "Luis.Espino" esto para controlar los posibles errores al utilizar la biblioteca.|Finalizado|04/07/2021|
+|95|04/07/2021|1|pgperusina|10|K-Nearest Neighbor|Revisión de pruebas y web eliminando referenias a archivos fuente y agreagndo referencia a archivo de distribución.|En proceso|04/07/2021|
