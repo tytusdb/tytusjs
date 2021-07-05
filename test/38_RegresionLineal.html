@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <script type="text/javascript" src="../src/G8_RegresionLineal.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+    <body>
+        <h1>Regresion Lineal - Mínimos cuadrados</h1>
+        <h2>Caso de ejemplo</h2>
+
+        <div>
+            <div style="width:28%; float:left;">
+                <h3 id="Resp"></h3>
+                <table border >
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                    </tr>
+                    <tr align=center>
+                        <td style="min-width: 11em;">7</td>
+                        <td style="min-width: 11em;">2</td>
+                    </tr>
+                    <tr align=center>
+                        <td style="min-width: 11em;">1</td>
+                        <td style="min-width: 11em;">9</td>
+                    </tr>
+                    <tr align=center>
+                        <td style="min-width: 11em;">10</td>
+                        <td style="min-width: 11em;">2</td>
+                    </tr>
+                    <tr align=center>
+                        <td style="min-width: 11em;">5</td>
+                        <td style="min-width: 11em;">5</td>
+                    </tr>
+                    <tr align=center>
+                        <td style="min-width: 11em;">4</td>
+                        <td style="min-width: 11em;">7</td>
+                    </tr>
+                    <tr align=center>
+                        <td style="min-width: 11em;">3</td>
+                        <td style="min-width: 11em;">11</td>
+                    </tr>
+                    <tr align=center>
+                        <td style="min-width: 11em;">13</td>
+                        <td style="min-width: 11em;">2</td>
+                    </tr>
+                    <tr align=center>
+                        <td style="min-width: 11em;">10</td>
+                        <td style="min-width: 11em;">5</td>
+                    </tr>
+                    <tr align=center>
+                        <td style="min-width: 11em;">2</td>
+                        <td style="min-width: 11em;">14</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="ejemplo" style="width:72%; height:40%; float:right;"></div>
+        </div>
+        
+        <script>
+            function graficar(datos, componente) {
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable(datos);
+
+                    var options = {
+                        title: 'Tendencia',
+                        hAxis: {title: 'X'},
+                        vAxis: {title: 'Y'},
+                        legend: 'none',
+                        trendlines: { 0: {} }    // Draw a trendline for data series 0.
+                    };
+
+                    var chart = new google.visualization.ScatterChart(document.getElementById(componente));
+                    chart.draw(data, options);
+                }
+            }
+            let datos = [[7, 2], [1, 9], [10, 2], [5, 5], [4, 7], [3, 11], [13, 2], [10, 5], [2, 14]];
+            console.log(2);
+            MinimosCuadrados(datos);
+            let resp = Predecir(15);
+            let Resp = document.getElementById("Resp");
+            let texto = `Y = ${resp[1]}X `;
+            if(resp[2] >= 0){
+                texto += `+ ${resp[2]}`;
+            }else{
+                texto += `- ${Math.abs(resp[2])}`;
+            }
+                
+            Resp.innerHTML = texto;
+
+            datos.unshift(['X','Y']);
+            graficar(datos, 'ejemplo');
+        </script>
+    </body>
+</html>

@@ -80,6 +80,8 @@ Pure Javascript Machine Learning Library
 
 [38 Arbol de decision](https://tytusdb.github.io/tytusjs/test/37_ArbolesDecision_ID3.html)
 
+[39 Linear Regression ](https://tytusdb.github.io/tytusjs/test/38_RegresionLineal.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
 
