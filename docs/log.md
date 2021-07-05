@@ -109,3 +109,4 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |104|04/07/2021|1|marcolograjeda|13|Regresion polinomial|Prueba polinomial|Finalizado|04/07/2021|
 |105|04/07/2021|3|cristianncaste18|13|Redes neuronales|Pruebas Beta|Finalizado|04/07/2021|
 |106|04/06/2021|1|hugofiguer9777|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
+|108|04/07/2021|1|ChristianR007|8|Arboles de decision|Implementacion de test para Arboles de decision utilizando el algoritmo de ID3|Finalizado|04/07/2021|
