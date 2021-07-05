@@ -2,6 +2,8 @@
 Pure Javascript Machine Learning Library
 
 ## Examples
+[00 Web unificada](https://tytusdb.github.io/tytusjs/test/00_General.html)
+
 [01 Linear Regression Example](https://tytusdb.github.io/tytusjs/test/01_regression.html)
 
 [02 Polynomial Regression Example](https://tytusdb.github.io/tytusjs/test/02_polynomialregression.html)
