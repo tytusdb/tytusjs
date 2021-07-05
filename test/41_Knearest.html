@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <style>
+            table {
+            border-collapse: collapse;
+            
+            text-align: center;
+            width: 100%;
+            }
+
+            th, td {
+            text-align: left;
+            padding: 8px;
+            }
+
+            tr:nth-child(even){background-color: #f2f2f2}
+
+            th {
+            background-color: #04AA6D;
+            color: white;
+            }
+            </style>
+        <script type="text/javascript" src="../dist/tytus.js"></script>
+    </head>
+    <body>
+    <h2>K-Nearest Neighbor</h2>
+    <table>
+        <th>Training</th>
+    </table>
+    <table id="tabla"></table>
+    
+    <h3>For point</h3>
+    <table id="punto"></table>
+    <h4>Euclidean</h4>
+    <p id="logE"></p>
+    <h4>Manhattan</h4>
+    <p id="logM"></p>
+    <p class="text-muted">Test By Ronald Romero G13</p>
+    </body>
+    <script>
+    var ind = ["A", "B", "C", "D", "E", "F", "G", "H"]
+    var arreglo1 = [12, 10, 11, 14, 16, 9, 1, 7]
+    var arreglo2 = [14, 8, 7, 10, 8, 17, 12, 10]
+    var arreglo3 = [10, 9, 15, 13, 16, 8, 12, 19]
+    var arreglo4 = [14, 8, 7, 10, 8, 17, 12, 10]
+    var group = ["Z", "X", "Y", "Y", "Z", "X", "Y", "Z"]
+    var point = [14, 10, 16]
+    var tabla = "<table>"
+    for (const i in arreglo1) {
+        tabla += "<tr>"
+        tabla += "<td>" + ind[i] + "</td><td>" + arreglo1[i] + "</td><td>" + arreglo2[i] + "</td><td>" + arreglo3[i] + "</td><td>" + arreglo4[i] + "</td><td>" + group[i] + "</td>"
+        tabla += "</tr>"
+    }
+    tabla += "</table>"
+    document.getElementById("tabla").innerHTML = tabla
+    tabla = "<table>"
+    tabla += "<td> F </td><td>" + point[0] + "</td><td>" + point[1] + "</td><td>" + point[2] + "</td>"
+    tabla += "</table>"
+    document.getElementById("punto").innerHTML = tabla
+    </script>
+    <script>
+    var individuals = zip([arreglo1, arreglo2, arreglo3, arreglo4, group])
+    var knn = new KNearestNeighbor(individuals)
+    var euc = knn.euclidean(point)
+    var man = knn.manhattan(point)
+    document.getElementById("logE").innerHTML = euc
+    document.getElementById("logM").innerHTML = man
+    </script>
+</html>
