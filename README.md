@@ -88,6 +88,9 @@ Pure Javascript Machine Learning Library
 
 [41 Logistic Regression Multiclass](https://tytusdb.github.io/tytusjs/test/25_LogisticRegresionMulticlass.html)
 
+[42 K-Nearest Neighboar Example 7](https://tytusdb.github.io/tytusjs/test/40_knearestneighbor.html)
+
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
 
