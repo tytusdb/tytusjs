@@ -198,6 +198,18 @@
         <p>The result of the probability calculation P(win| sunny, hot, high, false) is <b id="res5"></b> </p>
 
     </div>
+    <div>
+        <p><h3>Other examples without cause only effect:</h3></p>
+    </div>
+    <div div style="margin-left: 170px;">
+       
+        <p>Result of outlook=Sunny, temperature=hot: <b id="p9" style="color: blue;"></b></p>
+        <p>Result of outlook=Sunny, temperature=cool: <b id="p10" style="color: blue;"></b></p>
+        <p>Result of outlook=Sunny, temperature=mild: <b id="p11" style="color: blue;"></b></p>
+        <p>Result of outlook=Rain, temperature=hot: <b id="p12" style="color: blue;"></b></p>
+        <p>Result of outlook=Rain, temperature=cool: <b id="p13" style="color: blue;"></b></p>
+        <p>Result of outlook=Rain, temperature=mild: <b id="p14" style="color: blue;"></b></p>
+    </div>
     <script>
         //Bayes method from tytus.js
         var bayes = new BayesMethod()   
@@ -272,14 +284,60 @@
         var resSplit4= res4.toString().split(',')
         document.getElementById('res4').innerHTML=res4  +' = '+parseFloat(resSplit4[1]).toFixed(3)+"%"  //set in <b>  with id res2
         document.getElementById('res5').innerHTML=parseFloat(resSplit4[1]).toFixed(3)+"%"               //set in <b>  with id res3    
-            
+
         //---------------------------------------Others examples-------------------------------------------------------------
         var res = bayes.predict(['sunny', 'hot'])
+        var resSplit= res.toString().split(',')
+        document.getElementById('p9').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"
         var res1 = bayes.predict(['sunny', 'hot', 'high', 'false'])
         console.log(`Result if outlook='sunny', temperature='hot': ${res}`)
         console.log(`Result if outlook='sunny', temperature='hot', humidity='high', windy='false': ${res1}`)
         console.log(`P(N|sunny,hot,high,false) = ${res2}`)
+
+        //---------------------------------------Others examples 2-------------------------------------------------------------
+        var res2 = bayes.predict(['sunny', 'cool'])
+        var resSplit= res2.toString().split(',')
+        document.getElementById('p10').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"
+        var res3 = bayes.predict(['sunny', 'hot', 'high', 'false'])
+        console.log(`Result if outlook='sunny', temperature='cold': ${res2}`)
+        console.log(`Result if outlook='sunny', temperature='cold', humidity='high', windy='false': ${res3}`)
+        console.log(`P(N|sunny,hot,high,false) = ${res3}`)
+
+        //---------------------------------------Others examples 3-------------------------------------------------------------
+        var res4 = bayes.predict(['sunny', 'mild'])
+        var resSplit= res4.toString().split(',')
+        document.getElementById('p11').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"
+        var res5 = bayes.predict(['sunny', 'hot', 'high', 'false'])
+        console.log(`Result if outlook='sunny', temperature='mild': ${res4}`)
+        console.log(`Result if outlook='sunny', temperature='cold', humidity='high', windy='false': ${res5}`)
+        console.log(`P(N|sunny,hot,high,false) = ${res5}`)
+
+        //---------------------------------------Others examples 4-------------------------------------------------------------
+        var res6 = bayes.predict(['rain', 'hot'])
+        var resSplit= res6.toString().split(',')
+        document.getElementById('p12').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"  //set in <b>  with id res2
+        var res5 = bayes.predict(['rain', 'cool', 'normal', 'true'])
+        console.log(`Result if outlook='sunny', temperature='mild': ${res4}`)
+        console.log(`Result if outlook='sunny', temperature='cold', humidity='high', windy='false': ${res5}`)
+        console.log(`P(N|sunny,hot,high,false) = ${res5}`)
+        //---------------------------------------Others examples 5-------------------------------------------------------------
+        var res7 = bayes.predict(['rain', 'cool'])
+        var resSplit= res7.toString().split(',')
+        document.getElementById('p13').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"  //set in <b>  with id res2
+        var res5 = bayes.predict(['rain', 'cool', 'normal', 'true'])
+        console.log(`Result if outlook='sunny', temperature='mild': ${res4}`)
+        console.log(`Result if outlook='sunny', temperature='cold', humidity='high', windy='false': ${res5}`)
+        console.log(`P(N|sunny,hot,high,false) = ${res5}`)
+        //---------------------------------------Others examples 6-------------------------------------------------------------
+        var res8 = bayes.predict(['rain', 'mild'])
+        var resSplit= res8.toString().split(',')
+        document.getElementById('p14').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"  //set in <b>  with id res2
+        var res5 = bayes.predict(['rain', 'cool', 'normal', 'true'])
+        console.log(`Result if outlook='sunny', temperature='mild': ${res4}`)
+        console.log(`Result if outlook='sunny', temperature='cold', humidity='high', windy='false': ${res5}`)
+        console.log(`P(N|sunny,hot,high,false) = ${res5}`)
     </script>
+    
     <hr color="mediumspringgreen" size=3></hr>
     <div>
        
