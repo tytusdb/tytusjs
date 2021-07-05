@@ -8,38 +8,37 @@
 </head>
 
 <body>
-    <h1 class="display-1 w-100 text-center">Regresion Lineal</h1>
+    <h1 class="display-1 w-100 text-center">Regresion Polinomial y(Random)</h1>
     <div class="container">
-
-        <div class="container" style="margin-left: 10%;">
-            <div class="row">
-                <div class="col" style="align-content: center;">
-                    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="align-content: center;">
-                        <h3 style="margin-left: 5em;">Tabla de valores:</h3>
-                        <table id="tabla" class="table table-Primary" style="height: 1%; overflow: auto;">
-                        </table>
+        <center>
+            <div class="container" style="margin-left: 10%;">
+                <div class="row">
+                    <div class="col" style="align-content: center;">
+                        <div class="shadow-lg p-3 mb-5 bg-white rounded" style="align-content: center;">
+                            <h3 style="margin-left: 5em;">Tabla de valores:</h3>
+                            <table id="tabla" class="table table-Primary" style="height: 1%; overflow: auto;">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                            <h3 style="margin-left: 2em;"> Y Prediccion: </h3>
+                            <table id="prediction" class="table table-Primary">
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <div class="col ">
-                    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="width: 50%;">
-                        <h3 style="margin-left: 2em;"> Y Prediccion: </h3>
-                        <table id="prediction" class="table table-Primary">
-                        </table>
+                <div class="row">
+                    <div class="col" style="align-content: center;">
+                        <h2>Grafica</h2>
+                        <div id="grafica" style="width: 900px; height: 500px"></div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <h2>Grafica</h2>
-                    <div id="grafica" style="width: 900px; height: 500px"></div>
-                </div>
-            </div>
-        </div>
+        </center>
     </div>
-
-
-    <script type="text/javascript">
-        var xValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    <script>
+        let xValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         var yValues = [Math.floor((Math.random() * 10) + 1),
         Math.floor((Math.random() * 10) + 1),
         Math.floor((Math.random() * 10) + 1),
@@ -50,22 +49,16 @@
         Math.floor((Math.random() * 10) + 1),
         Math.floor((Math.random() * 10) + 1),
         Math.floor((Math.random() * 10) + 1),
-        Math.floor((Math.random() * 10) + 1),
-        Math.floor((Math.random() * 10) + 1),
-        Math.floor((Math.random() * 10) + 1),
-        Math.floor((Math.random() * 10) + 1),
-        Math.floor((Math.random() * 10) + 1),
-        Math.floor((Math.random() * 10) + 1),
-        Math.floor((Math.random() * 10) + 1),
-        Math.floor((Math.random() * 10) + 1),
-        Math.floor((Math.random() * 10) + 1),
-        Math.floor((Math.random() * 10) + 1),
-        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1)
         ]
-        var linear = new LinearRegression()
+        let polynomialRegression = new PolynomialRegression();
 
-        linear.fit(xValues, yValues);
-        prediction = linear.predict(xValues);
+        polynomialRegression.fit(xValues, yValues, 2);
+        let grado2 = polynomialRegression.predict(xValues);
+        polynomialRegression.fit(xValues, yValues, 3);
+        let grado3 = polynomialRegression.predict(xValues);
+        polynomialRegression.fit(xValues, yValues, 4);
+        let grado4 = polynomialRegression.predict(xValues);
 
         let content = `<thead>
                 <tr>
@@ -82,47 +75,50 @@
         let content2 = `<thead>
                 <tr>
                     <th scope=\"col\">X</th>
-                    <th scope=\"col\">Y-PREDCCION</th>
+                    <th scope=\"col\">GRADO 2</th>
+                    <th scope=\"col\">GRADO 3</th>
+                    <th scope=\"col\">GRADO 4</th>
                 </tr>
             </thead>
             <tbody>`;
-        for (let i = 0; i < prediction.length; i++) {
-            content2 += "  <tr><th scope=\"row\">" + xValues[i] + "</th> <td> " + prediction[i] + "</td></tr>";
+        for (let i = 0; i < grado2.length; i++) {
+            content2 += "  <tr><th scope=\"row\">" + xValues[i] + "</th> <td> " + grado2[i] + "</td> <td> " + grado3[i] + "</td> <td> " + grado4[i] + "</td></tr>";
         }
         content2 += " </tbody>";
 
+
         document.getElementById("tabla").innerHTML = content;
         document.getElementById("prediction").innerHTML = content2;
-
 
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
             var valoresGrafica = [];
-            valoresGrafica.push(["X", "X", "PREDICCION"]);
+            valoresGrafica.push(["X", "Y", "Grado 2", "Grado 3", "Grado 4"]);
 
             for (let i = 0; i < xValues.length; i++) {
                 valoresGrafica.push([
                     xValues[i],
-                    xValues[i],
-                    prediction[i]
+                    yValues[i],
+                    grado2[i],
+                    grado3[i],
+                    grado4[i],
                 ]);
             }
 
             var data = google.visualization.arrayToDataTable(valoresGrafica);
 
             var options = {
-                title: 'Regresion Lineal',
+                title: 'Regresion Polinomial',
                 curveType: 'function'
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('grafica'));
             chart.draw(data, options);
         }
-
     </script>
-    <h1 class="display-1 w-100 text-center">Regresion Lineal</h1>
+     <h1 class="display-1 w-100 text-center">Regresion Polinomial y(Random)</h1>
 </body>
 
 </html>
