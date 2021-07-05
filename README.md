@@ -90,6 +90,8 @@ Pure Javascript Machine Learning Library
 
 [42 K-Nearest Neighboar Example 7](https://tytusdb.github.io/tytusjs/test/35_knearestneighbor.html)
 
+[43 Polynomial Regression Example (05)](https://tytusdb.github.io/tytusjs/test/41_polynomialregression.html)
+
 
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
