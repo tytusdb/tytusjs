@@ -97,3 +97,4 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |92|04/07/2021|1|coradowilly|12|Regresión Logistica|Algoritmo Binario y Multicase. Pruebas Beta|Finalizado|04/07/2021|
 |93|04/07/2021|1|Saulguz1|12|Regresión Logistica|Documentacion y Especificaciones Regresion Logistica Binaria Simple y Multiclase|Finalizado|04/07/2021|
 |94|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregaron validaciones en el archivo "LinearModel.js" escrito por el ingeniero "Luis.Espino" esto para controlar los posibles errores al utilizar la biblioteca.|Finalizado|04/07/2021|
+|95|04/07/2021|1|pgperusina|10|K-Nearest Neighbor|Revisión de pruebas y web eliminando referenias a archivos fuente y agreagndo referencia a archivo de distribución.|En proceso|04/07/2021|
