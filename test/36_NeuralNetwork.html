@@ -10,7 +10,18 @@
     <div class="container">
         <br />
         <h1>Neural Network</h1>
-        <p>Trained with random numbers</p>
+        <h4>Training example</h4>
+        <p>Insert training data: n1,n2</p>
+        <p>Or press the button to generate 1000 random data</p>
+        <br>
+        <textarea style="width: 80%;" id="textarea" rows="10" placeholder="Insert training data. Example:
+        n1,n2
+        n1,n2
+        n1,n2
+        ..."></textarea>
+        <br>
+        <button id="random">Generate random data</button>
+        <br><br>
         <p>[n1,n2]: Probability </p>
 
         <h2>Prediction n1 > n2</h2>
@@ -35,6 +46,17 @@
 <script type="text/javascript" src="../dist/tytus.js"></script>
 <script>
 
+    document.getElementById('random').onclick = function () {
+        var cadena = ""
+        for (let i = 0; i < 1000; i++) {
+            let n1 = getRandomInt(0, 100);
+            let n2 = getRandomInt(0, 100);
+            cadena += n1 + "," + n2;
+            if (i < 999) cadena += "\n"
+        }
+        document.getElementById('textarea').value = cadena;
+    }
+
     document.getElementById('predict1').onclick = function () {
         let design = [2, 4, 3, 2];
 
@@ -43,12 +65,24 @@
         //n1 > n2 [n1, n2]
         let brain = new NeuralNetwork(design);
 
-        for (let i = 0; i < 10000; i++) {
-            let num1 = Math.random(), num2 = Math.random();
+        var training = document.getElementById('textarea').value;
+        if (training == "") {
+            alert("Insert training data!")
+            return
+        }
+        if (training.charAt(training.length - 1)) {
+            training.substring(0, training.length - 1);
+        }
+        var arrTraining = training.split("\n")
+        for (let i = 0; i < arrTraining.length; i++) {
+            let nums = arrTraining[i].split(",")
+            let num1 = parseInt(nums[0])
+            let num2 = parseInt(nums[1])
             brain.Entrenar([num1, num2], (num1 > num2 ? [1, 0] : [0, 1]));
         }
+
         var n = "[" + n1 + "," + n2 + "]: ";
-        document.getElementById("prediction_1").innerHTML = String(n + brain.Predecir([n1, n1]));
+        document.getElementById("prediction_1").innerHTML = String(n + brain.Predecir([n1, n2]));
 
     }
 
@@ -58,18 +92,35 @@
 
         var n1 = document.getElementById('n1_2').value;
         var n2 = document.getElementById('n2_2').value;
-        //n1 < n2 [n1, n2]
+        //n1 > n2 [n1, n2]
         let brain = new NeuralNetwork(design);
 
-        for (let i = 0; i < 10000; i++) {
-            let num1 = Math.random(), num2 = Math.random();
+        var training = document.getElementById('textarea').value;
+        if (training == "") {
+            alert("Insert training data!")
+            return
+        }
+        if (training.charAt(training.length - 1)) {
+            training.substring(0, training.length - 1);
+        }
+        var arrTraining = training.split("\n")
+        for (let i = 0; i < arrTraining.length; i++) {
+            let nums = arrTraining[i].split(",")
+            let num1 = parseInt(nums[0])
+            let num2 = parseInt(nums[1])
             brain.Entrenar([num1, num2], (num1 < num2 ? [1, 0] : [0, 1]));
         }
+
         var n = "[" + n1 + "," + n2 + "]: ";
-        document.getElementById("prediction_2").innerHTML = String(n + brain.Predecir([n1, n1]));
+        document.getElementById("prediction_2").innerHTML = String(n + brain.Predecir([n1, n2]));
 
     }
 
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 </script>
 
 </html>
