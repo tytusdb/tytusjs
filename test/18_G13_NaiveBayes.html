@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="../dist/tytus.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Naive Bayes G13</title>
+</head>
+
+<body>
+    <h1 class="display-1 text-center">Naive Bayes G13</h1>
+    <div class="container mt-4 pt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Training</h3>
+                <table id="tabla" class="table table-striped table-hover" border="1"></table>
+            </div>
+            <div class="col-md-4">
+                <h3>Predict</h3>
+                <select name="effect" class="form-select" id="effect_dropdown"></select>
+            </div>
+            <div class="col-md-4">
+                <h3>When</h3>
+                <div id = "events"></div><br>
+                <button type="button" onclick="Predict()" class="btn btn-primary">PREDICT! </button>
+            </div>
+        </div>
+        <div class="row mt-5 p-4">
+            <div class="col-md-12 text-center">
+                <h3 class="text-primary">Result: </h3>
+                <div class="display-1 " id="predict_result"></div>
+            </div>
+        </div>
+
+        
+    </div>
+    
+</body>
+
+<script>
+
+    //DATA DECLARATION
+        var names = ["clima", "temperatura", "humedad", "viento", "juega"];
+        var cli = ["soleado", "soleado", "nublado", "lluvioso", "lluvioso", "lluvioso", "nublado", "soleado", "soleado","lluvioso"];
+        var tem = ["calor", "calor", "calor", "templado", "frio", "frio", "frio", "templado", "frio", "templado"];
+        var hum = ["alta", "alta", "alta", "alta", "normal", "normal", "normal", "alta", "normal", "normal"];
+        var vie = ["no", "si", "no", "no", "no", "si", "si", "no", "no", "no"];
+        var jue = ["no", "no", "si", "si", "si", "no", "si", "no", "si", "si"];
+
+
+    //DATA INSERTION 
+        var naive = new NaiveBayes();
+        naive.insertCause(names[0], cli);
+        naive.insertCause(names[1], tem);
+        naive.insertCause(names[2], hum);
+        naive.insertCause(names[3], vie);
+        naive.insertCause(names[4], jue);
+
+    //EJEMPLO: predecir la temperatura dado que: clima=soleado, humedad=alta y viento=no
+        // var prediction = naive.predict("temperatura",[["clima","soleado"],["humedad","alta"],["viento","no"]]);
+        //console.log(prediction); 
+        //salida: ["calor", "13.333333%"]
+
+
+    //DISPLAYING DATA INTO A TABLE
+        var table = ""
+        table += "<tr>"
+        for (const i in names) {
+            table += "<th>" +names[i]+ "</th>";
+        }
+        table += "</tr>"
+
+        for (const i in cli) {
+            table += "<tr>"
+            table += "<td>" + cli[i] + "</td><td>" + tem[i] + "</td><td>" + hum[i] + "</td><td>" + vie[i] + "</td><td>" +
+                jue[i] + "</td>"
+            table += "</tr>"
+        }
+        document.getElementById("tabla").innerHTML = table
+    
+    //SETTING UP ROW TO PREDICT
+        var drop = "";
+        for (const i in names) {
+            drop += "<option value=" + names[i] + ">" + names[i] + "</option>"
+        }
+        document.getElementById("effect_dropdown").innerHTML = drop
+
+  
+
+    //SETTING UP CONDITIONS INPUTS
+        var event_causes = "<table>";
+        var causes = naive.causes;
+
+        for (let index = 0; index < causes.length; index++) {
+            event_causes+= "<tr><td><label id=label_"+(index+1)+">"+causes[index][0]+"</label>    <td>";
+            event_causes+= "<td><select class=\"form-select\" name=\"cause\" id=\"cause"+(index+1)+"_dropdown\">";
+                var events = Array.from(new Set(causes[index][1]));
+                event_causes+= "<option value=\"\" >- - -</option>"
+                for (let x = 0; x < events.length; x++) {
+                  event_causes+= "<option value=" + events[x] + ">" + events[x] + "</option>"
+                }
+            event_causes+="</select></td></tr>";
+        }
+        document.getElementById("events").innerHTML = event_causes;
+
+</script>
+<script>
+    function Predict() {
+        var effect = document.getElementById("effect_dropdown").value;
+        let my_causes = [];
+
+        for (let index = 0; index < names.length - 1; index++) {
+            let id = index + 1;
+            let label_text = document.getElementById("label_" + id).innerText;
+            if (effect != "") {
+                my_causes.push([label_text,document.getElementById("cause" + id + "_dropdown").value])
+            }
+        }
+       
+        var prediction = naive.predict(effect, my_causes);
+        document.getElementById("predict_result").innerHTML = prediction[0] + " " + prediction[1];
+
+    }
+</script>
+
+</html>
