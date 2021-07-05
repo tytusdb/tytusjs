@@ -11,7 +11,7 @@ Log Notes
 |7|29/06/2021|2|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo lineal y pruebas|Finalizado|01/07/2021|
 |8|29/06/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo lineal|Finalizado|01/07/2021|
 |9|29/06/2021|1|pablorrp1|2|K-nearest neigbor|Cálculo del punto a clasificar contra datos de entrenamiento|Finalizado|29/06/2021|
-|10|29/06/2021|3|cristianncaste18|13|Redes neuronales|Análisis y diseño del algoritmo|En desarrollo|En desarrollo|
+|10|29/06/2021|3|cristianncaste18|13|Redes neuronales|Análisis y diseño del algoritmo|Finalizado|04/07/2021|
 |11|29/06/2021|1|pablorrp1|2|Conjuntos difusos|Cálculo del punto a clasificar por conjuntos difusos|Finalizado|30/06/2021|
 |12|29/06/2021|-|cesarsazo|6|Regresion Lineal|Regresion con minimos cuadrados.|En desarrollo|En desarrollo|
 |13|29/06/2021|-|jj196|6|Método de Bayes|Análisis|En desarrollo|En desarrollo|En desarrollo|
@@ -103,4 +103,4 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |98|04/07/2021|1|pgperusina|10|K-Nearest Neighbor, Neural Network, NaiveBayes|Revisión de pruebas y web eliminando referenias a archivos fuente y agreagndo referencia a archivo de distribución.|En proceso|04/07/2021|
 |99|04/07/2021|1|tanyamuhun|18|Metodo de bayes | Documentacion de metodo de bayes"".|En proceso|04/07/2021|
 |100|04/07/2021|1|tanyamuhun|18|Regresion polinomial|Se agregó documentacion sobre la regresion polinomial|finalizado|04/07/2021|
-
+|101|04/07/2021|3|cristianncaste18|13|Redes neuronales|Pruebas Beta|Finalizado|04/07/2021|
