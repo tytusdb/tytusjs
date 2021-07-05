@@ -100,4 +100,4 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |95|04/07/2021|1|pgperusina|10|K-Nearest Neighbor, Neural Network, NaiveBayes|Revisión de pruebas y web eliminando referenias a archivos fuente y agreagndo referencia a archivo de distribución.|En proceso|04/07/2021|
 |96|04/07/2021|1|tanyamuhun|18|Metodo de bayes | Documentacion de metodo de bayes"".|En proceso|04/07/2021|
 |97|04/07/2021|1|tanyamuhun|18|Regresion polinomial|Se agregó documentacion sobre la regresion polinomial|finalizado|04/07/2021|
-
+|98|04/06/2021|1|hugofiguer9777|4|K-nearest neighbor|Prueba beta K-nearest neighbor|En proceso|4/07/2021|
