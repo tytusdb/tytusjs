@@ -16,6 +16,17 @@ class LinearRegression extends LinearModel {
         var sumY = 0
         var sumXY = 0
         var sumXX = 0
+
+        //Se agrego la validación de que los datos de entrenamiento sean de la misma longitud. 
+        if (xTrain.length != yTrain.length) {
+            throw new Error('Los parametros para entrenar no tienen la misma longitud!');
+        }
+
+        //Validación ya que no se cuenta con manejo de errores en caso se llegara a implementar.
+        if (xTrain.length === 0) {
+            return [ [], [] ];
+        }
+
         for(var i = 0; i < xTrain.length; i++) {
             sumX += xTrain[i]
             sumY += yTrain[i]
