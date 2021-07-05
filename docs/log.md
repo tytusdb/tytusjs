@@ -39,7 +39,7 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |34|03/07/2021|1|carlospnd|5|Partial Least-Squares|Prueba Beta Partial Least-Squares|Finalizado|03/07/2021|
 |35|03/07/2021|1|PabloOsuna1997|1|Regresion Lineal|Prueba Regresion Lineal|Finalizado|03/07/2021|
 |36|03/07/2021|1|Ingridrpm|1|Árboles de decisión|Prueba Árboles de decisión|Finalizado|03/07/2021|
-|37|03/07/2021|1|davidsalguero|1|Progresión polinomial|Pruebas de progresión polinomial|En desarrollo|03/07/2021|
+|37|03/07/2021|1|davidsalguero|1|Progresión polinomial|Pruebas de progresión polinomial|Finalizado|03/07/2021|
 |38|03/07/2021|1|gerchay|13|Naive Bayes|Implementación del algoritmo Naiva Bayes tipo Gaussian|Finalizado|03/07/2021|
 |39|03/07/2021|1|gerchay|13|K-means|Implementación del algoritmo K-means tipo Density-Based Clustering.|Finalizado|03/07/2021|
 |40|03/07/2021|1|ronald1512|13|Arboles de decision|Implementación del algoritmo Arboles de decision tipo regresión.|Finalizado|03/07/2021|
