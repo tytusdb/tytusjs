@@ -11,7 +11,7 @@ Log Notes
 |7|29/06/2021|2|LuisAlfonsoMelgarArizpe|14|K-Means|Codificacion del algoritmo lineal y pruebas|Finalizado|01/07/2021|
 |8|29/06/2021|2|Richimenendez|14|K-Means|Codificacion del algoritmo lineal|Finalizado|01/07/2021|
 |9|29/06/2021|1|pablorrp1|2|K-nearest neigbor|Cálculo del punto a clasificar contra datos de entrenamiento|Finalizado|29/06/2021|
-|10|29/06/2021|3|cristianncaste18|13|Redes neuronales|Análisis y diseño del algoritmo|En desarrollo|En desarrollo|
+|10|29/06/2021|3|cristianncaste18|13|Redes neuronales|Análisis y diseño del algoritmo|Finalizado|04/07/2021|
 |11|29/06/2021|1|pablorrp1|2|Conjuntos difusos|Cálculo del punto a clasificar por conjuntos difusos|Finalizado|30/06/2021|
 |12|29/06/2021|-|cesarsazo|6|Regresion Lineal|Regresion con minimos cuadrados.|En desarrollo|En desarrollo|
 |13|29/06/2021|-|jj196|6|Método de Bayes|Análisis|En desarrollo|En desarrollo|En desarrollo|
@@ -51,8 +51,8 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |46|03/07/2021|1|CPeraltaa|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
 |47|03/07/2021|1|jossiebk|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Desarrollo|03/07/2021|
 |48|03/07/2021|1|huriel2g|18|Redes Neuronales|Prueba Beta Redes Neuronales|Finalizado|03/07/2021| 
-|49|03/07/2021|1|dianajimeneza|4|Método de Bayes|Pruebas del método|Desarrollo|04/07/2021| 
-|50|03/07/2021|1|QuiqueMRamirez|4|Método de Bayes|Especificaciones del software|Desarrollo|04/07/2021| 
+|49|03/07/2021|1|dianajimeneza|4|Método de Bayes|Pruebas del método|Finalizado|04/07/2021| 
+|50|03/07/2021|1|QuiqueMRamirez|4|Método de Bayes|Especificaciones del software|Finalizado|04/07/2021| 
 |51|03/07/2021|1|jorsala1|7|Redes Neuronales|Prueba beta Neuronal Network| Finalizado |03/07/2021|
 |52|03/07/2021|1|bchacon45|7|K-nearest neigbor|Prueba beta K-nearest neigbor|Finalizado |03/07/2021|
 |53|03/07/2021|1|andreaflores|5|Web unificada|Diseño y ejemplos|Finalizado|03/07/2021|
@@ -98,3 +98,14 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |93|04/07/2021|1|Saulguz1|12|Regresión Logistica|Documentacion y Especificaciones Regresion Logistica Binaria Simple y Multiclase|Finalizado|04/07/2021|
 |94|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregaron validaciones en el archivo "LinearModel.js" escrito por el ingeniero "Luis.Espino" esto para controlar los posibles errores al utilizar la biblioteca.|Finalizado|04/07/2021|
 |95|04/07/2021|1|pgperusina|10|K-Nearest Neighbor|Revisión de pruebas y web eliminando referenias a archivos fuente y agreagndo referencia a archivo de distribución.|finalizado|04/07/2021|
+|96|04/07/2021|1|WillyAlberto|8|K-Nearest Neighbor|Test para K-Nearest Neighbor|Terminado|04/07/2021|
+|97|04/07/2021|1|ChristianR007|8|Naive Bayes|Implementacion de test para metodo de bayes por causa y efecto segun las probabilidades de sus valores|Finalizado|04/07/2021|
+|98|04/07/2021|1|pgperusina|10|K-Nearest Neighbor, Neural Network, NaiveBayes|Revisión de pruebas y web eliminando referenias a archivos fuente y agreagndo referencia a archivo de distribución.|En proceso|04/07/2021|
+|99|04/07/2021|1|tanyamuhun|18|Metodo de bayes | Documentacion de metodo de bayes"".|En proceso|04/07/2021|
+|100|04/07/2021|1|tanyamuhun|18|Regresion polinomial|Se agregó documentacion sobre la regresion polinomial|finalizado|04/07/2021|
+|101|04/07/2021|1|marcolograjeda|13|Regresión Linea|Prueba regresion|Desarrollo|04/07/2021|
+|102|04/07/2021|1|marcolograjeda|13|Regresión Linea|Finalizado|Desarrollo|04/07/2021|
+|103|04/07/2021|1|marcolograjeda|13|Regresion polinomial|Prueba|Test|04/07/2021|
+|104|04/07/2021|1|marcolograjeda|13|Regresion polinomial|Prueba polinomial|Finalizado|04/07/2021|
+|105|04/07/2021|3|cristianncaste18|13|Redes neuronales|Pruebas Beta|Finalizado|04/07/2021|
+|106|04/06/2021|1|hugofiguer9777|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
