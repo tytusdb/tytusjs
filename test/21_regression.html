@@ -8,6 +8,9 @@
 </head>
 <body>
 <h1 class="display-1 w-100 text-center">Linear Regression</h1>
+<br>
+<br>
+
 <div class="container">
    
     <table id= "tabla1" class="table table-dark">
@@ -26,12 +29,16 @@
     <center> 
     <div id="regression_chart" style="width: 900px; height: 500px"></div>
     </center>
+    <br>
+    <br>
+    <br>
+
 </div>
 
 
 <script type="text/javascript">
-    var xTrain = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13]
-    var yTrain = [7, 3, 4, 10, 5, 5, 9, 8, 3, 13, 4, 6, 1, 9]
+    var xTrain = [0,3,4,7,8,9,10,13,14,17,18,19,21]
+    var yTrain = [1,2,5,8,10,7,9,12,15,17,19,17,16]
     var linear = new LinearRegression()
     linear.fit(xTrain, yTrain);
     yPredict = linear.predict(xTrain);
@@ -42,34 +49,78 @@
     content += " </tbody>";
     document.getElementById("tabla1").innerHTML = content;
     document.getElementById("codigo").innerHTML = ""  + yPredict;
-
     var datos = [];
-	//datos.push(["X", "Y", "Predicted"]);
-	for (let i = 0; i < xTrain.length; i++) {
-		let x = xTrain[i];
-		datos.push([x, yTrain[i], yPredict[i]]);
+    //datos.push(["X", "Y", "Predicted"]);
+    for (let i = 0; i < xTrain.length; i++) {
+		datos.push([xTrain[i], yTrain[i], yPredict[i]]);
 	}
+    google.charts.load('current', {'packages':['corechart', 'scatter']});
+    google.charts.setOnLoadCallback(drawStuff);
 
-	google.charts.load("current", { packages: ["corechart"] });
-	google.charts.setOnLoadCallback(drawChart);
+    function drawStuff() {
 
-    function drawChart() {
-		var data = google.visualization.arrayToDataTable(datos);
+var button = document.getElementById('change-chart');
+var chartDiv = document.getElementById('regression_chart');
 
-		var options = {
-                    seriesType : 'scatter',
-                    series: {1: {type: 'line'}},
-					title: "Linear Regression ",
-					//legend: { position: "bottom" },
-                    
-		};
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'xTrain');
+data.addColumn('number', 'yTrain');
+data.addColumn('number', 'yPredicted');
 
-				var chart = new google.visualization.LineChart(
-					document.getElementById("regression_chart")
-				);
+data.addRows(datos);
 
-				chart.draw(data, options);
-			}
+var materialOptions = {
+  chart: {
+    title: 'Linear Regression',
+    subtitle: 'xTrain\' yPredicted'
+  },
+  width: 800,
+  height: 500,
+  series: {
+    0: {axis: 'yTrain'},
+    1: {axis: 'yPredicted'}
+  },
+  axes: {
+    y: {
+      'yTrain': {label: 'yTrain'},
+      'yPredicted': {label: 'yPredicted'}
+    }
+  }
+};
+
+var classicOptions = {
+  width: 800,
+  series: {
+    0: {targetAxisIndex: 0},
+    1: {targetAxisIndex: 1}
+  },
+  title: 'Linear Regression',
+
+  vAxes: {
+    // Adds titles to each axis.
+    0: {title: 'yTrain'},
+    1: {title: 'yPredicted'}
+  }
+};
+
+function drawMaterialChart() {
+  var materialChart = new google.charts.Scatter(chartDiv);
+  materialChart.draw(data, google.charts.Scatter.convertOptions(materialOptions));
+  button.innerText = 'Change to Classic';
+  button.onclick = drawClassicChart;
+}
+
+function drawClassicChart() {
+  var classicChart = new google.visualization.ScatterChart(chartDiv);
+  classicChart.draw(data, classicOptions);
+  button.innerText = 'Change to Material';
+  button.onclick = drawMaterialChart;
+}
+
+drawMaterialChart();
+};
+
+
 </script>
 </body>
 
