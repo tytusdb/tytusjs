@@ -91,3 +91,4 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |86|04/07/2021|1|ramiromateo|17|Regresion lineal|Implementacion del coeficiente de correlacion, testeo con dos ejemplos con puntos muy dispersos y con puntos ideales|Finalizado|04/07/2021|
 |87|04/07/2021|1|ChristianR007|8|Arboles de decision|Implementacion de Arboles de decision utilizando algoritmo ID3 con el calculo de la ganancia de la informacion|Finalizado|04/07/2021|
 |88|04/07/2021|1|WillyAlberto|8|Regresion lineal|Minimos cuadrados|Finalizado|04/07/2021|
+|89|04/07/2021|1|pgperusina|10|K-Nearest Neighbor|Revisión de pruebas y web eliminando referenias a archivos fuente y agreagndo referencia a archivo de distribución.|En proceso|04/07/2021|
