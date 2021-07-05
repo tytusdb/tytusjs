@@ -32,7 +32,7 @@
   </table>
 
 
-<h4>Probably male for point: 190,80</h4>
+<h4>Probably male for point: 190,90</h4>
 <p>Result: <span id="result"></span></p> 
 
 <table id="datavotos"></table>
@@ -1008,7 +1008,7 @@
 
     var solver1 = new KNearestNeighbor();
     solver1.inicializar(5, weight_height.data, weight_height.labels);
-    var resultPredict=solver1.predecir([190, 80]);
+    var resultPredict=solver1.predecir([190, 90]);
     
     for (var key in resultPredict.votosCounts) {
         document.getElementById("result").innerHTML =key+"<span style='margin-left:30px;'> Count Near:</span> "+ resultPredict.votosCounts[key];
