@@ -109,3 +109,7 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |104|04/07/2021|1|marcolograjeda|13|Regresion polinomial|Prueba polinomial|Finalizado|04/07/2021|
 |105|04/07/2021|3|cristianncaste18|13|Redes neuronales|Pruebas Beta|Finalizado|04/07/2021|
 |106|04/06/2021|1|hugofiguer9777|4|K-nearest neighbor|Prueba beta K-nearest neighbor|Finalizado|4/07/2021|
+|107|04/07/2021|1|Azurdia90|9|Metodo de Bayes Gaussian|Implementación y Test del argoritmo |Finalizado|04/07/2021|
+|108|03/07/2021|1|michikatrins|9|Metodo de Bayes Gaussian|Test del argoritmo |Finalizado|03/07/2021|
+|109|03/07/2021|1|CPeraltaa|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Finalizado|03/07/2021|
+|110|03/07/2021|1|jossiebk|9|Metodo de Bayes Gaussian|Implementación del argoritmo |Finalizado|03/07/2021|
