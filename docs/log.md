@@ -83,3 +83,5 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |78|04/07/2021|1|gpeitzner|1|Regresión Lineal|Prueba Beta de Regresión Lineal Custom|Finalizado|04/07/2021|
 |79|04/07/2021|1|PabloOsuna1997|1|Naive Bayes|Prueba Naive Bayes|Finalizado|04/07/2021|
 |80|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregó documentación del funcionamiento del algoritmo.|Finalizado|04/07/2021|
+|81|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregó variación del algoritmo de limites cuadrados "".|Finalizado|04/07/2021|
+|82|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregarón pruebas "01_regression_LinearLeastSquares.html" utilizando la variación del algoritmo de limites cuadrados.|Finalizado|04/07/2021|
