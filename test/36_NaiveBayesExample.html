@@ -1,0 +1,45 @@
+<html>
+    <head>
+        
+        <h1>Naive Bayes</h1>
+    </head>
+    <body>
+        <div>
+        <h3>Add a data set</h3>
+        <pre>columns separated by commas and columns separated with semicolons
+            Example: a,b,c;D,E,F</pre>
+        </div>
+        <div>
+            <textarea id="entrada" name="entrada" rows="4" cols="50"></textarea>
+        </div>
+        <div>
+            <button onclick="ingress()">Gauss</button>
+        </div>
+    </body>
+    <script >
+        function ingress(){
+            inputValues= document.getElementById("entrada").value;
+            console.log(inputValues);
+            parseInput(inputValues);
+        }
+
+        function parseInput(vals){
+            try{
+                var rows=vals.split(";");
+                var variables=[];
+                console.log(rows);
+                for(var i=0;i<rows.length;i++){
+                    var columns=rows[i].split(",");
+                    console.log(columns);
+                    variables.push(columns);
+                }
+                console.table(variables);
+
+            }catch(e){
+                alert("An error occur with the input");
+            }
+            
+        }
+      
+    </script>
+</html>
