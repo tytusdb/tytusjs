@@ -55,8 +55,104 @@
             </div>
             <div id="ejemplo" style="width:72%; height:40%; float:right;"></div>
         </div>
+
+    
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+        
+        <h2>Implementación</h2>
+        <div>
+            <div style="width:28%; float:left;">
+                <button onclick="addFila()">Agregar fila</button>
+                <button onclick="startPrediccion()">Calcular</button>
+                <br/>
+                <br/>
+
+                X: <input type="tel" id="X">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <h3 id="Respuesta"></h3>
+
+                <table id="tabla" border>
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="tel">
+                        </td>
+                        <td>
+                            <input type="tel">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                            <input type="text">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="dinamico" style="width:72%; float:right"></div>
+        </div>
+        <br/><br/><br/><br/><br/><br/><br/><br/>
         
         <script>
+            function addFila() {
+                let iIzq = document.createElement("input");
+                let iDer = document.createElement("input");
+                iIzq.type = "text";
+                iDer.type = "text";
+
+                let celdaIzq = document.createElement("td");
+                let celdaDer = document.createElement("td");
+                celdaIzq.appendChild(iIzq);
+                celdaDer.appendChild(iDer);
+
+                let fila = document.createElement("tr");
+                fila.appendChild(celdaIzq);
+                fila.appendChild(celdaDer);
+
+                let tabla = document.getElementById("tabla");
+                tabla.children[0].appendChild(fila);
+            }
+
+            function startPrediccion(){
+                let tabla = document.getElementById("tabla").children[0].children;
+                let datos = [];
+
+                for (let i = 1; i < tabla.length; i++) {
+                    let tr = tabla[i];
+                    let izq = tr.children[0];
+                    let der = tr.children[1];
+
+                    izq = izq.children[0].value;
+                    der = der.children[0].value;
+
+                    datos.push([ parseInt(izq, 10), parseInt(der, 10) ]);
+                }
+
+                let X = document.getElementById("X").value;
+
+                MinimosCuadrados(datos);
+                let resp = Predecir(X);
+                let Resp = document.getElementById("Respuesta");
+                let texto = `El resultado es: ${resp[0]}<br/>`;
+                texto += `Y = ${resp[1]}X `;
+                if(resp[2] >= 0){
+                    texto += `+ ${resp[2]}`;
+                }else{
+                    texto += `- ${Math.abs(resp[2])}`;
+                }
+                
+                Resp.innerHTML = texto;
+
+                datos.unshift(['X','Y']);
+                graficar(datos, 'dinamico');
+            }
+
             function graficar(datos, componente) {
                 google.charts.load('current', {'packages':['corechart']});
                 google.charts.setOnLoadCallback(drawChart);
@@ -76,6 +172,8 @@
                     chart.draw(data, options);
                 }
             }
+            
+
             let datos = [[7, 2], [1, 9], [10, 2], [5, 5], [4, 7], [3, 11], [13, 2], [10, 5], [2, 14]];
             console.log(2);
             MinimosCuadrados(datos);
