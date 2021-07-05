@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="../dist/tytus.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        
+        table {
+            background: #65A5A5;
+            text-align: center;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th{
+            padding: 1%;
+        }
+
+        thead {
+        background: #07575B;
+        color: white;
+        border-bottom: solid 5px #003B46;
+        }
+
+        tr.horario:hover td{
+            background-color: #C4DFE6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2 mt-5">
+            <h1 class="display-3 text-center">Polynomial Regression Academic Demostration</h1>
+        </div>
+    </div>
+    <table>
+        <tr>
+            <th>Datos</th>
+        </tr>
+        <tr><td><p class="text-dark" id="log1"></p></td></tr>
+        <tr><td><p class="text-dark" id="log2"></p></td></tr>
+        <tr><td><p class="text-dark" id="log3"></p></td></tr>
+        <tr><td><p class="text-dark" id="log4"></p></td></tr>
+        <tr><td><p class="text-dark" id="log5"></p></td></tr>
+        <tr><td><p class="text-dark" id="log6"></p></td></tr>
+        <tr><td><p class="text-dark" id="log7"></p></td></tr>
+        <tr><td><p class="text-dark" id="log8"></p></td></tr>
+        <tr><td><p class="text-dark" id="log9"></p></td></tr>
+    </table>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-3 mt-3">
+            <div id="chart_div" style="width: 900px; height: 500px;"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function joinArrays() {
+            var a = []
+            if (arguments.length == 10) {
+                a.push([arguments[0], arguments[2], arguments[4], arguments[6], arguments[8]]);
+                for (var i = 0; i < arguments[1].length; i++) {
+                    a.push([arguments[1][i], arguments[3][i], arguments[5][i], arguments[7][i], arguments[9][i]]);
+                }
+            }
+            return a;
+        }
+
+        var xTrain = [0, 1, 2, 3, 4, 5];
+        var yTrain = [1, 20, 35, 80, 150, 290];
+        var predictArray = [0, 1, 2, 3, 4, 5, 6];
+        var polynomial = new PolynomialRegression();
+
+        polynomial.fit(xTrain, yTrain, 2);
+        yPredict = polynomial.predict(predictArray);
+        r2 = polynomial.getError();
+
+        polynomial.fit(xTrain, yTrain, 3);
+        yPredict2 = polynomial.predict(predictArray);
+        r22 = polynomial.getError();
+
+        polynomial.fit(xTrain, yTrain, 4);
+        yPredict3 = polynomial.predict(predictArray);
+        r23 = polynomial.getError();
+
+        for (let i = 0; i < predictArray.length; i++) {
+            yPredict[i] = Number(yPredict[i].toFixed(2));
+            yPredict2[i] = Number(yPredict2[i].toFixed(2));
+            yPredict3[i] = Number(yPredict3[i].toFixed(2));
+        }
+
+        document.getElementById("log1").innerHTML += 'X Train: [' + xTrain + ']';
+        document.getElementById("log2").innerHTML += 'Y Train: [' + yTrain + ']';
+        document.getElementById("log3").innerHTML += 'X To Predict: [' + predictArray + ']';
+        document.getElementById("log4").innerHTML += 'Y Prediction Degree 2: [' + yPredict + ']';
+        document.getElementById("log5").innerHTML += 'Y Prediction Degree 3: [' + yPredict2 + ']';
+        document.getElementById("log6").innerHTML += 'Y Prediction Degree 4: [' + yPredict3 + ']';
+        document.getElementById("log7").innerHTML += 'R^2 for Degree 2: ' + Number(r2.toFixed(2));
+        document.getElementById("log8").innerHTML += 'R^2 for Degree 3: ' + Number(r22.toFixed(2));
+        document.getElementById("log9").innerHTML += 'R^2 for Degree 4: ' + Number(r23.toFixed(2));
+
+        var a = joinArrays('x', xTrain, 'Training', yTrain, 'Prediction Degree 2', yPredict, 'Prediction Degree 3', yPredict2, 'Prediction Degree 4', yPredict3);
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable(a);
+            var options = {
+                seriesType: 'scatter',
+                series: {
+                    1: { type: 'line' },
+                    2: { type: 'line' },
+                    3: { type: 'line' }
+                }
+            };
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+
+</html>
