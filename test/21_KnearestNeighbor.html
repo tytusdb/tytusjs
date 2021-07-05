@@ -1,97 +1,188 @@
 <html>
     <head>
-        <script type="text/javascript" src="../dist/tytus.js"></script>
+        <script type="text/javascript" src="../src/G8_KnearestNeighbor.js"></script>
     </head>
     <body>
         <h1>K-Nearest Neighbor</h1>
-        <p id="Resp"></p>
-        <table id="tabla">
+        <h2>Caso de ejemplo</h2>
+        <h3>Para H:<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;Manhattan: II, III<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;Euclidiana: III
+        </h3>
+        
+        <table border>
             <tr>
-                <th>Individuo</th>
-                <th>V1</th>
-                <th>V2</th>
-                <th>V3</th>
-                <th>Clase</th>
+                <th style="min-width: 11em;">Individuo</th>
+                <th style="min-width: 11em;">V1</th>
+                <th style="min-width: 11em;">V2</th>
+                <th style="min-width: 11em;">V3</th>
+                <th style="min-width: 11em;">Clase</th>
             </tr>
-            <tr>
-                <td>A</td>
-                <td>1</td>
-                <td>9</td>
-                <td>2</td>
-                <td>A1</td>
+            <tr align=center>
+                <td style="min-width: 4em;">A</td>
+                <td style="min-width: 4em;">1</td>
+                <td style="min-width: 11em;">9</td>
+                <td style="min-width: 11em;">2</td>
+                <td style="min-width: 11em;">I</td>
             </tr>
-            <tr>
-                <td>B</td>
-                <td>9</td>
-                <td>8</td>
-                <td>8</td>
-                <td>A3</td>
+            <tr align=center>
+                <td style="min-width: 11em;">B</td>
+                <td style="min-width: 11em;">9</td>
+                <td style="min-width: 11em;">8</td>
+                <td style="min-width: 11em;">8</td>
+                <td style="min-width: 11em;">III</td>
             </tr>
-            <tr>
-                <td>C</td>
-                <td>2</td>
-                <td>8</td>
-                <td>3</td>
-                <td>A1</td>
+            <tr align=center>
+                <td style="min-width: 11em;">C</td>
+                <td style="min-width: 11em;">2</td>
+                <td style="min-width: 11em;">8</td>
+                <td style="min-width: 11em;">3</td>
+                <td style="min-width: 11em;">I</td>
             </tr>
-            <tr>
-                <td>D</td>
-                <td>9</td>
-                <td>1</td>
-                <td>8</td>
-                <td>A2</td>
+            <tr align=center>
+                <td style="min-width: 11em;">D</td>
+                <td style="min-width: 11em;">9</td>
+                <td style="min-width: 11em;">1</td>
+                <td style="min-width: 11em;">8</td>
+                <td style="min-width: 11em;">II</td>
             </tr>
-            <tr>
-                <td>E</td>
-                <td>2</td>
-                <td>8</td>
-                <td>2</td>
-                <td>A1</td>
+            <tr align=center>
+                <td style="min-width: 11em;">E</td>
+                <td style="min-width: 11em;">2</td>
+                <td style="min-width: 11em;">8</td>
+                <td style="min-width: 11em;">2</td>
+                <td style="min-width: 11em;">I</td>
             </tr>
-            <tr>
-                <td>F</td>
-                <td>9</td>
-                <td>8</td>
-                <td>9</td>
-                <td>A3</td>
+            <tr align=center>
+                <td style="min-width: 11em;">F</td>
+                <td style="min-width: 11em;">9</td>
+                <td style="min-width: 11em;">8</td>
+                <td style="min-width: 11em;">9</td>
+                <td style="min-width: 11em;">III</td>
             </tr>
-            <tr>
-                <td>G</td>
-                <td>8</td>
-                <td>2</td>
-                <td>9</td>
-                <td>A2</td>
+            <tr align=center>
+                <td style="min-width: 11em;">G</td>
+                <td style="min-width: 11em;">8</td>
+                <td style="min-width: 11em;">2</td>
+                <td style="min-width: 11em;">9</td>
+                <td style="min-width: 11em;">II</td>
             </tr>
-            <tr>
-                <td>H</td>
-                <td>7</td>
-                <td>5</td>
-                <td>6</td>
-                <td>?</td>
+            <tr align=center>
+                <td style="min-width: 11em;">H</td>
+                <td style="min-width: 11em;">7</td>
+                <td style="min-width: 11em;">5</td>
+                <td style="min-width: 11em;">6</td>
+                <td style="min-width: 11em;">?</td>
             </tr>
         </table>
 
-        <script>
-            var datos = [
-                ["A", [1,9,2], "I"],
-                ["B", [9,8,8], "III"],
-                ["C", [2,8,3], "I"],
-                ["D", [9,1,8], "II"],
-                ["E", [2,8,2], "I"],
-                ["F", [9,8,9], "III"],
-                ["G", [8,2,9], "II"]
-            ];
-            var newIndividuo = ["H", [7,5,6]];
-            let Manhattan = predecirCluster(1, datos, newIndividuo);
-            let Euclidiana = predecirCluster(2, datos, newIndividuo);
+        <h2>Implementación</h2>
+        <button onclick="addFila()">Agregar fila</button>
+        <button onclick="addColum()">Agregar columna</button>
+        <button onclick="startPrediccion()">Calcular</button>
+        <br/>
+        <br/>
 
-            let html = document.getElementById("Resp");
-            let resp = 'El resultado es:<br/>';
-            resp += `Manhattan: ${Manhattan}<br/>`;
-            resp += `Euclidiana: ${Euclidiana}`;
-            html.innerHTML = resp;
-            
-            
+        Nuevo Individuo: <input type="tel" id="Individuo" placeholder="Nombre,X1,X2,...,Xn" style="min-width: 20em;">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <h3 id="Respuesta"></h3>
+
+        <table id="tabla" border>
+            <tr>
+                <th>Nombre del individuo</th>
+                <th>Clase</th>
+                <th>X1</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="tel">
+                </td>
+                <td>
+                    <input type="tel">
+                </td>
+                <td>
+                    <input type="tel">
+                </td>
+            </tr>
+        </table>
+        <br/><br/><br/><br/>
+
+        <script>
+            function addFila() {
+                let tabla = document.getElementById("tabla").children[0];
+                let numColum = tabla.children[1].children.length;
+
+                let fila = document.createElement("tr");
+                
+                for(let i = 0; i < numColum; i++){
+                    let input = document.createElement("input");
+                    input.type = "text";
+
+                    let celda = document.createElement("td");
+                    celda.appendChild(input);
+
+                    fila.appendChild(celda);
+                }
+                
+                tabla.appendChild(fila);
+            }
+
+            function addColum() {
+                let tabla = document.getElementById("tabla").children[0];
+                let numColum = tabla.children[0].children.length;
+                let numFila = tabla.children.length;
+
+                let th = document.createElement("th");
+                th.innerHTML = 'X' + numColum;
+                tabla.children[0].append(th);
+
+                for(let i = 1; i < numFila; i++){
+                    let input = document.createElement("input");
+                    input.type = "text";
+
+                    let celda = document.createElement("td");
+                    celda.appendChild(input);
+
+                    tabla.children[i].append(celda);
+                }
+            }
+
+            function startPrediccion(){
+                var datos = [];
+                let tabla = document.getElementById("tabla").children[0].children;
+
+                for(let i = 1; i < tabla.length; i++) {
+                    let valores = tabla[i].children;
+                    let fila = [ valores[0].children[0].value, [], valores[1].children[0].value ];
+
+                    for(let y = 2; y < valores.length; y++) {
+                        let val = valores[y].children[0].value;
+                        fila[1].push(val);
+                    }
+                    datos.push(fila);
+                }
+
+                let nuevo = document.getElementById("Individuo").value.split(",");
+
+                if(nuevo.length > 1){
+                    for(let i = 1; i < nuevo.length; i++) {
+                        nuevo[i] = parseInt(nuevo[i], 10);
+                    }
+
+                    nuevo = [nuevo[0], nuevo.slice(1)];
+
+                    let Manhattan = predecirCluster(1, datos, nuevo);
+                    let Euclidiana = predecirCluster(2, datos, nuevo);
+
+                    let html = document.getElementById("Respuesta");
+                    let resp = 'El resultado es:<br/>';
+                    resp += `Manhattan: ${Manhattan}<br/>`;
+                    resp += `Euclidiana: ${Euclidiana}`;
+                    html.innerHTML = resp;
+                }else{
+                    alert("Revise los datos que ingreso");
+                }
+            }
         </script>
     </body>
 </html>
