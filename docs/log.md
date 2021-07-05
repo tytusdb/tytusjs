@@ -85,3 +85,4 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |80|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregó documentación del funcionamiento del algoritmo.|Finalizado|04/07/2021|
 |81|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregó variación del algoritmo de limites cuadrados "".|Finalizado|04/07/2021|
 |82|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregarón pruebas "01_regression_LinearLeastSquares.html" utilizando la variación del algoritmo de limites cuadrados.|Finalizado|04/07/2021|
+|83|04/07/2021|1|esahuay|15|Regresión lineal limites cuadrados | Se agregaron validaciones en el archivo "LinearModel.js" escrito por el ingeniero "Luis.Espino" esto para controlar los posibles errores al utilizar la biblioteca.|Finalizado|04/07/2021|
