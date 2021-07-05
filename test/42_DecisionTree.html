@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        table {
+        border-collapse: collapse;
+        
+        text-align: center;
+        width: 100%;
+        }
+
+        th, td {
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+        background-color: #04AA6D;
+        color: white;
+        }
+        </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
+    <script type="text/javascript" src="../dist/tytus.js"></script>
+    <title>Ronald Romero</title>
+</head>
+
+<body>
+    <h1>Decision Tree</h1>
+    <br>
+    <table><th><label>Training example</label></th></table>
+    <table style="width:100%">
+        
+        <tr>
+            <td><label>Header</label></td>
+            <td><input style="width: 80%;" id="header" type="text" placeholder="Insert header" value="Gender,Career,Sportsman,Job,Children,Time,Married,House,Success"> </td>
+        </tr>
+        <tr>
+            <td><label>Training example</label></td>
+            <td><textarea style="width: 80%;" id="textarea" rows="10" placeholder="Insert training data">Man,Yes,Yes,Yes,Yes,Long,Yes,Yes,Yes
+Woman,Yes,Yes,Yes,Yes,Long,Yes,Yes,Yes
+Man,Yes,Yes,Yes,Yes,Short,Yes,Yes,Yes
+Woman,Yes,Yes,Yes,Yes,Short,Yes,Yes,Yes
+Man,Yes,No,Yes,Yes,Short,No,No,No
+Woman,Yes,No,Yes,Yes,Short,No,No,No
+Man,No,Yes,Yes,No,Long,Yes,Yes,Yes
+Woman,No,Yes,Yes,No,Long,Yes,Yes,Yes
+Man,No,Yes,Yes,No,Long,Yes,No,Yes
+Woman,No,Yes,Yes,No,Long,Yes,No,Yes
+Man,No,Yes,Yes,No,Long,No,No,Yes
+Woman,No,Yes,Yes,No,Long,No,No,Yes
+Man,No,Yes,Yes,No,Short,No,Yes,No
+Woman,No,Yes,Yes,No,Short,No,Yes,No
+Man,Yes,No,Yes,No,Long,Yes,Yes,Yes
+Woman,Yes,No,Yes,No,Long,Yes,Yes,Yes
+Man,Yes,No,Yes,No,Long,Yes,No,Yes
+Woman,Yes,No,Yes,No,Long,Yes,No,Yes
+Man,No,No,Yes,No,Long,Yes,No,No
+Woman,No,No,Yes,No,Long,Yes,No,No</textarea></td>
+        </tr>
+        <tr>
+            <td><label>Predict</label></td>
+            <td><input style="width: 80%;" id="data" type="text" placeholder="Insert data" value="Man,Yes,No,Yes,No,Long,No,Yes"></td>
+        </tr>
+        <tr>
+            <td><button id="generate">Generate decision tree</button></td>
+            <td></td>
+        </tr>
+    </table>
+    <p id="prediction" style="font-size: 20px;"></p>
+    <h3 class="display-6 text-center mt-5">Result Tree:<br /></h3>
+    <div class="container mb-5">
+        <div style="width: 100%; height: 500px; border: 2px solid rgb(96, 160, 255); border-radius: 10px;" id="tree">
+        </div>
+    </div>
+    <p class="text-muted">Test By Ronald Romero G13</p>
+    <script type="text/javascript">
+        document.getElementById('generate').onclick = function () {
+            var chart = document.getElementById("tree");
+            var {
+                dotStr,
+                predictNode
+            } = testWithChart()
+            if (predictNode != null) {
+                var header = document.getElementById('header').value;
+                var arrHeader = header.split(",")
+                document.getElementById('prediction').innerText = arrHeader[arrHeader.length-1] + ": " + predictNode.value
+            } else {
+                document.getElementById('prediction').innerText = ""
+            }
+            var parsDot = vis.network.convertDot(dotStr);
+            var data = {
+                nodes: parsDot.nodes,
+                edges: parsDot.edges
+            }
+            var options = {
+                layout: {
+                    hierarchical: {
+                        levelSeparation: 100,
+                        nodeSpacing: 100,
+                        parentCentralization: true,
+                        direction: 'UD', // UD, DU, LR, RL
+                        sortMethod: 'directed', // hubsize, directed
+                        //shakeTowards: 'roots' // roots, leaves                        
+                    },
+                },
+            };
+            var network = new vis.Network(chart, data, options);
+
+            var chart = document.getElementById("tree");
+            var {
+                dotStr,
+                predictNode
+            } = testWithChart()
+            if (predictNode != null) {
+                var header = document.getElementById('header').value;
+                var arrHeader = header.split(",")
+                document.getElementById('prediction').innerText = arrHeader[arrHeader.length-1] + ": " + predictNode.value
+            } else {
+                document.getElementById('prediction').innerText = ""
+            }
+            var parsDot = vis.network.convertDot(dotStr);
+            var data = {
+                nodes: parsDot.nodes,
+                edges: parsDot.edges
+            }
+            var options = {
+                layout: {
+                    hierarchical: {
+                        levelSeparation: 100,
+                        nodeSpacing: 100,
+                        parentCentralization: true,
+                        direction: 'UD', // UD, DU, LR, RL
+                        sortMethod: 'directed', // hubsize, directed
+                        //shakeTowards: 'roots' // roots, leaves                        
+                    },
+                },
+            };
+            var network = new vis.Network(chart, data, options);
+        }
+        testWithChart = () => {
+            var header = document.getElementById('header').value;
+            var arrHeader = header.split(",")
+            var training = document.getElementById('textarea').value;
+            var arrTraining = training.split("\n")
+            var arrData = [arrHeader]
+            for (var i = 0; i < arrTraining.length; i++) {
+                arrData.push(arrTraining[i].split(","))
+            }
+            //class="display-6 text-center mb-5" 
+            let dtSt = arrData
+
+            let dTree = new DecisionTreeID3(dtSt);
+            let root = dTree.train(dTree.dataset);
+            var pred = document.getElementById('data').value;
+            var arrPred = pred.split(",")
+            var predHeader = []
+            for(var i = 0; i<arrHeader.length-1;i++){
+                predHeader.push(arrHeader[i])
+            }
+            let predict = pred != "" ? dTree.predict([predHeader,arrPred], root) : null;
+            return {
+                dotStr: dTree.generateDotString(root),
+                predictNode: predict
+            };
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
