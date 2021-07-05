@@ -288,7 +288,7 @@
         //---------------------------------------Others examples-------------------------------------------------------------
         var res = bayes.predict(['sunny', 'hot'])
         var resSplit= res.toString().split(',')
-        document.getElementById('p9').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"
+        document.getElementById('p9').innerHTML=res  +' = '+parseFloat(resSplit[1]).toFixed(3)+"%"
         var res1 = bayes.predict(['sunny', 'hot', 'high', 'false'])
         console.log(`Result if outlook='sunny', temperature='hot': ${res}`)
         console.log(`Result if outlook='sunny', temperature='hot', humidity='high', windy='false': ${res1}`)
@@ -297,7 +297,7 @@
         //---------------------------------------Others examples 2-------------------------------------------------------------
         var res2 = bayes.predict(['sunny', 'cool'])
         var resSplit= res2.toString().split(',')
-        document.getElementById('p10').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"
+        document.getElementById('p10').innerHTML=res2  +' = '+parseFloat(resSplit[1]).toFixed(3)+"%"
         var res3 = bayes.predict(['sunny', 'hot', 'high', 'false'])
         console.log(`Result if outlook='sunny', temperature='cold': ${res2}`)
         console.log(`Result if outlook='sunny', temperature='cold', humidity='high', windy='false': ${res3}`)
@@ -306,7 +306,7 @@
         //---------------------------------------Others examples 3-------------------------------------------------------------
         var res4 = bayes.predict(['sunny', 'mild'])
         var resSplit= res4.toString().split(',')
-        document.getElementById('p11').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"
+        document.getElementById('p11').innerHTML=res4  +' = '+parseFloat(resSplit[1]).toFixed(3)+"%"
         var res5 = bayes.predict(['sunny', 'hot', 'high', 'false'])
         console.log(`Result if outlook='sunny', temperature='mild': ${res4}`)
         console.log(`Result if outlook='sunny', temperature='cold', humidity='high', windy='false': ${res5}`)
@@ -315,7 +315,7 @@
         //---------------------------------------Others examples 4-------------------------------------------------------------
         var res6 = bayes.predict(['rain', 'hot'])
         var resSplit= res6.toString().split(',')
-        document.getElementById('p12').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"  //set in <b>  with id res2
+        document.getElementById('p12').innerHTML=res6  +' = '+parseFloat(resSplit[1]).toFixed(3)+"%"  //set in <b>  with id res2
         var res5 = bayes.predict(['rain', 'cool', 'normal', 'true'])
         console.log(`Result if outlook='sunny', temperature='mild': ${res4}`)
         console.log(`Result if outlook='sunny', temperature='cold', humidity='high', windy='false': ${res5}`)
@@ -323,7 +323,7 @@
         //---------------------------------------Others examples 5-------------------------------------------------------------
         var res7 = bayes.predict(['rain', 'cool'])
         var resSplit= res7.toString().split(',')
-        document.getElementById('p13').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"  //set in <b>  with id res2
+        document.getElementById('p13').innerHTML=res7  +' = '+parseFloat(resSplit[1]).toFixed(3)+"%"  //set in <b>  with id res2
         var res5 = bayes.predict(['rain', 'cool', 'normal', 'true'])
         console.log(`Result if outlook='sunny', temperature='mild': ${res4}`)
         console.log(`Result if outlook='sunny', temperature='cold', humidity='high', windy='false': ${res5}`)
@@ -331,7 +331,7 @@
         //---------------------------------------Others examples 6-------------------------------------------------------------
         var res8 = bayes.predict(['rain', 'mild'])
         var resSplit= res8.toString().split(',')
-        document.getElementById('p14').innerHTML=+parseFloat(resSplit[1]).toFixed(3)+"%"  //set in <b>  with id res2
+        document.getElementById('p14').innerHTML=res8  +' = '+parseFloat(resSplit[1]).toFixed(3)+"%"  //set in <b>  with id res2
         var res5 = bayes.predict(['rain', 'cool', 'normal', 'true'])
         console.log(`Result if outlook='sunny', temperature='mild': ${res4}`)
         console.log(`Result if outlook='sunny', temperature='cold', humidity='high', windy='false': ${res5}`)
