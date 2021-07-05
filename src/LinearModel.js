@@ -44,4 +44,22 @@ class LinearRegression extends LinearModel {
         }
         return mse / yTrain.length
     }
+
+    coeficientR2(yTrain, yPredict) 
+    {
+        var avg=0;
+        var numerator = 0;
+        var denominator = 0;
+        for(var i = 0; i < yTrain.length; i++) {
+            avg += yTrain[i]
+        }
+        avg=avg/yTrain.length;
+        for(var i = 0; i < yPredict.length; i++) {
+            numerator += Math.pow(yPredict[i]-avg,2);
+        }
+        for(var i = 0; i < yTrain.length; i++) {
+            denominator += Math.pow(yTrain[i]-avg,2);
+        }
+        return numerator/denominator
+    }
 }
