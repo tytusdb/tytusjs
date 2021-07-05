@@ -7,12 +7,14 @@
 <body>
     <h1 class="text-center mt-3">Software specification</h1>
     <hr>
+
     <div class="row">
         <div class="col-md-8 offset-md-2 mt-3">
             <h2 class="ml-3">Linear Regression</h2>
             <h3>Class Diagram</h3>    
         </div>
     </div> 
+
     <div class="mermaid text-center">
         classDiagram
         LinearModel <|-- LinearRegression
@@ -21,17 +23,25 @@
         }
         class LinearRegression {
             +m : float = 0
+
             +b : float = 0
+
             +fit(xTrain : float[], yTrain : float[])
+
             +predict(xTest : float[]) float[]
+
             +mserror(yTrain : float[], yPredict : float[]) float
+
         }
+
     </div>
     <hr>
     <div class="row">
         <div class="col-md-8 offset-md-2 mt-3">
             <h2>Polynomial Regression</h2>
+
             <h3>Class diagram</h3>    
+
         </div>
     </div>
     
@@ -41,14 +51,22 @@
         class PolynomialModel {
             +isFit : bool = false
         }
+
         class PolynomialRegression {
             +solutions :[]
+
             +error :float
+
             +fit(xArray: float[], yArray: float[], degree: int)
+
             +predict(xArray: float[])
+
             +calculateR2(xArray: float[], yArray: float[])
+
             +getError()
+
         }
+
     </div>
     
     <div class="row">
@@ -56,97 +74,174 @@
             <h3>Methods and attributes description</h3>
             <table class="table table-striped table-bordered table-responsive">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Method or Atribute</th>
-                    <th scope="col">Scope</th>
-                    <th scope="col">Description</th>
+                  
+                    <tr>
+                    
+                        <th scope="col">#</th>
+                    
+                        <th scope="col">Method or Atribute</th>
+                    
+                        <th scope="col">Scope</th>
+                    
+                        <th scope="col">Description</th>
                 </tr>
             </thead>
             <tbody>
               <tr>
+                
                 <th>1</th>
+                
                 <td>isFit</td>
+                
                 <td>PolynomialModel Class</td>
+                
                 <td>Attribute that defines if the model is already trained or not</td>
             </tr>
+            
             <tr>
                 <th>2</th>
+                
                 <td>solutions</td>
+                
                 <td>PolynomialRegression Class</td>
+                
                 <td>Array of floats that stores the solutions for the polynomial model</td>
             </tr>
+            
             <tr>
+                
                 <th>3</th>
+                
                 <td>fit</td>
+                
                 <td>PolynomialRegression Class</td>
+                
                 <td>This method creates the solutions for the polynomial model based in the logic that will be described below</td>
+            
             </tr>
             <tr>
+                
                 <th>4</th>
+                
                 <td>xArray</td>
+                
                 <td>Method fit - PolynomialModel Class</td>
+                
+                
                 <td>Array parameter of x values that are used to train the model</td>
+            
             </tr>
+            
             <tr>
+                
                 <th>5</th>
+                
                 <td>yArray</td>
+                
                 <td>Method fit - PolynomialRegression Class</td>
+                
                 <td>Array parameter of y values that are used to train the model</td>
+            
             </tr>
+            
             <tr>
+                
                 <th>6</th>
+                
                 <td>degree</td>
+                
                 <td>Method fit - PolynomialRegression Class</td>
+                
                 <td>Paramter with the desired degree for the model</td>
+            
             </tr>
+            
             <tr>
               <th>7</th>
+              
+              
               <td>equationSize</td>
+              
               <td>Method fit - PolynomialRegression Class</td>
+              
               <td>Attribute that defines the number of equations that are going to be used in the model based in the degree of the model</td>
           </tr>
           <tr>
               <th>8</th>
+             
               <td>nElements</td>
+             
               <td>Method fit - PolynomialRegression Class</td>
+             
               <td>Attribute that defines the number columns that are going to be used in the matrix for the model</td>
           </tr>
+          
           <tr>
+            
             <th>9</th>
+            
             <td>equations</td>
+            
+            
             <td>Method fit - PolynomialRegression Class</td>
+            
             <td>Matrix that stores the equations and solutions for the polynomial model</td>
+        
         </tr>
         <tr>
+            
             <th>10</th>
+            
             <td>predict</td>
+            
             <td>PolynomialRegression Class</td>
+            
             <td>Function that returns the predicted values based on the traning done before by the model</td>
         </tr>
+        
         <tr>
+            
             <th>10</th>
+            
             <td>xArray</td>
+            
             <td>Method predict - PolynomialRegression Class</td>
+            
             <td>Parameter with the x Array values to be predicted</td>
         </tr>
+        
         <tr>
+            
             <th>11</th>
+            
             <td>yArray</td>
+            
             <td>Method predict - PolynomialRegression Class</td>
+            
             <td>Array with y values predicted by the model</td>
         </tr>
+        
         <tr>
+            
             <th>12</th>
+            
             <td>calculateR2</td>
+            
             <td>Method calculateR2 - PolynomialRegression Class</td>
+            
             <td>Method that creates the r^2 error of the trained model</td>
         </tr>
+       
         <tr>
+            
             <th>13</th>
+            
             <td>getError</td>
+            
             <td>Method getError - PolynomialRegression Class</td>
+            
             <td>Method that return the r^2 value for the trained model</td>
+        
         </tr>
     </tbody>
 </table>
@@ -163,13 +258,21 @@
             In order to train the model to get an accurate prediction based in the input degree, it was used several math concepts to get a precise function for the model, in this library it was used the following concepts to develop the solution: 
         </p>
         <div class="row">
+            
             <div class="col-md-6 offset-md-3">
+                
                 <ul class="list-group">
+                    
                     <li class="list-group-item">Least Squares</li>
+                    
                     <li class="list-group-item">Gauss Jordan</li>
+                
                 </ul>
+           
             </div>
+        
         </div>
+       
         <h3>Least Squares</h3>
         <p>
             This method was used to build a coefficent matrix for the equation system solution, this matrix is simetric and it is created based in an input degree that we call "m", the logic of least squares is pretty simple, it just consist in creating a matrix that contains a group of equations that increase their degree as we create new equations in the matrix, this matrix is later solved to get the coefficents for the solution of the Regression Model.
@@ -177,48 +280,84 @@
         <div class="text-center">
             <table class="table table-striped table-bordered table-responsive">
                 <tr>
+                    
                     <td>n</td>
+                    
                     <td>Σx</td>
+                    
                     <td>Σx^2</td>
+                    
                     <td>Σx^3</td>
+                    
                     <td>...</td>
+                    
                     <td>Σx^m</td>
+                    
                     <td>Σy</td>
+                
                 </tr>
                 <tr>
+                    
                     <td>Σx</td>
+                    
                     <td>Σx^2</td>
+                    
                     <td>Σx^3</td>
+                    
                     <td>Σx^4</td>
+                    
                     <td>...</td>
+                    
                     <td>Σx^m</td>
+                    
                     <td>Σxy</td>
                 </tr>
                 <tr>
+                    
                     <td>Σx^2</td>
+                    
                     <td>Σx^3</td>
+                    
                     <td>Σx^4</td>
+                    
                     <td>Σx^5</td>
+                    
                     <td>...</td>
+                    
                     <td>Σx^m</td>
+                    
                     <td>Σx^2*y</td>
                 </tr>
                 <tr>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
+                    
                     <td>...</td>
                 </tr>
                 <tr>
+                    
                     <td>Σx^m</td>
+                    
                     <td>Σx^m+1</td>
+                    
                     <td>Σx^m+2</td>
+                    
                     <td>Σx^m+3</td>
+                    
                     <td>...</td>
+                    
                     <td>Σx^m+n</td>
+                    
                     <td>Σx^m*y</td>
                 </tr>
             </table>
@@ -230,21 +369,35 @@
         <div class="text-center">
             <table class="table table-striped table-bordered table-responsive">
                 <tr>
+                    
                     <td>1</td>
+                    
                     <td>2</td>
+                    
                     <td>3</td>
+                    
                     <td>4</td>
+                    
                     <td>...</td>
+                    
                     <td>n</td>
+                    
                     <td>m</td>
                 </tr>
                 <tr>
                     <td>0</td>
+                    
+                    
                     <td>1</td>
+                    
                     <td>2</td>
+                    
                     <td>3</td>
+                    
                     <td>...</td>
+                    
                     <td>n</td>
+                    
                     <td>m</td>
                 </tr>
                 <tr>
