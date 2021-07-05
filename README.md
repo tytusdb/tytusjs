@@ -83,7 +83,8 @@ Pure Javascript Machine Learning Library
 [38 Arbol de decision](https://tytusdb.github.io/tytusjs/test/37_ArbolesDecision_ID3.html)
 
 [39 Linear Regression ](https://tytusdb.github.io/tytusjs/test/38_RegresionLineal.html)
-[40 K-Nearest Neighboar Example 7](https://tytusdb.github.io/tytusjs/test/35_knearestneighbor.html)
+
+[40 K-Nearest Neighboar Example 7](https://tytusdb.github.io/tytusjs/test/40_knearestneighbor.html)
 
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
