@@ -117,4 +117,5 @@ spnd|5|Support Vector Machine|Análisis|Finalizado|03/07/2021|
 |112|04/07/2021|1|esahuay|15|Regresion lineal Gradiante Descendente|Se agregó el algoritmo. |finalizado|04/07/2021|
 |113|04/07/2021|1|esahuay|15|Regresion lineal Gradiante Descendente|Se agregó la prueba al archivo 32 Regresion Linear Minimos Cuadrados, como comparativa entre ambos metodos. |finalizado|04/07/2021|
 |114|04/07/2021|1|esthuardo12|4|K-nearest neighbor|Prueba hacia K-nearest neighbor con valores 190/90|Finalizado|4/07/2021|
+|115|04/06/2021|1|tanyamuhun|18|Arboles de decision|Documentacion arboles de decision|Finalizado|4/07/2021|
 
