@@ -76,6 +76,8 @@ Pure Javascript Machine Learning Library
 
 [36 Neural network](https://tytusdb.github.io/tytusjs/test/36_NeuralNetwork.html)
 
+[38 Linear Regression ](https://tytusdb.github.io/tytusjs/test/38_RegresionLineal.html)
+
 ## Docs
 [Software specification](https://tytusdb.github.io/tytusjs/docs/specification.html)
 
