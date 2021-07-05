@@ -1,17 +1,57 @@
 <html>
 <body>
-    <h2>Método de Bayes</h2>
-    <h4>Utilizando la siguiente tabla:</h4>
-    <p id="salida"></p>
-    <div style="width: 800px; height:40px; float:left; align-items: center; display: flex;">
-        <h4>Con la condicion:&nbsp;&nbsp;</h4> 
-        <p id="salida1"></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button onclick="cambioCondicion()">Cambiar condicion</button>
+    <div style="height: 100%; width: 40%; float:left; display:flex; justify-content: center;align-items: center;">
+        <div id="tab" style="">
+            <h2>Test G8 - Método de Bayes</h2>
+            <h4>Con la siguiente tabla:</h4>
+            <p id="salida"></p>
+        </div>
     </div>
-    <div style="width: 800px; height:40px; float:left; align-items: center; display: flex;">
-        <h4>Probabilidad de ganar:&nbsp;&nbsp;</h4> 
-        <p id="salida2"></p>
+    <div style="height: 100%; width: 50%; display:flex; justify-content: center;align-items: center;">
+        <div id="comp" style=""><br><br><br><br>
+            <div id="s4" style="width: 800px; height:40px; display:flex;">
+                <h4>Resultado:&nbsp;&nbsp;</h4>
+                <p style="font-size: large;" id="salida4"></p>
+            </div>
+            <div id="s2" style="width: 800px; height:40px; display:flex;">
+                <h4>Probabilidad de ganar:&nbsp;&nbsp;</h4> 
+                <p id="salida2"></p>
+            </div>
+            <div id="s3" style="width: 800px; height:40px; display:flex;">
+                <h4>Probabilidad de no ganar:&nbsp;&nbsp;</h4>
+                <p id="salida3"></p>
+            </div><br>
+            <div id="s1" style="width: 800px; height:40px; display:flex;">
+                <h4>Condicion:&nbsp;&nbsp;</h4> 
+                <!--<p id="salida1"></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                <input id="salida1" type="text" value="">
+                <button onclick="cambioCondicion()">Aplicar condicion</button>
+            </div><br>
+            <div style="width: 400px; height: 170px; border: solid; padding: 5px; ">
+                <div style="">
+                    <div style="width: 100%; height:40px; display:flex;">
+                        <h4>Reset Tabla:&nbsp;&nbsp;</h4> 
+                        <button onclick="borrarTabla()">Borrar Tabla</button>
+                    </div>
+                    <div style="width: 800px; height:40px; display:flex;">
+                        <h4>Agregar Fila&nbsp;&nbsp;</h4> 
+                        <input id="addFile" type="text" value="fila1,fila2,fila3,fila4">
+                        <button onclick="agregarFila()">Agregar Fila</button>
+                    </div>
+                    <div style="width: 800px; height:40px; display:flex;">
+                        <h4>Atributo Ganar&nbsp;&nbsp;</h4> 
+                        <input id="atrWin" type="text" value="">
+                    </div>
+                    <div style="width: 800px; height:40px; display:flex;">
+                        <h4>Atributo No Ganar&nbsp;&nbsp;</h4> 
+                        <input id="atrLose" type="text" value="">
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="../src/G8_Naive_Bayes.js"></script>
+        </div>   
     </div>
+
     <div style="width: 800px; height:40px; float:left; align-items: center; display: flex;">
         <h4>Probabilidad de no ganar:&nbsp;&nbsp;</h4>
         <p id="salida3"></p>
@@ -21,5 +61,6 @@
         <p id="salida4"></p>
     </div>
     <script type="text/javascript" src="../dist/tytus.js"></script>
+
 </body>
 </html>
