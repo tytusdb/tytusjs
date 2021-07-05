@@ -462,6 +462,168 @@ HashMap.prototype = {
   }
 }
 
+/* Implementacion Info Ganancia*/
+
+function IteratorGanancia(arr){
+  if(!(arr instanceof Array)){
+    throw new Error('iterator needs a arguments that type is Array!');
+  }
+  this.arr = arr;
+  this.length = arr.length;
+  this.index = 0;
+}
+IteratorGanancia.prototype.current = function() {
+  return this.arr[this.index-1];
+}
+IteratorGanancia.prototype.next = function(){
+  this.index += 1;
+  if(this.index > this.length || this.arr[this.index-1] === null)
+    return false;
+  return true;
+}
+
+
+/*
+  * Calcular la ganancia de información
+  * Conjunto de datos de entrenamiento de datos @param Array
+  * Atributos de características de datos de @param Array
+  */
+
+function InfoGain(data, attr) {
+  if(!(data instanceof Array) || !(attr instanceof Array)){
+    throw new Error('Se necesita un argumento tipo arreglo!');
+  }
+  this._data = data;
+  this._attr = attr;
+}
+
+InfoGain.prototype = {
+  /**
+    * Obtenga la cantidad de categorías de datos de entrenamiento
+    * @return hashMap <categoría, el número de categorías>
+    */
+  getTargetValue: function() {
+    var map = new HashMap();
+    var iter = new IteratorGanancia(this._data);
+    while(iter.next()){
+      var t = iter.current();
+      var key = t[t.length-1];
+      var value = map.get(key);
+      map.put(key, value !== undefined ? ++value : 1);
+    }
+    return map;
+  },
+  /**
+    * Obtener información de la entropía de los datos de entrenamiento.
+    * @return información entropía de datos de entrenamiento
+    */
+  getEntroy: function(){
+    var targetValueMap = this.getTargetValue();
+    var targetKey = targetValueMap.keys(), entroy = 0;
+    var self = this;
+    var iter = new IteratorGanancia(targetKey);
+    while(iter.next()){
+      var p = targetValueMap.get(iter.current()) / self._data.length;
+      entroy += (-1) * p * (Math.log(p) / Math.LN2);
+    }
+    return entroy;
+  },
+  /**
+    * Obtener el número de valores de atributo en el conjunto de datos de entrenamiento.
+    * @param número índice atributo nombre matriz índice
+    */
+  getAttrValue: function(index){
+    var map = new HashMap();
+    var iter = new IteratorGanancia(this._data);
+    while(iter.next()){
+      var t = iter.current();
+      var key = t[index];
+      var value = map.get(key);
+      map.put(key, value !== undefined ? ++value : 1);
+    }
+    return map;
+  },
+  /**
+    * Obtenga la proporción del valor del atributo en el espacio de decisión
+    * @param valor de atributo de nombre de cadena
+    * @param número índice en qué columna se encuentra el atributo
+    */
+  getAttrValueTargetValue: function(name, index){
+    var map = new HashMap();
+    var iter = new IteratorGanancia(this._data);
+    while(iter.next()){
+      var t = iter.current();
+      if(name === t[index]){
+        var size = t.length;
+        var key = t[t.length-1];
+        var value = map.get(key);
+        map.put(key, value !== undefined ? ++value : 1);
+      }
+    }
+    return map;
+  },
+  /**
+    * Obtenga la entropía del conjunto de datos clasificados después de aplicar el atributo de característica al conjunto de datos de entrenamiento
+    * @param número índice atributo nombre matriz índice
+    */
+  getInfoAttr: function(index){
+    var attrValueMap = this.getAttrValue(index);
+    var infoA = 0;
+    var c = attrValueMap.keys();
+    for(var i = 0; i < attrValueMap.size(); i++){
+      var size = this._data.length;
+      var attrP = attrValueMap.get(c[i]) / size;
+      var targetValueMap = this.getAttrValueTargetValue(c[i], index);
+      var totalCount = 0 ,valueSum = 0;
+      for(var j = 0; j < targetValueMap.size(); j++){
+        totalCount += targetValueMap.get(targetValueMap.keys()[j]);
+      }
+      for(var k = 0; k < targetValueMap.size(); k++){
+        var p = targetValueMap.get(targetValueMap.keys()[k]) / totalCount;
+        valueSum += (Math.log(p) / Math.LN2) * p;
+      }
+      infoA += (-1) * attrP * valueSum;
+    }
+    return infoA;
+  },
+  /**
+    * Obtener ganancia de información
+    */
+  getGain: function(index) {
+    return this.getEntroy() - this.getInfoAttr(index);
+  },
+  
+  /**
+    * Obtenga el factor de penalización
+    */
+  getSplitInfo: function(index){
+    var map = this.getAttrValue(index);
+    var splitA = 0;
+    for(var i = 0; i < map.size(); i++){
+      var size = this._data.length;
+      var attrP = map.get(map.keys()[i]) / size;
+      splitA += (-1) * attrP * (Math.log(attrP) / Math.LN2);
+    }
+    return splitA;
+  },
+  /**
+    * Obtener tasa de ganancia
+    */
+  getGainRaito: function(index){
+    return this.getGain(index) / this.getSplitInfo(index);
+  },
+  getData4Value: function(attrValue, attrIndex){
+    var resultData = new Array();
+    var iter = new Iterator(this._data);
+    while(iter.next()){
+      var temp = iter.current();
+      if(temp[attrIndex] === attrValue){
+        resultData.push(temp);
+      }
+    }
+    return resultData;
+  }
+}
 
 //fin c
 
