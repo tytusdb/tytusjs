@@ -7,12 +7,14 @@
 <body>
     <h1 class="text-center mt-3">Software specification</h1>
     <hr>
+
     <div class="row">
         <div class="col-md-8 offset-md-2 mt-3">
             <h2 class="ml-3">Linear Regression</h2>
             <h3>Class Diagram</h3>    
         </div>
     </div> 
+
     <div class="mermaid text-center">
         classDiagram
         LinearModel <|-- LinearRegression
@@ -21,17 +23,25 @@
         }
         class LinearRegression {
             +m : float = 0
+
             +b : float = 0
+
             +fit(xTrain : float[], yTrain : float[])
+
             +predict(xTest : float[]) float[]
+
             +mserror(yTrain : float[], yPredict : float[]) float
+
         }
+
     </div>
     <hr>
     <div class="row">
         <div class="col-md-8 offset-md-2 mt-3">
             <h2>Polynomial Regression</h2>
+
             <h3>Class diagram</h3>    
+
         </div>
     </div>
     
@@ -41,14 +51,22 @@
         class PolynomialModel {
             +isFit : bool = false
         }
+
         class PolynomialRegression {
             +solutions :[]
+
             +error :float
+
             +fit(xArray: float[], yArray: float[], degree: int)
+
             +predict(xArray: float[])
+
             +calculateR2(xArray: float[], yArray: float[])
+
             +getError()
+
         }
+
     </div>
     
     <div class="row">
@@ -56,54 +74,96 @@
             <h3>Methods and attributes description</h3>
             <table class="table table-striped table-bordered table-responsive">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Method or Atribute</th>
-                    <th scope="col">Scope</th>
-                    <th scope="col">Description</th>
+                  
+                    <tr>
+                    
+                        <th scope="col">#</th>
+                    
+                        <th scope="col">Method or Atribute</th>
+                    
+                        <th scope="col">Scope</th>
+                    
+                        <th scope="col">Description</th>
                 </tr>
             </thead>
             <tbody>
               <tr>
+                
                 <th>1</th>
+                
                 <td>isFit</td>
+                
                 <td>PolynomialModel Class</td>
+                
                 <td>Attribute that defines if the model is already trained or not</td>
             </tr>
+            
             <tr>
                 <th>2</th>
+                
                 <td>solutions</td>
+                
                 <td>PolynomialRegression Class</td>
+                
                 <td>Array of floats that stores the solutions for the polynomial model</td>
             </tr>
+            
             <tr>
+                
                 <th>3</th>
+                
                 <td>fit</td>
+                
                 <td>PolynomialRegression Class</td>
+                
                 <td>This method creates the solutions for the polynomial model based in the logic that will be described below</td>
+            
             </tr>
             <tr>
+                
                 <th>4</th>
+                
                 <td>xArray</td>
+                
                 <td>Method fit - PolynomialModel Class</td>
+                
+                
                 <td>Array parameter of x values that are used to train the model</td>
+            
             </tr>
+            
             <tr>
+                
                 <th>5</th>
+                
                 <td>yArray</td>
+                
                 <td>Method fit - PolynomialRegression Class</td>
+                
                 <td>Array parameter of y values that are used to train the model</td>
+            
             </tr>
+            
             <tr>
+                
                 <th>6</th>
+                
                 <td>degree</td>
+                
                 <td>Method fit - PolynomialRegression Class</td>
+                
                 <td>Paramter with the desired degree for the model</td>
+            
             </tr>
+            
             <tr>
               <th>7</th>
+              
+              
               <td>equationSize</td>
+              
               <td>Method fit - PolynomialRegression Class</td>
+              
               <td>Attribute that defines the number of equations that are going to be used in the model based in the degree of the model</td>
           </tr>
           <tr>
