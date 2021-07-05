@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script type="text/javascript" src="../dist/tytus.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        
+    </head>
+    <body>
+        <h2>Regresion Lineal</h2>
+        <p id="log"></p>    
+        <div id="chart_div" style="width: 900px; height: 500px;"></div>
+        <script type="text/javascript">
+            var xTrain = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+            var yTrain = [1, 2.296, 5, 5.976, 7.816, 10, 11.496, 14, 15.176, 18, 20, 25, 29.1234, 34.1234, 40, 42.1234, 50, 57.1324134, 70, 85.1234, 99.12341324]
+
+            var linear = new LinearRegression()
+            linear.fit(xTrain, yTrain)
+            yPredict = linear.predict(xTrain)
+            document.getElementById("log").innerHTML+='<br>X Train:   '+xTrain+'<br>Y Train:   '+yTrain+'<br>Y Predict: '+yPredict
+            var a = joinArrays('x',xTrain,'yTrain',yTrain,'yPredict',yPredict)
+            document.getElementById("log").innerHTML+=
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable(a);
+                var options = {
+                    seriesType : 'scatter',
+                    series: {1: {type: 'line'}}
+                };  
+                var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+                chart.draw(data, options);         
+            }    
+        </script>
+    </body>
+</html>
