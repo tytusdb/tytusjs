@@ -1,6 +1,7 @@
 <html>
 <head>
 <script type="text/javascript" src="../src/LineLeastSquares.js"></script>
+<script type="text/javascript" src="../src/LinearRegressionGradientDescent.js"></script>
 <script type="text/javascript" src="../dist/tytus.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
@@ -30,6 +31,41 @@ function drawChart() {
     var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
     chart.draw(data, options);         
 }    
+</script>
+
+<h2>Linear Regression Graddient Descent</h2>
+<p>
+    Tabla de las iteraciones y el resultado de f(x) en cada iteración se utilizó la misma matriz para corroborar el número de iteraciones y el valor de aprendizaje adecuado.
+</p>
+<table>
+    <tr>
+        <th>Iteracion</th>
+        <th>Funcion</th>
+    </tr>
+    <tbody id="myTable">
+
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    var gradiente = new GradienteDescendente();
+    console.log(gradiente);
+    const myArray = Object.values(gradiente);
+    
+    buildTable(gradiente);
+
+    function buildTable(data){
+        var table = document.getElementById("myTable")
+
+        for(var i = 0; i < data.length; i++)
+        {
+            var row = `<tr>
+                            <td>${data[i].Iteracion}</td>
+                            <td>${data[i].Funcion}</td>
+                       </tr>`
+            table.innerHTML += row
+        }
+    }    
 </script>
 </body>
 </html>
