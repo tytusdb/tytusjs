@@ -43,7 +43,7 @@ class NaiveBayes {
                 effect_unique_value.push(effect_array[index]);
             }
         }
-        console.log(effect_unique_tuple);
+        //console.log(effect_unique_tuple);
         
         for (let i = 0; i < effect_unique_tuple.length; i++) {
             let effect_prob = this.getSimpleProbability([effect,effect_unique_tuple[i][0]]);
@@ -54,7 +54,7 @@ class NaiveBayes {
             }
             effect_unique_tuple[i][1] =effect_prob; 
         }
-        console.log(effect_unique_tuple);
+        //console.log(effect_unique_tuple);
 
         let maxprob = 0;
         let val ="nothing :("

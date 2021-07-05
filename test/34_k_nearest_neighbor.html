@@ -1,0 +1,46 @@
+<html>
+<head>
+<script type="text/javascript" src="../dist/tytus.js"></script>
+<title>Algorimo K-nearest neighbor</title>
+</head>
+<body>
+<h2>Test Algoritmo K-Nearest Neighbor Grupo 6</h2>
+<h3>Tabla de entrenamiento</h3>
+<table id="id4"></table>
+<h3>Por Puntos</h3>
+<table id="id3"></table>
+<h4>Euclidean</h4>
+<p id="id1"></p>
+<h4>Manhattan</h4>
+<p id="id2"></p>
+</body>
+<script>
+  var ind = ["A", "B", "C", "D", "E", "F", "G", "H"]
+  var a = [11, 15, 16, 18, 16, 17, 15, 19]
+  var b = [16, 13, 17, 12, 13, 14, 12, 16]
+  var c = [17, 19, 18, 19, 11, 19, 13, 17]
+  var d = [13, 18, 18, 11, 14, 12, 18, 19]
+  var group = ["Q", "R", "W", "Q", "R", "R","T","Q"]
+  var point = [14,16,19]
+  var id4 = "<table>"
+  for (const i in a) {
+    id4 += "<tr>"
+    id4 += "<td>" + ind[i] + "</td><td>" + a[i] + "</td><td>" + b[i] + "</td><td>" + c[i]+ "</td><td>" + d[i]+ "</td><td>" + group[i] + "</td>"
+    id4 += "</tr>"
+  }
+  id4 += "</table>"
+  document.getElementById("id4").innerHTML = id4
+  id4 = "<table>"
+  id4 += "<td> Z </td><td>" + point[0] + "</td><td>" + point[1] + "</td><td>" + point[2]  + "</td>"
+  id4 += "</table>"
+  document.getElementById("id3").innerHTML = id4
+</script>
+<script>
+  var individuals = zip([a, b, c, d, group])
+  var knn = new KNearestNeighbor(individuals)
+  var euc = knn.euclidean(point)
+  var man = knn.manhattan(point)
+  document.getElementById("id1").innerHTML = euc
+  document.getElementById("id2").innerHTML = man
+</script>
+</html>

@@ -876,8 +876,431 @@
     </div>
 
     <hr>
+
+
+    <div class="container mt-4">
+    <h3 class="display-5">LinearKMeans Class</h3>
+    <div class="dropdown-divider"></div>
+
+    <div class="row">
+        <div>
+            <h3 class="">Properties</h3>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>k</td>
+                        <td>Number of clusters in wich the points will be grouped.</td>
+                    </tr>
+                    <tr>
+                        <td>data</td>
+                        <td>Array of numbers representing each point on the X axis.</td>
+                    </tr>
+                    <tr>
+                        <td>iterations</td>
+                        <td>Amount of repetitions that the algorithm will perform. The iterations apply specifically to the randomization of possible cluster points.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h3 class="">Methods</h3>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 10%;">Name</th>
+                        <th scope="col"  style="width: 20%;">Parameters</th> 
+                        <th scope="col"  style="width: 70%;">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>clusterize</td>
+                        <td>
+                            <ul>
+                                <li>k</li>
+                                <li>data</li>
+                                <li>iterations</li>
+                            </ul>
+                        </td>
+                        <td>This is the main method of the KMeans algorithm, which follows the following steps:
+                            <ol>
+                                <li><b>k</b> ammount of random points are selected from the <b>data</b> array without repetition. This are the potential clusters. </li>
+                                <li>The distance between each point on the <b>data</b> array and each potential cluster is calculated and stored in the same array.</li>
+                                <li>Each point gets assigned to the closest (less distance) potential cluster point. </li>
+                                <li>The mean and variance of each cluster group is calculated and stored.</li>
+                                <li>The points are reasigned to the potential clusters but this time the distance is calculated between the point and the cluster group mean. This step is repeated untill there are no more changes in the cluster groups. </li>
+                                <li>The sum of each group variance (total variance) of the potential cluster is stored.</li>
+                                <li>Steps 1 through 6 are repeated <b>iterations</b> times </li>
+                                <li>The potential cluster who has the lesser total variance is selected as the optimal solution, and send as the returned value.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>distance</td>
+                        <td>
+                            <ul>
+                                <li>point_a</li>
+                                <li>point_b</li>
+                            </ul>
+                        </td>
+                        <td>This method returns the distance between two points (<b>point_b</b> - <b>point_a</b>)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>calculateMeanVariance</td>
+                        <td>
+                            <ul>
+                                <li>arr</li>
+                            </ul>
+                        </td>
+                        <td>This method returns the mean and variance of an array of values.
+                           The mean of <b>arr</b> is the sum of all the data divided by the item count.
+                           The variance of <b>arr</b> is the sum of the substraction of each point and the mean, to the power of 2, divided by de item count.
+
+                       </td>
+                   </tr>
+               </tbody>
+           </table>
+       </div>
+
+   </div>
+
+
+</div>
+
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2 mt-3">
+            <h2 class="ml-3">Bayes Method</h2>
+        </div>
+    </div> 
+    <div class="mermaid text-center">
+        classDiagram
+        class MethodBayes {
+            +m : attributes = []
+            +b : classes = []
+            +b : frecuencyTables = []
+            +b : attributesNames = []
+            +b : className = null
+            +addAttribute(values : [], attributesNames : [])
+            +addClass(values : [], className: String) 
+            +train()
+            +probability(attributesName : String, cause: String, effect: String) 
+            +predict(causes : [], effect: String) 
+            +train()
+            +toFrecuencyTable(values:[]) 
+        }
+    </div>
+
+    <div class="container mt-4">
+        <h3 class="display-5">Bayes Class</h3>
+        <div class="dropdown-divider"></div>
+
+        <div class="row">
+            <div>
+                <h3 class="">Properties</h3>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>attributes</td>
+                            <td>Attributes that the model to evaluate will contain</td>
+                        </tr>
+                        <tr>
+                            <td>classes</td>
+                            <td>Classes that the model to evaluate will contain</td>
+                        </tr>
+                        <tr>
+                            <td>frecuencyTables</td>
+                            <td>Table containing the data of the probabilities of each event</td>
+                        </tr>
+                        <tr>
+                            <td>attributesNames</td>
+                            <td>Stores the name of each attribute registered in the model</td>
+                        </tr>
+                        <tr>
+                            <td>className</td>
+                            <td>Stores the value of the last class that was added</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <h3 class="">Methods</h3>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 10%;">Name</th>
+                            <th scope="col" style="width: 20%;">Parameters</th>
+                            <th scope="col" style="width: 70%;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>addAttribute</td>
+                            <td>
+                                <ul>
+                                    <li>values</li>
+                                    <li>attributeName</li>
+                                </ul>
+                            </td>
+                            <td>Method used to add an attribute to the array of attributes that belong to a specific
+                                model. Its values ​​parameter will contain the values ​​to add the attribute and the
+                                name to associate it.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>addClass</td>
+                            <td>
+                                <ul>
+                                    <li>values</li>
+                                    <li>className</li>
+                                </ul>
+                            </td>
+                            <td>Method used to add a class to the array of classes that belong to a specific model. Its
+                                values ​​parameter will contain the values ​​to add the class and the name to associate
+                                it.
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>train</td>
+                            <td>
+
+                            </td>
+                            <td>Method used to train our model with its corresponding attributes and classes. This method
+                                also makes use of the frequency table to store the probabilities found.
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>probability</td>
+                            <td>
+                                <ul>
+                                    <li>attributeName</li>
+                                    <li>cause</li>
+                                    <li>effect</li>
+                                </ul>
+                            </td>
+                            <td>Method used to calculate the probabilities of an attribute using its cause and effect
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>predict</td>
+                            <td>
+                                <ul>
+                                    <li>cause</li>
+                                    <li>effect</li>
+                                </ul>
+                            </td>
+                            <td>Method used to predict an outcome through a given event. To predict these events, the cause and effect parameters are used.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>isModelValid</td>
+                            <td>
+
+                            </td>
+                            <td>Method used to validate if a model is valid through its minimum requirements, such as the one that contains classes, attributes, etc.
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>toFrecuencyTable</td>
+                            <td>
+                                <ul>
+                                    <li>values</li>
+                                </ul>
+                            </td>
+                            <td>Method used to store and return the frequency table that contains the probabilities, frequencies and values ​​of the model
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
     
+            <div class="col col-sm-12 col-md-6">
+                <h3 class="display-6">Example Data <br /></h3>
+                <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+                    <img src="https://gitlab.com/cmazariegosramirez/prac1_sa_201314627/-/raw/master/WhatsApp_Image_2021-07-04_at_12.08.52_PM.jpeg"  />
+                </p>
+            </div>
     
+            <div class="col col-sm-12 col-md-6">
+                <h3 class="display-6">Result of Method Bayes:<br /></h3>
+                <p>
+                    The result is shown below
+                    <br />
+                    <br />
+                </p>
+                <p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+                    <img src="https://gitlab.com/cmazariegosramirez/prac1_sa_201314627/-/raw/master/WhatsApp_Image_2021-07-04_at_12.09.12_PM.jpeg" style="text-center" width="100%" />
+                </p>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div>
+                <h1 class="display-3 w-100 text-center">NaiveBayes</h1>
+                <hr>
+                <div class="container">
+                    <h1 class="display-5 w-100">Class Diagram</h1>
+                </div>
+            </div>
+        </div>
+        <div class="mermaid text-center">
+            classDiagram
+        
+            class NaiveBayes {
+            +causes : any[] = []
+            +insertCause(name : string, array : any[])
+            +predict(effect : string, events : []]) any[]
+            +getSimpleProbability(event : [])
+            +getConditionalProbability(eventA : [],eventB : [])
+            +getCauseByName(cause_name:string)
+            }
+        
+        </div>
+        
+            
+        
+        
+        <div class="container mt-4">
+            <h3 class="display-5">NaiveBayes Class</h3>
+            <div class="dropdown-divider"></div>
+        
+            <div class="row">
+                <div>
+                    <h3 class="">Properties</h3>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>causes</td>
+                                <td>Array of the causes to be taken in count for the prediction</td>
+                            </tr>
+        
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <h3 class="">Methods</h3>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 10%;">Name</th>
+                                <th scope="col" style="width: 20%;">Parameters</th>
+                                <th scope="col" style="width: 70%;">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>insertCause</td>
+                                <td>
+                                    <ul>
+                                        <li>effect (string) </li>
+                                        <li>events (array)</li>
+                                    </ul>
+                                </td>
+                                <td>This method fills the data usted to make the predictions. Each cause added must have the
+                                    same events array as the others inserted, otherwise it will throw an error through console .
+                                    <ul>
+                                        <li>The <b>effect</b> parameter represents the name of the column / cause added and it
+                                            must be unique </li>
+                                        <li>The <b>events</b> parameter recieves the data used for the column/cause </li>
+        
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>predict</td>
+                                <td>
+                                    <ul>
+                                        <li>effect (string)</li>
+                                        <li>events (array)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    This is the main method that runs the prediction for the data entered through on the
+                                    parameters.
+                                    <ul>
+                                        <li>The <b>effect</b> parameter represents the name of the column/cause for which you
+                                            want to make the prediction </li>
+                                        <li>The <b>events</b> parameter recieves an array of tuples [column_name, value] for
+                                            known events. <br>eg. [["name", value],["name", value],["name", value] ...] </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>getSimpleProbability</td>
+                                <td>
+                                    <ul>
+                                        <li>event (array)</li>
+                                    </ul>
+                                </td>
+                                <td>This method returns the probability that an <b>event</b> ocurrs. Events are represented by
+                                    tuples with the format ["column_name", value]. In other words it
+                                    returns the probability of finding "value" on cause "column_name"
+        
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>getConditionalProbability</td>
+                                <td>
+                                    <ul>
+                                        <li>event_A (array)</li>
+                                        <li>event_B (array)</li>
+                                    </ul>
+                                </td>
+                                <td> Returns probability of <b>event_A</b> occurring given that <b>event_B</b> occurs. 
+                                    Events are represented by tuples with the format ["column_name", value]. 
+        
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>getCauseByName</td>
+                                <td>
+                                    <ul>
+                                        <li>cause_name (string)</li>
+                                    </ul>
+                                </td>
+                                <td> Returns the array of values corresponding to the column/cause identified with the value recieved in the parameter.
+        
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+               </div>
+        
+           </div>
+        
+        
+        </div>
+
  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
  <script>mermaid.initialize({startOnLoad:true});</script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
