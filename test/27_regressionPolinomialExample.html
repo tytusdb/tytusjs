@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="../dist/tytus.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <h1 class="display-1 w-100 text-center">Regresion Polinomial y(Random)</h1>
+    <div class="container">
+        <center>
+            <div class="container" style="margin-left: 10%;">
+                <div class="row">
+                    <div class="col" style="align-content: center;">
+                        <div class="shadow-lg p-3 mb-5 bg-white rounded" style="align-content: center;">
+                            <h3 style="margin-left: 5em;">Tabla de valores:</h3>
+                            <table id="tabla" class="table table-Primary" style="height: 1%; overflow: auto;">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                            <h3 style="margin-left: 2em;"> Y Prediccion: </h3>
+                            <table id="prediction" class="table table-Primary">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" style="align-content: center;">
+                        <h2>Grafica</h2>
+                        <div id="grafica" style="width: 900px; height: 500px"></div>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+    <script>
+        let xValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var yValues = [Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1),
+        Math.floor((Math.random() * 10) + 1)
+        ]
+        let polynomialRegression = new PolynomialRegression();
+
+        polynomialRegression.fit(xValues, yValues, 2);
+        let grado2 = polynomialRegression.predict(xValues);
+        polynomialRegression.fit(xValues, yValues, 3);
+        let grado3 = polynomialRegression.predict(xValues);
+        polynomialRegression.fit(xValues, yValues, 4);
+        let grado4 = polynomialRegression.predict(xValues);
+
+        let content = `<thead>
+                <tr>
+                    <th scope=\"col\">valor</th>
+                    <th scope=\"col\">X</th>
+                    <th scope=\"col\">Y</th>
+                </tr>
+            </thead>
+            <tbody>`;
+        for (let i = 0; i < xValues.length; i++) {
+            content += "  <tr><th scope=\"row\">" + i + "</th> <td> " + xValues[i] + " </td> <td> " + yValues[i] + "</td></tr>";
+        }
+
+        let content2 = `<thead>
+                <tr>
+                    <th scope=\"col\">X</th>
+                    <th scope=\"col\">GRADO 2</th>
+                    <th scope=\"col\">GRADO 3</th>
+                    <th scope=\"col\">GRADO 4</th>
+                </tr>
+            </thead>
+            <tbody>`;
+        for (let i = 0; i < grado2.length; i++) {
+            content2 += "  <tr><th scope=\"row\">" + xValues[i] + "</th> <td> " + grado2[i] + "</td> <td> " + grado3[i] + "</td> <td> " + grado4[i] + "</td></tr>";
+        }
+        content2 += " </tbody>";
+
+
+        document.getElementById("tabla").innerHTML = content;
+        document.getElementById("prediction").innerHTML = content2;
+
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var valoresGrafica = [];
+            valoresGrafica.push(["X", "Y", "Grado 2", "Grado 3", "Grado 4"]);
+
+            for (let i = 0; i < xValues.length; i++) {
+                valoresGrafica.push([
+                    xValues[i],
+                    yValues[i],
+                    grado2[i],
+                    grado3[i],
+                    grado4[i],
+                ]);
+            }
+
+            var data = google.visualization.arrayToDataTable(valoresGrafica);
+
+            var options = {
+                title: 'Regresion Polinomial',
+                curveType: 'function'
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('grafica'));
+            chart.draw(data, options);
+        }
+    </script>
+     <h1 class="display-1 w-100 text-center">Regresion Polinomial y(Random)</h1>
+</body>
+
+</html>
