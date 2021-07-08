@@ -31,14 +31,14 @@
 </body>
 <script>
     var ind = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
-    var x = [5, 9, 8, 2, 3, 6, 5, 4, 7]
-    var y = [6, 9, 2, 1, 5, 8, 9, 6, 3]
+    var x2 = [5, 9, 8, 2, 3, 6, 5, 4, 7]
+    var y2 = [6, 9, 2, 1, 5, 8, 9, 6, 3]
     var group = ["N", "P", "N", "N", "P", "P", "P", "N", "N"]
     var point = [5, 8]
     var tabla = "<table>"
-    for (const i in x) {
+    for (const i in x2) {
         tabla += "<tr>"
-        tabla += "<td>" + ind[i] + "</td><td>" + x[i] + "</td><td>" + y[i] + "</td><td>" + group[i] + "</td>"
+        tabla += "<td>" + ind[i] + "</td><td>" + x2[i] + "</td><td>" + y2[i] + "</td><td>" + group[i] + "</td>"
         tabla += "</tr>"
     }
     tabla += "</table>"
@@ -49,7 +49,7 @@
     document.getElementById("punto").innerHTML = tabla
 </script>
 <script>
-    var individuals = zip([x, y, group])
+    var individuals = zip([x2, y2, group])
     var knn = new KNearestNeighbor(individuals)
     var euc = knn.euclidean(point)
     var man = knn.manhattan(point)

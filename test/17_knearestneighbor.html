@@ -55,15 +55,15 @@
 </body>
 <script>
   var ind = ["A", "B", "C", "D", "E", "F", "G"]
-  var x = [9, 2, 9, 8, 1, 9, 2]
-  var y = [8, 1, 8, 9, 8, 8, 2]
+  var x2 = [9, 2, 9, 8, 1, 9, 2]
+  var y2 = [8, 1, 8, 9, 8, 8, 2]
   var z = [8, 2, 9, 9, 2, 8, 3]
   var group = ["I", "III", "I", "II", "I", "III", "II"]
   var point = [5, 7, 9]
 </script>
 
 <script>
-  var individuals = zip([x, y, z, group])
+  var individuals = zip([x2, y2, z, group])
   var knn = new KNearestNeighbor(individuals)
   var euc = knn.euclidean(point)
   var man = knn.manhattan(point)

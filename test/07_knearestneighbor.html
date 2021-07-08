@@ -1,5 +1,6 @@
 <html>
 <head>
+<!--<script type="text/javascript" src="../src/KNearestNeighbor.js"></script>-->
 <script type="text/javascript" src="../dist/tytus.js"></script>
 </head>
 <body>
@@ -15,14 +16,14 @@
 </body>
 <script>
   var ind = ["A", "B", "C", "D", "E", "F"]
-  var x = [3, 5, 2, 2, 6, 6]
-  var y = [2, 3, 1, 2, 3, 4]
+  var x2 = [3, 5, 2, 2, 6, 6]
+  var y2 = [2, 3, 1, 2, 3, 4]
   var group = ["N", "P", "N", "N", "P", "P"]
   var point = [4, 4]
   var tabla = "<table>"
-  for (const i in x) {
+  for (const i in x2) {
     tabla += "<tr>"
-    tabla += "<td>" + ind[i] + "</td><td>" + x[i] + "</td><td>" + y[i] + "</td><td>" + group[i] + "</td>"
+    tabla += "<td>" + ind[i] + "</td><td>" + x2[i] + "</td><td>" + y2[i] + "</td><td>" + group[i] + "</td>"
     tabla += "</tr>"
   }
   tabla += "</table>"
@@ -33,7 +34,7 @@
   document.getElementById("punto").innerHTML = tabla
 </script>
 <script>
-  var individuals = zip([x, y, group])
+  var individuals = zip([x2, y2, group])
   var knn = new KNearestNeighbor(individuals)
   var euc = knn.euclidean(point)
   var man = knn.manhattan(point)

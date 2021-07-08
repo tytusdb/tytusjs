@@ -17,7 +17,7 @@
 <script>
   var ind = ["A", "B", "C", "D", "E", "F", "G", "H"]
   var a = [11, 15, 16, 18, 16, 17, 15, 19]
-  var b = [16, 13, 17, 12, 13, 14, 12, 16]
+  var b2 = [16, 13, 17, 12, 13, 14, 12, 16]
   var c = [17, 19, 18, 19, 11, 19, 13, 17]
   var d = [13, 18, 18, 11, 14, 12, 18, 19]
   var group = ["Q", "R", "W", "Q", "R", "R","T","Q"]
@@ -25,7 +25,7 @@
   var id4 = "<table>"
   for (const i in a) {
     id4 += "<tr>"
-    id4 += "<td>" + ind[i] + "</td><td>" + a[i] + "</td><td>" + b[i] + "</td><td>" + c[i]+ "</td><td>" + d[i]+ "</td><td>" + group[i] + "</td>"
+    id4 += "<td>" + ind[i] + "</td><td>" + a[i] + "</td><td>" + b2[i] + "</td><td>" + c[i]+ "</td><td>" + d[i]+ "</td><td>" + group[i] + "</td>"
     id4 += "</tr>"
   }
   id4 += "</table>"
@@ -36,7 +36,7 @@
   document.getElementById("id3").innerHTML = id4
 </script>
 <script>
-  var individuals = zip([a, b, c, d, group])
+  var individuals = zip([a, b2, c, d, group])
   var knn = new KNearestNeighbor(individuals)
   var euc = knn.euclidean(point)
   var man = knn.manhattan(point)

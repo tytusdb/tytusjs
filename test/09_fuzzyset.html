@@ -15,15 +15,15 @@
 </body>
 <script>
   var ind = ["A", "B", "C", "D", "E", "F", "G"]
-  var x = [1, 9, 2, 9, 2, 9, 8]
-  var y = [9, 8, 8, 1, 8, 8, 2]
+  var x2 = [1, 9, 2, 9, 2, 9, 8]
+  var y2 = [9, 8, 8, 1, 8, 8, 2]
   var z = [2, 8, 3, 8, 2, 9, 9]
   var group = ["I", "III", "I", "II", "I", "III", "II"]
   var point = [7, 5, 6]
   var tabla = "<table>"
-  for (const i in x) {
+  for (const i in x2) {
     tabla += "<tr>"
-    tabla += "<td>" + ind[i] + "</td><td>" + x[i] + "</td><td>" + y[i] + "</td><td>" + z[i] + "</td><td>" + group[i] + "</td>"
+    tabla += "<td>" + ind[i] + "</td><td>" + x2[i] + "</td><td>" + y2[i] + "</td><td>" + z[i] + "</td><td>" + group[i] + "</td>"
     tabla += "</tr>"
   }
   tabla += "</table>"
@@ -34,7 +34,7 @@
   document.getElementById("punto").innerHTML = tabla
 </script>
 <script>
-  var individuals = zip([x, y, z, group])
+  var individuals = zip([x2, y2, z, group])
   var fs = new FuzzySet(individuals)
   var euc = fs.euclidean(point)
   var man = fs.manhattan(point)
