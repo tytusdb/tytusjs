@@ -4,9 +4,9 @@ class KNearestNeighbor {
     this.individuals = individuals
   }
 
-  k;
-  data;
-  label;
+  //k;
+  //data;
+  //label;
   // Metodo para inicializar valores para metodo de calcular distancia
   inicializar(k, data, labels) {
     this.k = k;
@@ -21,10 +21,15 @@ class KNearestNeighbor {
  * @param {Array.<number>} b
  * @return {number}
  */
-  distance = (a, b) => Math.sqrt(
+  /*distance = (a, b) => Math.sqrt(
     a.map((aPoint, i) => b[i] - aPoint)
       .reduce((sumOfSquares, diff) => sumOfSquares + (diff * diff), 0)
-  );
+  );*/
+
+  distance (a, b){ return Math.sqrt(
+    a.map((aPoint, i) => b[i] - aPoint)
+      .reduce((sumOfSquares, diff) => sumOfSquares + (diff * diff), 0)
+  );}
 
   euclidean(point) {
     var distance = []
