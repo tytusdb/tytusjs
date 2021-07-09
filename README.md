@@ -3,7 +3,7 @@ Pure Javascript Machine Learning Library
 
 ## Examples
 
-[00 Web unificada](https://tytusdb.github.io/tytusjs/test/00_General.html)
+[00 Web unificada](https://tytusdb.github.io/tytusjs/00_General.html)
 
 ### Linear Regression
 
