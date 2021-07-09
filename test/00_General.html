@@ -736,16 +736,71 @@
 
 				</article>
 			</section>
+			<!-- ************************************ NEURONAL NETWORK ************************************ -->
+			<section id="quinto">
+			<article class="box post post-excerpt">
+				<header>
+					<!--
+								Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+								if they get too long. You can also remove the <p> entirely if you don't
+								need a subtitle.
+							-->
+					<h2><a href="#">Neuronal Network</a></h2>
+					<p></p>
+				</header>
+				<div class="info">
+					<!--
+								Note: The date should be formatted exactly as it's shown below. In particular, the
+								"least significant" characters of the month should be encapsulated in a <span>
+								element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+								Oh, and if you don't need a date for a particular page or post you can simply delete
+								the entire "date" element.
+
+							-->
+					<span class="date"><span class="month">
+							<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+						</span> <span class="day">
+							<script>var dd = new Date(); document.write(dd.getDate());</script>
+						</span><span class="year">, 2014</span></span>
+
+
+				</div>
+				<div style="width: 100%;">
+					<h3 class="display-15 mt-5">Predecir que el valor del primer numero sea diferente del valor del segundo numero</h3>
+					<input style="width: 60%;" id="nnvalor1" type="number" placeholder="Ingrese el primer valor" value=5>
+					<input style="width: 60%;" id="nnvalor2" type="number" placeholder="Ingrese el segundo valor" value=10>
+					<button id="btnnncalcular">Calcular probabilidad</button>
+					<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+						<code class="text-center" id="nnresultado">
+							
+						</code>
+					</p>
+					<center>
+						<div id="neuronaldivision" style="width: 900px; height: 100px;"></div>
+					</center>
+				</div>
+				<script>
+					document.getElementById('btnnncalcular').onclick = function () {
+						let arreglodesignado = [2, 4, 3, 2];
+						let redNeural = new NeuralNetwork(arreglodesignado);
+						for (let i = 0; i < 10000; i++) {
+							let numero1 = Math.random();
+							let numero2 = Math.random();
+							redNeural.Entrenar([numero1, numero2], (numero1 != numero2 ? [1, 0] : [0, 1]));
+						}
+						let valor1=document.getElementById('nnvalor1').value;
+						let valor2=document.getElementById('nnvalor2').value;
+						console.log("Se ejecuto el codigo para los valores: " +valor1 + ","+valor2);
+						document.getElementById("nnresultado").innerHTML = String( "&nbsp;&nbsp;&nbsp;&nbsp;" + redNeural.Predecir([valor1, valor2]));
+					}
+				</script>
 
 
 
 
 
 
-
-
-
-			<section id="sexto">
+			<section id="seccionkmeans">
 				<article class="box post post-excerpt">
 					<header>
 						<!--
@@ -794,7 +849,7 @@
 						<button id="btnLineal">Calcular KMeans Lineal</button>
 
 						<center>
-							<div id="chart_div" style="width: 900px; height: 500px;"></div>
+							<div id="chartkmean" style="width: 900px; height: 500px;"></div>
 						</center>
 
 					</div>
@@ -857,7 +912,7 @@
 									legend: 'none'
 								};
 
-								var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+								var chart = new google.visualization.ScatterChart(document.getElementById('chartkmean'));
 
 								chart.draw(graph_data, options);
 							}
@@ -868,27 +923,27 @@
 					</script>
 				</article>
 			</section>
-
+<!--
 			<section id="sexto">
 				<article class="box post post-excerpt">
 					<header>
-						<!--
-									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									if they get too long. You can also remove the <p> entirely if you don't
-									need a subtitle.
-								-->
+						
+									//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									//if they get too long. You can also remove the <p> entirely if you don't
+									//need a subtitle.
+								
 						<h2><a href="#">Fuzzyset</a></h2>
 						<p></p>
 					</header>
 					<div class="info">
-						<!--
-									Note: The date should be formatted exactly as it's shown below. In particular, the
-									"least significant" characters of the month should be encapsulated in a <span>
-									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									Oh, and if you don't need a date for a particular page or post you can simply delete
-									the entire "date" element.
+						
+									//Note: The date should be formatted exactly as it's shown below. In particular, the
+									//"least significant" characters of the month should be encapsulated in a <span>
+									//element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									//Oh, and if you don't need a date for a particular page or post you can simply delete
+									//the entire "date" element.
 
-								-->
+								
 						<span class="date"><span class="month">
 								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
 							</span> <span class="day">
@@ -943,8 +998,8 @@
 
 				</article>
 			</section>
-
-			<section id="cuarto">
+		-->
+			<section id="doce">
 				<article class="box post post-excerpt">
 					<header>
 						<!--
@@ -972,20 +1027,44 @@
 
 
 					</div>
+					<div style="width: 100%;">
+						<h3 class="display-6 mt-5">Training:<br /></h3>
+						<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+							<code class="text-info">
+								[<br />
+								&nbsp;&nbsp;&nbsp;&nbsp;[A	9	8	8	I] <br />
+								&nbsp;&nbsp;&nbsp;&nbsp;[B	2	1	2	III] <br />
+								&nbsp;&nbsp;&nbsp;&nbsp;[C	9	8	9	I] <br />
+								&nbsp;&nbsp;&nbsp;&nbsp;[D	8	9	9	II] <br />
+								&nbsp;&nbsp;&nbsp;&nbsp;[E	1	8	2	I] <br />
+								&nbsp;&nbsp;&nbsp;&nbsp;[F	9	8	8	III] <br />
+								&nbsp;&nbsp;&nbsp;&nbsp;[G	2	2	3	II] <br />
+								]<br />
+							</code>
+						</p>
 
-					<h3>Training</h3>
-					<table id="tabla1"></table>
+						<h3 class="display-6 mt-5">For point:<br /></h3>
+						<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+							<code class="text-muted">
+								[<br />
+								&nbsp;&nbsp;&nbsp;&nbsp;[H	5  7  9] <br />
+								]<br />
+							</code>
+						</p>
 
-					<h3>For point</h3>
-					<table id="punto1"></table>
+						<h3 class="display-6 mt-5">Euclidean:<br /></h3>
+						<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+							<code class="text-center" id="logE">
 
-					<h4>Euclidean</h4>
-					<p id="logE1"></p>
+							</code>
+						</p>
 
-					<h4>Manhattan</h4>
-					<p id="logM1"></p>
-
-
+						<h3 class="display-6 mt-5">Manhattan:<br /></h3>
+						<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+							<code class="text-center" id="logM">
+							</code>
+						</p>
+					</div>
 					<script>
 						var ind = ["A", "B", "C", "D", "E", "F"]
 						var x = [3, 5, 2, 2, 6, 6]
@@ -1009,39 +1088,42 @@
 
 					</script>
 					<script>
-						var individuals = zip([x, y, group])
+						var ind = ["A", "B", "C", "D", "E", "F", "G"]
+						var x2 = [9, 2, 9, 8, 1, 9, 2]
+						var y2 = [8, 1, 8, 9, 8, 8, 2]
+						var z = [8, 2, 9, 9, 2, 8, 3]
+						var group = ["I", "III", "I", "II", "I", "III", "II"]
+						var point = [5, 7, 9]
+						var individuals = zip([x2, y2, z, group])
 						var knn = new KNearestNeighbor(individuals)
 						var euc = knn.euclidean(point)
 						var man = knn.manhattan(point)
-						document.getElementById("logE1").innerHTML = euc
-						document.getElementById("logM1").innerHTML = man
+						document.getElementById("logE").innerHTML = euc
+						document.getElementById("logM").innerHTML = man
 					</script>
-
-
-
 				</article>
 			</section>
-
+<!---
 			<section id="quinto">
 				<article class="box post post-excerpt">
 					<header>
-						<!--
+						
 									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
 									if they get too long. You can also remove the <p> entirely if you don't
 									need a subtitle.
-								-->
+								-
 						<h2><a href="#">Simple Neural Networks</a></h2>
 						<p></p>
 					</header>
 					<div class="info">
-						<!--
+						
 									Note: The date should be formatted exactly as it's shown below. In particular, the
 									"least significant" characters of the month should be encapsulated in a <span>
 									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
 									Oh, and if you don't need a date for a particular page or post you can simply delete
 									the entire "date" element.
 
-								-->
+								
 						<span class="date"><span class="month">
 								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
 							</span> <span class="day">
@@ -1102,27 +1184,28 @@
 
 				</article>
 			</section>
-
+		-->
+		<!--
 			<section id="octavo">
 				<article class="box post post-excerpt">
 					<header>
-						<!--
-									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									if they get too long. You can also remove the <p> entirely if you don't
-									need a subtitle.
-								-->
+						
+									//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									//if they get too long. You can also remove the <p> entirely if you don't
+									//need a subtitle.
+								
 						<h2><a href="#">K-Nearest Neighbor 2</a></h2>
 						<p></p>
 					</header>
 					<div class="info">
-						<!--
-									Note: The date should be formatted exactly as it's shown below. In particular, the
-									"least significant" characters of the month should be encapsulated in a <span>
-									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									Oh, and if you don't need a date for a particular page or post you can simply delete
-									the entire "date" element.
+						
+									//Note: The date should be formatted exactly as it's shown below. In particular, the
+									//"least significant" characters of the month should be encapsulated in a <span>
+									//element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									//Oh, and if you don't need a date for a particular page or post you can simply delete
+									//the entire "date" element.
 
-								-->
+								
 						<span class="date"><span class="month">
 								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
 							</span> <span class="day">
@@ -1169,27 +1252,28 @@
 
 				</article>
 			</section>
-
+		-->
+<!--
 			<section id="noveno">
 				<article class="box post post-excerpt">
 					<header>
-						<!--
-									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									if they get too long. You can also remove the <p> entirely if you don't
-									need a subtitle.
-								-->
+						
+									//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									//if they get too long. You can also remove the <p> entirely if you don't
+									//need a subtitle.
+								
 						<h2><a href="#">Neuronal Network</a></h2>
 						<p></p>
 					</header>
 					<div class="info">
-						<!--
-									Note: The date should be formatted exactly as it's shown below. In particular, the
-									"least significant" characters of the month should be encapsulated in a <span>
-									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									Oh, and if you don't need a date for a particular page or post you can simply delete
-									the entire "date" element.
+						
+									//Note: The date should be formatted exactly as it's shown below. In particular, the
+									//"least significant" characters of the month should be encapsulated in a <span>
+									//element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									//Oh, and if you don't need a date for a particular page or post you can simply delete
+									//the entire "date" element.
 
-								-->
+								
 						<span class="date"><span class="month">
 								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
 							</span> <span class="day">
@@ -1238,28 +1322,28 @@
 
 				</article>
 			</section>
-
-
+		-->
+<!--
 			<section id="once">
 				<article class="box post post-excerpt">
 					<header>
-						<!--
-									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									if they get too long. You can also remove the <p> entirely if you don't
-									need a subtitle.
-								-->
+						
+									//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									//if they get too long. You can also remove the <p> entirely if you don't
+									//need a subtitle.
+								
 						<h2><a href="#">SVM</a></h2>
 						<p></p>
 					</header>
 					<div class="info">
-						<!--
-									Note: The date should be formatted exactly as it's shown below. In particular, the
-									"least significant" characters of the month should be encapsulated in a <span>
-									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									Oh, and if you don't need a date for a particular page or post you can simply delete
-									the entire "date" element.
+						
+									//Note: The date should be formatted exactly as it's shown below. In particular, the
+									//"least significant" characters of the month should be encapsulated in a <span>
+									//element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									//Oh, and if you don't need a date for a particular page or post you can simply delete
+									//the entire "date" element.
 
-								-->
+								
 						<span class="date"><span class="month">
 								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
 							</span> <span class="day">
@@ -1356,8 +1440,8 @@
 
 				</article>
 			</section>
-
-			<section id="sexto">
+		-->
+			<section id="seccionejemplos">
 				<article class="box post post-excerpt">
 					<header>
 						<!--
@@ -1365,9 +1449,11 @@
 									if they get too long. You can also remove the <p> entirely if you don't
 									need a subtitle.
 								-->
-						<h2><a href="#">tercero</a></h2>
-						<p>En esta pagina encontra la informacion centralizada de las ejemplos de las funciones de
-							machine learning</p>
+						<h2><a href="#">Examples</a></h2>
+						<p>On this page you will find the centralized information of the examples of the machine learning functions. </p>
+						<a href="https://tytusdb.github.io/tytusjs/">Tytusjs</a>
+						<!--<p>En esta pagina encontra la informacion centralizada de las ejemplos de las funciones de
+							machine learning</p>-->
 					</header>
 					<div class="info">
 						<!--
@@ -1406,21 +1492,15 @@
 				<li><a href="#segundo">Polynomial Regression</a></li>
 				<li><a href="#tercero">Decision Tree</a></li>
 				<li><a href="#cuarto">Naive Bayes</a></li>
-
-
-
-
-				<li><a href="#quinto">Simple Neural Networks</a></li>
-				<li><a href="#sexto">FuzzySet</a></li>
-				<li><a href="#octavo">K-Nearest Neighbor 2</a></li>
-				<li><a href="#noveno">Neuronal Network</a></li>
-				<li><a href="#once">SVM</a></li>
-				<li><a href="#once">KMeans</a></li>
+				<li><a href="#quinto">Neuronal Network</a></li>
+				<li><a href="#seccionkmeans">KMeans</a></li>
 				<li><a href="#doce">K-Nearest Neighbor</a></li>
-
-
-
-
+				<li><a href="#seccionejemplos">Examples</a></li>
+				<!--
+				<li><a href="#octavo">K-Nearest Neighbor 2</a></li>
+				<li><a href="#once">SVM</a></li>-->
+				
+				
 			</ul>
 		</nav>
 
