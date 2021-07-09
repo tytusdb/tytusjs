@@ -13,7 +13,7 @@
 	<title>IA MACHINE LEARNING</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="./assets/css/main.css"/>
+	<link rel="stylesheet" href="./assets/css/main.css" />
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
 	<!--<script type="text/javascript" src="../src/DecisionTreeID3.js"></script>-->
@@ -41,6 +41,7 @@
 			<!-- ************************************ LINEAR REGRESION ************************************ -->
 			<section id="primero">
 				<article class="box post post-excerpt">
+
 					<header>
 						<!--
 									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
@@ -67,6 +68,47 @@
 
 
 					</div>
+
+						<p id="logRS"></p>
+						<div id="chart_divRS" style="width: 900px; height: 500px;"></div>
+					
+						<script type="text/javascript">
+							var xTrain2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+							var yTrain2 = [1, 4, 1, 5, 3, 7, 2, 7, 4, 9]
+							var linear2 = new LinearRegression()
+							linear2.fit(xTrain2, yTrain2)
+							yPredict2 = linear2.predict(xTrain2)
+							document.getElementById("logRS").innerHTML += '<br>X Train:   ' + xTrain2 + '<br>Y Train:   ' + yTrain2 + '<br>Y Predict: ' + yPredict2
+							var a2 = joinArrays('x', xTrain2, 'yTrain', yTrain2, 'yPredict', yPredict2)
+
+							google.charts.load('current', { 'packages': ['corechart'] });
+							google.charts.setOnLoadCallback(drawChart);
+
+							function drawChart() {
+								var data2 = google.visualization.arrayToDataTable(a2);
+								var options2 = {
+									seriesType: 'scatter',
+									series: { 1: { type: 'line' } }
+								};
+								var chart2 = new google.visualization.ComboChart(document.getElementById('chart_divRS'));
+								chart2.draw(data2, options2);
+							}    
+						</script>
+
+				</article>
+			</section>
+			
+			<section id="primero2">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">Example Linear Regression</a></h2>
+						<p></p>
+					</header>
 					<div class="container">
 						<!--
 									Note: The date should be formatted exactly as it's shown below. In particular, the
@@ -183,6 +225,8 @@
 						</script>
 				</article>
 			</section>
+
+			
 
 			<!-- ************************************ POLINOMIAL REGRESION ************************************ -->
 			<section id="segundo">
@@ -736,20 +780,21 @@
 
 				</article>
 			</section>
+
 			<!-- ************************************ NEURONAL NETWORK ************************************ -->
 			<section id="quinto">
-			<article class="box post post-excerpt">
-				<header>
-					<!--
+				<article class="box post post-excerpt">
+					<header>
+						<!--
 								Note: Titles and subtitles will wrap automatically when necessary, so don't worry
 								if they get too long. You can also remove the <p> entirely if you don't
 								need a subtitle.
 							-->
-					<h2><a href="#">Neuronal Network</a></h2>
-					<p></p>
-				</header>
-				<div class="info">
-					<!--
+						<h2><a href="#">Example Neuronal Network</a></h2>
+						<p></p>
+					</header>
+					<div class="info">
+						<!--
 								Note: The date should be formatted exactly as it's shown below. In particular, the
 								"least significant" characters of the month should be encapsulated in a <span>
 								element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
@@ -757,49 +802,260 @@
 								the entire "date" element.
 
 							-->
-					<span class="date"><span class="month">
-							<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
-						</span> <span class="day">
-							<script>var dd = new Date(); document.write(dd.getDate());</script>
-						</span><span class="year">, 2014</span></span>
+						<span class="date"><span class="month">
+								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
+							</span> <span class="day">
+								<script>var dd = new Date(); document.write(dd.getDate());</script>
+							</span><span class="year">, 2014</span></span>
 
 
-				</div>
-				<div style="width: 100%;">
-					<h3 class="display-15 mt-5">Predecir que el valor del primer numero sea diferente del valor del segundo numero</h3>
-					<input style="width: 60%;" id="nnvalor1" type="number" placeholder="Ingrese el primer valor" value=5>
-					<input style="width: 60%;" id="nnvalor2" type="number" placeholder="Ingrese el segundo valor" value=10>
-					<button id="btnnncalcular">Calcular probabilidad</button>
-					<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
-						<code class="text-center" id="nnresultado">
-							
+					</div>
+					<div style="width: 100%;">
+						<h3 class="display-15 mt-5">Predecir que el valor del primer numero sea diferente del valor del
+							segundo numero</h3>
+						<input style="width: 60%;" id="nnvalor1" type="number" placeholder="Ingrese el primer valor"
+							value=5>
+						<input style="width: 60%;" id="nnvalor2" type="number" placeholder="Ingrese el segundo valor"
+							value=10>
+						<button id="btnnncalcular">Calcular probabilidad</button>
+						<p class="bg-dark p-5 text-muted" style="border-radius: 10px;">
+							<code class="text-center" id="nnresultado">
+
 						</code>
-					</p>
-					<center>
-						<div id="neuronaldivision" style="width: 900px; height: 100px;"></div>
-					</center>
-				</div>
-				<script>
-					document.getElementById('btnnncalcular').onclick = function () {
-						let arreglodesignado = [2, 4, 3, 2];
-						let redNeural = new NeuralNetwork(arreglodesignado);
-						for (let i = 0; i < 10000; i++) {
-							let numero1 = Math.random();
-							let numero2 = Math.random();
-							redNeural.Entrenar([numero1, numero2], (numero1 != numero2 ? [1, 0] : [0, 1]));
+						</p>
+						<center>
+							<div id="neuronaldivision" style="width: 900px; height: 100px;"></div>
+						</center>
+					</div>
+					<script>
+						document.getElementById('btnnncalcular').onclick = function () {
+							let arreglodesignado = [2, 4, 3, 2];
+							let redNeural = new NeuralNetwork(arreglodesignado);
+							for (let i = 0; i < 10000; i++) {
+								let numero1 = Math.random();
+								let numero2 = Math.random();
+								redNeural.Entrenar([numero1, numero2], (numero1 != numero2 ? [1, 0] : [0, 1]));
+							}
+							let valor1 = document.getElementById('nnvalor1').value;
+							let valor2 = document.getElementById('nnvalor2').value;
+							console.log("Se ejecuto el codigo para los valores: " + valor1 + "," + valor2);
+							document.getElementById("nnresultado").innerHTML = String("&nbsp;&nbsp;&nbsp;&nbsp;" + redNeural.Predecir([valor1, valor2]));
 						}
-						let valor1=document.getElementById('nnvalor1').value;
-						let valor2=document.getElementById('nnvalor2').value;
-						console.log("Se ejecuto el codigo para los valores: " +valor1 + ","+valor2);
-						document.getElementById("nnresultado").innerHTML = String( "&nbsp;&nbsp;&nbsp;&nbsp;" + redNeural.Predecir([valor1, valor2]));
-					}
-				</script>
+					</script>
+				</article>
+			</section>
+
+			<section id="quinto2">
+				<article class="box post post-excerpt">
+					<header>
+						<!--	Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">Simple Neural Networks</a></h2>
+						<p></p>
+					</header>
+
+					<body id="id2nn">
+						<textarea id="id1nn"
+							rows="10">Predecir que segundo numero sea mayor al primero [10,20], el resultado mostrado es segun entrenamiento realizado.</textarea>
+						<p id="logEnn"></p>
+						<p id="logEnn">
+							----------------------------------------------------------------------------------------------
+						</p>
+						<textarea id="id2nn"
+							rows="10">Predecir que primer numero sea mayor al segundo [20,5], el resultado mostrado es segun entrenamiento realizado.</textarea>
+
+						<p id="logEEnn"></p>
+					</body>
+					<!--<script src="../src/NeuronalNetwork.js"></script>-->
+					<script>
+						let design = [2, 4, 3, 2];
+						let brain = new NeuralNetwork(design);
+						for (let i = 0; i < 10000; i++) {
+							let num1 = Math.random();
+							let num2 = Math.random();
+							brain.Entrenar([num1, num2], (num1 > num2 ? [1, 0] : [0, 1]));
+						}
+
+						largest = brain.Predecir([10, 20]);
+
+						document.getElementById("logEnn").innerHTML = String("Probability Score for Largest: " + brain.Predecir([10, 20]));
 
 
+						console.log(`Probability Score for Largest: ${largest}`)
 
+						let design2 = [2, 4, 3, 2];
+						let brain2 = new NeuralNetwork(design2);
+						for (let i = 0; i < 10000; i++) {
+							let num1 = Math.random();
+							let num2 = Math.random();
+							brain.Entrenar([num1, num2], (num1 < num2 ? [1, 0] : [0, 1]));
+						}
 
+						largest = brain2.Predecir([20, 5]);
+						document.getElementById("logEEnn").innerHTML = String("Probability Score for Largest: " + brain.Predecir([20, 5]));
+						console.log(`Probability Score for Largest: ${largest}`)
+					</script>
+				</article>
+			</section>
 
+			<section id="quinto2">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									//if they get too long. You can also remove the <p> entirely if you don't
+									//need a subtitle.
+									-->
 
+						<h2><a href="#">Neuronal Network</a></h2>
+						<p></p>
+					</header>
+
+					<p>[n1,n2]: Probability </p>
+
+					<h2>Prediction n1 > n2</h2>
+					<p id="n1mayn2_1"></p>
+					<p id="n1mayn2_2"></p>
+
+					<h2>Prediction n1 < n2</h2>
+							<p id="n1menn2_19"></p>
+							<p id="n1menn2_29"></p>
+
+							<script>
+								let design9 = [2, 4, 3, 2];
+
+								//n1 > n2 [n1, n2]
+								let brain9 = new NeuralNetwork(design9);
+								for (let x = 0; x < 2; x++) {
+									for (let i = 0; i < 10000; i++) {
+										let num19 = Math.random(), num29 = Math.random();
+										brain9.Entrenar([num19, num29], (num19 > num29 ? [1, 0] : [0, 1]));
+									}
+									if (x == 0) { document.getElementById("n1mayn2_1").innerHTML = String("[50,15]: " + brain9.Predecir([50, 15])); }
+									else { document.getElementById("n1mayn2_2").innerHTML = String("[15,50]: " + brain9.Predecir([15, 50])); }
+								}
+
+								//n1 < n2 [n1, n2]
+								brain9 = new NeuralNetwork(design9);
+								for (let x = 0; x < 2; x++) {
+									for (let i = 0; i < 10000; i++) {
+										let num19 = Math.random(), num29 = Math.random();
+										brain9.Entrenar([num19, num29], (num19 < num29 ? [1, 0] : [0, 1]));
+									}
+									if (x == 0) { document.getElementById("n1menn2_19").innerHTML = String("[23,17]: " + brain9.Predecir([23, 17])); }
+									else { document.getElementById("n1menn2_29").innerHTML = String("[12,25]: " + brain9.Predecir([12, 25])); }
+								}
+
+							</script>
+
+				</article>
+			</section>
+
+			<section id="quinto3">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									//if they get too long. You can also remove the <p> entirely if you don't
+									//need a subtitle.
+								-->
+						<h2><a href="#">SVM</a></h2>
+						<p></p>
+					</header>
+
+					<body onLoad="testsvm();">
+						Poor man's unit tests:
+						<div id="printdiv"></div>
+					</body>
+
+					<script type="text/javascript">
+
+						// MATLAB Reference code is available in testsvm.m
+						function testsvm() {
+
+							// Linearly non-separable test
+							var N = 10;
+							var data = new Array(N);
+							var labels = new Array(N);
+							data[0] = [-0.4326, 1.1909];
+							data[1] = [3.0, 4.0]; // this point makes data non-separable
+							data[2] = [0.1253, -0.0376];
+							data[3] = [0.2877, 0.3273];
+							data[4] = [-1.1465, 0.1746];
+							data[5] = [1.8133, 2.1139];
+							data[6] = [2.7258, 3.0668];
+							data[7] = [1.4117, 2.0593];
+							data[8] = [4.1832, 1.9044];
+							data[9] = [1.8636, 1.1677];
+
+							labels[0] = 1;
+							labels[1] = 1;
+							labels[2] = 1;
+							labels[3] = 1;
+							labels[4] = 1;
+							labels[5] = -1;
+							labels[6] = -1;
+							labels[7] = -1;
+							labels[8] = -1;
+							labels[9] = -1;
+
+							var svm = new svmjs.SVM();
+							svm.train(data, labels, { C: 3, numpasses: 100 }); // make more passes to increase precision
+
+							if (console) {
+								// print weights and offset
+								wb = svm.getWeights();
+								for (var i = 0; i < wb.w.length; i++) {
+									console.log("w_%d = %f", i, wb.w[i]);
+								}
+								console.log("b = %f", wb.b);
+
+								// print predicted margins
+								var marg = svm.margins(data);
+								for (var i = 0; i < N; i++) {
+									console.log("%f, %f", labels[i], marg[i]);
+								}
+							}
+
+							asserteqf(wb.w[0], -1.1096);
+							asserteqf(wb.w[1], -0.0590);
+							asserteqf(wb.b, 1.1368);
+							asserteqf(marg[0], 1.5466);
+							asserteqf(marg[1], -2.4281);
+							asserteqf(marg[2], 1.0000);
+							asserteqf(marg[3], 0.7983);
+							asserteqf(marg[4], 2.3987);
+							asserteqf(marg[5], -1.0000);
+							asserteqf(marg[6], -2.0688);
+							asserteqf(marg[7], -0.5511);
+							asserteqf(marg[8], -3.6174);
+							asserteqf(marg[9], -1.0000);
+							if (pass) { document.bgColor = "#9F9"; }
+							else { document.bgColor = "#F99"; }
+						}
+
+						// "unit testing" >.<
+						var pass = true;
+						function myprint(s) {
+							document.getElementById("printdiv").innerHTML += s + "<br />"
+						}
+						function asserteqf(got, want) {
+							if (Math.abs(want - got) > 1e-3) {
+								myprint("wanted " + want + " but got " + got);
+								pass = false;
+							} else {
+								myprint("wanted " + want + " and got " + got + " OK.");
+							}
+						}
+
+					</script>
+
+				</article>
+			</section>
+
+			<!-- ************************************ KMEANS ************************************ -->
 			<section id="seccionkmeans">
 				<article class="box post post-excerpt">
 					<header>
@@ -809,6 +1065,7 @@
 									need a subtitle.
 								-->
 						<h2><a href="#">KMeans</a></h2>
+						<h2><a href="#">Linear Example</a></h2>
 						<p></p>
 					</header>
 					<div class="info">
@@ -923,82 +1180,170 @@
 					</script>
 				</article>
 			</section>
-<!--
-			<section id="sexto">
+
+			<section id="seccionkmeans">
 				<article class="box post post-excerpt">
 					<header>
-						
-									//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									//if they get too long. You can also remove the <p> entirely if you don't
-									//need a subtitle.
-								
-						<h2><a href="#">Fuzzyset</a></h2>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">KMeans 2D Example</a></h2>
 						<p></p>
 					</header>
-					<div class="info">
-						
-									//Note: The date should be formatted exactly as it's shown below. In particular, the
-									//"least significant" characters of the month should be encapsulated in a <span>
-									//element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									//Oh, and if you don't need a date for a particular page or post you can simply delete
-									//the entire "date" element.
+					<div style="width: 100%;">
+						<label for="linear_data"> Datos 2D (x,y)</label>
+						<br>
+						<input style="width: 60%;" id="cluster_count2D" type="number"
+							placeholder="Ingrese la cantidad de clusters" value=3>
+						<br>
+						<!--pendiente añadir iteraciones -->
+						<input style="width: 60%;" id="linear_data2D" type="text"
+							placeholder="Ingrese los numeros separados por comas ([0,0],[0,1],[0,2]...)"
+							value="[11,6],[4,2],[15,0],[10,6],[7,8],[9,12],[13,0],[5,1],[0,13],[7,5],[6,1],[3,6],[0,10],[14,10],[6,14],[6,4],[4,9],[5,14],[9,9],[13,8]">
+						<br>
+						<input style="width: 60%;" id="iterations2D" type="number"
+							placeholder="Ingrese la cantidad de iteraciones a realizar" value=3>
+						<br>
 
-								
-						<span class="date"><span class="month">
-								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
-							</span> <span class="day">
-								<script>var dd = new Date(); document.write(dd.getDate());</script>
-							</span><span class="year">, 2014</span></span>
+						<button id="btnLineal2D">Calcular KMeans 2D</button>
 
-
-					</div>
-					<div>
-						<h3>Training</h3>
-						<table id="tabla"></table>
-
-						<h3>For point</h3>
-						<table id="punto"></table>
-
-						<h4>Euclidean</h4>
-						<p id="logE"></p>
-
-						<h4>Manhattan</h4>
-						<p id="logM"></p>
+						<div id="chart_div2D" style="width: 900px; height: 500px;"></div>
 					</div>
 					<script>
-						var ind = ["A", "B", "C", "D", "E", "F", "G"]
-						var x = [1, 9, 2, 9, 2, 9, 8]
-						var y = [9, 8, 8, 1, 8, 8, 2]
-						var z = [2, 8, 3, 8, 2, 9, 9]
-						var group = ["I", "III", "I", "II", "I", "III", "II"]
-						var point = [7, 5, 6]
-						var tabla = "<table>"
 
-						for (const i in x) {
-							tabla += "<tr>"
-							tabla += "<td>" + ind[i] + "</td><td>" + x[i] + "</td><td>" + y[i] + "</td><td>" + z[i] + "</td><td>" + group[i] + "</td>"
-							tabla += "</tr>"
+						document.getElementById('btnLineal2D').onclick = function () {
+							var linear_data = document.getElementById('linear_data2D').value
+							var k = document.getElementById('cluster_count2D').value
+							var iterations = document.getElementById('iterations2D').value
+							var data = []
+							var split = linear_data.replaceAll(/\s/g, '').replaceAll('[', '').split('],')
+							// <!--pendiente añadir cantidad de pasos -->
+							split.forEach(d => {
+								var point = d.replace(']', '').split(',')
+								data.push([parseInt(point[0]), parseInt(point[1])])
+							});
+
+							if (data.length < k) {
+								alert(`El numero de clusters (${k}) no puede ser menor a la cantidad de datos (${data.length})`)
+							}
+
+							var kmeans = new _2DKMeans(k, data)
+
+							let clusterized_data = kmeans.clusterize(k, data, iterations)
+
+
+							let clusters = clusterized_data.map(a => [a[1][0], a[1][1]])
+
+
+							clusters = clusters.filter((v, i, a) => a.findIndex(t => (JSON.stringify(t) === JSON.stringify(v))) === i)
+
+
+
+
+
+							//console.log(clusterized_data)
+							//console.log(clusters)
+
+							clusters.forEach((cluster, i) => {
+								clusters[i] = [cluster, "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })]
+							});
+
+							// console.log('clusters set: ', clusters)
+							//Graficada
+
+							google.charts.load('current', { 'packages': ['corechart'] });
+							google.charts.setOnLoadCallback(function () { drawChart(clusters) });
+
+							function drawChart(clusters) {
+								//let y = Array(data.length).fill(0)
+								var graph_data = new google.visualization.DataTable();
+								graph_data.addColumn('number', 'X')
+								graph_data.addColumn('number', 'Y')
+								graph_data.addColumn({ type: 'string', role: 'style' }); // style col.
+								let a = clusterized_data.map(e => [e[0][0], e[0][1], `point { size: 7; shape-type: diamond; fill-color: ${clusters[clusters.findIndex(a => JSON.stringify(a[0]) == JSON.stringify(e[1]))][1]}}`])
+
+								// console.log(a)
+								graph_data.addRows(a)
+
+								clusters.forEach(c => {
+									graph_data.addRow([c[0][0], c[0][1], `point { size: 3; shape-type: square; fill-color: #ff0000`])
+								});
+
+
+
+								var options = {
+									title: 'Puntos',
+									seriesType: 'scatter',
+									series: { 1: { type: 'line' } },
+									hAxis: { title: 'X' },
+									yAxis: { title: 'Y' },
+									legend: 'none'
+								};
+
+								var chart = new google.visualization.ScatterChart(document.getElementById('chart_div2D'));
+
+								chart.draw(graph_data, options);
+							}
+
+
+
 						}
 
-						tabla += "</table>"
-						document.getElementById("tabla").innerHTML = tabla
-						tabla = "<table>"
-						tabla += "<td> G </td><td>" + point[0] + "</td><td>" + point[1] + "</td><td>" + point[2] + "</td>"
-						tabla += "</table>"
-						document.getElementById("punto").innerHTML = tabla
 					</script>
-					<script>
-						var individuals = zip([x, y, z, group])
-						var fs = new FuzzySet(individuals)
-						var euc = fs.euclidean(point)
-						var man = fs.manhattan(point)
-						document.getElementById("logE").innerHTML = euc
-						document.getElementById("logM").innerHTML = man
+
+
+
+				</article>
+			</section>
+
+			<section id="seccionkmeans2">
+				<article class="box post post-excerpt">
+					<header>
+						<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+						<h2><a href="#">K-Means Algorithm </a></h2>
+						<p></p>
+					</header>
+
+					<main class="container">
+						<div>
+							<canvas id="grafica" width="600" height="600"></canvas>
+						</div>
+						<div>
+							<p id="datos"></p>
+						</div>
+					</main>
+
+					<script type="text/javascript">
+						var data = [
+							[9, 7], [11, 13], [120, 25], [75, 85], [36, 12], [10, 3], [12, 3], [9, 7], [4, 2], [9, 6], [7, 9], [78, 77], [32, 31], [21, 32], [21, 0], [78, 33], [78, 85], [96, 10], [44, 36], [78, 33], [13, 61], [33, 31], [20, 5], [7, 6], [34, 77]];
+
+						var kmeanss = new G8_Kmeans({
+							canvas: document.getElementById('grafica'),
+							data: data,
+							k: 4
+						});
+
+						for (i = 0; i < kmeanss.means.length; i++) {
+							document.getElementById("datos").innerHTML += "<p>Centroide Cluster ".concat(i, ": ", kmeanss.means[i].concat("<p>"));
+						}
+
 					</script>
 
 				</article>
 			</section>
-		-->
+
+
+
+
+
+			<!-- ************************************ K-NEAREST NEIGHBOR ************************************ -->
+
 			<section id="doce">
 				<article class="box post post-excerpt">
 					<header>
@@ -1103,115 +1448,175 @@
 					</script>
 				</article>
 			</section>
-<!---
-			<section id="quinto">
+
+			<section id="trece">
 				<article class="box post post-excerpt">
 					<header>
-						
-									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									if they get too long. You can also remove the <p> entirely if you don't
-									need a subtitle.
-								-
-						<h2><a href="#">Simple Neural Networks</a></h2>
+
+						<!--	//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									//if they get too long. You can also remove the <p> entirely if you don't
+									//need a subtitle.
+								-->
+						<h2><a href="#">Fuzzyset</a></h2>
 						<p></p>
 					</header>
-					<div class="info">
-						
-									Note: The date should be formatted exactly as it's shown below. In particular, the
-									"least significant" characters of the month should be encapsulated in a <span>
-									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									Oh, and if you don't need a date for a particular page or post you can simply delete
-									the entire "date" element.
 
-								
-						<span class="date"><span class="month">
-								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
-							</span> <span class="day">
-								<script>var dd = new Date(); document.write(dd.getDate());</script>
-							</span><span class="year">, 2014</span></span>
+					<div>
+						<h3>Training</h3>
+						<table id="tablaf"></table>
 
+						<h3>For point</h3>
+						<table id="puntof"></table>
+
+						<h4>Euclidean</h4>
+						<p id="logEf"></p>
+
+						<h4>Manhattan</h4>
+						<p id="logMf"></p>
 					</div>
-
-					<body id="id2">
-						<textarea id="id1"
-							rows="10">Predecir que segundo numero sea mayor al primero [10,20], el resultado mostrado es segun entrenamiento realizado.</textarea>
-
-						<p id="logE"></p>
-						<p id="logE">
-							----------------------------------------------------------------------------------------------
-						</p>
-						<textarea id="id2"
-							rows="10">Predecir que primer numero sea mayor al segundo [20,5], el resultado mostrado es segun entrenamiento realizado.</textarea>
-
-						<p id="logEE"></p>
-					</body>
-
-
-					<script src="../src/NeuronalNetwork.js"></script>
 					<script>
-						let design = [2, 4, 3, 2];
-						let brain = new NeuralNetwork(design);
-						for (let i = 0; i < 10000; i++) {
-							let num1 = Math.random();
-							let num2 = Math.random();
-							brain.Entrenar([num1, num2], (num1 > num2 ? [1, 0] : [0, 1]));
+						var ind = ["A", "B", "C", "D", "E", "F", "G"]
+						var x2 = [1, 9, 2, 9, 2, 9, 8]
+						var y2 = [9, 8, 8, 1, 8, 8, 2]
+						var z = [2, 8, 3, 8, 2, 9, 9]
+						var group = ["I", "III", "I", "II", "I", "III", "II"]
+						var point = [7, 5, 6]
+						var tabla = "<table>"
+
+						for (const i in x2) {
+							tabla += "<tr>"
+							tabla += "<td>" + ind[i] + "</td><td>" + x2[i] + "</td><td>" + y2[i] + "</td><td>" + z[i] + "</td><td>" + group[i] + "</td>"
+							tabla += "</tr>"
 						}
 
-						largest = brain.Predecir([10, 20]);
-
-						document.getElementById("logE").innerHTML = String("Probability Score for Largest: " + brain.Predecir([10, 20]));
-
-
-						console.log(`Probability Score for Largest: ${largest}`)
-
-						let design2 = [2, 4, 3, 2];
-						let brain2 = new NeuralNetwork(design2);
-						for (let i = 0; i < 10000; i++) {
-							let num1 = Math.random();
-							let num2 = Math.random();
-							brain.Entrenar([num1, num2], (num1 < num2 ? [1, 0] : [0, 1]));
-						}
-
-						largest = brain2.Predecir([20, 5]);
-
-						document.getElementById("logEE").innerHTML = String("Probability Score for Largest: " + brain.Predecir([20, 5]));
-
-
-						console.log(`Probability Score for Largest: ${largest}`)
-
+						tabla += "</table>"
+						document.getElementById("tablaf").innerHTML = tabla
+						tabla = "<table>"
+						tabla += "<td> G </td><td>" + point[0] + "</td><td>" + point[1] + "</td><td>" + point[2] + "</td>"
+						tabla += "</table>"
+						document.getElementById("puntof").innerHTML = tabla
 					</script>
-
+					<script>
+						var individuals = zip([x2, y2, z, group])
+						var fs = new FuzzySet(individuals)
+						var euc = fs.euclidean(point)
+						var man = fs.manhattan(point)
+						document.getElementById("logEf").innerHTML = euc
+						document.getElementById("logMf").innerHTML = man
+					</script>
 
 				</article>
 			</section>
-		-->
-		<!--
-			<section id="octavo">
+
+			<section id="trece">
 				<article class="box post post-excerpt">
 					<header>
-						
-									//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+
+						<!--	//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
 									//if they get too long. You can also remove the <p> entirely if you don't
 									//need a subtitle.
+								-->
+						<h2><a href="#">K-Nearest Neighbor Algorithm</a></h2>
+						<p></p>
+					</header>
+
+					<div>
+						<h3>Training</h3>
+						<table id="tablaKN"></table>
+						<h3>For point</h3>
+						<table id="puntoKN"></table>
+						<h4>Euclidean</h4>
+						<p id="logEKN"></p>
+						<h4>Manhattan</h4>
+						<p id="logMKN"></p>
+						<br>
+						<h4>Grafica</h4>
+						<div style="height: 20px;width: 20px;background-color: rgb(214, 14, 14);">N</div>
+						<br>
+						<div
+							style="width: 0;height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 20px solid rgb(255, 230, 0);">
+							P</div>
+						<br>
+						<div style="height: 20px;width: 20px;background-color: rgb(0, 160, 13);border-radius: 50%;">
+							Point</div>
+						<br>
+						<div style="height: 20px;width: 20px;background-color: rgb(0, 102, 255);border-radius: 50%;">
+							Neighbor</div>
+						<div id="chart_divKN" style="width: 900px; height: 500px;"></div>
+					</div>
+					<script>
+						var ind = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
+						var x2 = [5, 9, 8, 2, 3, 6, 5, 4, 7]
+						var y2 = [6, 9, 2, 1, 5, 8, 9, 6, 3]
+						var group = ["N", "P", "N", "N", "P", "P", "P", "N", "N"]
+						var point = [5, 8]
+						var tabla = "<table>"
+						for (const i in x2) {
+							tabla += "<tr>"
+							tabla += "<td>" + ind[i] + "</td><td>" + x2[i] + "</td><td>" + y2[i] + "</td><td>" + group[i] + "</td>"
+							tabla += "</tr>"
+						}
+						tabla += "</table>"
+						document.getElementById("tablaKN").innerHTML = tabla
+						tabla = "<table>"
+						tabla += "<td> J </td><td>" + point[0] + "</td><td>" + point[1] + "</td>"
+						tabla += "</table>"
+						document.getElementById("puntoKN").innerHTML = tabla
+					</script>
+					<script>
+						var individuals = zip([x2, y2, group])
+						var knn = new KNearestNeighbor(individuals)
+						var euc = knn.euclidean(point)
+						var man = knn.manhattan(point)
+						document.getElementById("logEKN").innerHTML = euc
+						document.getElementById("logMKN").innerHTML = man
+						google.charts.load("current", { packages: ["corechart"] });
+						google.charts.setOnLoadCallback(drawChart);
+						function drawChart() {
+							var data = google.visualization.arrayToDataTable
+								([['X', '1', '2', '3', '4'],
+								[5, 6, 6, null, null],
+								[9, null, null, 9, null],
+								[8, null, 2, null, null],
+								[2, null, 1, null, null],
+								[3, null, null, 5, null],
+								[6, 8, null, 8, null],
+								[5, 9, null, 9, null],
+								[4, null, 6, null, null],
+								[7, null, 3, null, null],
+								[5, null, null, null, 8]
+								]);
+
+							var options = {
+								legend: 'none',
+								pointSize: 30,
+								series: {
+									0: { pointShape: 'circle' },
+									1: { pointShape: 'square' },
+									2: { pointShape: 'triangle' },
+									3: { pointShape: 'circle' }
+								}
+							};
+
+							var chart = new google.visualization.ScatterChart(document.getElementById('chart_divKN'));
+							chart.draw(data, options);
+						}
+					</script>
+				</article>
+			</section>
+
+			<!--
+			<section id="catorce">
+				<article class="box post post-excerpt">
+					<header>
+									//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									//if they get too long. You can also remove the <p> entirely if you don't
+									//need a subtitle.	
 								
 						<h2><a href="#">K-Nearest Neighbor 2</a></h2>
 						<p></p>
 					</header>
-					<div class="info">
-						
-									//Note: The date should be formatted exactly as it's shown below. In particular, the
-									//"least significant" characters of the month should be encapsulated in a <span>
-									//element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									//Oh, and if you don't need a date for a particular page or post you can simply delete
-									//the entire "date" element.
-
-								
-						<span class="date"><span class="month">
-								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
-							</span> <span class="day">
-								<script>var dd = new Date(); document.write(dd.getDate());</script>
-							</span><span class="year">, 2014</span></span>
-					</div>
+					
 					<h3>Training</h3>
 					<table id="tablaK"></table>
 					<h3>For point</h3>
@@ -1223,15 +1628,15 @@
 
 					<script>
 						var ind = ["A", "B", "C", "D", "E", "F", "G"]
-						var x = [1, 9, 2, 9, 2, 9, 8]
-						var y = [9, 8, 8, 1, 8, 8, 2]
+						var x2 = [1, 9, 2, 9, 2, 9, 8]
+						var y2 = [9, 8, 8, 1, 8, 8, 2]
 						var z = [2, 8, 3, 8, 2, 9, 9]
 						var group = ["I", "III", "I", "II", "I", "III", "II"]
 						var point = [7, 5, 6]
 						var tabla = "<table>"
-						for (const i in x) {
+						for (const i in x2) {
 							tabla += "<tr>"
-							tabla += "<td>" + ind[i] + "</td><td>" + x[i] + "</td><td>" + y[i] + "</td><td>" + z[i] + "</td><td>" + group[i] + "</td>"
+							tabla += "<td>" + ind[i] + "</td><td>" + x2[i] + "</td><td>" + y2[i] + "</td><td>" + z[i] + "</td><td>" + group[i] + "</td>"
 							tabla += "</tr>"
 						}
 						tabla += "</table>"
@@ -1242,7 +1647,7 @@
 						document.getElementById("puntoK").innerHTML = tabla
 					</script>
 					<script>
-						var individuals8 = zip([x, y, z, group])
+						var individuals8 = zip([x2, y2, z, group])
 						var knn8 = new KNearestNeighbor(individuals8)
 						var euc8 = knn8.euclidean(point)
 						var man8 = knn8.manhattan(point)
@@ -1253,194 +1658,13 @@
 				</article>
 			</section>
 		-->
-<!--
-			<section id="noveno">
-				<article class="box post post-excerpt">
-					<header>
-						
-									//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									//if they get too long. You can also remove the <p> entirely if you don't
-									//need a subtitle.
-								
-						<h2><a href="#">Neuronal Network</a></h2>
-						<p></p>
-					</header>
-					<div class="info">
-						
-									//Note: The date should be formatted exactly as it's shown below. In particular, the
-									//"least significant" characters of the month should be encapsulated in a <span>
-									//element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									//Oh, and if you don't need a date for a particular page or post you can simply delete
-									//the entire "date" element.
-
-								
-						<span class="date"><span class="month">
-								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
-							</span> <span class="day">
-								<script>var dd = new Date(); document.write(dd.getDate());</script>
-							</span><span class="year">, 2014</span></span>
 
 
-					</div>
-
-					<p>[n1,n2]: Probability </p>
-
-					<h2>Prediction n1 > n2</h2>
-					<p id="n1mayn2_1"></p>
-					<p id="n1mayn2_2"></p>
-
-					<h2>Prediction n1 < n2</h2>
-							<p id="n1menn2_19"></p>
-							<p id="n1menn2_29"></p>
-
-							<script>
-								let design9 = [2, 4, 3, 2];
-
-								//n1 > n2 [n1, n2]
-								let brain9 = new NeuralNetwork(design9);
-								for (let x = 0; x < 2; x++) {
-									for (let i = 0; i < 10000; i++) {
-										let num19 = Math.random(), num29 = Math.random();
-										brain9.Entrenar([num19, num29], (num19 > num29 ? [1, 0] : [0, 1]));
-									}
-									if (x == 0) { document.getElementById("n1mayn2_1").innerHTML = String("[50,15]: " + brain9.Predecir([50, 15])); }
-									else { document.getElementById("n1mayn2_2").innerHTML = String("[15,50]: " + brain9.Predecir([15, 50])); }
-								}
-
-								//n1 < n2 [n1, n2]
-								brain9 = new NeuralNetwork(design9);
-								for (let x = 0; x < 2; x++) {
-									for (let i = 0; i < 10000; i++) {
-										let num19 = Math.random(), num29 = Math.random();
-										brain9.Entrenar([num19, num29], (num19 < num29 ? [1, 0] : [0, 1]));
-									}
-									if (x == 0) { document.getElementById("n1menn2_19").innerHTML = String("[23,17]: " + brain9.Predecir([23, 17])); }
-									else { document.getElementById("n1menn2_29").innerHTML = String("[12,25]: " + brain9.Predecir([12, 25])); }
-								}
-
-							</script>
-
-				</article>
-			</section>
-		-->
-<!--
-			<section id="once">
-				<article class="box post post-excerpt">
-					<header>
-						
-									//Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									//if they get too long. You can also remove the <p> entirely if you don't
-									//need a subtitle.
-								
-						<h2><a href="#">SVM</a></h2>
-						<p></p>
-					</header>
-					<div class="info">
-						
-									//Note: The date should be formatted exactly as it's shown below. In particular, the
-									//"least significant" characters of the month should be encapsulated in a <span>
-									//element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
-									//Oh, and if you don't need a date for a particular page or post you can simply delete
-									//the entire "date" element.
-
-								
-						<span class="date"><span class="month">
-								<script>document.write(monthNames[d.getMonth()]);</script><span>y</span>
-							</span> <span class="day">
-								<script>var dd = new Date(); document.write(dd.getDate());</script>
-							</span><span class="year">, 2014</span></span>
 
 
-					</div>
-					<script type="text/javascript">
 
-						// MATLAB Reference code is available in testsvm.m
-						function testsvm() {
 
-							// Linearly non-separable test
-							var N = 10;
-							var data = new Array(N);
-							var labels = new Array(N);
-							data[0] = [-0.4326, 1.1909];
-							data[1] = [3.0, 4.0]; // this point makes data non-separable
-							data[2] = [0.1253, -0.0376];
-							data[3] = [0.2877, 0.3273];
-							data[4] = [-1.1465, 0.1746];
-							data[5] = [1.8133, 2.1139];
-							data[6] = [2.7258, 3.0668];
-							data[7] = [1.4117, 2.0593];
-							data[8] = [4.1832, 1.9044];
-							data[9] = [1.8636, 1.1677];
 
-							labels[0] = 1;
-							labels[1] = 1;
-							labels[2] = 1;
-							labels[3] = 1;
-							labels[4] = 1;
-							labels[5] = -1;
-							labels[6] = -1;
-							labels[7] = -1;
-							labels[8] = -1;
-							labels[9] = -1;
-
-							var svm = new svmjs.SVM();
-							svm.train(data, labels, { C: 3, numpasses: 100 }); // make more passes to increase precision
-
-							if (console) {
-								// print weights and offset
-								wb = svm.getWeights();
-								for (var i = 0; i < wb.w.length; i++) {
-									console.log("w_%d = %f", i, wb.w[i]);
-								}
-								console.log("b = %f", wb.b);
-
-								// print predicted margins
-								var marg = svm.margins(data);
-								for (var i = 0; i < N; i++) {
-									console.log("%f, %f", labels[i], marg[i]);
-								}
-							}
-
-							asserteqf(wb.w[0], -1.1096);
-							asserteqf(wb.w[1], -0.0590);
-							asserteqf(wb.b, 1.1368);
-							asserteqf(marg[0], 1.5466);
-							asserteqf(marg[1], -2.4281);
-							asserteqf(marg[2], 1.0000);
-							asserteqf(marg[3], 0.7983);
-							asserteqf(marg[4], 2.3987);
-							asserteqf(marg[5], -1.0000);
-							asserteqf(marg[6], -2.0688);
-							asserteqf(marg[7], -0.5511);
-							asserteqf(marg[8], -3.6174);
-							asserteqf(marg[9], -1.0000);
-							if (pass) { document.bgColor = "#9F9"; }
-							else { document.bgColor = "#F99"; }
-						}
-
-						// "unit testing" >.<
-						var pass = true;
-						function myprint(s) {
-							document.getElementById("printdiv").innerHTML += s + "<br />"
-						}
-						function asserteqf(got, want) {
-							if (Math.abs(want - got) > 1e-3) {
-								myprint("wanted " + want + " but got " + got);
-								pass = false;
-							} else {
-								myprint("wanted " + want + " and got " + got + " OK.");
-							}
-						}
-
-					</script>
-					<div onLoad="testsvm();">
-						Poor man's unit tests:
-						<div id="printdiv"></div>
-					</div>
-
-				</article>
-			</section>
-		-->
 			<section id="seccionejemplos">
 				<article class="box post post-excerpt">
 					<header>
@@ -1450,7 +1674,8 @@
 									need a subtitle.
 								-->
 						<h2><a href="#">Examples</a></h2>
-						<p>On this page you will find the centralized information of the examples of the machine learning functions. </p>
+						<p>On this page you will find the centralized information of the examples of the machine
+							learning functions. </p>
 						<a href="https://tytusdb.github.io/tytusjs/">Tytusjs</a>
 						<!--<p>En esta pagina encontra la informacion centralizada de las ejemplos de las funciones de
 							machine learning</p>-->
@@ -1499,8 +1724,8 @@
 				<!--
 				<li><a href="#octavo">K-Nearest Neighbor 2</a></li>
 				<li><a href="#once">SVM</a></li>-->
-				
-				
+
+
 			</ul>
 		</nav>
 
